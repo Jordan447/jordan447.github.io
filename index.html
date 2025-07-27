@@ -3,66 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unpaid Citations Calculator</title>
+    <title>Jordan's Tool Panel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="dark-mode-toggle">
-        <input type="checkbox" id="dark-mode-switch">
-        <label for="dark-mode-switch" class="dark-mode-label">
-            <span class="dark-mode-slider"></span>
-            <span class="dark-mode-text">Dark Mode</span>
-        </label>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-tools"></i> Jordan's Tools</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" data-tool="dashboard" class="active">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li class="sidebar-dropdown">
+                <a href="#" class="dropdown-btn">
+                    <i class="fas fa-shield-alt"></i> LSSD Tools
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <div class="dropdown-container">
+                    <a href="#" data-tool="citations"><i class="fas fa-file-invoice-dollar"></i> Unpaid Citations</a>
+                    <a href="#" data-tool="patrol"><i class="fas fa-clipboard-list"></i> King Patrol Log</a>
+                </div>
+            </li>
+            <li class="sidebar-dropdown">
+                <a href="#" class="dropdown-btn">
+                    <i class="fas fa-bus"></i> SADCR Tools
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <div class="dropdown-container">
+                    <a href="#" data-tool="tbd"><i class="fas fa-procedures"></i> Medical Reports (TBI)</a>
+                </div>
+            </li>
+            <li class="sidebar-dropdown">
+                <a href="#" class="dropdown-btn">
+                    <i class="fas fa-image"></i> Image Tools
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <div class="dropdown-container">
+                    <a href="#" data-tool="psd-generator"><i class="fas fa-file-image"></i> PSD Generator</a>
+                </div>
+            </li>
+            <li>
+                <a href="#" data-tool="changelog">
+                    <i class="fas fa-history"></i> Changelog
+                </a>
+            </li>
+        </ul>
     </div>
 
-    <div class="content-wrapper">
-        <h1><i class="fas fa-calculator"></i> Unpaid Citations Calculator</h1>
-        
-        <div class="form-container">
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="First Last">
-            </div>
-            
-            <div class="form-group">
-                <label for="fswFiled">FSW Filed</label>
-                <select id="fswFiled">
-                    <option value="YES">YES</option>
-                    <option value="NO">NO</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="inputText">Paste your text below to count dollar amounts ending with 0:</label>
-                <textarea id="inputText" rows="10" placeholder="Paste your text here..."></textarea>
-            </div>
-            
-            <div class="button-group">
-                <button id="countBtn" class="primary-btn"><i class="fas fa-calculator"></i> Count Amounts</button>
-                <button id="templateBtn" class="secondary-btn" disabled><i class="fas fa-file-alt"></i> Generate Template</button>
+    <div class="main-content">
+        <div class="header">
+            <h1 id="current-tool">Dashboard</h1>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
             </div>
         </div>
-        
-        <div id="results" style="display: none;">
-            <h3><i class="fas fa-chart-bar"></i> Results</h3>
-            <div id="output"></div>
-            <div id="summary"></div>
-        </div>
-        
-        <div id="templateOutput" style="display: none;">
-            <div class="template-header">
-                <h3><i class="fas fa-clipboard"></i> Template</h3>
-                <button id="copyBtn" class="primary-btn"><i class="fas fa-copy"></i> Copy Template</button>
+
+        <div class="panel-container">
+            <div class="tools-panel">
+                <!-- Dashboard Section -->
+                <div class="tool-section active" id="dashboard-section">
+                    <h2><i class="fas fa-home"></i> Dashboard - Quick Start</h2>
+                    <p>Welcome to Jordan's Tool Panel. Select a tool from the sidebar to get started.</p>
+                    <div class="dashboard-tools">
+                        <div class="dashboard-tool" onclick="switchTool('citations')">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <h3>Unpaid Citations Calculator</h3>
+                            <p>Calculate unpaid citations from pasted text.</p>
+                        </div>
+                        <div class="dashboard-tool" onclick="switchTool('patrol')">
+                            <i class="fas fa-clipboard-list"></i>
+                            <h3>King Patrol Log Generator</h3>
+                            <p>Generate formatted King patrol logs with BBCode output.</p>
+                        </div>
+                        <div class="dashboard-tool" onclick="switchTool('psd-generator')">
+                            <i class="fas fa-file-image"></i>
+                            <h3>PSD Generator</h3>
+                            <p>Fill and generate documents from PSD templates.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Existing tool sections remain unchanged -->
+
+                <!-- New PSD Generator Section -->
+                <div class="tool-section" id="psd-generator-section">
+                    <h2><i class="fas fa-file-image"></i> PSD Generator</h2>
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label for="psd-fullName">Full Name</label>
+                            <input type="text" id="psd-fullName" placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="psd-fullAddress">Full Address</label>
+                            <textarea id="psd-fullAddress" placeholder="Enter full address"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="psd-fullSig">Signature</label>
+                            <input type="text" id="psd-fullSig" placeholder="Enter signature">
+                        </div>
+                        <div class="form-group">
+                            <label for="psd-fullExpiration">Expiration Date</label>
+                            <input type="text" id="psd-fullExpiration" placeholder="Enter expiration date">
+                        </div>
+                        <div class="form-group">
+                            <label for="psd-fullDate">Date</label>
+                            <input type="text" id="psd-fullDate" placeholder="Enter date">
+                        </div>
+                        <div class="form-group">
+                            <label for="psd-fullRecNo">Record Number</label>
+                            <input type="text" id="psd-fullRecNo" placeholder="Enter record number">
+                        </div>
+                        <div class="button-group">
+                            <button id="psd-generateBtn" class="primary-btn"><i class="fas fa-cog"></i> Generate Document</button>
+                        </div>
+                    </div>
+                    <div id="psd-results">
+                        <div class="template-header">
+                            <h3><i class="fas fa-image"></i> Preview</h3>
+                        </div>
+                        <div id="psd-preview-container">
+                            <img id="psd-previewImage" src="SA_GC_TEMP.png" alt="Document Preview">
+                            <p>Generated image will appear here</p>
+                        </div>
+                        <div class="button-group">
+                            <button id="psd-downloadBtn" class="secondary-btn" disabled><i class="fas fa-download"></i> Download Image</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Changelog Section -->
+                <div class="tool-section" id="changelog-section">
+                    <h2><i class="fas fa-history"></i> Changelog</h2>
+                    <div class="changelog-content">
+                        <div class="changelog-item">
+                            <div class="changelog-date">July 5, 2025</div>
+                            <div class="changelog-text">Implemented new template for Unpaid Citations + ability to count amount of fines.</div>
+                        </div>
+                        <div class="changelog-item">
+                            <div class="changelog-date">July 6, 2025</div>
+                            <div class="changelog-text">Added PSD Generator tool for document creation.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="templateContent"></div>
+
+            <div class="changelog-panel">
+                <h3>Recent Updates</h3>
+                <div class="changelog-item">
+                    <div class="changelog-date">July 6, 2025</div>
+                    <div class="changelog-text">Added PSD Generator tool for document creation.</div>
+                </div>
+                <div class="changelog-item">
+                    <div class="changelog-date">July 5, 2025</div>
+                    <div class="changelog-text">Implemented new template for Unpaid Citations + ability to count amount of fines.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Created and maintained by <a href="https://forum.gta.world/en/profile/47870-jordan447/" target="_blank">Jordan</a>
         </div>
     </div>
 
-    <footer class="footer">
-        Created and maintained by <a href="https://forum.gta.world/en/profile/47870-jordan447/" target="_blank">Jordan</a>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/psd.js/3.2.0/psd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
