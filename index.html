@@ -340,51 +340,60 @@
                             
                             <h3>Violation Details</h3>
                             
-                            <div class="form-group">
-                                <label for="infractionType">Infraction Type</label>
-                                <select id="infractionType">
-                                    <option value="">Select infraction type</option>
-                                    <option value="IC 405. Failure to Produce Proof of Insurance">IC 405. Failure to Produce Proof of Insurance</option>
-                                    <option value="IC 406. Unregistered Vehicle">IC 406. Unregistered Vehicle</option>
-                                    <option value="IC 407. No Insurance">IC 407. No Insurance</option>
-                                    <option value="IC 410. Speeding">IC 410. Speeding</option>
-                                    <option value="IC 411. Excessive Speeding">IC 411. Excessive Speeding</option>
-                                    <option value="IC 412. Failure to Yield/Stop to a Traffic Control Device">IC 412. Failure to Yield/Stop to a Traffic Control Device</option>
-                                    <option value="IC 413. Failure to Yield at Intersection">IC 413. Failure to Yield at Intersection</option>
-                                    <option value="IC 414. Failure to Yield Entering Roadway">IC 414. Failure to Yield Entering Roadway</option>
-                                    <option value="IC 415. Failure to Yield for Crosswalk">IC 415. Failure to Yield for Crosswalk</option>
-                                    <option value="IC 416. Failure to Yield to an Emergency Vehicle">IC 416. Failure to Yield to an Emergency Vehicle</option>
-                                    <option value="IC 417. Improper Lane Entry while Turning">IC 417. Improper Lane Entry while Turning</option>
-                                    <option value="IC 418. Prohibited Parking">IC 418. Prohibited Parking</option>
-                                    <option value="IC 421. Drive Without Headlights">IC 421. Drive Without Headlights</option>
-                                    <option value="IC 422. Unsafe Reversing">IC 422. Unsafe Reversing</option>
-                                    <option value="IC 423. Obstructing Traffic">IC 423. Obstructing Traffic</option>
-                                    <option value="IC 424. Driving Against One-Way Traffic">IC 424. Driving Against One-Way Traffic</option>
-                                    <option value="IC 425. Imprudent Driving">IC 425. Imprudent Driving</option>
-                                    <option value="IC 426. Use of an Electronic Device while Driving">IC 426. Use of an Electronic Device while Driving</option>
-                                    <option value="IC 427. Vehicular Noise Violation">IC 427. Vehicular Noise Violation</option>
-                                    <option value="IC 428. Illegal Usage of Hydraulics">IC 428. Illegal Usage of Hydraulics</option>
-                                    <option value="IC 429. Tinted Windows">IC 429. Tinted Windows</option>
-                                    <option value="IC 433. Jaywalking">IC 433. Jaywalking</option>
-                                    <option value="IC 434. Possession of Open Container">IC 434. Possession of Open Container</option>
-                                    <option value="IC 435. Failure to Wear a Seatbelt/Safety Equipment">IC 435. Failure to Wear a Seatbelt/Safety Equipment</option>
-                                    <option value="IC 436. Operation of Unsafe Motor Vehicle">IC 436. Operation of Unsafe Motor Vehicle</option>
-                                    <option value="IC 441. Negligent Operation of Bicycle">IC 441. Negligent Operation of Bicycle</option>
-                                    <option value="IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach">IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach</option>
-                                    <option value="IC 611. Fire Code Violation">IC 611. Fire Code Violation</option>
-                                    <option value="IC 612. Littering">IC 612. Littering</option>
-                                    <option value="IC 613. Noise Disturbance">IC 613. Noise Disturbance</option>
-                                    <option value="IC 614. Public Nuisance">IC 614. Public Nuisance</option>
-                                    <option value="IC 615. Trespassing (I)">IC 615. Trespassing (I)</option>
-                                    <option value="IC 616. Public Intoxication (I)">IC 616. Public Intoxication (I)</option>
-                                    <option value="IC 617. Unlawful Camping">IC 617. Unlawful Camping</option>
-                                </select>
+                            <div class="violations-container">
+                                <div class="violation-item">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Infraction Type</label>
+                                            <select class="infraction-type">
+                                                <option value="">Select infraction type</option>
+                                                <option value="IC 405. Failure to Produce Proof of Insurance">IC 405. Failure to Produce Proof of Insurance</option>
+                                                <option value="IC 406. Unregistered Vehicle">IC 406. Unregistered Vehicle</option>
+                                                <option value="IC 407. No Insurance">IC 407. No Insurance</option>
+                                                <option value="IC 410. Speeding">IC 410. Speeding</option>
+                                                <option value="IC 411. Excessive Speeding">IC 411. Excessive Speeding</option>
+                                                <option value="IC 412. Failure to Yield/Stop to a Traffic Control Device">IC 412. Failure to Yield/Stop to a Traffic Control Device</option>
+                                                <option value="IC 413. Failure to Yield at Intersection">IC 413. Failure to Yield at Intersection</option>
+                                                <option value="IC 414. Failure to Yield Entering Roadway">IC 414. Failure to Yield Entering Roadway</option>
+                                                <option value="IC 415. Failure to Yield for Crosswalk">IC 415. Failure to Yield for Crosswalk</option>
+                                                <option value="IC 416. Failure to Yield to an Emergency Vehicle">IC 416. Failure to Yield to an Emergency Vehicle</option>
+                                                <option value="IC 417. Improper Lane Entry while Turning">IC 417. Improper Lane Entry while Turning</option>
+                                                <option value="IC 418. Prohibited Parking">IC 418. Prohibited Parking</option>
+                                                <option value="IC 421. Drive Without Headlights">IC 421. Drive Without Headlights</option>
+                                                <option value="IC 422. Unsafe Reversing">IC 422. Unsafe Reversing</option>
+                                                <option value="IC 423. Obstructing Traffic">IC 423. Obstructing Traffic</option>
+                                                <option value="IC 424. Driving Against One-Way Traffic">IC 424. Driving Against One-Way Traffic</option>
+                                                <option value="IC 425. Imprudent Driving">IC 425. Imprudent Driving</option>
+                                                <option value="IC 426. Use of an Electronic Device while Driving">IC 426. Use of an Electronic Device while Driving</option>
+                                                <option value="IC 427. Vehicular Noise Violation">IC 427. Vehicular Noise Violation</option>
+                                                <option value="IC 428. Illegal Usage of Hydraulics">IC 428. Illegal Usage of Hydraulics</option>
+                                                <option value="IC 429. Tinted Windows">IC 429. Tinted Windows</option>
+                                                <option value="IC 433. Jaywalking">IC 433. Jaywalking</option>
+                                                <option value="IC 434. Possession of Open Container">IC 434. Possession of Open Container</option>
+                                                <option value="IC 435. Failure to Wear a Seatbelt/Safety Equipment">IC 435. Failure to Wear a Seatbelt/Safety Equipment</option>
+                                                <option value="IC 436. Operation of Unsafe Motor Vehicle">IC 436. Operation of Unsafe Motor Vehicle</option>
+                                                <option value="IC 441. Negligent Operation of Bicycle">IC 441. Negligent Operation of Bicycle</option>
+                                                <option value="IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach">IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach</option>
+                                                <option value="IC 611. Fire Code Violation">IC 611. Fire Code Violation</option>
+                                                <option value="IC 612. Littering">IC 612. Littering</option>
+                                                <option value="IC 613. Noise Disturbance">IC 613. Noise Disturbance</option>
+                                                <option value="IC 614. Public Nuisance">IC 614. Public Nuisance</option>
+                                                <option value="IC 615. Trespassing (I)">IC 615. Trespassing (I)</option>
+                                                <option value="IC 616. Public Intoxication (I)">IC 616. Public Intoxication (I)</option>
+                                                <option value="IC 617. Unlawful Camping">IC 617. Unlawful Camping</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Violation Description</label>
+                                            <textarea class="violation-description" placeholder="Enter details of the observed violation"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="form-group">
-                                <label for="violationDescription">Violation Description</label>
-                                <textarea id="violationDescription" placeholder="Enter details of the observed violation"></textarea>
-                            </div>
+                            <button type="button" id="add-violation" class="secondary-btn">
+                                <i class="fas fa-plus"></i> Add Another Violation
+                            </button>
                             
                             <div class="form-group">
                                 <label for="officerComments">Officer Comments</label>
@@ -395,6 +404,7 @@
                                 <button class="primary-btn" onclick="updateTrafficWarningPreview()"><i class="fas fa-sync-alt"></i> Update Preview</button>
                                 <button class="secondary-btn" onclick="generateRandomTrafficData()"><i class="fas fa-dice"></i> Random Data</button>
                                 <button class="primary-btn download-btn" onclick="downloadTrafficWarningAsPNG()"><i class="fas fa-download"></i> Download as PNG</button>
+                                <button class="primary-btn" onclick="copyWarningTitle()"><i class="fas fa-copy"></i> Copy Title</button>
                             </div>
                             
                             <p class="form-note">This is a fictional tool for entertainment purposes only</p>
@@ -415,8 +425,8 @@
                                     <li>Download the image via the download button to your computer.</li>
                                     <li>Go to <a href="https://imgur.com" target="_blank" class="link">Imgur</a> or <a href="https://postimages.org" target="_blank" class="link">postimages</a> and upload the downloaded image.</li>
                                     <li>Go to any 24/7 and buy notes.</li>
-                                    <li>Use /myinvex for the id, then use <code>/note [id of the blank note item in your inventory] amount name LSSD Written Warning F. Lastname</code></li>
-                                    <li>Use /myinvex for the id, then use <code>/note [id of the new note item in your inventory] amount content URL from Imgur/postimages ending with .png</code></li>
+                                    <li>Use <code>/note [id of the blank note item in your inventory] amount name LSSD Written Warning F. Lastname</code></li>
+                                    <li>Use <code>/note [id of the new note item in your inventory] amount content URL from Imgur/postimages ending with .png</code></li>
                                     <li><strong>[!]</strong> If you keep the name and content the same of every note they can be stacked.</li>
                                     <li>Use <code>/giveitem</code> to give out your cards to other people.</li>
                                 </ol>
@@ -440,6 +450,10 @@
                     <div class="changelog-content">
                         <div class="changelog-item">
                             <div class="changelog-date">July 6, 2025</div>
+                            <div class="changelog-text">Added multiple violations support and copy title feature to Traffic Warning Generator.</div>
+                        </div>
+                        <div class="changelog-item">
+                            <div class="changelog-date">July 6, 2025</div>
                             <div class="changelog-text">Added Traffic Warning Generator with dynamic officer/deputy titles and usage instructions.</div>
                         </div>
                         <div class="changelog-item">
@@ -452,6 +466,10 @@
 
             <div class="changelog-panel">
                 <h3>Recent Updates</h3>
+                <div class="changelog-item">
+                    <div class="changelog-date">July 6, 2025</div>
+                    <div class="changelog-text">Added multiple violations support and copy title feature to Traffic Warning Generator.</div>
+                </div>
                 <div class="changelog-item">
                     <div class="changelog-date">July 6, 2025</div>
                     <div class="changelog-text">Added Traffic Warning Generator with dynamic officer/deputy titles and usage instructions.</div>

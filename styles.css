@@ -882,6 +882,33 @@ th {
     color: #000;
 }
 
+/* Violations Container Styles */
+.violations-container {
+    margin-bottom: 20px;
+}
+
+.violation-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--role-bg);
+    border-radius: 6px;
+    border: 1px solid var(--input-border);
+}
+
+.violation-item:last-child {
+    margin-bottom: 0;
+}
+
+.remove-violation {
+    background-color: #dc3545 !important;
+    padding: 8px 15px !important;
+    font-size: 14px !important;
+}
+
+.remove-violation:hover {
+    background-color: #c82333 !important;
+}
+
 /* How to Use Section Styles */
 .how-to-use-section {
     margin-top: 30px;
