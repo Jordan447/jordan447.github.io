@@ -3,65 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unpaid Citations Calculator</title>
+    <title>Jordan's Tool Panel</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="dark-mode-toggle">
-        <input type="checkbox" id="dark-mode-switch">
-        <label for="dark-mode-switch" class="dark-mode-label">
-            <span class="dark-mode-slider"></span>
-            <span class="dark-mode-text">Dark Mode</span>
-        </label>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-tools"></i> Jordan's Tools</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" data-tool="dashboard" class="active">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li class="sidebar-dropdown">
+                <a href="#" class="dropdown-btn">
+                    <i class="fas fa-shield-alt"></i> LSSD Tools
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <div class="dropdown-container">
+                    <a href="#" data-tool="citations"><i class="fas fa-file-invoice-dollar"></i> Unpaid Citations</a>
+                    <a href="#" data-tool="patrol"><i class="fas fa-clipboard-list"></i> King Patrol Log</a>
+                    <a href="#" data-tool="traffic-warning"><i class="fas fa-file-alt"></i> Traffic Warning Generator</a>
+                </div>
+            </li>
+            <li class="sidebar-dropdown">
+                <a href="#" class="dropdown-btn">
+                    <i class="fas fa-bus"></i> SADCR Tools
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <div class="dropdown-container">
+                    <a href="#" data-tool="tbd"><i class="fas fa-procedures"></i> Medical Reports (TBI)</a>
+                </div>
+            </li>
+            <li>
+                <a href="#" data-tool="changelog">
+                    <i class="fas fa-history"></i> Changelog
+                </a>
+            </li>
+        </ul>
     </div>
 
-    <div class="content-wrapper">
-        <h1><i class="fas fa-calculator"></i> Unpaid Citations Calculator</h1>
-        
-        <div class="form-container">
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="First Last">
-            </div>
-            
-            <div class="form-group">
-                <label for="fswFiled">FSW Filed</label>
-                <select id="fswFiled">
-                    <option value="YES">YES</option>
-                    <option value="NO">NO</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="inputText">Paste your text below to count dollar amounts ending with 0:</label>
-                <textarea id="inputText" rows="10" placeholder="Paste your text here..."></textarea>
-            </div>
-            
-            <div class="button-group">
-                <button id="countBtn" class="primary-btn"><i class="fas fa-calculator"></i> Count Amounts</button>
-                <button id="templateBtn" class="secondary-btn" disabled><i class="fas fa-file-alt"></i> Generate Template</button>
+    <div class="main-content">
+        <div class="header">
+            <h1 id="current-tool">Dashboard</h1>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
             </div>
         </div>
-        
-        <div id="results" style="display: none;">
-            <h3><i class="fas fa-chart-bar"></i> Results</h3>
-            <div id="output"></div>
-            <div id="summary"></div>
-        </div>
-        
-        <div id="templateOutput" style="display: none;">
-            <div class="template-header">
-                <h3><i class="fas fa-clipboard"></i> Template</h3>
-                <button id="copyBtn" class="primary-btn"><i class="fas fa-copy"></i> Copy Template</button>
+
+        <div class="panel-container">
+            <div class="tools-panel">
+                <!-- Dashboard Section -->
+                <div class="tool-section active" id="dashboard-section">
+                    <h2><i class="fas fa-home"></i> Dashboard - Quick Start</h2>
+                    <p>Welcome to Jordan's Tool Panel. Select a tool from the sidebar to get started.</p>
+                    <div class="dashboard-tools">
+                        <div class="dashboard-tool" onclick="switchTool('citations')">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <h3>Unpaid Citations Calculator</h3>
+                            <p>Calculate unpaid citations from pasted text.</p>
+                        </div>
+                        <div class="dashboard-tool" onclick="switchTool('patrol')">
+                            <i class="fas fa-clipboard-list"></i>
+                            <h3>King Patrol Log Generator</h3>
+                            <p>Generate formatted King patrol logs with BBCode output.</p>
+                        </div>
+                        <div class="dashboard-tool" onclick="switchTool('traffic-warning')">
+                            <i class="fas fa-file-alt"></i>
+                            <h3>Traffic Warning Generator</h3>
+                            <p>Generate official-looking traffic warnings for law enforcement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unpaid Citations Calculator -->
+                <div class="tool-section" id="citations-section">
+                    <h2><i class="fas fa-file-invoice-dollar"></i> Unpaid Citations Calculator</h2>
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="First Last">
+                        </div>
+                        <div class="form-group">
+                            <label for="fswFiled">FSW Filed</label>
+                            <select id="fswFiled">
+                                <option value="YES">YES</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputText">Paste your text below to count dollar amounts ending with 0:</label>
+                            <textarea id="inputText" rows="10" placeholder="Paste your text here..."></textarea>
+                        </div>
+                        <div class="button-group">
+                            <button id="countBtn" class="primary-btn"><i class="fas fa-calculator"></i> Count Amounts</button>
+                            <button id="templateBtn" class="secondary-btn" disabled><i class="fas fa-file-alt"></i> Generate Template</button>
+                        </div>
+                    </div>
+                    <div id="results">
+                        <div class="template-header">
+                            <h3><i class="fas fa-chart-bar"></i> Results</h3>
+                        </div>
+                        <div id="output"></div>
+                        <div id="summary"></div>
+                    </div>
+                    <div id="templateOutput">
+                        <div class="template-header">
+                            <h3><i class="fas fa-clipboard"></i> Template</h3>
+                            <button id="copyBtn" class="primary-btn"><i class="fas fa-copy"></i> Copy Template</button>
+                        </div>
+                        <div id="templateContent"></div>
+                    </div>
+                </div>
+
+                <!-- Patrol Log Generator -->
+                <div class="tool-section" id="patrol-section">
+                    <h2><i class="fas fa-clipboard-list"></i> Patrol Log Generator</h2>
+                    <form id="patrol-form">
+                        <div class="form-section">
+                            <h3>Header Information</h3>
+                            <div class="form-group">
+                                <label for="report-date">Report Date</label>
+                                <input type="text" id="report-date" placeholder="DD/MMM/YYYY (e.g., 24/MAY/2025)" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="report-time">Report Time</label>
+                                <input type="text" id="report-time" placeholder="HH:MM AM/PM (e.g., 21:10 PM)" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patrol-number">Patrol Number</label>
+                                <input type="text" id="patrol-number" placeholder="PATROL #1" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Trainee Information</h3>
+                            <div class="form-group">
+                                <label for="trainee-name">Trainee Name</label>
+                                <input type="text" id="trainee-name" placeholder="Isabella Taylor" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="employee-number">Employee Number</label>
+                                <input type="text" id="employee-number" placeholder="69435" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="callsign">Callsign</label>
+                                <input type="text" id="callsign" placeholder="115K" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Associated Reports</h3>
+                            <p class="hint">Add any reports associated with this patrol. If none, leave empty.</p>
+                            <div id="reports-container">
+                                <!-- Reports will be added here -->
+                            </div>
+                            <button type="button" id="add-report" class="secondary-btn">
+                                <i class="fas fa-plus"></i> Add Report
+                            </button>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Patrol Narrative</h3>
+                            <p class="hint">Enter your patrol narrative with timestamps (e.g., 17:40 - Started my patrol...)</p>
+                            <div class="form-group">
+                                <textarea id="narrative" placeholder="17:40 - Started my patrol under callsign 115 King&#10;18:15 - Performed a traffic stop..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="submit" id="submit-btn" class="primary-btn">
+                                <span class="spinner"><i class="fas fa-spinner fa-spin"></i></span>
+                                <span class="btn-text">Generate BB Code</span>
+                            </button>
+                            <button type="reset" class="secondary-btn">Reset Form</button>
+                        </div>
+                    </form>
+
+                    <div id="output-container">
+                        <div class="template-header">
+                            <h3><i class="fas fa-code"></i> Generated BB Code</h3>
+                            <button id="copy-bbcode" class="primary-btn">
+                                <i class="fas fa-copy"></i> Copy to Clipboard
+                            </button>
+                        </div>
+                        <textarea id="bbcode-output" readonly></textarea>
+                    </div>
+                </div>
+
+                <!-- Traffic Warning Generator -->
+                <div class="tool-section" id="traffic-warning-section">
+                    <h2><i class="fas fa-file-alt"></i> Traffic Warning Generator</h2>
+                    
+                    <div class="traffic-warning-container">
+                        <div class="form-section">
+                            <h3>Warning Details</h3>
+                            
+                            <div class="form-group">
+                                <label for="agency">Law Enforcement Agency</label>
+                                <select id="agency">
+                                    <option value="LSPD">LOS SANTOS POLICE DEPARTMENT</option>
+                                    <option value="LSSD">LOS SANTOS SHERIFF'S DEPARTMENT</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="badgeNumber" id="badgeLabel">Officer Badge/ID Number</label>
+                                    <input type="text" id="badgeNumber" placeholder="Enter badge number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="officerName" id="officerLabel">Officer Name</label>
+                                    <input type="text" id="officerName" placeholder="Enter officer name">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="date">Date of Violation</label>
+                                    <input type="date" id="date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Time of Violation</label>
+                                    <input type="time" id="time">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="location">Location of Violation</label>
+                                <input type="text" id="location" placeholder="Enter violation location">
+                            </div>
+                            
+                            <div class="section-separator"></div>
+                            
+                            <h3>Driver Information</h3>
+                            
+                            <div class="form-group">
+                                <label for="driverName">Driver's Full Name</label>
+                                <input type="text" id="driverName" placeholder="Enter driver name">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="dlNumber">Driver's License Number</label>
+                                    <input type="text" id="dlNumber" placeholder="Enter license number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dlState">License State</label>
+                                    <select id="dlState">
+                                        <option value="SA">San Andreas</option>
+                                        <option value="BC">Blaine County</option>
+                                        <option value="LS">Los Santos</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" id="address" placeholder="Enter street address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <select id="city">
+                                        <option value="Los Santos">Los Santos</option>
+                                        <option value="Vinewood">Vinewood</option>
+                                        <option value="Sandy Shores">Sandy Shores</option>
+                                        <option value="Paleto Bay">Paleto Bay</option>
+                                        <option value="Grapeseed">Grapeseed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="section-separator"></div>
+                            
+                            <h3>Vehicle Information</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vehicleMake">Vehicle Make</label>
+                                    <select id="vehicleMake">
+                                        <option value="">Select vehicle make</option>
+                                        <option value="Albany">Albany</option>
+                                        <option value="Annis">Annis</option>
+                                        <option value="Bravado">Bravado</option>
+                                        <option value="Declasse">Declasse</option>
+                                        <option value="Dewbauchee">Dewbauchee</option>
+                                        <option value="Emperor">Emperor</option>
+                                        <option value="Grotti">Grotti</option>
+                                        <option value="Imponte">Imponte</option>
+                                        <option value="Karin">Karin</option>
+                                        <option value="Lampadati">Lampadati</option>
+                                        <option value="Maibatsu">Maibatsu</option>
+                                        <option value="Obey">Obey</option>
+                                        <option value="Ocelot">Ocelot</option>
+                                        <option value="Pfister">Pfister</option>
+                                        <option value="Ubermacht">Ubermacht</option>
+                                        <option value="Vapid">Vapid</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehicleModel">Vehicle Model</label>
+                                    <input type="text" id="vehicleModel" placeholder="Enter vehicle model">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vehicleColor">Color</label>
+                                    <input type="text" id="vehicleColor" placeholder="Enter vehicle color">
+                                </div>
+                                <div class="form-group">
+                                    <label for="licensePlate">License Plate</label>
+                                    <input type="text" id="licensePlate" placeholder="Enter license plate">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="plateState">Plate State</label>
+                                <select id="plateState">
+                                    <option value="SA">San Andreas</option>
+                                    <option value="BC">Blaine County</option>
+                                    <option value="LS">Los Santos</option>
+                                </select>
+                            </div>
+                            
+                            <div class="section-separator"></div>
+                            
+                            <h3>Violation Details</h3>
+                            
+                            <div class="form-group">
+                                <label for="infractionType">Infraction Type</label>
+                                <select id="infractionType">
+                                    <option value="">Select infraction type</option>
+                                    <option value="IC 405. Failure to Produce Proof of Insurance">IC 405. Failure to Produce Proof of Insurance</option>
+                                    <option value="IC 406. Unregistered Vehicle">IC 406. Unregistered Vehicle</option>
+                                    <option value="IC 407. No Insurance">IC 407. No Insurance</option>
+                                    <option value="IC 410. Speeding">IC 410. Speeding</option>
+                                    <option value="IC 411. Excessive Speeding">IC 411. Excessive Speeding</option>
+                                    <option value="IC 412. Failure to Yield/Stop to a Traffic Control Device">IC 412. Failure to Yield/Stop to a Traffic Control Device</option>
+                                    <option value="IC 413. Failure to Yield at Intersection">IC 413. Failure to Yield at Intersection</option>
+                                    <option value="IC 414. Failure to Yield Entering Roadway">IC 414. Failure to Yield Entering Roadway</option>
+                                    <option value="IC 415. Failure to Yield for Crosswalk">IC 415. Failure to Yield for Crosswalk</option>
+                                    <option value="IC 416. Failure to Yield to an Emergency Vehicle">IC 416. Failure to Yield to an Emergency Vehicle</option>
+                                    <option value="IC 417. Improper Lane Entry while Turning">IC 417. Improper Lane Entry while Turning</option>
+                                    <option value="IC 418. Prohibited Parking">IC 418. Prohibited Parking</option>
+                                    <option value="IC 421. Drive Without Headlights">IC 421. Drive Without Headlights</option>
+                                    <option value="IC 422. Unsafe Reversing">IC 422. Unsafe Reversing</option>
+                                    <option value="IC 423. Obstructing Traffic">IC 423. Obstructing Traffic</option>
+                                    <option value="IC 424. Driving Against One-Way Traffic">IC 424. Driving Against One-Way Traffic</option>
+                                    <option value="IC 425. Imprudent Driving">IC 425. Imprudent Driving</option>
+                                    <option value="IC 426. Use of an Electronic Device while Driving">IC 426. Use of an Electronic Device while Driving</option>
+                                    <option value="IC 427. Vehicular Noise Violation">IC 427. Vehicular Noise Violation</option>
+                                    <option value="IC 428. Illegal Usage of Hydraulics">IC 428. Illegal Usage of Hydraulics</option>
+                                    <option value="IC 429. Tinted Windows">IC 429. Tinted Windows</option>
+                                    <option value="IC 433. Jaywalking">IC 433. Jaywalking</option>
+                                    <option value="IC 434. Possession of Open Container">IC 434. Possession of Open Container</option>
+                                    <option value="IC 435. Failure to Wear a Seatbelt/Safety Equipment">IC 435. Failure to Wear a Seatbelt/Safety Equipment</option>
+                                    <option value="IC 436. Operation of Unsafe Motor Vehicle">IC 436. Operation of Unsafe Motor Vehicle</option>
+                                    <option value="IC 441. Negligent Operation of Bicycle">IC 441. Negligent Operation of Bicycle</option>
+                                    <option value="IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach">IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach</option>
+                                    <option value="IC 611. Fire Code Violation">IC 611. Fire Code Violation</option>
+                                    <option value="IC 612. Littering">IC 612. Littering</option>
+                                    <option value="IC 613. Noise Disturbance">IC 613. Noise Disturbance</option>
+                                    <option value="IC 614. Public Nuisance">IC 614. Public Nuisance</option>
+                                    <option value="IC 615. Trespassing (I)">IC 615. Trespassing (I)</option>
+                                    <option value="IC 616. Public Intoxication (I)">IC 616. Public Intoxication (I)</option>
+                                    <option value="IC 617. Unlawful Camping">IC 617. Unlawful Camping</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="violationDescription">Violation Description</label>
+                                <textarea id="violationDescription" placeholder="Enter details of the observed violation"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="officerComments">Officer Comments</label>
+                                <textarea id="officerComments" placeholder="Enter additional observations"></textarea>
+                            </div>
+                            
+                            <div class="button-group">
+                                <button class="primary-btn" onclick="updateTrafficWarningPreview()"><i class="fas fa-sync-alt"></i> Update Preview</button>
+                                <button class="secondary-btn" onclick="generateRandomTrafficData()"><i class="fas fa-dice"></i> Random Data</button>
+                                <button class="primary-btn download-btn" onclick="downloadTrafficWarningAsPNG()"><i class="fas fa-download"></i> Download as PNG</button>
+                            </div>
+                            
+                            <p class="form-note">This is a fictional tool for entertainment purposes only</p>
+                        </div>
+                        
+                        <div class="preview-section">
+                            <h3>Warning Preview</h3>
+                            <div id="trafficWarningPreview" class="warning-form">
+                                <!-- Preview will be generated here -->
+                            </div>
+                        </div>
+
+                        <!-- How to Use Section -->
+                        <div class="how-to-use-section">
+                            <h3><i class="fas fa-question-circle"></i> How to Use?</h3>
+                            <div class="how-to-use-content">
+                                <ol>
+                                    <li>Download the image via the download button to your computer.</li>
+                                    <li>Go to <a href="https://imgur.com" target="_blank" class="link">Imgur</a> or <a href="https://postimages.org" target="_blank" class="link">postimages</a> and upload the downloaded image.</li>
+                                    <li>Go to any 24/7 and buy notes.</li>
+                                    <li>Use /myinvex for the id, then use <code>/note [id of the blank note item in your inventory] amount name LSSD Written Warning F. Lastname</code></li>
+                                    <li>Use /myinvex for the id, then use <code>/note [id of the new note item in your inventory] amount content URL from Imgur/postimages ending with .png</code></li>
+                                    <li><strong>[!]</strong> If you keep the name and content the same of every note they can be stacked.</li>
+                                    <li>Use <code>/giveitem</code> to give out your cards to other people.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="traffic-success-message">
+                        <div class="success-message-content">
+                            <i class="fas fa-check-circle"></i>
+                            <h2>Warning Generated Successfully!</h2>
+                            <p>Your Los Santos traffic warning has been downloaded as a PNG file.</p>
+                            <button id="close-traffic-success">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Changelog Section -->
+                <div class="tool-section" id="changelog-section">
+                    <h2><i class="fas fa-history"></i> Changelog</h2>
+                    <div class="changelog-content">
+                        <div class="changelog-item">
+                            <div class="changelog-date">July 6, 2025</div>
+                            <div class="changelog-text">Added Traffic Warning Generator with dynamic officer/deputy titles and usage instructions.</div>
+                        </div>
+                        <div class="changelog-item">
+                            <div class="changelog-date">July 5, 2025</div>
+                            <div class="changelog-text">Implemented new template for Unpaid Citations + ability to count amount of fines.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="templateContent"></div>
+
+            <div class="changelog-panel">
+                <h3>Recent Updates</h3>
+                <div class="changelog-item">
+                    <div class="changelog-date">July 6, 2025</div>
+                    <div class="changelog-text">Added Traffic Warning Generator with dynamic officer/deputy titles and usage instructions.</div>
+                </div>
+                <div class="changelog-item">
+                    <div class="changelog-date">July 5, 2025</div>
+                    <div class="changelog-text">Implemented new template for Unpaid Citations + ability to count amount of fines.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Created and maintained by <a href="https://forum.gta.world/en/profile/47870-jordan447/" target="_blank">Jordan</a>
         </div>
     </div>
-
-    <footer class="footer">
-        Created and maintained by <a href="https://forum.gta.world/en/profile/47870-jordan447/" target="_blank">Jordan</a>
-    </footer>
 
     <script src="script.js"></script>
 </body>
