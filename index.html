@@ -40,6 +40,16 @@
                     <a href="#" data-tool="tbd"><i class="fas fa-procedures"></i> Medical Reports (TBI)</a>
                 </div>
             </li>
+            <li class="sidebar-dropdown">
+                <a href="#" class="dropdown-btn">
+                    <i class="fas fa-folder"></i> TRAP Generators
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <div class="dropdown-container">
+                    <a href="#" data-tool="case-package"><i class="fas fa-file-alt"></i> TRAP Case Package</a>
+                    <a href="#" data-tool="supplemental"><i class="fas fa-file-medical-alt"></i> Supplemental Report</a>
+                </div>
+            </li>
             <li>
                 <a href="#" data-tool="changelog">
                     <i class="fas fa-history"></i> Changelog
@@ -80,6 +90,16 @@
                             <i class="fas fa-file-alt"></i>
                             <h3>Traffic Warning Generator</h3>
                             <p>Generate official-looking traffic warnings for law enforcement.</p>
+                        </div>
+                        <div class="dashboard-tool" onclick="switchTool('case-package')">
+                            <i class="fas fa-folder"></i>
+                            <h3>TRAP Case Package Generator</h3>
+                            <p>Create comprehensive case packages with evidence management.</p>
+                        </div>
+                        <div class="dashboard-tool" onclick="switchTool('supplemental')">
+                            <i class="fas fa-file-medical-alt"></i>
+                            <h3>Supplemental Report Generator</h3>
+                            <p>Generate follow-up supplemental reports.</p>
                         </div>
                     </div>
                 </div>
@@ -340,60 +360,51 @@
                             
                             <h3>Violation Details</h3>
                             
-                            <div class="violations-container">
-                                <div class="violation-item">
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label>Infraction Type</label>
-                                            <select class="infraction-type">
-                                                <option value="">Select infraction type</option>
-                                                <option value="IC 405. Failure to Produce Proof of Insurance">IC 405. Failure to Produce Proof of Insurance</option>
-                                                <option value="IC 406. Unregistered Vehicle">IC 406. Unregistered Vehicle</option>
-                                                <option value="IC 407. No Insurance">IC 407. No Insurance</option>
-                                                <option value="IC 410. Speeding">IC 410. Speeding</option>
-                                                <option value="IC 411. Excessive Speeding">IC 411. Excessive Speeding</option>
-                                                <option value="IC 412. Failure to Yield/Stop to a Traffic Control Device">IC 412. Failure to Yield/Stop to a Traffic Control Device</option>
-                                                <option value="IC 413. Failure to Yield at Intersection">IC 413. Failure to Yield at Intersection</option>
-                                                <option value="IC 414. Failure to Yield Entering Roadway">IC 414. Failure to Yield Entering Roadway</option>
-                                                <option value="IC 415. Failure to Yield for Crosswalk">IC 415. Failure to Yield for Crosswalk</option>
-                                                <option value="IC 416. Failure to Yield to an Emergency Vehicle">IC 416. Failure to Yield to an Emergency Vehicle</option>
-                                                <option value="IC 417. Improper Lane Entry while Turning">IC 417. Improper Lane Entry while Turning</option>
-                                                <option value="IC 418. Prohibited Parking">IC 418. Prohibited Parking</option>
-                                                <option value="IC 421. Drive Without Headlights">IC 421. Drive Without Headlights</option>
-                                                <option value="IC 422. Unsafe Reversing">IC 422. Unsafe Reversing</option>
-                                                <option value="IC 423. Obstructing Traffic">IC 423. Obstructing Traffic</option>
-                                                <option value="IC 424. Driving Against One-Way Traffic">IC 424. Driving Against One-Way Traffic</option>
-                                                <option value="IC 425. Imprudent Driving">IC 425. Imprudent Driving</option>
-                                                <option value="IC 426. Use of an Electronic Device while Driving">IC 426. Use of an Electronic Device while Driving</option>
-                                                <option value="IC 427. Vehicular Noise Violation">IC 427. Vehicular Noise Violation</option>
-                                                <option value="IC 428. Illegal Usage of Hydraulics">IC 428. Illegal Usage of Hydraulics</option>
-                                                <option value="IC 429. Tinted Windows">IC 429. Tinted Windows</option>
-                                                <option value="IC 433. Jaywalking">IC 433. Jaywalking</option>
-                                                <option value="IC 434. Possession of Open Container">IC 434. Possession of Open Container</option>
-                                                <option value="IC 435. Failure to Wear a Seatbelt/Safety Equipment">IC 435. Failure to Wear a Seatbelt/Safety Equipment</option>
-                                                <option value="IC 436. Operation of Unsafe Motor Vehicle">IC 436. Operation of Unsafe Motor Vehicle</option>
-                                                <option value="IC 441. Negligent Operation of Bicycle">IC 441. Negligent Operation of Bicycle</option>
-                                                <option value="IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach">IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach</option>
-                                                <option value="IC 611. Fire Code Violation">IC 611. Fire Code Violation</option>
-                                                <option value="IC 612. Littering">IC 612. Littering</option>
-                                                <option value="IC 613. Noise Disturbance">IC 613. Noise Disturbance</option>
-                                                <option value="IC 614. Public Nuisance">IC 614. Public Nuisance</option>
-                                                <option value="IC 615. Trespassing (I)">IC 615. Trespassing (I)</option>
-                                                <option value="IC 616. Public Intoxication (I)">IC 616. Public Intoxication (I)</option>
-                                                <option value="IC 617. Unlawful Camping">IC 617. Unlawful Camping</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Violation Description</label>
-                                            <textarea class="violation-description" placeholder="Enter details of the observed violation"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <label for="infractionType">Infraction Type</label>
+                                <select id="infractionType">
+                                    <option value="">Select infraction type</option>
+                                    <option value="IC 405. Failure to Produce Proof of Insurance">IC 405. Failure to Produce Proof of Insurance</option>
+                                    <option value="IC 406. Unregistered Vehicle">IC 406. Unregistered Vehicle</option>
+                                    <option value="IC 407. No Insurance">IC 407. No Insurance</option>
+                                    <option value="IC 410. Speeding">IC 410. Speeding</option>
+                                    <option value="IC 411. Excessive Speeding">IC 411. Excessive Speeding</option>
+                                    <option value="IC 412. Failure to Yield/Stop to a Traffic Control Device">IC 412. Failure to Yield/Stop to a Traffic Control Device</option>
+                                    <option value="IC 413. Failure to Yield at Intersection">IC 413. Failure to Yield at Intersection</option>
+                                    <option value="IC 414. Failure to Yield Entering Roadway">IC 414. Failure to Yield Entering Roadway</option>
+                                    <option value="IC 415. Failure to Yield for Crosswalk">IC 415. Failure to Yield for Crosswalk</option>
+                                    <option value="IC 416. Failure to Yield to an Emergency Vehicle">IC 416. Failure to Yield to an Emergency Vehicle</option>
+                                    <option value="IC 417. Improper Lane Entry while Turning">IC 417. Improper Lane Entry while Turning</option>
+                                    <option value="IC 418. Prohibited Parking">IC 418. Prohibited Parking</option>
+                                    <option value="IC 421. Drive Without Headlights">IC 421. Drive Without Headlights</option>
+                                    <option value="IC 422. Unsafe Reversing">IC 422. Unsafe Reversing</option>
+                                    <option value="IC 423. Obstructing Traffic">IC 423. Obstructing Traffic</option>
+                                    <option value="IC 424. Driving Against One-Way Traffic">IC 424. Driving Against One-Way Traffic</option>
+                                    <option value="IC 425. Imprudent Driving">IC 425. Imprudent Driving</option>
+                                    <option value="IC 426. Use of an Electronic Device while Driving">IC 426. Use of an Electronic Device while Driving</option>
+                                    <option value="IC 427. Vehicular Noise Violation">IC 427. Vehicular Noise Violation</option>
+                                    <option value="IC 428. Illegal Usage of Hydraulics">IC 428. Illegal Usage of Hydraulics</option>
+                                    <option value="IC 429. Tinted Windows">IC 429. Tinted Windows</option>
+                                    <option value="IC 433. Jaywalking">IC 433. Jaywalking</option>
+                                    <option value="IC 434. Possession of Open Container">IC 434. Possession of Open Container</option>
+                                    <option value="IC 435. Failure to Wear a Seatbelt/Safety Equipment">IC 435. Failure to Wear a Seatbelt/Safety Equipment</option>
+                                    <option value="IC 436. Operation of Unsafe Motor Vehicle">IC 436. Operation of Unsafe Motor Vehicle</option>
+                                    <option value="IC 441. Negligent Operation of Bicycle">IC 441. Negligent Operation of Bicycle</option>
+                                    <option value="IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach">IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach</option>
+                                    <option value="IC 611. Fire Code Violation">IC 611. Fire Code Violation</option>
+                                    <option value="IC 612. Littering">IC 612. Littering</option>
+                                    <option value="IC 613. Noise Disturbance">IC 613. Noise Disturbance</option>
+                                    <option value="IC 614. Public Nuisance">IC 614. Public Nuisance</option>
+                                    <option value="IC 615. Trespassing (I)">IC 615. Trespassing (I)</option>
+                                    <option value="IC 616. Public Intoxication (I)">IC 616. Public Intoxication (I)</option>
+                                    <option value="IC 617. Unlawful Camping">IC 617. Unlawful Camping</option>
+                                </select>
                             </div>
                             
-                            <button type="button" id="add-violation" class="secondary-btn">
-                                <i class="fas fa-plus"></i> Add Another Violation
-                            </button>
+                            <div class="form-group">
+                                <label for="violationDescription">Violation Description</label>
+                                <textarea id="violationDescription" placeholder="Enter details of the observed violation"></textarea>
+                            </div>
                             
                             <div class="form-group">
                                 <label for="officerComments">Officer Comments</label>
@@ -404,7 +415,6 @@
                                 <button class="primary-btn" onclick="updateTrafficWarningPreview()"><i class="fas fa-sync-alt"></i> Update Preview</button>
                                 <button class="secondary-btn" onclick="generateRandomTrafficData()"><i class="fas fa-dice"></i> Random Data</button>
                                 <button class="primary-btn download-btn" onclick="downloadTrafficWarningAsPNG()"><i class="fas fa-download"></i> Download as PNG</button>
-                                <button class="primary-btn" onclick="copyWarningTitle()"><i class="fas fa-copy"></i> Copy Title</button>
                             </div>
                             
                             <p class="form-note">This is a fictional tool for entertainment purposes only</p>
@@ -414,22 +424,6 @@
                             <h3>Warning Preview</h3>
                             <div id="trafficWarningPreview" class="warning-form">
                                 <!-- Preview will be generated here -->
-                            </div>
-                        </div>
-
-                        <!-- How to Use Section -->
-                        <div class="how-to-use-section">
-                            <h3><i class="fas fa-question-circle"></i> How to Use?</h3>
-                            <div class="how-to-use-content">
-                                <ol>
-                                    <li>Download the image via the download button to your computer.</li>
-                                    <li>Go to <a href="https://imgur.com" target="_blank" class="link">Imgur</a> or <a href="https://postimages.org" target="_blank" class="link">postimages</a> and upload the downloaded image.</li>
-                                    <li>Go to any 24/7 and buy notes.</li>
-                                    <li>Use <code>/note [id of the blank note item in your inventory] amount name LSSD Written Warning F. Lastname</code></li>
-                                    <li>Use <code>/note [id of the new note item in your inventory] amount content URL from Imgur/postimages ending with .png</code></li>
-                                    <li><strong>[!]</strong> If you keep the name and content the same of every note they can be stacked.</li>
-                                    <li>Use <code>/giveitem</code> to give out your cards to other people.</li>
-                                </ol>
                             </div>
                         </div>
                     </div>
@@ -444,21 +438,184 @@
                     </div>
                 </div>
 
+                <!-- Case Package Generator -->
+                <div class="tool-section" id="case-package-section">
+                    <h2><i class="fas fa-folder"></i> TRAP Case Package Generator</h2>
+                    
+                    <div class="form-section">
+                        <h3>Case Information</h3>
+                        <div class="form-container">
+                            <div class="form-group">
+                                <label for="case-title">Case Title</label>
+                                <input type="text" id="case-title" placeholder="e.g., Grand Theft Auto x3, Mission Row">
+                            </div>
+                            <div class="form-group">
+                                <label for="case-date">Date</label>
+                                <input type="text" id="case-date" placeholder="e.g., 10/18/2025">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Investigative Background</h3>
+                        <div class="form-container">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="time-date">Time & Date</label>
+                                    <input type="text" id="time-date" placeholder="e.g., 1430, June 15, 2023">
+                                </div>
+                                <div class="form-group">
+                                    <label for="location">Location</label>
+                                    <input type="text" id="location" placeholder="e.g., 123 Main Street, Los Santos">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="penal-code">Penal Code (if Criminal)</label>
+                                <input type="text" id="penal-code" placeholder="e.g., 187PC, Murder; 211PC, Robbery">
+                            </div>
+                            <div class="form-group">
+                                <label for="investigators">Handling Investigator(s)</label>
+                                <input type="text" id="investigators" placeholder="e.g., Sergeant John Doe (Lead); Deputy Jane Smith">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Involved Persons</h3>
+                        <div class="form-container" id="persons-container">
+                            <!-- Person sections will be added here dynamically -->
+                        </div>
+                        <button class="add-btn" id="add-person-btn">
+                            <i class="fas fa-plus"></i> Add Person
+                        </button>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Narrative</h3>
+                        <div class="form-container">
+                            <div class="form-group">
+                                <textarea id="narrative-case" placeholder="Write narrative here..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Evidence</h3>
+                        <div class="form-container">
+                            <div id="evidence-container-case">
+                                <!-- Evidence items will be added here dynamically -->
+                            </div>
+                            <button class="add-btn" id="add-evidence-btn-case">
+                                <i class="fas fa-plus"></i> Add Evidence
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="primary-btn" id="generate-case-btn">
+                            <i class="fas fa-code"></i> Generate BB Code
+                        </button>
+                        <button class="secondary-btn" id="reset-case-btn">
+                            <i class="fas fa-redo"></i> Reset Form
+                        </button>
+                    </div>
+
+                    <div id="output-container-case">
+                        <div class="output-section">
+                            <div class="template-header">
+                                <h3>Generated Title</h3>
+                                <button class="secondary-btn" id="copy-title-btn">
+                                    <i class="fas fa-copy"></i> Copy Title
+                                </button>
+                            </div>
+                            <div id="title-output"></div>
+                        </div>
+                        
+                        <div class="output-section">
+                            <div class="template-header">
+                                <h3>Generated BB Code</h3>
+                                <button class="primary-btn" id="copy-bbcode-case-btn">
+                                    <i class="fas fa-copy"></i> Copy BB Code
+                                </button>
+                            </div>
+                            <div id="bbcode-output-case"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supplemental Report Generator -->
+                <div class="tool-section" id="supplemental-section">
+                    <h2><i class="fas fa-file-medical-alt"></i> Supplemental Report Generator</h2>
+                    
+                    <div class="form-section">
+                        <h3>Supplemental Report</h3>
+                        <div class="form-container">
+                            <div class="form-group">
+                                <label for="supplemental-narrative">Narrative</label>
+                                <textarea id="supplemental-narrative" placeholder="Write narrative here..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Evidence</h3>
+                        <div class="form-container">
+                            <div id="evidence-container-supplemental">
+                                <!-- Evidence items will be added here dynamically -->
+                            </div>
+                            <button class="add-btn" id="add-evidence-btn-supplemental">
+                                <i class="fas fa-plus"></i> Add Evidence
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Filed By</h3>
+                        <div class="form-container">
+                            <div class="form-group">
+                                <label for="filed-by">Rank and Name</label>
+                                <input type="text" id="filed-by" placeholder="Rank Forename Surname">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="primary-btn" id="generate-supplemental-btn">
+                            <i class="fas fa-code"></i> Generate BB Code
+                        </button>
+                        <button class="secondary-btn" id="reset-supplemental-btn">
+                            <i class="fas fa-redo"></i> Reset Form
+                        </button>
+                    </div>
+
+                    <div id="output-container-supplemental">
+                        <div class="output-section">
+                            <div class="template-header">
+                                <h3>Generated Supplemental Report BB Code</h3>
+                                <button class="primary-btn" id="copy-bbcode-supplemental-btn">
+                                    <i class="fas fa-copy"></i> Copy BB Code
+                                </button>
+                            </div>
+                            <div id="bbcode-output-supplemental"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Changelog Section -->
                 <div class="tool-section" id="changelog-section">
                     <h2><i class="fas fa-history"></i> Changelog</h2>
                     <div class="changelog-content">
                         <div class="changelog-item">
-                            <div class="changelog-date">July 6, 2025</div>
-                            <div class="changelog-text">Added multiple violations support and copy title feature to Traffic Warning Generator.</div>
-                        </div>
-                        <div class="changelog-item">
-                            <div class="changelog-date">July 6, 2025</div>
-                            <div class="changelog-text">Added Traffic Warning Generator with dynamic officer/deputy titles and usage instructions.</div>
-                        </div>
-                        <div class="changelog-item">
                             <div class="changelog-date">July 5, 2025</div>
                             <div class="changelog-text">Implemented new template for Unpaid Citations + ability to count amount of fines.</div>
+                        </div>
+                        <div class="changelog-item">
+                            <div class="changelog-date">July 6, 2025</div>
+                            <div class="changelog-text">Added Traffic Warning Generator tool to LSSD Tools section.</div>
+                        </div>
+                        <div class="changelog-item">
+                            <div class="changelog-date">October 23, 2025</div>
+                            <div class="changelog-text">Added TRAP Generators section with Case Package and Supplemental Report tools.</div>
                         </div>
                     </div>
                 </div>
@@ -467,12 +624,12 @@
             <div class="changelog-panel">
                 <h3>Recent Updates</h3>
                 <div class="changelog-item">
-                    <div class="changelog-date">July 6, 2025</div>
-                    <div class="changelog-text">Added multiple violations support and copy title feature to Traffic Warning Generator.</div>
+                    <div class="changelog-date">October 23, 2025</div>
+                    <div class="changelog-text">Added TRAP Generators section with Case Package and Supplemental Report tools.</div>
                 </div>
                 <div class="changelog-item">
                     <div class="changelog-date">July 6, 2025</div>
-                    <div class="changelog-text">Added Traffic Warning Generator with dynamic officer/deputy titles and usage instructions.</div>
+                    <div class="changelog-text">Added Traffic Warning Generator tool to LSSD Tools section.</div>
                 </div>
                 <div class="changelog-item">
                     <div class="changelog-date">July 5, 2025</div>
@@ -483,6 +640,62 @@
 
         <div class="footer">
             Created and maintained by <a href="https://forum.gta.world/en/profile/47870-jordan447/" target="_blank">Jordan</a>
+        </div>
+    </div>
+
+    <!-- Evidence Type Selection Modal -->
+    <div class="modal-overlay" id="evidence-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Select Evidence Type</h3>
+                <button class="close-modal" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="evidence-type-options">
+                <div class="evidence-type-option" data-type="text">
+                    <div class="evidence-type-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <div class="evidence-type-name">Text Evidence</div>
+                </div>
+                <div class="evidence-type-option" data-type="image">
+                    <div class="evidence-type-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="evidence-type-name">Image Evidence</div>
+                </div>
+                <div class="evidence-type-option" data-type="url">
+                    <div class="evidence-type-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="evidence-type-name">URL Evidence</div>
+                </div>
+            </div>
+            
+            <!-- URL Evidence Options -->
+            <div class="checkbox-group url-options" id="url-options">
+                <input type="checkbox" id="url-clickable">
+                <label for="url-clickable">Use clickable text</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="evidence-spoiler">
+                <label for="evidence-spoiler">Mark as spoiler</label>
+            </div>
+            <div class="form-group">
+                <label for="evidence-title">Evidence Title (Optional)</label>
+                <input type="text" id="evidence-title" placeholder="e.g., Crime Scene Photo, Witness Statement">
+            </div>
+            <div class="evidence-preview" id="evidence-preview"></div>
+            <div class="button-group">
+                <button class="primary-btn" id="add-evidence-confirm">
+                    <i class="fas fa-plus"></i> Add Evidence
+                </button>
+                <button class="secondary-btn" id="cancel-evidence">
+                    Cancel
+                </button>
+            </div>
         </div>
     </div>
 
