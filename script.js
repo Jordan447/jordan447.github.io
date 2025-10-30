@@ -1,1 +1,3802 @@
-const _0x5d6fcd=_0x586e;(function(_0x14ce50,_0x53a89f){const _0xb7d84=_0x586e,_0x587d09=_0x14ce50();while(!![]){try{const _0x233d05=-parseInt(_0xb7d84(0x1a9))/0x1*(parseInt(_0xb7d84(0x7b))/0x2)+parseInt(_0xb7d84(0x220))/0x3*(-parseInt(_0xb7d84(0x264))/0x4)+parseInt(_0xb7d84(0x244))/0x5*(parseInt(_0xb7d84(0xcd))/0x6)+-parseInt(_0xb7d84(0x1a5))/0x7+parseInt(_0xb7d84(0x1e6))/0x8*(parseInt(_0xb7d84(0xb7))/0x9)+-parseInt(_0xb7d84(0x296))/0xa+-parseInt(_0xb7d84(0x1cd))/0xb*(-parseInt(_0xb7d84(0x18c))/0xc);if(_0x233d05===_0x53a89f)break;else _0x587d09['push'](_0x587d09['shift']());}catch(_0x3652b5){_0x587d09['push'](_0x587d09['shift']());}}}(_0x5c31,0xecf40),document[_0x5d6fcd(0x25f)](_0x5d6fcd(0x147),function(){const _0x55ed1d=_0x5d6fcd,_0xa81d7=document[_0x55ed1d(0x7d)](_0x55ed1d(0x274)),_0x3872c1=document['documentElement'],_0x33426e=localStorage[_0x55ed1d(0x2a0)](_0x55ed1d(0xf1))||_0x55ed1d(0xc9);_0x3872c1[_0x55ed1d(0x246)](_0x55ed1d(0x24c),_0x33426e),updateThemeButton(_0x33426e),_0xa81d7[_0x55ed1d(0x25f)](_0x55ed1d(0x15b),toggleTheme),initDropdowns();let _0x42e420=_0x55ed1d(0x226);switchTool(_0x42e420),initCitationsCalculator(),initPatrolLogGenerator(),initTrafficWarningGenerator(),initTrapCasefileGenerator(),initSupplementalReportGenerator(),initStolenVehicleReportGenerator(),initStolenPlateReportGenerator(),initTrapDatabaseUpdateGenerator();}));function initDropdowns(){const _0x1a22c4=_0x5d6fcd;document[_0x1a22c4(0xcc)](_0x1a22c4(0xd5))[_0x1a22c4(0x9a)](_0x4f95c4=>{_0x4f95c4['addEventListener']('click',function(_0x195ed4){const _0x307e2c=_0x586e;(_0x195ed4['target'][_0x307e2c(0x11c)][_0x307e2c(0x266)](_0x307e2c(0x13d))||_0x195ed4['target'][_0x307e2c(0x11c)][_0x307e2c(0x266)](_0x307e2c(0x187))||_0x195ed4[_0x307e2c(0x122)][_0x307e2c(0x1a1)][_0x307e2c(0x11c)][_0x307e2c(0x266)](_0x307e2c(0x13d)))&&_0x195ed4[_0x307e2c(0x160)]();const _0x321809=this[_0x307e2c(0x151)](_0x307e2c(0x13b));_0x321809[_0x307e2c(0x11c)][_0x307e2c(0x280)](_0x307e2c(0x1bb)),document[_0x307e2c(0xcc)](_0x307e2c(0x13b))['forEach'](_0x240009=>{const _0x579598=_0x307e2c;_0x240009!==_0x321809&&_0x240009[_0x579598(0x11c)]['remove'](_0x579598(0x1bb));});});}),document[_0x1a22c4(0xcc)]('.sidebar-menu\x20a[data-tool]')[_0x1a22c4(0x9a)](_0x5e8c90=>{const _0x11fa1b=_0x1a22c4;_0x5e8c90[_0x11fa1b(0x25f)]('click',function(_0x53953d){const _0x74e633=_0x11fa1b;_0x53953d[_0x74e633(0x160)]();const _0xa768eb=this[_0x74e633(0x18f)](_0x74e633(0x142));switchTool(_0xa768eb);const _0x190e75=this[_0x74e633(0x151)](_0x74e633(0x185));if(_0x190e75){const _0x14d0a7=_0x190e75['closest'](_0x74e633(0x13b));_0x14d0a7[_0x74e633(0x11c)][_0x74e633(0xf3)](_0x74e633(0x1bb));}});}),document['addEventListener'](_0x1a22c4(0x15b),function(_0x654420){const _0x47dc85=_0x1a22c4;!_0x654420['target'][_0x47dc85(0x151)](_0x47dc85(0x13b))&&document[_0x47dc85(0xcc)](_0x47dc85(0x13b))['forEach'](_0x9dc6ee=>{const _0x206316=_0x47dc85;_0x9dc6ee[_0x206316(0x11c)][_0x206316(0x27f)](_0x206316(0x1bb));});});}function toggleTheme(){const _0x5bae0e=_0x5d6fcd,_0x300f4b=document[_0x5bae0e(0x18d)],_0x59f15e=_0x300f4b['getAttribute'](_0x5bae0e(0x24c)),_0x3b88f0=_0x59f15e===_0x5bae0e(0x201)?_0x5bae0e(0xc9):_0x5bae0e(0x201);_0x300f4b[_0x5bae0e(0x246)](_0x5bae0e(0x24c),_0x3b88f0),localStorage[_0x5bae0e(0xf9)](_0x5bae0e(0xf1),_0x3b88f0),updateThemeButton(_0x3b88f0);}function updateThemeButton(_0x384c38){const _0x4819db=_0x5d6fcd,_0x37f1d3=document[_0x4819db(0x7d)](_0x4819db(0x274)),_0x1e1401=_0x37f1d3[_0x4819db(0xe4)]('i'),_0x2c48d5=_0x37f1d3['querySelector']('span');_0x384c38===_0x4819db(0x201)?(_0x1e1401[_0x4819db(0x161)]='fas\x20fa-sun',_0x2c48d5[_0x4819db(0x267)]='Light\x20Mode'):(_0x1e1401['className']=_0x4819db(0xef),_0x2c48d5[_0x4819db(0x267)]=_0x4819db(0x7a));}function switchTool(_0x497035){const _0x17a1f8=_0x5d6fcd;currentTool=_0x497035,document[_0x17a1f8(0xcc)]('.sidebar-menu\x20a')[_0x17a1f8(0x9a)](_0x2d44e5=>{const _0x3fa099=_0x17a1f8;_0x2d44e5[_0x3fa099(0x11c)][_0x3fa099(0x27f)](_0x3fa099(0x1bb));});const _0x2abb50=document[_0x17a1f8(0xe4)]('.sidebar-menu\x20a[data-tool=\x22'+_0x497035+'\x22]');if(_0x2abb50){_0x2abb50[_0x17a1f8(0x11c)][_0x17a1f8(0xf3)](_0x17a1f8(0x1bb));const _0x466ba9=_0x2abb50[_0x17a1f8(0x151)](_0x17a1f8(0x185));if(_0x466ba9){const _0x24b490=_0x466ba9[_0x17a1f8(0x151)]('.sidebar-dropdown');_0x24b490[_0x17a1f8(0x11c)]['add'](_0x17a1f8(0x1bb));}}const _0x24c709={'dashboard':_0x17a1f8(0x10b),'citations':_0x17a1f8(0x1ef),'patrol':_0x17a1f8(0x23a),'traffic-warning':_0x17a1f8(0x146),'trap-casefile':'TRAP\x20Casefile\x20Generator','supplemental-report':_0x17a1f8(0x1fd),'stolen-vehicle':'Stolen\x20Vehicle\x20Report\x20Generator','stolen-plate':_0x17a1f8(0x9c),'trap-database-update':_0x17a1f8(0xae),'tbd':_0x17a1f8(0x140),'changelog':_0x17a1f8(0x285)};document[_0x17a1f8(0x7d)](_0x17a1f8(0xb9))[_0x17a1f8(0x267)]=_0x24c709[_0x497035]||_0x17a1f8(0xe8),document[_0x17a1f8(0xcc)](_0x17a1f8(0x293))[_0x17a1f8(0x9a)](_0x4469c8=>{const _0x249200=_0x17a1f8;_0x4469c8[_0x249200(0x11c)][_0x249200(0x27f)](_0x249200(0x1bb));}),document[_0x17a1f8(0x7d)](_0x497035+_0x17a1f8(0x165))[_0x17a1f8(0x11c)][_0x17a1f8(0xf3)](_0x17a1f8(0x1bb)),window[_0x17a1f8(0x10a)](0x0,0x0);}function initCitationsCalculator(){const _0x3f7cdd=_0x5d6fcd,_0xf9a5a6=document[_0x3f7cdd(0x7d)](_0x3f7cdd(0x288)),_0x33d483=document[_0x3f7cdd(0x7d)](_0x3f7cdd(0x281)),_0x4c2dfe=document[_0x3f7cdd(0x7d)](_0x3f7cdd(0xf7)),_0x46f4f0=document[_0x3f7cdd(0x7d)]('inputText'),_0x40d56b=document[_0x3f7cdd(0x7d)](_0x3f7cdd(0x15f)),_0x42202d=document['getElementById'](_0x3f7cdd(0x216)),_0x300c86=document[_0x3f7cdd(0x7d)]('output'),_0x12c28f=document[_0x3f7cdd(0x7d)](_0x3f7cdd(0x1aa)),_0x45221a=document['getElementById']('results'),_0x57ab33=document['getElementById']('templateContent'),_0x845b8f=document[_0x3f7cdd(0x7d)](_0x3f7cdd(0x1dd));let _0x208c2e=0x0,_0x4d22dc=0x0;_0xf9a5a6['addEventListener']('click',_0x1d0bc4),_0x33d483['addEventListener'](_0x3f7cdd(0x15b),_0x5212d0),_0x4c2dfe['addEventListener'](_0x3f7cdd(0x15b),_0x14fdb4);function _0x1d0bc4(){const _0x3d7a4b=_0x3f7cdd,_0x27e15d=_0x46f4f0[_0x3d7a4b(0x1b0)];_0x300c86[_0x3d7a4b(0x199)]='',_0x12c28f[_0x3d7a4b(0x199)]='',_0x208c2e=0x0,_0x4d22dc=0x0;const _0x48d90c=/\$[\d,]+0\b/g,_0x348f79=_0x27e15d[_0x3d7a4b(0x10e)](_0x48d90c);if(!_0x348f79||_0x348f79[_0x3d7a4b(0x28e)]===0x0){_0x300c86[_0x3d7a4b(0x199)]=_0x3d7a4b(0x206),_0x33d483[_0x3d7a4b(0x83)]=!![],_0x45221a['style'][_0x3d7a4b(0x1c4)]='block';return;}const _0x12f871={};_0x348f79[_0x3d7a4b(0x9a)](_0x246876=>{_0x12f871[_0x246876]=(_0x12f871[_0x246876]||0x0)+0x1,_0x4d22dc++;});const _0x4ecd79=Object['entries'](_0x12f871)[_0x3d7a4b(0x163)]((_0x48ff46,_0x1815de)=>{const _0x12d5c4=_0x3d7a4b,_0x2e1124=parseFloat(_0x48ff46[0x0][_0x12d5c4(0xb1)](/[$,]/g,'')),_0x3e577d=parseFloat(_0x1815de[0x0]['replace'](/[$,]/g,''));return _0x3e577d-_0x2e1124;});let _0x1446d8=_0x3d7a4b(0xd1);_0x4ecd79[_0x3d7a4b(0x9a)](([_0x5d7de4,_0xad58bb])=>{const _0x1f48f2=_0x3d7a4b,_0x20d3e6=parseFloat(_0x5d7de4['replace'](/[$,]/g,'')),_0xac85dc=_0x20d3e6*_0xad58bb;_0x208c2e+=_0xac85dc,_0x1446d8+=_0x1f48f2(0x172)+_0x5d7de4+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0xad58bb+_0x1f48f2(0xfc)+_0x5929f1(_0xac85dc)+_0x1f48f2(0xa9);}),_0x1446d8+=_0x3d7a4b(0x269),_0x300c86['innerHTML']=_0x1446d8,_0x12c28f[_0x3d7a4b(0x199)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p><strong>Total\x20Fines\x20Count:</strong>\x20'+_0x4d22dc+_0x3d7a4b(0xe7)+_0x5929f1(_0x208c2e)+'</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20',_0x33d483[_0x3d7a4b(0x83)]=![],_0x45221a[_0x3d7a4b(0x170)][_0x3d7a4b(0x1c4)]='block';}function _0x5212d0(){const _0x563938=_0x3f7cdd,_0x2abef2=_0x40d56b[_0x563938(0x1b0)]||_0x563938(0x236),_0x143525=_0x42202d[_0x563938(0x1b0)];_0x57ab33['textContent']='[b]Full\x20Name:[/b]\x20'+_0x2abef2+_0x563938(0x182)+_0x4d22dc+'\x0a[b]Amount\x20Owed:[/b]\x20'+_0x5929f1(_0x208c2e)+_0x563938(0x27a)+_0x143525,_0x845b8f[_0x563938(0x170)][_0x563938(0x1c4)]=_0x563938(0x135),_0x845b8f[_0x563938(0x1dc)]({'behavior':_0x563938(0x167)});}function _0x14fdb4(){const _0x3fd8ab=_0x3f7cdd,_0x1cad4a=document['createRange']();_0x1cad4a[_0x3fd8ab(0xfb)](_0x57ab33),window['getSelection']()[_0x3fd8ab(0xa1)](),window[_0x3fd8ab(0x29a)]()['addRange'](_0x1cad4a),document[_0x3fd8ab(0x8a)](_0x3fd8ab(0x21c)),window[_0x3fd8ab(0x29a)]()[_0x3fd8ab(0xa1)]();const _0x4e22fd=_0x4c2dfe[_0x3fd8ab(0x199)];_0x4c2dfe[_0x3fd8ab(0x199)]='<i\x20class=\x22fas\x20fa-check\x22></i>\x20Copied!',setTimeout(()=>{const _0x1f6216=_0x3fd8ab;_0x4c2dfe[_0x1f6216(0x199)]=_0x4e22fd;},0x7d0);}function _0x5929f1(_0x49bc59){const _0x122903=_0x3f7cdd;return new Intl[(_0x122903(0x7e))]('en-US',{'style':_0x122903(0x19e),'currency':'USD'})[_0x122903(0xbc)](_0x49bc59);}}function initPatrolLogGenerator(){const _0x1ddacc=_0x5d6fcd,_0x2c0b3f=document[_0x1ddacc(0x7d)]('patrol-form'),_0x39f213=document['getElementById'](_0x1ddacc(0x112)),_0x487f80=document[_0x1ddacc(0x7d)](_0x1ddacc(0x1e5)),_0x1440b8=document[_0x1ddacc(0x7d)](_0x1ddacc(0x210)),_0xa6d4c8=document[_0x1ddacc(0x7d)]('bbcode-output'),_0x1c8a86=document[_0x1ddacc(0x7d)](_0x1ddacc(0xbd));_0x39f213[_0x1ddacc(0x25f)](_0x1ddacc(0x15b),()=>{const _0x3de572=_0x1ddacc,_0x485f3d=document[_0x3de572(0x1f0)]('div');_0x485f3d[_0x3de572(0x161)]=_0x3de572(0xe6),_0x485f3d[_0x3de572(0x199)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22report-name\x22\x20placeholder=\x22Report\x20Name\x20(e.g.,\x20Arrest\x20Report)\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22report-url\x22\x20placeholder=\x22Report\x20URL\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20class=\x22remove-report\x22><i\x20class=\x22fas\x20fa-times\x22></i></button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20',_0x487f80[_0x3de572(0xc4)](_0x485f3d),_0x485f3d[_0x3de572(0xe4)]('.remove-report')[_0x3de572(0x25f)](_0x3de572(0x15b),()=>{const _0x5499e9=_0x3de572;_0x487f80[_0x5499e9(0x1af)](_0x485f3d);});}),_0x2c0b3f[_0x1ddacc(0x25f)](_0x1ddacc(0x252),_0x229e10=>{const _0x2e35d0=_0x1ddacc;_0x229e10[_0x2e35d0(0x160)]();const _0x19a988=document[_0x2e35d0(0x7d)](_0x2e35d0(0xb0));_0x19a988['querySelector'](_0x2e35d0(0x1f3))[_0x2e35d0(0x11c)]['add']('visible'),_0x19a988[_0x2e35d0(0xe4)](_0x2e35d0(0x14b))[_0x2e35d0(0x267)]=_0x2e35d0(0x124),_0x19a988[_0x2e35d0(0x83)]=!![],setTimeout(()=>{const _0x3d2957=_0x2e35d0;_0x3c2bad(),_0x19a988[_0x3d2957(0xe4)](_0x3d2957(0x1f3))[_0x3d2957(0x11c)][_0x3d2957(0x27f)](_0x3d2957(0xb6)),_0x19a988[_0x3d2957(0xe4)](_0x3d2957(0x14b))[_0x3d2957(0x267)]='Generate\x20BB\x20Code',_0x19a988[_0x3d2957(0x83)]=![];},0x1f4);});function _0x3c2bad(){const _0x516f1b=_0x1ddacc,_0x194752=document[_0x516f1b(0x7d)](_0x516f1b(0x27d))['value'],_0x270ddf=document[_0x516f1b(0x7d)](_0x516f1b(0x217))[_0x516f1b(0x1b0)],_0xa15d30=document['getElementById']('patrol-number')[_0x516f1b(0x1b0)],_0x4b5d2d=document['getElementById'](_0x516f1b(0x1ad))[_0x516f1b(0x1b0)],_0x36bb3f=document['getElementById'](_0x516f1b(0x27b))[_0x516f1b(0x1b0)],_0x135965=document[_0x516f1b(0x7d)](_0x516f1b(0x1f8))[_0x516f1b(0x1b0)],_0xcdcfe3=document[_0x516f1b(0x7d)]('narrative')['value'],_0x433026=document[_0x516f1b(0xcc)](_0x516f1b(0x29b)),_0x5b2942=[];_0x433026['forEach'](_0x240894=>{const _0x50ac25=_0x516f1b,_0x1a853e=_0x240894[_0x50ac25(0xe4)](_0x50ac25(0x275))['value'],_0x2e7158=_0x240894[_0x50ac25(0xe4)]('.report-url')['value'];if(_0x1a853e&&_0x2e7158)_0x5b2942[_0x50ac25(0x1de)]({'name':_0x1a853e,'url':_0x2e7158});else _0x1a853e&&_0x5b2942[_0x50ac25(0x1de)]({'name':_0x1a853e,'url':'#'});});let _0x15988e='[center][color=Transparent][/color]\x0a\x20\x20\x20\x20[img]https://i.postimg.cc/gjxmBXm7/image.png[/img]\x0a\x20\x20\x20\x20\x0a\x20\x20\x20\x20[color=grey][size=100]LOS\x20SANTOS\x20COUNTY\x20SHERIFF\x27S\x20DEPARTMENT[/size][/color]\x0a\x20\x20\x20\x20[color=black][size=150][b]FIELD\x20TRAINING\x20KING\x20PATROL\x20LOG[/b][/size][/color]\x0a\x20\x20\x20\x20[/center]\x0a\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[transtable=Arial]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b]REPORT\x20DATE[/b][/td]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b]REPORT\x20TIME[/b][/td]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b]PATROL\x20#[/b][/td][/tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td]'+_0x194752+_0x516f1b(0x292)+_0x270ddf+'[/td]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td]'+_0xa15d30+_0x516f1b(0x1f6)+_0x4b5d2d+_0x516f1b(0x18e)+_0x36bb3f+_0x516f1b(0x18e)+_0x135965+_0x516f1b(0x25a);_0x5b2942['length']>0x0?(_0x15988e+=_0x516f1b(0x26f),_0x5b2942[_0x516f1b(0x9a)](_0x1f2eb0=>{const _0x13c0cb=_0x516f1b;_0x15988e+=_0x13c0cb(0xb2)+_0x1f2eb0[_0x13c0cb(0x253)]+']'+_0x1f2eb0[_0x13c0cb(0x17b)]+_0x13c0cb(0x22b);}),_0x15988e+=_0x516f1b(0x1e9)):_0x15988e+=_0x516f1b(0x239),_0x15988e+='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[transtable=Arial]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr][td][b]PATROL\x20NARRATIVE[/b][/TD][/TR]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr][td]\x0a'+_0xcdcfe3+_0x516f1b(0x20a)+_0x4b5d2d+_0x516f1b(0x204)+_0x194752+_0x516f1b(0x214),_0xa6d4c8[_0x516f1b(0x1b0)]=_0x15988e,_0x1440b8[_0x516f1b(0x170)][_0x516f1b(0x1c4)]=_0x516f1b(0x135),_0x1440b8[_0x516f1b(0x1dc)]({'behavior':'smooth'}),_0x2e6f51();}function _0x2e6f51(){const _0x30c102=_0x1ddacc;_0xa6d4c8['select'](),document[_0x30c102(0x8a)](_0x30c102(0x21c));const _0x46d54c=_0x1c8a86[_0x30c102(0x199)];_0x1c8a86[_0x30c102(0x199)]='<i\x20class=\x22fas\x20fa-check\x22></i>\x20Copied!',setTimeout(()=>{const _0x4af4fc=_0x30c102;_0x1c8a86[_0x4af4fc(0x199)]=_0x46d54c;},0x7d0);}_0x1c8a86[_0x1ddacc(0x25f)](_0x1ddacc(0x15b),_0x2e6f51);}function initTrafficWarningGenerator(){const _0x11111f=_0x5d6fcd,_0x7bb179=new Date();document['getElementById']('date')[_0x11111f(0x1b0)]=_0x7bb179[_0x11111f(0x12b)]()[_0x11111f(0xf5)]('T')[0x0],document[_0x11111f(0x7d)]('time')[_0x11111f(0x1b0)]=_0x7bb179[_0x11111f(0x17a)]()[_0x11111f(0x125)](0x0,0x5),updateTrafficWarningPreview(),document[_0x11111f(0x7d)](_0x11111f(0x18b))[_0x11111f(0x25f)](_0x11111f(0x15b),function(){const _0x218cd1=_0x11111f;document[_0x218cd1(0x7d)](_0x218cd1(0x2a4))[_0x218cd1(0x11c)][_0x218cd1(0x27f)](_0x218cd1(0xb6));});}const streetNames=[_0x5d6fcd(0x9e),_0x5d6fcd(0xaa),'Davis\x20Ave',_0x5d6fcd(0x85),_0x5d6fcd(0x2a1),_0x5d6fcd(0xd4),_0x5d6fcd(0xce),_0x5d6fcd(0x24d),_0x5d6fcd(0x233),_0x5d6fcd(0x1ee),'Spanish\x20Ave',_0x5d6fcd(0x100)],lastNames=[_0x5d6fcd(0x19c),_0x5d6fcd(0xd8),'Johnston','Harris',_0x5d6fcd(0x255),'Espinoza',_0x5d6fcd(0xac),_0x5d6fcd(0x134),_0x5d6fcd(0x127),_0x5d6fcd(0x111)],firstNames=[_0x5d6fcd(0x174),_0x5d6fcd(0x15c),_0x5d6fcd(0x1fe),_0x5d6fcd(0x1cc),_0x5d6fcd(0x228),_0x5d6fcd(0x149),'Tracey',_0x5d6fcd(0x1c1),_0x5d6fcd(0x157),'Andreas'];function getRandomElement(_0xbeb614){const _0x4995cd=_0x5d6fcd;return _0xbeb614[Math[_0x4995cd(0x11a)](Math['random']()*_0xbeb614[_0x4995cd(0x28e)])];}function generateRandomTrafficData(){const _0x4ddb5c=_0x5d6fcd,_0x1e7ecc=getRandomElement(streetNames);let _0xe8c220;do{_0xe8c220=getRandomElement(streetNames);}while(_0xe8c220===_0x1e7ecc);document['getElementById']('location')['value']=_0x1e7ecc+_0x4ddb5c(0x17f)+_0xe8c220;const _0x5115b0=getRandomElement(firstNames),_0x1313f3=getRandomElement(lastNames);document['getElementById']('driverName')[_0x4ddb5c(0x1b0)]=_0x1313f3+',\x20'+_0x5115b0;const _0x57e523=_0x4ddb5c(0x1a4),_0x2caf80=_0x4ddb5c(0x162);let _0x53a41c='';for(let _0x46cbfc=0x0;_0x46cbfc<0x3;_0x46cbfc++){_0x53a41c+=_0x57e523[_0x4ddb5c(0x107)](Math[_0x4ddb5c(0x11a)](Math[_0x4ddb5c(0x26e)]()*_0x57e523[_0x4ddb5c(0x28e)]));}_0x53a41c+='\x20';for(let _0x125c69=0x0;_0x125c69<0x4;_0x125c69++){_0x53a41c+=_0x2caf80[_0x4ddb5c(0x107)](Math[_0x4ddb5c(0x11a)](Math['random']()*_0x2caf80[_0x4ddb5c(0x28e)]));}document[_0x4ddb5c(0x7d)](_0x4ddb5c(0x23f))['value']=_0x53a41c,document['getElementById'](_0x4ddb5c(0x193))[_0x4ddb5c(0x1b0)]=Math[_0x4ddb5c(0x11a)](0x3e8+Math[_0x4ddb5c(0x26e)]()*0x2328);const _0x4ec006=getRandomElement(firstNames),_0x3796e1=getRandomElement(lastNames);document['getElementById'](_0x4ddb5c(0x1f9))['value']=_0x4ec006+'\x20'+_0x3796e1,document[_0x4ddb5c(0x7d)](_0x4ddb5c(0x12a))['value']=Math[_0x4ddb5c(0x11a)](0x64+Math[_0x4ddb5c(0x26e)]()*0x2328)+'\x20'+getRandomElement(streetNames);const _0x38823d=[_0x4ddb5c(0x166),_0x4ddb5c(0x1df),'Racing\x20Green',_0x4ddb5c(0xc7),_0x4ddb5c(0x1a3),_0x4ddb5c(0x102),'Yellow','White'];document[_0x4ddb5c(0x7d)]('vehicleColor')[_0x4ddb5c(0x1b0)]=getRandomElement(_0x38823d);const _0x28def1={'Albany':['Emperor',_0x4ddb5c(0xe3),_0x4ddb5c(0xde),_0x4ddb5c(0x12d)],'Bravado':[_0x4ddb5c(0x1db),'Banshee',_0x4ddb5c(0x188),_0x4ddb5c(0x129)],'Declasse':[_0x4ddb5c(0x1ac),_0x4ddb5c(0x1b5),_0x4ddb5c(0x229),'Premier'],'Grotti':[_0x4ddb5c(0x277),_0x4ddb5c(0x190),_0x4ddb5c(0x1a2)],'Karin':[_0x4ddb5c(0x254),_0x4ddb5c(0x16c),_0x4ddb5c(0x150),_0x4ddb5c(0xea)],'Vapid':[_0x4ddb5c(0x139),_0x4ddb5c(0x180),_0x4ddb5c(0x169),_0x4ddb5c(0x198)]},_0x3664a8=document[_0x4ddb5c(0x7d)](_0x4ddb5c(0x287)),_0x57c028=Array[_0x4ddb5c(0x1c6)](_0x3664a8['options'])[_0x4ddb5c(0x97)](_0x307483=>_0x307483['value'])[_0x4ddb5c(0x202)](_0x534e11=>_0x534e11!==''),_0xfcb32=getRandomElement(_0x57c028);_0x3664a8['value']=_0xfcb32;_0x28def1[_0xfcb32]?document['getElementById'](_0x4ddb5c(0x177))[_0x4ddb5c(0x1b0)]=getRandomElement(_0x28def1[_0xfcb32]):document[_0x4ddb5c(0x7d)](_0x4ddb5c(0x177))[_0x4ddb5c(0x1b0)]=_0x4ddb5c(0x25e);const _0x1c4ef1=document[_0x4ddb5c(0x7d)]('infractionType'),_0x5ce7e7=Array[_0x4ddb5c(0x1c6)](_0x1c4ef1['options'])[_0x4ddb5c(0x97)](_0x1bb4ea=>_0x1bb4ea['value'])[_0x4ddb5c(0x202)](_0x2aa996=>_0x2aa996!=='');document[_0x4ddb5c(0x7d)](_0x4ddb5c(0x289))[_0x4ddb5c(0x1b0)]=getRandomElement(_0x5ce7e7);const _0x2588f9=['Vehicle\x20was\x20observed\x20exceeding\x20the\x20posted\x20speed\x20limit\x20by\x20more\x20than\x2015\x20mph\x20in\x20a\x20residential\x20area.',_0x4ddb5c(0x105),_0x4ddb5c(0x8d),_0x4ddb5c(0x245),'Vehicle\x20made\x20an\x20illegal\x20U-turn\x20at\x20a\x20controlled\x20intersection.'];document[_0x4ddb5c(0x7d)](_0x4ddb5c(0x259))[_0x4ddb5c(0x1b0)]=getRandomElement(_0x2588f9);const _0x45367d=[_0x4ddb5c(0xbb),_0x4ddb5c(0x25b),_0x4ddb5c(0x1eb),_0x4ddb5c(0x10d)];document[_0x4ddb5c(0x7d)](_0x4ddb5c(0x240))['value']=getRandomElement(_0x45367d),updateTrafficWarningPreview();}function updateTrafficWarningPreview(){const _0x21d806=_0x5d6fcd,_0x18a6f2=document[_0x21d806(0x7d)](_0x21d806(0x183)),_0x2070b0=document['getElementById'](_0x21d806(0x8c))[_0x21d806(0x1b0)],_0x5176e1=_0x2070b0===_0x21d806(0x84)?_0x21d806(0x86):'LOS\x20SANTOS\x20SHERIFF\x27S\x20DEPARTMENT',_0x2a6366=document[_0x21d806(0x7d)]('badgeNumber')[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x487fa1=document[_0x21d806(0x7d)]('officerName')[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x18a0b3=document['getElementById']('date')[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x454a1e=document[_0x21d806(0x7d)](_0x21d806(0x1d0))[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x21d125=document[_0x21d806(0x7d)](_0x21d806(0x1f4))[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x5731c4=document[_0x21d806(0x7d)]('driverName')[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x1d9968=document[_0x21d806(0x7d)](_0x21d806(0x90))['value']||_0x21d806(0x159),_0x56d3f4=document[_0x21d806(0x7d)](_0x21d806(0x145))['value']||_0x21d806(0x159),_0x57615f=document[_0x21d806(0x7d)]('address')[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x505901=document['getElementById'](_0x21d806(0x1a6))[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x1b6c0c=document[_0x21d806(0x7d)](_0x21d806(0x287))[_0x21d806(0x1b0)]||_0x21d806(0x159),_0xdd6078=document[_0x21d806(0x7d)](_0x21d806(0x177))[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x209998=document[_0x21d806(0x7d)](_0x21d806(0x175))[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x44ec1c=document[_0x21d806(0x7d)](_0x21d806(0x23f))['value']||_0x21d806(0x159),_0x318f28=document['getElementById'](_0x21d806(0x249))['value']||'N/A',_0x29ed21=document[_0x21d806(0x7d)](_0x21d806(0x289))[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x493451=document[_0x21d806(0x7d)](_0x21d806(0x259))['value']||'N/A',_0x386b74=document[_0x21d806(0x7d)]('officerComments')[_0x21d806(0x1b0)]||_0x21d806(0x159),_0x5eb78a=_0x18a0b3!==_0x21d806(0x159)?new Date(_0x18a0b3)[_0x21d806(0x114)]('en-US',{'year':_0x21d806(0x26a),'month':'long','day':'numeric'}):_0x21d806(0x159);_0x18a6f2[_0x21d806(0x199)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22warning-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22agency-name\x22>'+_0x5176e1+_0x21d806(0x272)+_0x2a6366+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label\x22>OFFICER\x20NAME</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value\x22>'+_0x487fa1+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label\x22>DATE\x20OF\x20VIOLATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value\x22>'+_0x5eb78a+_0x21d806(0x1fc)+_0x454a1e+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item\x22\x20style=\x22grid-column:\x201\x20/\x20-1;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label\x22>LOCATION\x20OF\x20VIOLATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value\x22>'+_0x21d125+_0x21d806(0x283)+_0x5731c4+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>License\x20Number:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>'+_0x1d9968+_0x21d806(0x297)+_0x56d3f4+_0x21d806(0xd3)+_0x57615f+',\x20'+_0x505901+_0x21d806(0x1c8)+_0x1b6c0c+_0x21d806(0x205)+_0xdd6078+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>Color:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>'+_0x209998+_0x21d806(0x256)+_0x44ec1c+_0x21d806(0x164)+_0x318f28+_0x21d806(0x1ea)+_0x29ed21+_0x21d806(0x117)+_0x493451+_0x21d806(0x14e)+_0x386b74+_0x21d806(0x16d)+_0x487fa1+_0x21d806(0x77);}function _0x5c31(){const _0x2100ac=['Sandking','innerHTML','.evidence-item','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22image-urls-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22image-url-line\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-image-url\x22\x20placeholder=\x22Image\x20URL\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line-actions\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22remove-image-btn\x22><i\x20class=\x22fas\x20fa-trash\x22></i></button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22add-image-btn\x22><i\x20class=\x22fas\x20fa-plus\x22></i>\x20Add\x20Another\x20Image</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','DeSanta','trap-suspect-close-modal','currency','[/center]\x0a','[center][img]https://i.imgur.com/LEWTXbL.png[/img]\x0a\x0a','parentElement','Turismo','Sunset\x20Orange','ABCDEFGHIJKLMNOPQRSTUVWXYZ','12310515ZCMVYi','city','person-name-1','checked','8882jzOZNU','summary','[b]Classification:[/b]\x20','Tornado','trainee-name','traffic_warning_','removeChild','value','[*]\x20-\x20Photos/Videos\x20(Add/Delete\x20lines\x20as\x20needed)\x0a','fontFamily','ENTER\x20UPDATE\x20NARRATIVE\x20HERE','evidence-container','Sabre','sp-time-date','[b]Residence:[/b]\x20','#person-phone-','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-section-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>OFFICER\x20COMMENTS</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line-with-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<textarea\x20class=\x22evidence-text-content\x22\x20placeholder=\x22Enter\x20text\x20evidence\x20here...\x22></textarea>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','active','<i\x20class=\x22fas\x20fa-plus\x22></i>\x20Add\x20Evidence','supplemental-filed-by','\x22>Classification</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<select\x20id=\x22person-classification-','sv-case-title','PLATE','Dave','trap-relation-incident','\x20Evidence\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-actions\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22checkbox-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20class=\x22evidence-spoiler-field\x22\x20','display','[center][img]https://i.imgur.com/5Jhd9NC.png[/img]\x0a','from','trap-generate-btn','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22section-separator\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-section\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>VEHICLE\x20INFORMATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>Make/Model:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>','casefile-bbcode-output','[b]Link\x20to\x20SSB\x20report:[/b]\x20','Yes','Lamar','11DHsFPa','[url]','copy-supplemental-bbcode-btn','time','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22section-separator-png\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22violation-section-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>VIOLATION\x20DETAILS</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22violation-grid-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>Infraction\x20Type:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','generate-casefile-btn','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-title-png\x22>TRAFFIC\x20WARNING\x20NOTICE</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-grid-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label-png\x22>BADGE/ID\x20NUMBER</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value-png\x22>','[b]If\x20Vehicle;\x20Make\x20Model,\x20&\x20VIN?[/b]\x20','.evidence-spoiler-field','sv-copy-title-btn','[b]Location:[/b]\x20','[size=150][b][b]Taskforce\x20for\x20Regional\x20Autotheft\x20Prevention\x20-\x20Stolen\x20Vehicle\x20Database[/b][/b][/size]\x0a','trap-suspect-evidence-title','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22section-separator-png\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-section-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>DRIVER\x20INFORMATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20grid;\x20grid-template-columns:\x201fr\x201fr;\x20gap:\x2015px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>Full\x20Name:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','Buffalo','scrollIntoView','templateOutput','push','Classic\x20Red','\x22\x20placeholder=\x22Forename\x20Surname\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22person-classification-','[b]Date\x20of\x20Birth:[/b]\x20','time-date','sv-items-stolen','\x22>Residence</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22person-residence-','reports-container','192jdSDeT','add-supplemental-evidence-btn','Form\x20has\x20been\x20reset.','\x0a[/list][/TD][/TR][/transtable][hr][/hr]','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22section-separator\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22violation-section\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>VIOLATION\x20DETAILS</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22violation-grid\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>Infraction\x20Type:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>','Weather\x20conditions\x20were\x20clear\x20at\x20the\x20time\x20of\x20the\x20violation.','supplemental-output-container','[br][/br]\x0a','Adam\x27s\x20Apple\x20Blvd','Unpaid\x20Citations\x20Calculator','createElement','evidence-spoiler','[Text\x20content\x20here]','.spinner','location','sp-copy-bbcode-btn','[/td]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[/tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[/transtable]\x0a\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[transtable=Arial]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b]TRAINEE\x20NAME[/b][/td]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b]EMPLOYEE\x20NUMBER[/b][/td]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b]CALLSIGN[/b][/td]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[/tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td]','en-US','callsign','officerName','warrant','penal-code','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label\x22>TIME\x20OF\x20VIOLATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value\x22>','Supplemental\x20Report\x20Generator','Trevor','\x20-\x20','[b]Victim\x20Statement:[/b][list]\x0a','dark','filter','url-options','[/i][/TD]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td]','\x20/\x20','<p>No\x20dollar\x20amounts\x20ending\x20with\x200\x20found.</p>','width','sp-vehicle-owner','[indent]','\x0a[/TD][/TR][/transtable][hr][/hr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[transtable=Arial]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b][center]SIGNATURE[/center][/b][/td][/tr][/transtable][hr][/hr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[transtable=Arial]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b]TRAINEE\x20SIGNATURE[/b][/td]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b]DATE[/b][/td][/tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][i]','div','sv-victim-statement','[*]\x20-\x20CCTV\x0a','Victim','copy-casefile-bbcode-btn','output-container','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-title-input\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-title-field\x22\x20placeholder=\x22Evidence\x20Title\x22\x20value=\x22','[img]','COLOR\x20MAKE\x20MODEL','[/TD][/tr][/transtable]',':]\x20','fswFiled','report-time','.image-url-line','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20grid;\x20grid-template-columns:\x201fr\x201fr;\x20gap:\x2015px;\x20margin-top:\x2010px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>License\x20Plate:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','\x22>Date\x20of\x20Birth</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22person-dob-','800px','copy','sp-additional-info','[list=1]','sp-fingerprints','3UtTbGM','[font=arial][color=black]\x0a','data-type','trap-suspect-evidence-container','[divbox=#323564][center][color=white][b]Warrant\x20Status\x20Update[/b][/color][/center][/divbox]\x0a','sp-bbcode-output','dashboard','\x22>Full\x20Name</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22person-name-','Amanda','Rancher','[PLATE]\x20Vehicle\x20Make\x20Model\x20(Status)','[/url]','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label-png\x22>OFFICER\x20NAME</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value-png\x22>','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label-png\x22>TIME\x20OF\x20VIOLATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value-png\x22>','casefile-narrative','supplemental-bbcode-output','[b]If\x20Vehicle;\x20Make\x20Model,\x20&\x20VIN?[/b]\x20MAKE\x20MODEL\x20VIN\x0a','trap-suspect-photo','sp-recovered-type-container','Power\x20St','close-modal','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label-png\x22>DATE\x20OF\x20VIOLATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value-png\x22>','First\x20Last','.url-text-input','selected','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[transtable=Arial]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr][td][b]ASSOCIATED\x20REPORTS[/b][/TD][/TR]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr][td][list][*]D.N.A.[/list][/TD][/TR][/transtable][hr][/hr]','Patrol\x20Log\x20Generator','suspect','color','[*]\x20-\x20Additional\x20Statements\x0a','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-title-input\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-title-field\x22\x20placeholder=\x22Image\x20Title\x20(Optional)\x22\x20value=\x22','licensePlate','officerComments','.add-image-btn','sp-generate-btn','sv-narrative','4015qGwaPT','Driver\x20was\x20observed\x20using\x20a\x20mobile\x20device\x20while\x20operating\x20a\x20motor\x20vehicle.','setAttribute','[size=105][b]Filed\x20By:[/b][/size]\x0a','sp-vehicle-details-container','plateState','persons-container','trap-warrant-status','data-theme','Alta\x20St','sv-additional-info','.url-clickable-field','sv-vehicle-details','.remove-person','submit','url','Sultan','Clinton','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>License\x20Plate:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>','sv-armed-robbery','trap-suspect-url-options','violationDescription','[/TD][/transtable]\x0a\x20\x20\x20\x20\x0a\x20\x20\x20\x20[transtable=Arial][tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][b][center]ASSOCIATED\x20REPORTS\x20&\x20PATROL\x20NARRATIVE[/center][/b][/td][/tr][/transtable][hr][/hr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[transtable=Arial]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td][justify][b]INSTRUCTIONS:[/b]\x20Please\x20fill\x20out\x20the\x20\x22Associated\x20Reports\x22\x20section\x20if\x20you\x20handle/fill\x20out\x20any\x20reports\x20during\x20your\x20King\x20patrol.\x20Provide\x20the\x20link\x20in\x20the\x20specified\x20area\x20and\x20also\x20include\x20a\x20general\x20name\x20for\x20the\x20report\x20(i.e.\x20Arrest\x20Report\x20-\x20John\x20Doe).\x20If\x20you\x20do\x20not\x20use/need\x20the\x20reports\x20section,\x20please\x20fill\x20in\x20the\x20\x22REPORT\x20NAME\x22\x20with\x20D.N.A.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0aFor\x20the\x20\x22Patrol\x20Narrative\x22,\x20please\x20try\x20and\x20use\x20general\x20timestamps\x20to\x20log\x20your\x20patrol\x20(i.e.\x201345\x20-\x20Traffic\x20stop\x20on\x20a\x20black\x20sedan,\x20Hawick\x20Avenue.\x20I\x20noticed\x20the\x20vehicle\x20driving\x20quite\x20recklessly\x20and\x20it\x20was\x20picked\x20up\x20on\x20my\x20dashcam.\x20I\x20decided\x20to\x20pull\x20the\x20vehicle\x20over\x20and\x20the\x20plates\x20read,\x20XXXXXX.\x20After\x20approaching\x20the\x20driver\x20and\x20asking\x20for\x20a\x20backup\x20unit,\x20I\x20decided\x20to\x20issue\x20a\x20citation\x20for\x20reckless\x20driving).\x20Again,\x20this\x20is\x20an\x20example,\x20but\x20please\x20provide\x20depth\x20to\x20the\x20scenarios\x20you\x20find\x20yourself\x20in\x20during\x20the\x20patrol.\x20However,\x20utilize\x20time\x20stamps\x20to\x20track\x20everything\x20that\x20you\x20encounter\x20during\x20your\x20patrol.\x20For\x20example:\x0a[list][*]1600\x20-\x20Start\x20of\x20patrol\x20under\x20111\x20King.\x0a[*]1622\x20-\x20I\x20performed\x20a\x20traffic\x20stop\x20on\x20a\x20black\x20Asbo\x20on\x20Elgin\x20Avenue.\x20I\x20required\x20a\x20backup\x20unit\x20since\x20the\x20vehicle\x20matched\x20the\x20description\x20from\x20a\x20crime\x20broadcast\x20from\x20earlier.\x20You\x20could\x20then\x20expand\x20on\x20that\x20and\x20write\x20about\x20what\x20occurred\x20before\x20or\x20after,\x20for\x20example.\x0a[*]1648\x20-\x20923s\x20were\x20heard\x20around\x20Davis\x20LTD.\x20Utilize\x20that\x20to\x20write\x20about\x20what\x20you\x20did,\x20did\x20you\x20respond?\x20Did\x20you\x20find\x20the\x20shooter?\x20All\x20of\x20this\x20can\x20be\x20included.\x0a[*]1700\x20-\x20End\x20of\x20patrol.[/list][/justify][/td][/tr][/transtable][hr][/hr]','Driver\x20appeared\x20unaware\x20of\x20the\x20traffic\x20regulation.','[/indent]\x0a\x0a','sp-recovered','Unknown','addEventListener','[b]If\x20Yes;[/b]\x0a','[b]Time\x20&\x20Date:[/b]\x20','[b]If\x20Yes;\x20Was\x20it\x20on\x20a\x20person\x20or\x20a\x20vehicle?[/b]\x20','[size=110][u]SUPPLEMENTAL\x20REPORT[/u][/size][/center][hr][/hr]\x0a\x0a','1331196sBLmMz','trap-general-section','contains','textContent','[b]Additional\x20Information:[/b]\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tbody>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</table>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','numeric','sp-copy-title-btn','Person\x20#','sv-fingerprints','random','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[transtable=Arial]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr][td][b]ASSOCIATED\x20REPORTS[/b][/TD][/TR]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[tr][td][list]','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20grid;\x20grid-template-columns:\x201fr\x201fr;\x20gap:\x2015px;\x20margin-top:\x2010px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>License\x20State:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','\x22\x20placeholder=\x22e.g.,\x20123\x20Main\x20Street\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22person-relation-','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-title\x22>TRAFFIC\x20WARNING\x20NOTICE</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-grid\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label\x22>BADGE/ID\x20NUMBER</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value\x22>','[b]Finger\x20prints\x20taken?[/b]\x20','theme-toggle-btn','.report-name','[divbox=#323564][center][color=white][b]Potential\x20Suspect[/b][/color][/center][/divbox]\x0a','Carbonizzare','sv-time-date','white','\x0a[b]FSW\x20Filed:[/b]\x20','employee-number','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22checkbox-group\x20url-options-inline\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20class=\x22url-clickable-field\x22\x20','report-date','driverName','remove','toggle','templateBtn','Attach\x20Statement\x20Here','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22section-separator\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-section\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>DRIVER\x20INFORMATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>Full\x20Name:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>','[divbox=#323564][center][color=white][b]General\x20Update[/b][/color][/center][/divbox]\x0a','Changelog','image-url-line','vehicleMake','countBtn','infractionType','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','person-dob-1','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-type\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22evidence-number\x22>','toDataURL','length','[*]\x20','sv-stolen-items','forensics','[/td]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td]','.tool-section','[indent]\x0a','case-title','7932460uBpdWG','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>License\x20State:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>','none','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-url-text\x22\x20placeholder=\x22Link\x20Text\x22\x20value=\x22\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','getSelection','.report-item','sp-add-evidence-btn','date','[b]Narrative:[/b][list]\x0a','.</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','getItem','Elgin\x20Ave','black','backgroundColor','traffic-success-message','person-residence-1','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22notice-section\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>NOTICE:</strong>\x20This\x20document\x20serves\x20as\x20an\x20official\x20warning\x20for\x20the\x20traffic\x20violation\x20detailed\x20above.\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Failure\x20to\x20comply\x20with\x20traffic\x20regulations\x20may\x20result\x20in\x20citation\x20or\x20arrest.\x20This\x20warning\x20will\x20be\x20recorded\x20in\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20the\x20department\x27s\x20database\x20for\x20future\x20reference.\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-note\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20This\x20is\x20a\x20warning\x20notice\x20only.\x20No\x20fine\x20is\x20assessed\x20at\x20this\x20time.\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','sp-recovered-vehicle-details','sv-vehicle-plate','Dark\x20Mode','398SHFOkH','left','getElementById','NumberFormat','sv-vehicle-owner','[b]If\x20Yes;\x20Was\x20it\x20on\x20a\x20person\x20or\x20a\x20vehicle?[/b]\x20Person/Vehicle\x0a','sp-victim-statement','copy-casefile-title-btn','disabled','LSPD','Strawberry\x20Ave','LOS\x20SANTOS\x20POLICE\x20DEPARTMENT','>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label>Use\x20clickable\x20text</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-url\x22\x20placeholder=\x22URL\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22url-text-input\x20','[size=105][b]Narrative[/b][/size]\x0a','[b]Relation\x20to\x20incident:[/b]\x0a','execCommand','add-person-btn','agency','Vehicle\x20was\x20parked\x20in\x20a\x20designated\x20no-parking\x20zone,\x20obstructing\x20traffic\x20flow.','[*]\x20EL\x20Number:\x20Description\x20of\x20evidence\x0a','sp-ssb-report','dlNumber','#trap-suspect-evidence-modal\x20.evidence-url','trap-suspect-evidence-spoiler','[b]Vehicle\x20Color\x20Make\x20Model\x20of\x20Plate:[/b]\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-image-url\x22\x20placeholder=\x22Image\x20URL\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line-actions\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22remove-image-btn\x22><i\x20class=\x22fas\x20fa-trash\x22></i></button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','[/list]\x0a\x0a','add-evidence-confirm','map','sp-call-id','Rank\x20Forename\x20Surname','forEach','sp-reset-btn','Stolen\x20Plate\x20Report\x20Generator','input','Vinewood\x20Blvd','writeText','long','removeAllRanges','[url]https://example.com[/url]','Please\x20select\x20an\x20evidence\x20type','0000,\x20Month\x20Day,\x20Year','sv-call-id','image/png','trap-general-narrative','[size=105][b]Evidence[/b][/size]\x0a','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','Mirror\x20Park\x20Ave','person-classification-1','Bell','sv-ssb-report','Database\x20Update\x20Generator','[/list]\x0a','submit-btn','replace','\x0a[*][url=','clipboard','[/img]\x0a','FIRSTNAME\x20LASTNAME','visible','613692DeLwMm','trap-suspect-url-clickable','current-tool','[b]Recovered?[/b]\x20','Driver\x20was\x20cooperative\x20and\x20acknowledged\x20the\x20violation.','format','copy-bbcode','.remove-image-btn','sp-narrative','[img]https://example.com/image.jpg[/img]','[/divbox]\x0a','sp-evidence-container','[b]Vehicle\x20Plate:[/b]\x20','appendChild','text','trap-update-type','Metallic\x20Blue','evidence-modal','light','body','[*]\x0a','querySelectorAll','1356VwOBSg','Innocence\x20Blvd','then','supplemental-evidence-container','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<table>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<thead>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th>Amount</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th>Count</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th>Subtotal</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</thead>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tbody>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','url-clickable','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>Address:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>','Popular\x20St','.dropdown-btn','trap-','.evidence-type-option','Phillips','trap-suspect-name','sp-location','[size=125][b]SHERIFF\x27S\x20DEPARTMENT\x0aCOUNTY\x20OF\x20LOS\x20SANTOS[/b]\x0a[i]\x22A\x20Tradition\x20of\x20Service\x20Since\x201850\x22[/i][/size]\x0a\x0a','case-date','Arial,\x20sans-serif','Romero','top','sp-recovered-type','Person','Write\x20Narrative\x20Here','Cavalcade','querySelector','.png','report-item','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p><strong>Grand\x20Total\x20Amount:</strong>\x20','Tool\x20Panel','.evidence-text-content','Dilettante','#person-name-','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>Description:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','#evidence-modal\x20.evidence-url-text','[b]Vehicle\x20Color,\x20Make,\x20&\x20Model:[/b]\x20','fas\x20fa-moon','[divbox=#323564][center][color=white][b]Stolen\x20Vehicle\x20Report[/b][/color][/center][/divbox]\x0a','theme','catch','add','#person-relation-','split','AREA/STREET','copyBtn','DAY/MM/YEAR','setItem','[font=Arial][color=black]\x0a\x0a','selectNode','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','sp-vehicle-plate','.image-urls-container','general','Portola\x20Dr','[list]','Silver','.evidence-url','-9999px','Driver\x20failed\x20to\x20come\x20to\x20a\x20complete\x20stop\x20at\x20a\x20clearly\x20marked\x20stop\x20sign,\x20creating\x20a\x20hazardous\x20situation.','.remove-evidence','charAt','[list]\x0a','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-title-input\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-title-field\x22\x20placeholder=\x22Link\x20Title\x20(Optional)\x22\x20value=\x22','scrollTo','Dashboard','evidence-preview','Traffic\x20was\x20light\x20at\x20the\x20time\x20of\x20the\x20observed\x20violation.','match','[list][*]','Failed\x20to\x20copy:\x20','Simpson','add-report','Are\x20you\x20sure\x20you\x20want\x20to\x20reset\x20the\x20form?\x20All\x20data\x20will\x20be\x20lost.','toLocaleDateString','.person-number','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22person-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20class=\x22person-number\x22>Person\x20#','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>Description:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>','OWNER\x20FIRST\x20LAST','.evidence-title-field','floor','Write\x20narrative\x20here.','classList','[divbox=transparent]','sv-stolen-items-container','.person-section','[font=arial][color=black][indent][size=105][b]Investigative\x20Background\x20and\x20Assignment[/b][/size]\x0a\x0a','\x0a[/spoiler]','target','supplemental-narrative','Generating...','slice','evidence-item','Atkins','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>License\x20Number:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','Gresley','address','toISOString','trap-copy-bbcode-btn','Virgo','investigators','[b]Owner:[/b]\x20','[divbox=transparent]\x0a','>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label>Spoiler</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22edit-evidence\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22fas\x20fa-edit\x22></i>\x20Edit\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22remove-evidence\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22fas\x20fa-trash\x22></i>\x20Remove\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','[size=110][u]CASE\x20PACKAGE[/u][/size][/center][hr][/hr]\x0a\x0a','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>Color:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','Richards','block','Vehicle','[b]Call-ID:[/b]\x20','.evidence-number','Dominator','toUpperCase','.sidebar-dropdown','sp-case-title','dropdown-btn','padding','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22Victim\x22>Victim</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22Suspect\x22>Suspect</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22Witness\x22>Witness</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22Informant\x22>Informant</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</select>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22person-dob-','Medical\x20Report\x20Tool','error','data-tool','#person-classification-','[b]Handling\x20Investigator(s):[/b]\x20','dlState','Traffic\x20Warning\x20Generator','DOMContentLoaded','.evidence-image-url','Jimmy','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>Address:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','.btn-text','<i\x20class=\x22fas\x20fa-save\x22></i>\x20Update\x20Evidence','[url=https://example.com]Clickable\x20Text[/url]','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-section\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>OFFICER\x20COMMENTS</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22section-separator-png\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-section-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>VEHICLE\x20INFORMATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20grid;\x20grid-template-columns:\x201fr\x201fr;\x20gap:\x2015px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>Make/Model:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>','Asterope','closest','\x22>Phone\x20Number</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22person-phone-','change','trim','[/divbox]','.evidence-url-text','Steve','[hr][/hr]\x0a','N/A','#person-dob-','click','Franklin','[/spoiler]','trap-output-container','fullName','preventDefault','className','0123456789','sort','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>Plate\x20State:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value\x22>','-section','Metallic\x20Black','smooth','casefile-output-container','Bullet','sv-reset-btn','trap-suspect-add-evidence-confirm','Futo','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-signature\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-section\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label\x22>OFFICER\x20SIGNATURE</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22signature-area\x22>','[spoiler]\x0a','sv-copy-bbcode-btn','style','#trap-database-update-section\x20.update-section','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','[divbox=transparent][center]','Michael','vehicleColor','.edit-evidence','vehicleModel','image','#evidence-modal\x20.evidence-url','toTimeString','name','trap-suspect-evidence-modal','[/list]','trap-suspect-evidence-preview','\x20&\x20','Stanier','trap-suspect-cancel-evidence','\x0a[b]Amount\x20of\x20Unpaid\x20Fines:[/b]\x20','trafficWarningPreview','[b]Penal\x20Code\x20(if\x20Criminal):[/b]\x20','.dropdown-container','sv-recovered','dropdown-icon','Gauntlet','sv-output-container','<i\x20class=\x22fas\x20fa-check\x22></i>\x20Copied!','close-traffic-success','45657336qesbEy','documentElement','[/TD]\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20[td]','getAttribute','Cheetah','[url=','123MC,\x20PENAL\x20CODE\x20TITLE;\x20456MC,\x20PENAL\x20CODE\x20TITLE','badgeNumber','casefile-title-output','Rank\x20Forename\x20Surname\x20(Lead);\x20Rank\x20Forename\x20Surname;\x20Rank\x20Forename\x20Surname','cancel-evidence','evidence-title'];_0x5c31=function(){return _0x2100ac;};return _0x5c31();}function downloadTrafficWarningAsPNG(){const _0x1dbe85=_0x5d6fcd,_0x5eecd0=document[_0x1dbe85(0x7d)](_0x1dbe85(0x183)),_0x4c8ddb=document[_0x1dbe85(0x7d)](_0x1dbe85(0x8c))['value'],_0x282721=_0x4c8ddb==='LSPD'?_0x1dbe85(0x86):'LOS\x20SANTOS\x20SHERIFF\x27S\x20DEPARTMENT',_0x83657f=document[_0x1dbe85(0x7d)](_0x1dbe85(0x193))['value']||_0x1dbe85(0x159),_0x433b7c=document[_0x1dbe85(0x7d)](_0x1dbe85(0x1f9))[_0x1dbe85(0x1b0)]||'N/A',_0x22e901=document[_0x1dbe85(0x7d)](_0x1dbe85(0x29d))['value']||_0x1dbe85(0x159),_0x241f94=document[_0x1dbe85(0x7d)](_0x1dbe85(0x1d0))[_0x1dbe85(0x1b0)]||_0x1dbe85(0x159),_0x1b157f=document[_0x1dbe85(0x7d)](_0x1dbe85(0x1f4))['value']||_0x1dbe85(0x159),_0xabd267=document[_0x1dbe85(0x7d)](_0x1dbe85(0x27e))[_0x1dbe85(0x1b0)]||'N/A',_0xe13be5=document['getElementById'](_0x1dbe85(0x90))[_0x1dbe85(0x1b0)]||_0x1dbe85(0x159),_0x3e42c5=document[_0x1dbe85(0x7d)](_0x1dbe85(0x145))[_0x1dbe85(0x1b0)]||_0x1dbe85(0x159),_0x1c852d=document['getElementById']('address')[_0x1dbe85(0x1b0)]||'N/A',_0x118d26=document[_0x1dbe85(0x7d)](_0x1dbe85(0x1a6))['value']||_0x1dbe85(0x159),_0xea9971=document[_0x1dbe85(0x7d)](_0x1dbe85(0x287))[_0x1dbe85(0x1b0)]||'N/A',_0x1c776f=document[_0x1dbe85(0x7d)](_0x1dbe85(0x177))[_0x1dbe85(0x1b0)]||_0x1dbe85(0x159),_0x2ee577=document[_0x1dbe85(0x7d)](_0x1dbe85(0x175))[_0x1dbe85(0x1b0)]||_0x1dbe85(0x159),_0x5ec9fb=document[_0x1dbe85(0x7d)](_0x1dbe85(0x23f))['value']||_0x1dbe85(0x159),_0x45f130=document[_0x1dbe85(0x7d)](_0x1dbe85(0x249))[_0x1dbe85(0x1b0)]||_0x1dbe85(0x159),_0x19474c=document[_0x1dbe85(0x7d)]('infractionType')[_0x1dbe85(0x1b0)]||_0x1dbe85(0x159),_0x4756ee=document[_0x1dbe85(0x7d)](_0x1dbe85(0x259))[_0x1dbe85(0x1b0)]||_0x1dbe85(0x159),_0x12af67=document['getElementById'](_0x1dbe85(0x240))[_0x1dbe85(0x1b0)]||_0x1dbe85(0x159),_0x22caca=_0x22e901!=='N/A'?new Date(_0x22e901)[_0x1dbe85(0x114)](_0x1dbe85(0x1f7),{'year':_0x1dbe85(0x26a),'month':_0x1dbe85(0xa0),'day':'numeric'}):_0x1dbe85(0x159),_0x6b4f29=document[_0x1dbe85(0x1f0)]('div');_0x6b4f29['style']['position']='absolute',_0x6b4f29[_0x1dbe85(0x170)][_0x1dbe85(0x7c)]=_0x1dbe85(0x104),_0x6b4f29[_0x1dbe85(0x170)][_0x1dbe85(0xdf)]=_0x1dbe85(0x104),_0x6b4f29['style'][_0x1dbe85(0x207)]=_0x1dbe85(0x21b),_0x6b4f29[_0x1dbe85(0x170)][_0x1dbe85(0x13e)]='25px',_0x6b4f29[_0x1dbe85(0x170)][_0x1dbe85(0x2a3)]=_0x1dbe85(0x279),_0x6b4f29[_0x1dbe85(0x170)][_0x1dbe85(0x23c)]=_0x1dbe85(0x2a2),_0x6b4f29['style'][_0x1dbe85(0x1b2)]=_0x1dbe85(0xdd),_0x6b4f29['innerHTML']='\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22warning-form-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22warning-header-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22agency-name-png\x22>'+_0x282721+_0x1dbe85(0x1d3)+_0x83657f+_0x1dbe85(0x22c)+_0x433b7c+_0x1dbe85(0x235)+_0x22caca+_0x1dbe85(0x22d)+_0x241f94+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-item-png\x22\x20style=\x22grid-column:\x201\x20/\x20-1;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-label-png\x22>LOCATION\x20OF\x20VIOLATION</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-info-value-png\x22>'+_0x1b157f+_0x1dbe85(0x1da)+_0xabd267+_0x1dbe85(0x128)+_0xe13be5+_0x1dbe85(0x270)+_0x3e42c5+_0x1dbe85(0x14a)+_0x1c852d+',\x20'+_0x118d26+_0x1dbe85(0x14f)+_0xea9971+_0x1dbe85(0x205)+_0x1c776f+_0x1dbe85(0x133)+_0x2ee577+_0x1dbe85(0x219)+_0x5ec9fb+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>Plate\x20State:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-value-png\x22>'+_0x45f130+_0x1dbe85(0x1d1)+_0x19474c+_0x1dbe85(0xec)+_0x4756ee+_0x1dbe85(0x1b9)+_0x12af67+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22officer-signature-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-section-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-label-png\x22>OFFICER\x20SIGNATURE</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22signature-area-png\x22>'+_0x433b7c+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22notice-section-png\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>NOTICE:</strong>\x20This\x20document\x20serves\x20as\x20an\x20official\x20warning\x20for\x20the\x20traffic\x20violation\x20detailed\x20above.\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Failure\x20to\x20comply\x20with\x20traffic\x20regulations\x20may\x20result\x20in\x20citation\x20or\x20arrest.\x20This\x20warning\x20will\x20be\x20recorded\x20in\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20the\x20department\x27s\x20database\x20for\x20future\x20reference.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-note\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20This\x20is\x20a\x20warning\x20notice\x20only.\x20No\x20fine\x20is\x20assessed\x20at\x20this\x20time.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20',document[_0x1dbe85(0xca)][_0x1dbe85(0xc4)](_0x6b4f29),html2canvas(_0x6b4f29,{'scale':0x2,'useCORS':!![],'logging':![],'backgroundColor':'#ffffff'})[_0x1dbe85(0xcf)](_0x3b4e53=>{const _0x2c3c67=_0x1dbe85,_0x18a264=document[_0x2c3c67(0x1f0)]('a');_0x18a264['download']=_0x2c3c67(0x1ae)+new Date()['getTime']()+_0x2c3c67(0xe5),_0x18a264['href']=_0x3b4e53[_0x2c3c67(0x28d)](_0x2c3c67(0xa6)),_0x18a264[_0x2c3c67(0x15b)](),document['body'][_0x2c3c67(0x1af)](_0x6b4f29),document[_0x2c3c67(0x7d)]('traffic-success-message')[_0x2c3c67(0x11c)]['add'](_0x2c3c67(0xb6));});}function initTrapCasefileGenerator(){const _0xa9890d=_0x5d6fcd,_0x18f1b1=document[_0xa9890d(0x7d)](_0xa9890d(0x24a)),_0x57e9a7=document['getElementById'](_0xa9890d(0x8b));let _0x19e1e8=0x0;function _0x251e96(){const _0x29fc43=_0xa9890d;_0x19e1e8++;const _0x228e31=document['createElement'](_0x29fc43(0x20b));_0x228e31[_0x29fc43(0x161)]='person-section',_0x228e31[_0x29fc43(0x199)]=_0x29fc43(0x116)+_0x19e1e8+'</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22person-actions\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22remove-person\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22fas\x20fa-trash\x22></i>\x20Remove\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22person-name-'+_0x19e1e8+_0x29fc43(0x227)+_0x19e1e8+_0x29fc43(0x1e0)+_0x19e1e8+_0x29fc43(0x1be)+_0x19e1e8+_0x29fc43(0x13f)+_0x19e1e8+_0x29fc43(0x21a)+_0x19e1e8+'\x22\x20placeholder=\x22e.g.,\x2005/15/1990\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22person-phone-'+_0x19e1e8+_0x29fc43(0x152)+_0x19e1e8+'\x22\x20placeholder=\x22e.g.,\x20555-1234\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22person-residence-'+_0x19e1e8+_0x29fc43(0x1e4)+_0x19e1e8+_0x29fc43(0x271)+_0x19e1e8+'\x22>Relation\x20to\x20Incident</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22person-relation-'+_0x19e1e8+'\x22\x20placeholder=\x22e.g.,\x20Owner\x20of\x20the\x20property\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20',_0x18f1b1[_0x29fc43(0xc4)](_0x228e31);const _0x581e6d=_0x228e31[_0x29fc43(0xe4)](_0x29fc43(0x251));_0x581e6d[_0x29fc43(0x25f)](_0x29fc43(0x15b),()=>{const _0x35c722=_0x29fc43;_0x228e31[_0x35c722(0x27f)](),_0x25252f();});}function _0x25252f(){const _0x229999=_0xa9890d,_0x2bacb9=_0x18f1b1[_0x229999(0xcc)](_0x229999(0x11f));_0x19e1e8=_0x2bacb9[_0x229999(0x28e)],_0x2bacb9[_0x229999(0x9a)]((_0x37beba,_0x4090ef)=>{const _0x4ee49f=_0x229999,_0x4831f9=_0x37beba['querySelector'](_0x4ee49f(0x115));_0x4831f9[_0x4ee49f(0x267)]=_0x4ee49f(0x26c)+(_0x4090ef+0x1);});}_0x57e9a7[_0xa9890d(0x25f)](_0xa9890d(0x15b),_0x251e96),_0x251e96();const _0x161675=document[_0xa9890d(0x7d)](_0xa9890d(0x1b4)),_0x39e882=document['getElementById']('add-evidence-btn'),_0xbd9afc=document['getElementById'](_0xa9890d(0xc8)),_0x38acfd=document[_0xa9890d(0xcc)]('.evidence-type-option'),_0x330b0b=document[_0xa9890d(0x7d)](_0xa9890d(0x1f1)),_0x599273=document['getElementById'](_0xa9890d(0x197)),_0x1005b4=document['getElementById']('evidence-preview'),_0x28c18b=document['getElementById'](_0xa9890d(0x96)),_0xef692=document['getElementById'](_0xa9890d(0x196)),_0x394b46=document[_0xa9890d(0x7d)](_0xa9890d(0x234)),_0x57c391=document[_0xa9890d(0x7d)](_0xa9890d(0x203)),_0x14c045=document[_0xa9890d(0x7d)](_0xa9890d(0xd2));let _0x120966='',_0x29ee49=0x0,_0x358981=null;_0x39e882[_0xa9890d(0x25f)]('click',()=>{const _0x40002c=_0xa9890d;_0xbd9afc[_0x40002c(0x11c)][_0x40002c(0xf3)](_0x40002c(0x1bb)),_0x120966='',_0x38acfd['forEach'](_0x19ef62=>_0x19ef62[_0x40002c(0x11c)][_0x40002c(0x27f)]('selected')),_0x330b0b[_0x40002c(0x1a8)]=![],_0x599273['value']='',_0x1005b4[_0x40002c(0x170)][_0x40002c(0x1c4)]=_0x40002c(0x298),_0x57c391['classList'][_0x40002c(0x27f)](_0x40002c(0x1bb)),_0x14c045['checked']=![],_0x358981=null,_0x28c18b[_0x40002c(0x199)]=_0x40002c(0x1bc);});function _0x5722cc(){const _0x1e3c20=_0xa9890d;_0xbd9afc['classList'][_0x1e3c20(0x27f)](_0x1e3c20(0x1bb));}_0x394b46[_0xa9890d(0x25f)](_0xa9890d(0x15b),_0x5722cc),_0xef692['addEventListener'](_0xa9890d(0x15b),_0x5722cc),_0x38acfd[_0xa9890d(0x9a)](_0x1e2b19=>{const _0x3b32f2=_0xa9890d;_0x1e2b19[_0x3b32f2(0x25f)](_0x3b32f2(0x15b),()=>{const _0x2f78e8=_0x3b32f2;_0x38acfd['forEach'](_0xed719e=>_0xed719e['classList']['remove'](_0x2f78e8(0x238))),_0x1e2b19[_0x2f78e8(0x11c)]['add'](_0x2f78e8(0x238)),_0x120966=_0x1e2b19[_0x2f78e8(0x18f)](_0x2f78e8(0x222)),_0x120966==='url'?_0x57c391[_0x2f78e8(0x11c)][_0x2f78e8(0xf3)](_0x2f78e8(0x1bb)):_0x57c391['classList']['remove'](_0x2f78e8(0x1bb)),_0xc95cc8();});}),_0x330b0b[_0xa9890d(0x25f)]('change',_0xc95cc8),_0x599273['addEventListener'](_0xa9890d(0x9d),_0xc95cc8),_0x14c045[_0xa9890d(0x25f)](_0xa9890d(0x153),_0xc95cc8);function _0xc95cc8(){const _0x10de8e=_0xa9890d;if(!_0x120966){_0x1005b4[_0x10de8e(0x170)]['display']=_0x10de8e(0x298);return;}let _0x2621a0='';const _0x59b0fd=_0x330b0b[_0x10de8e(0x1a8)],_0x2f0b28=_0x599273[_0x10de8e(0x1b0)][_0x10de8e(0x154)]();switch(_0x120966){case _0x10de8e(0xc5):_0x2621a0=_0x10de8e(0x1f2);break;case'image':_0x2621a0=_0x10de8e(0xc0);break;case _0x10de8e(0x253):const _0x1db90b=_0x14c045[_0x10de8e(0x1a8)];_0x1db90b?_0x2621a0=_0x10de8e(0x14d):_0x2621a0=_0x10de8e(0xa2);break;}let _0x49f83a='';_0x2f0b28&&(_0x49f83a='['+_0x2f0b28+_0x10de8e(0x215)),_0x59b0fd?_0x49f83a+='[spoiler]\x0a'+_0x2621a0+_0x10de8e(0x121):_0x49f83a+=_0x2621a0,_0x1005b4['textContent']=_0x49f83a,_0x1005b4[_0x10de8e(0x170)][_0x10de8e(0x1c4)]=_0x10de8e(0x135);}function _0x261fef(_0x133d4a,_0x503c9a){const _0x357e90=_0xa9890d,_0x5450ea=_0x133d4a[_0x357e90(0xe4)](_0x357e90(0x237));_0x5450ea&&(_0x503c9a?_0x5450ea[_0x357e90(0x11c)][_0x357e90(0xf3)](_0x357e90(0x1bb)):_0x5450ea[_0x357e90(0x11c)]['remove'](_0x357e90(0x1bb)));}_0x28c18b['addEventListener']('click',()=>{const _0x39f393=_0xa9890d;if(!_0x120966){alert(_0x39f393(0xa3));return;}if(_0x358981)_0xc3bf4a(_0x358981);else{_0x29ee49++;const _0xa9ceb5=document['createElement']('div');_0xa9ceb5['className']='evidence-item',_0xa9ceb5[_0x39f393(0x246)]('data-type',_0x120966),_0x4618fb(_0xa9ceb5,_0x120966,_0x330b0b[_0x39f393(0x1a8)],_0x599273[_0x39f393(0x1b0)][_0x39f393(0x154)](),_0x14c045[_0x39f393(0x1a8)]),_0x161675[_0x39f393(0xc4)](_0xa9ceb5),_0xf27127(_0xa9ceb5);}_0x5722cc();});function _0x4618fb(_0x2114ae,_0x562475,_0x1fc22a,_0x215b9e,_0x30a83d){const _0x592d4c=_0xa9890d;let _0x50ba04='';switch(_0x562475){case _0x592d4c(0xc5):_0x50ba04='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-title-input\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-title-field\x22\x20placeholder=\x22Evidence\x20Title\x22\x20value=\x22'+_0x215b9e+_0x592d4c(0x1ba);break;case _0x592d4c(0x178):_0x50ba04='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-title-input\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-title-field\x22\x20placeholder=\x22Image\x20Title\x20(Optional)\x22\x20value=\x22'+_0x215b9e+_0x592d4c(0x19b);break;case _0x592d4c(0x253):_0x50ba04=_0x592d4c(0x109)+_0x215b9e+_0x592d4c(0x27c)+(_0x30a83d?_0x592d4c(0x1a8):'')+'>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label>Use\x20clickable\x20text</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-url\x22\x20placeholder=\x22URL\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22url-text-input\x20'+(_0x30a83d?_0x592d4c(0x1bb):'')+_0x592d4c(0x299);break;}_0x2114ae[_0x592d4c(0x199)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-type\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22evidence-number\x22>'+_0x29ee49+'.</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x562475['charAt'](0x0)[_0x592d4c(0x13a)]()+_0x562475['slice'](0x1))+_0x592d4c(0x1c3)+(_0x1fc22a?_0x592d4c(0x1a8):'')+_0x592d4c(0x131)+_0x50ba04+_0x592d4c(0x28a);}function _0xc3bf4a(_0x348f41){const _0x3f1133=_0xa9890d,_0x5b58d7=_0x348f41[_0x3f1133(0x18f)](_0x3f1133(0x222)),_0x1a1bd4=_0x330b0b[_0x3f1133(0x1a8)],_0x1118da=_0x599273[_0x3f1133(0x1b0)][_0x3f1133(0x154)](),_0x437528=_0x14c045[_0x3f1133(0x1a8)];_0x4618fb(_0x348f41,_0x5b58d7,_0x1a1bd4,_0x1118da,_0x437528),_0xf27127(_0x348f41);}function _0xf27127(_0x2e13c4){const _0x15ad8e=_0xa9890d,_0x59aa7e=_0x2e13c4[_0x15ad8e(0xe4)](_0x15ad8e(0x106));_0x59aa7e[_0x15ad8e(0x25f)](_0x15ad8e(0x15b),()=>{const _0x1f0d59=_0x15ad8e;_0x2e13c4[_0x1f0d59(0x27f)](),_0x2c7501();});const _0x1af863=_0x2e13c4[_0x15ad8e(0xe4)](_0x15ad8e(0x176));_0x1af863[_0x15ad8e(0x25f)](_0x15ad8e(0x15b),()=>{_0x39aaca(_0x2e13c4);});if(_0x2e13c4[_0x15ad8e(0x18f)](_0x15ad8e(0x222))===_0x15ad8e(0x253)){const _0x24ee1a=_0x2e13c4[_0x15ad8e(0xe4)](_0x15ad8e(0x24f));_0x24ee1a[_0x15ad8e(0x25f)]('change',()=>{const _0x46e959=_0x15ad8e;_0x261fef(_0x2e13c4,_0x24ee1a[_0x46e959(0x1a8)]);});}if(_0x2e13c4[_0x15ad8e(0x18f)](_0x15ad8e(0x222))===_0x15ad8e(0x178)){const _0x1d27e7=_0x2e13c4['querySelector']('.add-image-btn'),_0x5d920e=_0x2e13c4['querySelector'](_0x15ad8e(0xfe));_0x1d27e7[_0x15ad8e(0x25f)](_0x15ad8e(0x15b),()=>{const _0x334674=_0x15ad8e,_0xb61f7b=document[_0x334674(0x1f0)](_0x334674(0x20b));_0xb61f7b[_0x334674(0x161)]=_0x334674(0x286),_0xb61f7b['innerHTML']=_0x334674(0x94),_0x5d920e[_0x334674(0xc4)](_0xb61f7b);const _0x532029=_0xb61f7b['querySelector'](_0x334674(0xbe));_0x532029[_0x334674(0x25f)]('click',()=>{_0xb61f7b['remove']();});});const _0x2ded0b=_0x2e13c4['querySelectorAll'](_0x15ad8e(0xbe));_0x2ded0b[_0x15ad8e(0x9a)](_0x427c09=>{const _0x42d71b=_0x15ad8e;_0x427c09[_0x42d71b(0x25f)](_0x42d71b(0x15b),function(){const _0x5453a3=_0x42d71b;this[_0x5453a3(0x151)](_0x5453a3(0x218))['remove']();});});}}function _0x39aaca(_0x3130b6){const _0x34dcfc=_0xa9890d,_0x56347f=_0x3130b6['getAttribute'](_0x34dcfc(0x222)),_0x465d76=_0x3130b6['querySelector'](_0x34dcfc(0x119)),_0xba57e6=_0x3130b6['querySelector']('.evidence-spoiler-field');_0x120966=_0x56347f,_0x38acfd[_0x34dcfc(0x9a)](_0x557a1c=>{const _0x2b6abe=_0x34dcfc;_0x557a1c[_0x2b6abe(0x18f)](_0x2b6abe(0x222))===_0x56347f?_0x557a1c[_0x2b6abe(0x11c)][_0x2b6abe(0xf3)](_0x2b6abe(0x238)):_0x557a1c[_0x2b6abe(0x11c)][_0x2b6abe(0x27f)](_0x2b6abe(0x238));}),_0x599273[_0x34dcfc(0x1b0)]=_0x465d76?_0x465d76[_0x34dcfc(0x1b0)]:'',_0x330b0b['checked']=_0xba57e6?_0xba57e6[_0x34dcfc(0x1a8)]:![];if(_0x56347f==='url'){_0x57c391['classList'][_0x34dcfc(0xf3)]('active');const _0x44ce63=_0x3130b6[_0x34dcfc(0xe4)](_0x34dcfc(0x24f));_0x14c045['checked']=_0x44ce63?_0x44ce63[_0x34dcfc(0x1a8)]:![];const _0xdfe55c=_0x3130b6[_0x34dcfc(0xe4)](_0x34dcfc(0x103)),_0x3049ce=_0x3130b6['querySelector'](_0x34dcfc(0x156));_0xdfe55c&&setTimeout(()=>{const _0x598811=_0x34dcfc,_0x39ca63=document[_0x598811(0xe4)](_0x598811(0x179));if(_0x39ca63)_0x39ca63[_0x598811(0x1b0)]=_0xdfe55c['value'];},0x64),_0x3049ce&&setTimeout(()=>{const _0x3391c1=_0x34dcfc,_0xe1037=document[_0x3391c1(0xe4)](_0x3391c1(0xed));if(_0xe1037)_0xe1037[_0x3391c1(0x1b0)]=_0x3049ce[_0x3391c1(0x1b0)];},0x64);}else _0x57c391[_0x34dcfc(0x11c)][_0x34dcfc(0x27f)](_0x34dcfc(0x1bb)),_0x14c045[_0x34dcfc(0x1a8)]=![];_0xc95cc8(),_0x358981=_0x3130b6,_0x28c18b['innerHTML']=_0x34dcfc(0x14c),_0xbd9afc['classList'][_0x34dcfc(0xf3)]('active');}function _0x2c7501(){const _0x2dc4d0=_0xa9890d,_0x3cea59=_0x161675['querySelectorAll'](_0x2dc4d0(0x19a));_0x29ee49=_0x3cea59[_0x2dc4d0(0x28e)],_0x3cea59[_0x2dc4d0(0x9a)]((_0x135d1c,_0x7817e8)=>{const _0x574e57=_0x2dc4d0,_0x425fcb=_0x135d1c[_0x574e57(0xe4)]('.evidence-number');_0x425fcb[_0x574e57(0x267)]=_0x7817e8+0x1+'.';});}const _0x16e3b7=document[_0xa9890d(0x7d)](_0xa9890d(0x1d2)),_0xa39657=document['getElementById'](_0xa9890d(0x168)),_0x56c822=document['getElementById'](_0xa9890d(0x194)),_0x34743e=document[_0xa9890d(0x7d)](_0xa9890d(0x1c9)),_0x2d42af=document[_0xa9890d(0x7d)](_0xa9890d(0x82)),_0x13ece2=document[_0xa9890d(0x7d)](_0xa9890d(0x20f)),_0x38127b=document[_0xa9890d(0x7d)]('reset-casefile-btn');_0x16e3b7[_0xa9890d(0x25f)]('click',()=>{const _0x6d9819=_0xa9890d,_0x2ca5f3=document['getElementById'](_0x6d9819(0x295))[_0x6d9819(0x1b0)],_0x4bd10e=document[_0x6d9819(0x7d)](_0x6d9819(0xdc))['value'],_0x2b7e7a=_0x4bd10e+'\x20'+_0x2ca5f3;_0x56c822[_0x6d9819(0x267)]=_0x2b7e7a;let _0x145dab=_0x6d9819(0xfa);_0x145dab+=_0x6d9819(0x1a0),_0x145dab+=_0x6d9819(0xdb),_0x145dab+=_0x6d9819(0x132),_0x145dab+=_0x6d9819(0x120),_0x145dab+=_0x6d9819(0x294);const _0x59aaf6=document[_0x6d9819(0x7d)]('time-date')[_0x6d9819(0x1b0)],_0x59a3c5=document[_0x6d9819(0x7d)](_0x6d9819(0x1fb))[_0x6d9819(0x1b0)],_0x5b47db=document[_0x6d9819(0x7d)](_0x6d9819(0x1f4))[_0x6d9819(0x1b0)],_0x354995=document['getElementById'](_0x6d9819(0x12e))[_0x6d9819(0x1b0)];_0x145dab+=_0x6d9819(0x261)+(_0x59aaf6||_0x6d9819(0xa4))+'\x0a',_0x145dab+=_0x6d9819(0x184)+(_0x59a3c5||_0x6d9819(0x192))+'\x0a',_0x145dab+='[b]Location:[/b]\x20'+(_0x5b47db||'')+'\x0a\x0a',_0x145dab+=_0x6d9819(0x144)+(_0x354995||_0x6d9819(0x195))+'\x0a',_0x145dab+='[/indent]\x0a\x0a',_0x145dab+='[size=105][b]Involved\x20Persons[/b][/size]\x0a',_0x145dab+=_0x6d9819(0x209);const _0x101204=_0x18f1b1[_0x6d9819(0xcc)](_0x6d9819(0x11f));_0x101204[_0x6d9819(0x9a)]((_0x1f9751,_0x7ae718)=>{const _0x39b3f2=_0x6d9819,_0x275213=_0x1f9751[_0x39b3f2(0xe4)](_0x39b3f2(0xeb)+(_0x7ae718+0x1))[_0x39b3f2(0x1b0)]||'Forename\x20Surname',_0x28e8f2=_0x1f9751[_0x39b3f2(0xe4)](_0x39b3f2(0x143)+(_0x7ae718+0x1))[_0x39b3f2(0x1b0)],_0xdb1ed1=_0x1f9751[_0x39b3f2(0xe4)](_0x39b3f2(0x15a)+(_0x7ae718+0x1))[_0x39b3f2(0x1b0)],_0x5ae6b7=_0x1f9751['querySelector'](_0x39b3f2(0x1b8)+(_0x7ae718+0x1))[_0x39b3f2(0x1b0)],_0x5ca115=_0x1f9751[_0x39b3f2(0xe4)]('#person-residence-'+(_0x7ae718+0x1))[_0x39b3f2(0x1b0)],_0x24e12e=_0x1f9751[_0x39b3f2(0xe4)](_0x39b3f2(0xf4)+(_0x7ae718+0x1))[_0x39b3f2(0x1b0)];let _0x810de2=_0xdb1ed1||'';_0x145dab+='[u]Person\x20#'+(_0x7ae718+0x1)+_0x39b3f2(0x1ff)+_0x275213+'[/u]\x0a',_0x145dab+=_0x39b3f2(0x1ab)+_0x28e8f2+'\x0a',_0x145dab+=_0x39b3f2(0x1e1)+_0x810de2+'\x0a',_0x145dab+='[b]Phone\x20Number:[/b]\x20'+_0x5ae6b7+'\x0a',_0x145dab+=_0x39b3f2(0x1b7)+_0x5ca115+'\x0a',_0x145dab+='[b]Relation\x20to\x20Incident:[/b]\x20'+_0x24e12e+'\x0a\x0a';}),_0x145dab+='[/indent]\x0a\x0a';const _0x49de4a=document['getElementById'](_0x6d9819(0x22e))[_0x6d9819(0x1b0)];_0x145dab+=_0x6d9819(0x88),_0x145dab+=_0x6d9819(0x209)+(_0x49de4a||_0x6d9819(0x11b))+_0x6d9819(0x25c),_0x145dab+=_0x6d9819(0xa8),_0x145dab+=_0x6d9819(0x21e);const _0x39e399=_0x161675[_0x6d9819(0xcc)](_0x6d9819(0x19a));_0x39e399['forEach'](_0xf30a24=>{const _0x5a2138=_0x6d9819,_0x577787=_0xf30a24['getAttribute'](_0x5a2138(0x222)),_0x9a03d=_0xf30a24[_0x5a2138(0xe4)](_0x5a2138(0x1d5))[_0x5a2138(0x1a8)],_0x17e3da=_0xf30a24[_0x5a2138(0xe4)](_0x5a2138(0x119)),_0x13cdda=_0x17e3da?_0x17e3da['value'][_0x5a2138(0x154)]():'';let _0x2dbf43='';switch(_0x577787){case'text':const _0x4a8455=_0xf30a24['querySelector'](_0x5a2138(0xe9))[_0x5a2138(0x1b0)];_0x2dbf43=_0x4a8455;break;case'image':const _0x564d22=_0xf30a24[_0x5a2138(0xcc)](_0x5a2138(0x148));let _0x136d6a='';_0x564d22[_0x5a2138(0x9a)](_0x379257=>{const _0x495c02=_0x5a2138;_0x379257[_0x495c02(0x1b0)][_0x495c02(0x154)]()&&(_0x136d6a+=_0x495c02(0x212)+_0x379257[_0x495c02(0x1b0)]+_0x495c02(0xb4));}),_0x2dbf43=_0x136d6a;break;case'url':const _0xa6f998=_0xf30a24[_0x5a2138(0xe4)]('.evidence-url')[_0x5a2138(0x1b0)],_0x1d8fed=_0xf30a24['querySelector'](_0x5a2138(0x156));_0x1d8fed&&_0x1d8fed[_0x5a2138(0x1b0)]?_0x2dbf43='[url='+_0xa6f998+']'+_0x1d8fed['value']+_0x5a2138(0x22b):_0x2dbf43='[url]'+_0xa6f998+_0x5a2138(0x22b);break;}let _0x1d4d8a='';_0x13cdda&&(_0x1d4d8a=_0x13cdda+':\x20'),_0x9a03d?_0x1d4d8a+=_0x5a2138(0x16e)+_0x2dbf43+_0x5a2138(0x15d):_0x1d4d8a+=_0x2dbf43,_0x145dab+='[*]\x20'+_0x1d4d8a+'\x0a';}),_0x145dab+=_0x6d9819(0x17d),_0x34743e[_0x6d9819(0x267)]=_0x145dab,_0xa39657[_0x6d9819(0x170)][_0x6d9819(0x1c4)]='block',_0xa39657[_0x6d9819(0x1dc)]({'behavior':'smooth'});}),_0x2d42af[_0xa9890d(0x25f)](_0xa9890d(0x15b),()=>{const _0x139dca=_0xa9890d;navigator[_0x139dca(0xb3)][_0x139dca(0x9f)](_0x56c822[_0x139dca(0x267)])[_0x139dca(0xcf)](()=>{_0x164ba5(_0x2d42af);})[_0x139dca(0xf2)](_0x7dc6dd=>{const _0x2435cd=_0x139dca;console[_0x2435cd(0x141)](_0x2435cd(0x110),_0x7dc6dd);});}),_0x13ece2['addEventListener'](_0xa9890d(0x15b),()=>{const _0x1cd5d8=_0xa9890d;navigator[_0x1cd5d8(0xb3)][_0x1cd5d8(0x9f)](_0x34743e[_0x1cd5d8(0x267)])['then'](()=>{_0x164ba5(_0x13ece2);})[_0x1cd5d8(0xf2)](_0x4a7fd0=>{console['error']('Failed\x20to\x20copy:\x20',_0x4a7fd0);});});function _0x164ba5(_0x46e060){const _0x35e761=_0xa9890d,_0x462521=_0x46e060[_0x35e761(0x199)];_0x46e060[_0x35e761(0x199)]=_0x35e761(0x18a),_0x46e060[_0x35e761(0x83)]=!![],setTimeout(()=>{const _0x11bf43=_0x35e761;_0x46e060[_0x11bf43(0x199)]=_0x462521,_0x46e060['disabled']=![];},0x7d0);}_0x38127b[_0xa9890d(0x25f)](_0xa9890d(0x15b),()=>{const _0x1ada80=_0xa9890d;if(confirm(_0x1ada80(0x113))){document['getElementById']('case-title')[_0x1ada80(0x1b0)]='',document['getElementById'](_0x1ada80(0xdc))['value']='',document[_0x1ada80(0x7d)](_0x1ada80(0x1e2))[_0x1ada80(0x1b0)]='',document['getElementById'](_0x1ada80(0x1fb))[_0x1ada80(0x1b0)]='',document[_0x1ada80(0x7d)](_0x1ada80(0x1f4))[_0x1ada80(0x1b0)]='',document[_0x1ada80(0x7d)](_0x1ada80(0x12e))['value']='',document[_0x1ada80(0x7d)](_0x1ada80(0x22e))[_0x1ada80(0x1b0)]='';const _0x3ad08b=_0x18f1b1[_0x1ada80(0xcc)]('.person-section');for(let _0x153253=0x1;_0x153253<_0x3ad08b[_0x1ada80(0x28e)];_0x153253++){_0x3ad08b[_0x153253][_0x1ada80(0x27f)]();}document[_0x1ada80(0x7d)](_0x1ada80(0x1a7))[_0x1ada80(0x1b0)]='',document[_0x1ada80(0x7d)](_0x1ada80(0xab))[_0x1ada80(0x1b0)]=_0x1ada80(0x20e),document[_0x1ada80(0x7d)](_0x1ada80(0x28b))[_0x1ada80(0x1b0)]='',document['getElementById']('person-phone-1')['value']='',document[_0x1ada80(0x7d)](_0x1ada80(0x2a5))[_0x1ada80(0x1b0)]='',document[_0x1ada80(0x7d)]('person-relation-1')[_0x1ada80(0x1b0)]='',_0x161675['innerHTML']='',_0x29ee49=0x0,_0xa39657[_0x1ada80(0x170)]['display']=_0x1ada80(0x298),alert('Form\x20has\x20been\x20reset.');}});}function initSupplementalReportGenerator(){const _0x200c98=_0x5d6fcd,_0x1df25f=document[_0x200c98(0x7d)](_0x200c98(0xd0)),_0x2a01eb=document['getElementById'](_0x200c98(0x1e7)),_0x35e82c=document['getElementById'](_0x200c98(0xc8)),_0x90fae2=document['querySelectorAll'](_0x200c98(0xd7)),_0x2fe56b=document[_0x200c98(0x7d)](_0x200c98(0x1f1)),_0x1e6ca0=document[_0x200c98(0x7d)](_0x200c98(0x197)),_0x2bcc5b=document[_0x200c98(0x7d)](_0x200c98(0x10c)),_0x12217d=document[_0x200c98(0x7d)]('add-evidence-confirm'),_0x54e028=document['getElementById'](_0x200c98(0x196)),_0x58ab07=document[_0x200c98(0x7d)](_0x200c98(0x234)),_0x7f8911=document['getElementById'](_0x200c98(0x203)),_0x546844=document[_0x200c98(0x7d)](_0x200c98(0xd2));let _0x44a53b='',_0x1d3519=0x0,_0x319896=null;_0x2a01eb['addEventListener'](_0x200c98(0x15b),()=>{const _0x50f4cb=_0x200c98;_0x35e82c[_0x50f4cb(0x11c)][_0x50f4cb(0xf3)](_0x50f4cb(0x1bb)),_0x44a53b='',_0x90fae2[_0x50f4cb(0x9a)](_0x23bdde=>_0x23bdde[_0x50f4cb(0x11c)][_0x50f4cb(0x27f)](_0x50f4cb(0x238))),_0x2fe56b['checked']=![],_0x1e6ca0[_0x50f4cb(0x1b0)]='',_0x2bcc5b['style'][_0x50f4cb(0x1c4)]=_0x50f4cb(0x298),_0x7f8911[_0x50f4cb(0x11c)][_0x50f4cb(0x27f)](_0x50f4cb(0x1bb)),_0x546844[_0x50f4cb(0x1a8)]=![],_0x319896=null,_0x12217d[_0x50f4cb(0x199)]=_0x50f4cb(0x1bc);});function _0x4c6a54(){const _0x1de87f=_0x200c98;_0x35e82c[_0x1de87f(0x11c)][_0x1de87f(0x27f)](_0x1de87f(0x1bb));}_0x58ab07['addEventListener'](_0x200c98(0x15b),_0x4c6a54),_0x54e028['addEventListener'](_0x200c98(0x15b),_0x4c6a54),_0x90fae2[_0x200c98(0x9a)](_0x2f5455=>{const _0x48118e=_0x200c98;_0x2f5455[_0x48118e(0x25f)](_0x48118e(0x15b),()=>{const _0x55b806=_0x48118e;_0x90fae2['forEach'](_0x433340=>_0x433340[_0x55b806(0x11c)][_0x55b806(0x27f)](_0x55b806(0x238))),_0x2f5455[_0x55b806(0x11c)][_0x55b806(0xf3)](_0x55b806(0x238)),_0x44a53b=_0x2f5455[_0x55b806(0x18f)]('data-type'),_0x44a53b==='url'?_0x7f8911[_0x55b806(0x11c)][_0x55b806(0xf3)](_0x55b806(0x1bb)):_0x7f8911['classList'][_0x55b806(0x27f)](_0x55b806(0x1bb)),_0x1afd6c();});}),_0x2fe56b[_0x200c98(0x25f)](_0x200c98(0x153),_0x1afd6c),_0x1e6ca0[_0x200c98(0x25f)](_0x200c98(0x9d),_0x1afd6c),_0x546844[_0x200c98(0x25f)](_0x200c98(0x153),_0x1afd6c);function _0x1afd6c(){const _0x2f7348=_0x200c98;if(!_0x44a53b){_0x2bcc5b[_0x2f7348(0x170)][_0x2f7348(0x1c4)]='none';return;}let _0x319ddf='';const _0x522607=_0x2fe56b['checked'],_0x4c6e3f=_0x1e6ca0[_0x2f7348(0x1b0)]['trim']();switch(_0x44a53b){case _0x2f7348(0xc5):_0x319ddf=_0x2f7348(0x1f2);break;case _0x2f7348(0x178):_0x319ddf=_0x2f7348(0xc0);break;case _0x2f7348(0x253):const _0x2c73f9=_0x546844[_0x2f7348(0x1a8)];_0x2c73f9?_0x319ddf=_0x2f7348(0x14d):_0x319ddf=_0x2f7348(0xa2);break;}let _0x1e10f5='';_0x4c6e3f&&(_0x1e10f5=_0x4c6e3f+':\x20'),_0x522607?_0x1e10f5+=_0x2f7348(0x16e)+_0x319ddf+_0x2f7348(0x121):_0x1e10f5+=_0x319ddf,_0x2bcc5b[_0x2f7348(0x267)]=_0x1e10f5,_0x2bcc5b[_0x2f7348(0x170)][_0x2f7348(0x1c4)]=_0x2f7348(0x135);}function _0x28391c(_0x5a1f64,_0x4dc553){const _0x20589c=_0x200c98,_0x1e63c2=_0x5a1f64[_0x20589c(0xe4)]('.url-text-input');_0x1e63c2&&(_0x4dc553?_0x1e63c2['classList'][_0x20589c(0xf3)]('active'):_0x1e63c2[_0x20589c(0x11c)][_0x20589c(0x27f)](_0x20589c(0x1bb)));}_0x12217d[_0x200c98(0x25f)]('click',()=>{const _0x363cae=_0x200c98;if(!_0x44a53b){alert(_0x363cae(0xa3));return;}if(_0x319896)_0x52383c(_0x319896);else{_0x1d3519++;const _0x32031f=document[_0x363cae(0x1f0)](_0x363cae(0x20b));_0x32031f['className']=_0x363cae(0x126),_0x32031f[_0x363cae(0x246)](_0x363cae(0x222),_0x44a53b),_0x5e5a3f(_0x32031f,_0x44a53b,_0x2fe56b['checked'],_0x1e6ca0['value']['trim'](),_0x546844[_0x363cae(0x1a8)]),_0x1df25f[_0x363cae(0xc4)](_0x32031f),_0x11c027(_0x32031f);}_0x4c6a54();});function _0x5e5a3f(_0x530a1c,_0x287bb8,_0x78055e,_0x33e56c,_0x4759db){const _0x588768=_0x200c98;let _0xdb3ccb='';switch(_0x287bb8){case'text':_0xdb3ccb=_0x588768(0x211)+_0x33e56c+_0x588768(0x1ba);break;case _0x588768(0x178):_0xdb3ccb=_0x588768(0x23e)+_0x33e56c+_0x588768(0x19b);break;case'url':_0xdb3ccb=_0x588768(0x109)+_0x33e56c+_0x588768(0x27c)+(_0x4759db?'checked':'')+_0x588768(0x87)+(_0x4759db?_0x588768(0x1bb):'')+_0x588768(0x299);break;}_0x530a1c[_0x588768(0x199)]=_0x588768(0x28c)+_0x1d3519+_0x588768(0x29f)+(_0x287bb8[_0x588768(0x107)](0x0)['toUpperCase']()+_0x287bb8[_0x588768(0x125)](0x1))+_0x588768(0x1c3)+(_0x78055e?_0x588768(0x1a8):'')+_0x588768(0x131)+_0xdb3ccb+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20';}function _0x52383c(_0x2d2ea4){const _0x53f1cc=_0x200c98,_0x2fa6cf=_0x2d2ea4[_0x53f1cc(0x18f)](_0x53f1cc(0x222)),_0x3214be=_0x2fe56b[_0x53f1cc(0x1a8)],_0x4b2e41=_0x1e6ca0['value'][_0x53f1cc(0x154)](),_0xb484da=_0x546844[_0x53f1cc(0x1a8)];_0x5e5a3f(_0x2d2ea4,_0x2fa6cf,_0x3214be,_0x4b2e41,_0xb484da),_0x11c027(_0x2d2ea4);}function _0x11c027(_0x4da8e){const _0x58f946=_0x200c98,_0x65b3b5=_0x4da8e[_0x58f946(0xe4)](_0x58f946(0x106));_0x65b3b5[_0x58f946(0x25f)]('click',()=>{_0x4da8e['remove'](),_0x1a5663();});const _0x185ea4=_0x4da8e[_0x58f946(0xe4)](_0x58f946(0x176));_0x185ea4[_0x58f946(0x25f)](_0x58f946(0x15b),()=>{_0x54e6a7(_0x4da8e);});if(_0x4da8e['getAttribute'](_0x58f946(0x222))===_0x58f946(0x253)){const _0x3703ee=_0x4da8e['querySelector'](_0x58f946(0x24f));_0x3703ee[_0x58f946(0x25f)](_0x58f946(0x153),()=>{const _0x38c2db=_0x58f946;_0x28391c(_0x4da8e,_0x3703ee[_0x38c2db(0x1a8)]);});}if(_0x4da8e[_0x58f946(0x18f)](_0x58f946(0x222))===_0x58f946(0x178)){const _0x57e56a=_0x4da8e[_0x58f946(0xe4)](_0x58f946(0x241)),_0x4e9c5c=_0x4da8e[_0x58f946(0xe4)]('.image-urls-container');_0x57e56a[_0x58f946(0x25f)](_0x58f946(0x15b),()=>{const _0x304124=_0x58f946,_0x29ebe0=document['createElement'](_0x304124(0x20b));_0x29ebe0[_0x304124(0x161)]=_0x304124(0x286),_0x29ebe0[_0x304124(0x199)]=_0x304124(0x94),_0x4e9c5c[_0x304124(0xc4)](_0x29ebe0);const _0x58088c=_0x29ebe0['querySelector'](_0x304124(0xbe));_0x58088c[_0x304124(0x25f)]('click',()=>{const _0x185090=_0x304124;_0x29ebe0[_0x185090(0x27f)]();});});const _0x4f4bf7=_0x4da8e[_0x58f946(0xcc)]('.remove-image-btn');_0x4f4bf7[_0x58f946(0x9a)](_0x5551dd=>{_0x5551dd['addEventListener']('click',function(){const _0x9fbf6d=_0x586e;this[_0x9fbf6d(0x151)]('.image-url-line')[_0x9fbf6d(0x27f)]();});});}}function _0x54e6a7(_0x186f21){const _0x573180=_0x200c98,_0x23640f=_0x186f21[_0x573180(0x18f)](_0x573180(0x222)),_0x493324=_0x186f21[_0x573180(0xe4)]('.evidence-title-field'),_0x5d828a=_0x186f21[_0x573180(0xe4)](_0x573180(0x1d5));_0x44a53b=_0x23640f,_0x90fae2['forEach'](_0x4c93e3=>{const _0xc57763=_0x573180;_0x4c93e3[_0xc57763(0x18f)]('data-type')===_0x23640f?_0x4c93e3['classList'][_0xc57763(0xf3)](_0xc57763(0x238)):_0x4c93e3[_0xc57763(0x11c)]['remove']('selected');}),_0x1e6ca0[_0x573180(0x1b0)]=_0x493324?_0x493324[_0x573180(0x1b0)]:'',_0x2fe56b['checked']=_0x5d828a?_0x5d828a[_0x573180(0x1a8)]:![];if(_0x23640f===_0x573180(0x253)){_0x7f8911['classList'][_0x573180(0xf3)]('active');const _0x445aeb=_0x186f21[_0x573180(0xe4)](_0x573180(0x24f));_0x546844[_0x573180(0x1a8)]=_0x445aeb?_0x445aeb[_0x573180(0x1a8)]:![];const _0x1a6b57=_0x186f21[_0x573180(0xe4)](_0x573180(0x103)),_0xde8043=_0x186f21[_0x573180(0xe4)](_0x573180(0x156));_0x1a6b57&&setTimeout(()=>{const _0x52f6cf=_0x573180,_0x111d14=document['querySelector'](_0x52f6cf(0x179));if(_0x111d14)_0x111d14[_0x52f6cf(0x1b0)]=_0x1a6b57[_0x52f6cf(0x1b0)];},0x64),_0xde8043&&setTimeout(()=>{const _0x43becf=_0x573180,_0x5b680f=document[_0x43becf(0xe4)](_0x43becf(0xed));if(_0x5b680f)_0x5b680f[_0x43becf(0x1b0)]=_0xde8043[_0x43becf(0x1b0)];},0x64);}else _0x7f8911[_0x573180(0x11c)][_0x573180(0x27f)]('active'),_0x546844['checked']=![];_0x1afd6c(),_0x319896=_0x186f21,_0x12217d[_0x573180(0x199)]=_0x573180(0x14c),_0x35e82c[_0x573180(0x11c)][_0x573180(0xf3)](_0x573180(0x1bb));}function _0x1a5663(){const _0x22c2cd=_0x200c98,_0x2c4948=_0x1df25f[_0x22c2cd(0xcc)](_0x22c2cd(0x19a));_0x1d3519=_0x2c4948[_0x22c2cd(0x28e)],_0x2c4948[_0x22c2cd(0x9a)]((_0x1750e9,_0x557d55)=>{const _0x28428f=_0x22c2cd,_0x25c708=_0x1750e9['querySelector'](_0x28428f(0x138));_0x25c708[_0x28428f(0x267)]=_0x557d55+0x1+'.';});}const _0x3eb31c=document[_0x200c98(0x7d)]('generate-supplemental-btn'),_0x445128=document[_0x200c98(0x7d)](_0x200c98(0x1ec)),_0x3f0bac=document[_0x200c98(0x7d)](_0x200c98(0x22f)),_0x260c95=document['getElementById'](_0x200c98(0x1cf)),_0x152586=document[_0x200c98(0x7d)]('reset-supplemental-btn');_0x3eb31c[_0x200c98(0x25f)](_0x200c98(0x15b),()=>{const _0x359ec8=_0x200c98,_0x40c4df=document['getElementById'](_0x359ec8(0x123))[_0x359ec8(0x1b0)],_0x14d8c2=document['getElementById'](_0x359ec8(0x1bd))['value'];let _0x2051c3=_0x359ec8(0xfa);_0x2051c3+=_0x359ec8(0x1a0),_0x2051c3+='[size=125][b]SHERIFF\x27S\x20DEPARTMENT\x0aCOUNTY\x20OF\x20LOS\x20SANTOS[/b]\x0a[i]\x22A\x20Tradition\x20of\x20Service\x20Since\x201850\x22[/i][/size]\x0a\x0a',_0x2051c3+=_0x359ec8(0x263),_0x2051c3+=_0x359ec8(0x221),_0x2051c3+=_0x359ec8(0x88),_0x2051c3+=_0x359ec8(0x209)+(_0x40c4df||_0x359ec8(0x11b))+_0x359ec8(0x25c),_0x2051c3+=_0x359ec8(0xa8),_0x2051c3+=_0x359ec8(0x21e);const _0x4e3e46=_0x1df25f[_0x359ec8(0xcc)](_0x359ec8(0x19a));_0x4e3e46[_0x359ec8(0x28e)]===0x0?_0x2051c3+=_0x359ec8(0x8e):_0x4e3e46['forEach'](_0x224e23=>{const _0x42d1b2=_0x359ec8,_0x7044ad=_0x224e23[_0x42d1b2(0x18f)](_0x42d1b2(0x222)),_0x4b3abd=_0x224e23[_0x42d1b2(0xe4)](_0x42d1b2(0x1d5))[_0x42d1b2(0x1a8)],_0x543846=_0x224e23[_0x42d1b2(0xe4)](_0x42d1b2(0x119)),_0x5857ff=_0x543846?_0x543846['value'][_0x42d1b2(0x154)]():'';let _0x2f8ec5='';switch(_0x7044ad){case'text':const _0x3be09a=_0x224e23[_0x42d1b2(0xe4)](_0x42d1b2(0xe9))['value'];_0x2f8ec5=_0x3be09a;break;case _0x42d1b2(0x178):const _0x351d86=_0x224e23[_0x42d1b2(0xcc)](_0x42d1b2(0x148));let _0x2fb250='';_0x351d86[_0x42d1b2(0x9a)](_0x3a02cb=>{const _0x253e32=_0x42d1b2;_0x3a02cb[_0x253e32(0x1b0)]['trim']()&&(_0x2fb250+=_0x253e32(0x212)+_0x3a02cb[_0x253e32(0x1b0)]+_0x253e32(0xb4));}),_0x2f8ec5=_0x2fb250;break;case _0x42d1b2(0x253):const _0x458511=_0x224e23[_0x42d1b2(0xe4)](_0x42d1b2(0x103))['value'],_0x30bf9a=_0x224e23['querySelector']('.evidence-url-text');_0x30bf9a&&_0x30bf9a['value']?_0x2f8ec5=_0x42d1b2(0x191)+_0x458511+']'+_0x30bf9a[_0x42d1b2(0x1b0)]+_0x42d1b2(0x22b):_0x2f8ec5=_0x42d1b2(0x1ce)+_0x458511+_0x42d1b2(0x22b);break;}let _0x37b791='';_0x5857ff&&(_0x37b791=_0x5857ff+':\x20'),_0x4b3abd?_0x37b791+=_0x42d1b2(0x16e)+_0x2f8ec5+_0x42d1b2(0x15d):_0x37b791+=_0x2f8ec5,_0x2051c3+='[*]\x20'+_0x37b791+'\x0a';}),_0x2051c3+=_0x359ec8(0x95),_0x2051c3+=_0x359ec8(0x247),_0x2051c3+=_0x359ec8(0x209)+(_0x14d8c2||_0x359ec8(0x99))+'[/indent]',_0x3f0bac['textContent']=_0x2051c3,_0x445128[_0x359ec8(0x170)][_0x359ec8(0x1c4)]=_0x359ec8(0x135),_0x445128['scrollIntoView']({'behavior':_0x359ec8(0x167)});}),_0x260c95[_0x200c98(0x25f)](_0x200c98(0x15b),()=>{const _0x2921c4=_0x200c98;navigator[_0x2921c4(0xb3)][_0x2921c4(0x9f)](_0x3f0bac[_0x2921c4(0x267)])[_0x2921c4(0xcf)](()=>{_0x1380ea(_0x260c95);})[_0x2921c4(0xf2)](_0x379fca=>{const _0xc6f494=_0x2921c4;console[_0xc6f494(0x141)](_0xc6f494(0x110),_0x379fca);});});function _0x1380ea(_0x5b1e30){const _0x5920ec=_0x200c98,_0x97895=_0x5b1e30[_0x5920ec(0x199)];_0x5b1e30[_0x5920ec(0x199)]=_0x5920ec(0x18a),_0x5b1e30[_0x5920ec(0x83)]=!![],setTimeout(()=>{const _0xb6c8ce=_0x5920ec;_0x5b1e30['innerHTML']=_0x97895,_0x5b1e30[_0xb6c8ce(0x83)]=![];},0x7d0);}_0x152586[_0x200c98(0x25f)](_0x200c98(0x15b),()=>{const _0x5efea8=_0x200c98;confirm('Are\x20you\x20sure\x20you\x20want\x20to\x20reset\x20the\x20form?\x20All\x20data\x20will\x20be\x20lost.')&&(document['getElementById'](_0x5efea8(0x123))['value']='',document['getElementById']('supplemental-filed-by')[_0x5efea8(0x1b0)]='',_0x1df25f[_0x5efea8(0x199)]='',_0x1d3519=0x0,_0x445128[_0x5efea8(0x170)][_0x5efea8(0x1c4)]=_0x5efea8(0x298),alert('Form\x20has\x20been\x20reset.'));});}function initStolenVehicleReportGenerator(){const _0x45b4ad=_0x5d6fcd,_0x3a6512=document[_0x45b4ad(0x7d)](_0x45b4ad(0x1e3)),_0x393757=document[_0x45b4ad(0x7d)](_0x45b4ad(0x11e));_0x3a6512[_0x45b4ad(0x25f)](_0x45b4ad(0x153),()=>{const _0x42e01c=_0x45b4ad;_0x3a6512[_0x42e01c(0x1b0)]==='Yes'?_0x393757[_0x42e01c(0x170)][_0x42e01c(0x1c4)]=_0x42e01c(0x135):_0x393757[_0x42e01c(0x170)]['display']=_0x42e01c(0x298);});const _0x178d9b=document[_0x45b4ad(0x7d)]('sv-evidence-container'),_0xdca7ef=document['getElementById']('sv-add-evidence-btn'),_0x192a4d=document[_0x45b4ad(0x7d)]('evidence-modal'),_0x3ea95d=document[_0x45b4ad(0xcc)](_0x45b4ad(0xd7)),_0x341b5b=document[_0x45b4ad(0x7d)](_0x45b4ad(0x1f1)),_0x3127f7=document[_0x45b4ad(0x7d)](_0x45b4ad(0x197)),_0x1101a5=document[_0x45b4ad(0x7d)]('evidence-preview'),_0x36eeb7=document[_0x45b4ad(0x7d)]('add-evidence-confirm'),_0x3254f4=document[_0x45b4ad(0x7d)](_0x45b4ad(0x196)),_0x6f456=document[_0x45b4ad(0x7d)](_0x45b4ad(0x234)),_0x70361d=document['getElementById']('url-options'),_0x455894=document['getElementById'](_0x45b4ad(0xd2));let _0x54133d='',_0x290b3e=0x0,_0x4eb49a=null;_0xdca7ef[_0x45b4ad(0x25f)](_0x45b4ad(0x15b),()=>{const _0x4693f1=_0x45b4ad;_0x192a4d['classList'][_0x4693f1(0xf3)](_0x4693f1(0x1bb)),_0x54133d='',_0x3ea95d[_0x4693f1(0x9a)](_0x59d7d0=>_0x59d7d0['classList'][_0x4693f1(0x27f)]('selected')),_0x341b5b[_0x4693f1(0x1a8)]=![],_0x3127f7[_0x4693f1(0x1b0)]='',_0x1101a5['style'][_0x4693f1(0x1c4)]=_0x4693f1(0x298),_0x70361d['classList'][_0x4693f1(0x27f)](_0x4693f1(0x1bb)),_0x455894[_0x4693f1(0x1a8)]=![],_0x4eb49a=null,_0x36eeb7[_0x4693f1(0x199)]='<i\x20class=\x22fas\x20fa-plus\x22></i>\x20Add\x20Evidence';});function _0xdfe133(){const _0x46901e=_0x45b4ad;_0x192a4d['classList'][_0x46901e(0x27f)]('active');}_0x6f456[_0x45b4ad(0x25f)]('click',_0xdfe133),_0x3254f4[_0x45b4ad(0x25f)](_0x45b4ad(0x15b),_0xdfe133),_0x3ea95d[_0x45b4ad(0x9a)](_0x2f2263=>{const _0x46cae4=_0x45b4ad;_0x2f2263[_0x46cae4(0x25f)](_0x46cae4(0x15b),()=>{const _0x23a554=_0x46cae4;_0x3ea95d[_0x23a554(0x9a)](_0x52d5f0=>_0x52d5f0[_0x23a554(0x11c)]['remove']('selected')),_0x2f2263['classList'][_0x23a554(0xf3)]('selected'),_0x54133d=_0x2f2263[_0x23a554(0x18f)](_0x23a554(0x222)),_0x54133d===_0x23a554(0x253)?_0x70361d['classList']['add']('active'):_0x70361d[_0x23a554(0x11c)]['remove']('active'),_0xb62382();});}),_0x341b5b['addEventListener'](_0x45b4ad(0x153),_0xb62382),_0x3127f7[_0x45b4ad(0x25f)]('input',_0xb62382),_0x455894[_0x45b4ad(0x25f)](_0x45b4ad(0x153),_0xb62382);function _0xb62382(){const _0x2a7b93=_0x45b4ad;if(!_0x54133d){_0x1101a5[_0x2a7b93(0x170)][_0x2a7b93(0x1c4)]='none';return;}let _0x1e3408='';const _0x347fa6=_0x341b5b[_0x2a7b93(0x1a8)],_0x3d3c58=_0x3127f7[_0x2a7b93(0x1b0)][_0x2a7b93(0x154)]();switch(_0x54133d){case'text':_0x1e3408=_0x2a7b93(0x1f2);break;case _0x2a7b93(0x178):_0x1e3408=_0x2a7b93(0xc0);break;case _0x2a7b93(0x253):const _0x1511a9=_0x455894['checked'];_0x1511a9?_0x1e3408=_0x2a7b93(0x14d):_0x1e3408='[url]https://example.com[/url]';break;}let _0x11548b='';_0x3d3c58&&(_0x11548b=_0x3d3c58+':\x20'),_0x347fa6?_0x11548b+='[spoiler]\x0a'+_0x1e3408+'\x0a[/spoiler]':_0x11548b+=_0x1e3408,_0x1101a5[_0x2a7b93(0x267)]=_0x11548b,_0x1101a5['style'][_0x2a7b93(0x1c4)]='block';}function _0x2c13ee(_0x234939,_0x4e11dc){const _0x3221b4=_0x45b4ad,_0x3abfef=_0x234939[_0x3221b4(0xe4)]('.url-text-input');_0x3abfef&&(_0x4e11dc?_0x3abfef[_0x3221b4(0x11c)]['add'](_0x3221b4(0x1bb)):_0x3abfef['classList']['remove'](_0x3221b4(0x1bb)));}_0x36eeb7[_0x45b4ad(0x25f)](_0x45b4ad(0x15b),()=>{const _0x1064ad=_0x45b4ad;if(!_0x54133d){alert(_0x1064ad(0xa3));return;}if(_0x4eb49a)_0x5dd2b4(_0x4eb49a);else{_0x290b3e++;const _0x4c93f5=document[_0x1064ad(0x1f0)](_0x1064ad(0x20b));_0x4c93f5[_0x1064ad(0x161)]='evidence-item',_0x4c93f5[_0x1064ad(0x246)](_0x1064ad(0x222),_0x54133d),_0x1fd4d6(_0x4c93f5,_0x54133d,_0x341b5b[_0x1064ad(0x1a8)],_0x3127f7[_0x1064ad(0x1b0)][_0x1064ad(0x154)](),_0x455894['checked']),_0x178d9b[_0x1064ad(0xc4)](_0x4c93f5),_0x2fc2b1(_0x4c93f5);}_0xdfe133();});function _0x1fd4d6(_0x326276,_0x28df99,_0x2d0141,_0x174fe7,_0x4a13a7){const _0x17af0d=_0x45b4ad;let _0x412652='';switch(_0x28df99){case _0x17af0d(0xc5):_0x412652=_0x17af0d(0x211)+_0x174fe7+_0x17af0d(0x1ba);break;case _0x17af0d(0x178):_0x412652=_0x17af0d(0x23e)+_0x174fe7+_0x17af0d(0x19b);break;case _0x17af0d(0x253):_0x412652='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-title-input\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-title-field\x22\x20placeholder=\x22Link\x20Title\x20(Optional)\x22\x20value=\x22'+_0x174fe7+_0x17af0d(0x27c)+(_0x4a13a7?_0x17af0d(0x1a8):'')+_0x17af0d(0x87)+(_0x4a13a7?_0x17af0d(0x1bb):'')+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-url-text\x22\x20placeholder=\x22Link\x20Text\x22\x20value=\x22\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';break;}_0x326276['innerHTML']=_0x17af0d(0x28c)+_0x290b3e+_0x17af0d(0x29f)+(_0x28df99[_0x17af0d(0x107)](0x0)['toUpperCase']()+_0x28df99[_0x17af0d(0x125)](0x1))+_0x17af0d(0x1c3)+(_0x2d0141?_0x17af0d(0x1a8):'')+_0x17af0d(0x131)+_0x412652+_0x17af0d(0x28a);}function _0x5dd2b4(_0xc0f78e){const _0x2078fa=_0x45b4ad,_0x235235=_0xc0f78e[_0x2078fa(0x18f)]('data-type'),_0x3790cf=_0x341b5b[_0x2078fa(0x1a8)],_0x1c2fac=_0x3127f7[_0x2078fa(0x1b0)][_0x2078fa(0x154)](),_0x34f37d=_0x455894['checked'];_0x1fd4d6(_0xc0f78e,_0x235235,_0x3790cf,_0x1c2fac,_0x34f37d),_0x2fc2b1(_0xc0f78e);}function _0x2fc2b1(_0x5259ff){const _0x5cff79=_0x45b4ad,_0x1c18a4=_0x5259ff[_0x5cff79(0xe4)](_0x5cff79(0x106));_0x1c18a4[_0x5cff79(0x25f)](_0x5cff79(0x15b),()=>{const _0x58f954=_0x5cff79;_0x5259ff[_0x58f954(0x27f)](),_0xb43c4e();});const _0x534dea=_0x5259ff[_0x5cff79(0xe4)](_0x5cff79(0x176));_0x534dea['addEventListener']('click',()=>{_0x4a2a3d(_0x5259ff);});if(_0x5259ff[_0x5cff79(0x18f)](_0x5cff79(0x222))===_0x5cff79(0x253)){const _0x38d424=_0x5259ff[_0x5cff79(0xe4)](_0x5cff79(0x24f));_0x38d424[_0x5cff79(0x25f)](_0x5cff79(0x153),()=>{const _0x3fcee3=_0x5cff79;_0x2c13ee(_0x5259ff,_0x38d424[_0x3fcee3(0x1a8)]);});}if(_0x5259ff[_0x5cff79(0x18f)]('data-type')==='image'){const _0x36f2d8=_0x5259ff['querySelector']('.add-image-btn'),_0x46286a=_0x5259ff[_0x5cff79(0xe4)](_0x5cff79(0xfe));_0x36f2d8[_0x5cff79(0x25f)](_0x5cff79(0x15b),()=>{const _0xfed5cb=_0x5cff79,_0x11ac68=document[_0xfed5cb(0x1f0)](_0xfed5cb(0x20b));_0x11ac68['className']='image-url-line',_0x11ac68[_0xfed5cb(0x199)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-image-url\x22\x20placeholder=\x22Image\x20URL\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line-actions\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22remove-image-btn\x22><i\x20class=\x22fas\x20fa-trash\x22></i></button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',_0x46286a[_0xfed5cb(0xc4)](_0x11ac68);const _0x30fb59=_0x11ac68['querySelector'](_0xfed5cb(0xbe));_0x30fb59[_0xfed5cb(0x25f)]('click',()=>{const _0xec7d7c=_0xfed5cb;_0x11ac68[_0xec7d7c(0x27f)]();});});const _0x5f9f84=_0x5259ff['querySelectorAll'](_0x5cff79(0xbe));_0x5f9f84['forEach'](_0x1df78d=>{const _0x124aa5=_0x5cff79;_0x1df78d['addEventListener'](_0x124aa5(0x15b),function(){const _0x3b5b5d=_0x124aa5;this[_0x3b5b5d(0x151)](_0x3b5b5d(0x218))['remove']();});});}}function _0x4a2a3d(_0x23e458){const _0x20b2b9=_0x45b4ad,_0x3f1418=_0x23e458['getAttribute']('data-type'),_0x4790c2=_0x23e458[_0x20b2b9(0xe4)](_0x20b2b9(0x119)),_0x5af817=_0x23e458[_0x20b2b9(0xe4)](_0x20b2b9(0x1d5));_0x54133d=_0x3f1418,_0x3ea95d[_0x20b2b9(0x9a)](_0x1cae8d=>{const _0x4ca3a1=_0x20b2b9;_0x1cae8d['getAttribute'](_0x4ca3a1(0x222))===_0x3f1418?_0x1cae8d[_0x4ca3a1(0x11c)]['add'](_0x4ca3a1(0x238)):_0x1cae8d[_0x4ca3a1(0x11c)][_0x4ca3a1(0x27f)](_0x4ca3a1(0x238));}),_0x3127f7[_0x20b2b9(0x1b0)]=_0x4790c2?_0x4790c2['value']:'',_0x341b5b[_0x20b2b9(0x1a8)]=_0x5af817?_0x5af817[_0x20b2b9(0x1a8)]:![];if(_0x3f1418===_0x20b2b9(0x253)){_0x70361d[_0x20b2b9(0x11c)][_0x20b2b9(0xf3)](_0x20b2b9(0x1bb));const _0x1d9c6e=_0x23e458['querySelector'](_0x20b2b9(0x24f));_0x455894[_0x20b2b9(0x1a8)]=_0x1d9c6e?_0x1d9c6e['checked']:![];const _0x1a669b=_0x23e458[_0x20b2b9(0xe4)](_0x20b2b9(0x103)),_0x1a1a8a=_0x23e458['querySelector'](_0x20b2b9(0x156));_0x1a669b&&setTimeout(()=>{const _0x16cc99=_0x20b2b9,_0x29e118=document[_0x16cc99(0xe4)](_0x16cc99(0x179));if(_0x29e118)_0x29e118['value']=_0x1a669b[_0x16cc99(0x1b0)];},0x64),_0x1a1a8a&&setTimeout(()=>{const _0x1658af=_0x20b2b9,_0x18f6b5=document[_0x1658af(0xe4)](_0x1658af(0xed));if(_0x18f6b5)_0x18f6b5[_0x1658af(0x1b0)]=_0x1a1a8a[_0x1658af(0x1b0)];},0x64);}else _0x70361d[_0x20b2b9(0x11c)][_0x20b2b9(0x27f)](_0x20b2b9(0x1bb)),_0x455894['checked']=![];_0xb62382(),_0x4eb49a=_0x23e458,_0x36eeb7[_0x20b2b9(0x199)]='<i\x20class=\x22fas\x20fa-save\x22></i>\x20Update\x20Evidence',_0x192a4d[_0x20b2b9(0x11c)][_0x20b2b9(0xf3)](_0x20b2b9(0x1bb));}function _0xb43c4e(){const _0x652a5c=_0x45b4ad,_0x43ef55=_0x178d9b['querySelectorAll'](_0x652a5c(0x19a));_0x290b3e=_0x43ef55[_0x652a5c(0x28e)],_0x43ef55[_0x652a5c(0x9a)]((_0x3527ea,_0x3a869e)=>{const _0x2d272d=_0x652a5c,_0x1e7936=_0x3527ea[_0x2d272d(0xe4)](_0x2d272d(0x138));_0x1e7936[_0x2d272d(0x267)]=_0x3a869e+0x1+'.';});}const _0x31fe39=document[_0x45b4ad(0x7d)]('sv-generate-btn'),_0x2f69e1=document['getElementById'](_0x45b4ad(0x189)),_0x52d056=document[_0x45b4ad(0x7d)]('sv-title-output'),_0x2ea361=document['getElementById']('sv-bbcode-output'),_0x28d73e=document['getElementById'](_0x45b4ad(0x1d6)),_0x48dbab=document[_0x45b4ad(0x7d)](_0x45b4ad(0x16f)),_0x12fc6c=document[_0x45b4ad(0x7d)](_0x45b4ad(0x16a));_0x31fe39[_0x45b4ad(0x25f)](_0x45b4ad(0x15b),()=>{const _0x5f25e5=_0x45b4ad,_0x476251=document['getElementById'](_0x5f25e5(0x1bf))['value'],_0x2f1a73=document[_0x5f25e5(0x7d)](_0x5f25e5(0x278))[_0x5f25e5(0x1b0)],_0x4be323=document[_0x5f25e5(0x7d)]('sv-location')[_0x5f25e5(0x1b0)],_0x3d0814=document[_0x5f25e5(0x7d)](_0x5f25e5(0x250))['value'],_0x17e034=document['getElementById'](_0x5f25e5(0x79))[_0x5f25e5(0x1b0)],_0xaa4fa1=document['getElementById'](_0x5f25e5(0x7f))[_0x5f25e5(0x1b0)],_0x4b6396=document[_0x5f25e5(0x7d)](_0x5f25e5(0xa5))[_0x5f25e5(0x1b0)],_0x576327=document['getElementById']('sv-narrative')['value'],_0xc63f67=document['getElementById']('sv-victim-statement')[_0x5f25e5(0x1b0)],_0x2e9a6d=document[_0x5f25e5(0x7d)](_0x5f25e5(0x257))[_0x5f25e5(0x1b0)],_0x156a23=document[_0x5f25e5(0x7d)](_0x5f25e5(0x1e3))[_0x5f25e5(0x1b0)],_0x46df37=document[_0x5f25e5(0x7d)](_0x5f25e5(0x290))[_0x5f25e5(0x1b0)],_0x58ef61=document[_0x5f25e5(0x7d)]('sv-fingerprints')[_0x5f25e5(0x1b0)],_0x3a70ca=document['getElementById'](_0x5f25e5(0x186))[_0x5f25e5(0x1b0)],_0x1b3311=document[_0x5f25e5(0x7d)](_0x5f25e5(0xad))[_0x5f25e5(0x1b0)],_0x286c6b=document[_0x5f25e5(0x7d)](_0x5f25e5(0x24e))['value'],_0x11455f=_0x476251||'[PLATE]\x20Vehicle\x20Make\x20Model\x20(Status)';_0x52d056['textContent']=_0x11455f;let _0x2e1b8e='[divbox=transparent]\x0a';_0x2e1b8e+=_0x5f25e5(0x1c5),_0x2e1b8e+=_0x5f25e5(0x158),_0x2e1b8e+=_0x5f25e5(0x1d8),_0x2e1b8e+=_0x5f25e5(0x158),_0x2e1b8e+=_0x5f25e5(0xc1),_0x2e1b8e+=_0x5f25e5(0x158),_0x2e1b8e+=_0x5f25e5(0xf0),_0x2e1b8e+=_0x5f25e5(0x130),_0x2e1b8e+=_0x5f25e5(0x1ed),_0x2e1b8e+='[b]Time\x20&\x20Date:[/b]\x20'+(_0x2f1a73||_0x5f25e5(0xf8))+'\x0a',_0x2e1b8e+=_0x5f25e5(0x1d7)+(_0x4be323||_0x5f25e5(0xf6))+'\x0a',_0x2e1b8e+=_0x5f25e5(0xee)+(_0x3d0814||_0x5f25e5(0x213))+'\x0a',_0x2e1b8e+=_0x5f25e5(0xc3)+(_0x17e034||'PLATE')+'\x0a',_0x2e1b8e+='[b]Owner:[/b]\x20'+(_0xaa4fa1||_0x5f25e5(0x118))+'\x0a',_0x2e1b8e+=_0x5f25e5(0x137)+(_0x4b6396||'#XXXX/Self-Initiated')+'\x0a',_0x2e1b8e+=_0x5f25e5(0x29e),_0x2e1b8e+=_0x5f25e5(0x28f)+(_0x576327||_0x5f25e5(0xe2))+'\x0a',_0x2e1b8e+=_0x5f25e5(0xaf),_0x2e1b8e+=_0x5f25e5(0x200),_0x2e1b8e+=_0x5f25e5(0x28f)+(_0xc63f67||_0x5f25e5(0x282))+'\x0a',_0x2e1b8e+='[/list]\x0a',_0x2e1b8e+='[b]Evidence:[/b]\x0a',_0x2e1b8e+=_0x5f25e5(0x108);const _0x5a0021=_0x178d9b[_0x5f25e5(0xcc)](_0x5f25e5(0x19a));_0x5a0021['length']>0x0?_0x5a0021['forEach'](_0x4243ae=>{const _0x32d78b=_0x5f25e5,_0x4d2834=_0x4243ae[_0x32d78b(0x18f)]('data-type'),_0x53ef1d=_0x4243ae['querySelector'](_0x32d78b(0x1d5))[_0x32d78b(0x1a8)],_0x46ea61=_0x4243ae['querySelector'](_0x32d78b(0x119)),_0x3c8071=_0x46ea61?_0x46ea61['value'][_0x32d78b(0x154)]():'';let _0x13824c='';switch(_0x4d2834){case _0x32d78b(0xc5):const _0x582d7b=_0x4243ae[_0x32d78b(0xe4)](_0x32d78b(0xe9))[_0x32d78b(0x1b0)];_0x13824c=_0x582d7b;break;case _0x32d78b(0x178):const _0xe74e65=_0x4243ae[_0x32d78b(0xcc)](_0x32d78b(0x148));let _0x5726b4='';_0xe74e65[_0x32d78b(0x9a)](_0x4e1c27=>{const _0xd12bb=_0x32d78b;_0x4e1c27['value'][_0xd12bb(0x154)]()&&(_0x5726b4+=_0xd12bb(0x212)+_0x4e1c27[_0xd12bb(0x1b0)]+_0xd12bb(0xb4));}),_0x13824c=_0x5726b4;break;case'url':const _0x285674=_0x4243ae[_0x32d78b(0xe4)](_0x32d78b(0x103))[_0x32d78b(0x1b0)],_0x48c3de=_0x4243ae[_0x32d78b(0xe4)]('.evidence-url-text');_0x48c3de&&_0x48c3de[_0x32d78b(0x1b0)]?_0x13824c='[url='+_0x285674+']'+_0x48c3de[_0x32d78b(0x1b0)]+_0x32d78b(0x22b):_0x13824c=_0x32d78b(0x1ce)+_0x285674+_0x32d78b(0x22b);break;}let _0xcd90a4='';_0x3c8071&&(_0xcd90a4=_0x3c8071+':\x20'),_0x53ef1d?_0xcd90a4+=_0x32d78b(0x16e)+_0x13824c+_0x32d78b(0x15d):_0xcd90a4+=_0x13824c,_0x2e1b8e+=_0x32d78b(0x28f)+_0xcd90a4+'\x0a';}):(_0x2e1b8e+=_0x5f25e5(0x1b1),_0x2e1b8e+=_0x5f25e5(0x20d),_0x2e1b8e+='[*]\x20-\x20Additional\x20Statements\x0a'),_0x2e1b8e+=_0x5f25e5(0xaf),_0x2e1b8e+='[b]Armed\x20Robbery?[/b]\x20'+_0x2e9a6d+'\x0a',_0x2e1b8e+='[b]Additional\x20Items\x20Stolen?[/b]\x20'+_0x156a23+'\x0a',_0x156a23===_0x5f25e5(0x1cb)&&_0x46df37?(_0x2e1b8e+=_0x5f25e5(0x260),_0x2e1b8e+=_0x5f25e5(0x10f)+_0x46df37+'[/list]\x0a'):(_0x2e1b8e+=_0x5f25e5(0x260),_0x2e1b8e+='[list][*]List\x20Items\x20Here,\x20If\x20No:\x20Delete\x20this\x20line[/list]\x0a'),_0x2e1b8e+=_0x5f25e5(0x273)+_0x58ef61+'\x0a',_0x2e1b8e+=_0x5f25e5(0xba)+_0x3a70ca+'\x0a',_0x2e1b8e+=_0x5f25e5(0x1ca)+(_0x1b3311||'')+'\x0a',_0x2e1b8e+='[b]Additional\x20Information:[/b]\x20'+(_0x286c6b||'')+'\x0a',_0x2e1b8e+=_0x5f25e5(0x1ed),_0x2e1b8e+=_0x5f25e5(0x155),_0x2ea361[_0x5f25e5(0x267)]=_0x2e1b8e,_0x2f69e1[_0x5f25e5(0x170)][_0x5f25e5(0x1c4)]=_0x5f25e5(0x135),_0x2f69e1[_0x5f25e5(0x1dc)]({'behavior':_0x5f25e5(0x167)});}),_0x28d73e['addEventListener'](_0x45b4ad(0x15b),()=>{const _0x16f0f0=_0x45b4ad;navigator['clipboard'][_0x16f0f0(0x9f)](_0x52d056['textContent'])[_0x16f0f0(0xcf)](()=>{_0x210a62(_0x28d73e);})[_0x16f0f0(0xf2)](_0x5a5090=>{const _0x1bb1f2=_0x16f0f0;console[_0x1bb1f2(0x141)](_0x1bb1f2(0x110),_0x5a5090);});}),_0x48dbab[_0x45b4ad(0x25f)](_0x45b4ad(0x15b),()=>{const _0x59f6dc=_0x45b4ad;navigator[_0x59f6dc(0xb3)]['writeText'](_0x2ea361[_0x59f6dc(0x267)])[_0x59f6dc(0xcf)](()=>{_0x210a62(_0x48dbab);})[_0x59f6dc(0xf2)](_0x10a0fd=>{const _0x2f2625=_0x59f6dc;console[_0x2f2625(0x141)](_0x2f2625(0x110),_0x10a0fd);});});function _0x210a62(_0x558c3e){const _0x5bf84c=_0x45b4ad,_0x449b52=_0x558c3e[_0x5bf84c(0x199)];_0x558c3e[_0x5bf84c(0x199)]=_0x5bf84c(0x18a),_0x558c3e[_0x5bf84c(0x83)]=!![],setTimeout(()=>{const _0x12bb1a=_0x5bf84c;_0x558c3e[_0x12bb1a(0x199)]=_0x449b52,_0x558c3e[_0x12bb1a(0x83)]=![];},0x7d0);}_0x12fc6c[_0x45b4ad(0x25f)](_0x45b4ad(0x15b),()=>{const _0x59b652=_0x45b4ad;confirm(_0x59b652(0x113))&&(document[_0x59b652(0x7d)](_0x59b652(0x1bf))[_0x59b652(0x1b0)]='',document['getElementById'](_0x59b652(0x278))['value']='',document[_0x59b652(0x7d)]('sv-location')[_0x59b652(0x1b0)]='',document[_0x59b652(0x7d)](_0x59b652(0x250))[_0x59b652(0x1b0)]='',document['getElementById']('sv-vehicle-plate')[_0x59b652(0x1b0)]='',document[_0x59b652(0x7d)](_0x59b652(0x7f))[_0x59b652(0x1b0)]='',document[_0x59b652(0x7d)]('sv-call-id')[_0x59b652(0x1b0)]='',document[_0x59b652(0x7d)](_0x59b652(0x243))[_0x59b652(0x1b0)]='',document[_0x59b652(0x7d)](_0x59b652(0x20c))['value']='',document['getElementById'](_0x59b652(0x257))[_0x59b652(0x1b0)]='No',document[_0x59b652(0x7d)]('sv-items-stolen')['value']='No',document['getElementById']('sv-stolen-items')[_0x59b652(0x1b0)]='',document[_0x59b652(0x7d)](_0x59b652(0x26d))[_0x59b652(0x1b0)]='No',document['getElementById'](_0x59b652(0x186))['value']='No',document[_0x59b652(0x7d)](_0x59b652(0xad))[_0x59b652(0x1b0)]='',document[_0x59b652(0x7d)](_0x59b652(0x24e))[_0x59b652(0x1b0)]='',_0x393757['style'][_0x59b652(0x1c4)]=_0x59b652(0x298),_0x178d9b[_0x59b652(0x199)]='',_0x290b3e=0x0,_0x2f69e1[_0x59b652(0x170)][_0x59b652(0x1c4)]='none',alert('Form\x20has\x20been\x20reset.'));});}function _0x586e(_0x59042c,_0x515401){const _0x5c318c=_0x5c31();return _0x586e=function(_0x586e31,_0x3d8161){_0x586e31=_0x586e31-0x77;let _0x346f2a=_0x5c318c[_0x586e31];return _0x346f2a;},_0x586e(_0x59042c,_0x515401);}function initStolenPlateReportGenerator(){const _0x2a18ac=_0x5d6fcd,_0x123857=document['getElementById']('sp-recovered'),_0x3f4866=document[_0x2a18ac(0x7d)](_0x2a18ac(0x232)),_0x16908a=document['getElementById'](_0x2a18ac(0x248));_0x123857['addEventListener']('change',()=>{const _0x832a40=_0x2a18ac;_0x123857['value']===_0x832a40(0x1cb)?_0x3f4866[_0x832a40(0x170)][_0x832a40(0x1c4)]=_0x832a40(0x135):(_0x3f4866['style'][_0x832a40(0x1c4)]=_0x832a40(0x298),_0x16908a[_0x832a40(0x170)]['display']=_0x832a40(0x298));});const _0x4d9391=document[_0x2a18ac(0x7d)]('sp-recovered-type');_0x4d9391[_0x2a18ac(0x25f)](_0x2a18ac(0x153),()=>{const _0xd84d71=_0x2a18ac;_0x4d9391[_0xd84d71(0x1b0)]===_0xd84d71(0x136)?_0x16908a['style'][_0xd84d71(0x1c4)]=_0xd84d71(0x135):_0x16908a['style'][_0xd84d71(0x1c4)]=_0xd84d71(0x298);});const _0x415781=document[_0x2a18ac(0x7d)](_0x2a18ac(0xc2)),_0xeccb1f=document[_0x2a18ac(0x7d)](_0x2a18ac(0x29c)),_0x173e38=document[_0x2a18ac(0x7d)](_0x2a18ac(0xc8)),_0x47dde4=document[_0x2a18ac(0xcc)](_0x2a18ac(0xd7)),_0x3dfd0b=document[_0x2a18ac(0x7d)](_0x2a18ac(0x1f1)),_0x5cf74c=document[_0x2a18ac(0x7d)](_0x2a18ac(0x197)),_0x550d29=document[_0x2a18ac(0x7d)](_0x2a18ac(0x10c)),_0x104202=document['getElementById'](_0x2a18ac(0x96)),_0x45cea3=document[_0x2a18ac(0x7d)](_0x2a18ac(0x196)),_0x52956f=document[_0x2a18ac(0x7d)](_0x2a18ac(0x234)),_0xf94226=document[_0x2a18ac(0x7d)](_0x2a18ac(0x203)),_0x4a6dbf=document[_0x2a18ac(0x7d)](_0x2a18ac(0xd2));let _0x237ffb='',_0x1ef66a=0x0,_0x2c45b5=null;_0xeccb1f[_0x2a18ac(0x25f)](_0x2a18ac(0x15b),()=>{const _0x284db5=_0x2a18ac;_0x173e38['classList'][_0x284db5(0xf3)](_0x284db5(0x1bb)),_0x237ffb='',_0x47dde4[_0x284db5(0x9a)](_0x4db0fa=>_0x4db0fa['classList'][_0x284db5(0x27f)](_0x284db5(0x238))),_0x3dfd0b[_0x284db5(0x1a8)]=![],_0x5cf74c[_0x284db5(0x1b0)]='',_0x550d29[_0x284db5(0x170)][_0x284db5(0x1c4)]=_0x284db5(0x298),_0xf94226[_0x284db5(0x11c)]['remove'](_0x284db5(0x1bb)),_0x4a6dbf[_0x284db5(0x1a8)]=![],_0x2c45b5=null,_0x104202[_0x284db5(0x199)]=_0x284db5(0x1bc);});function _0x4f0e01(){const _0x2f5a21=_0x2a18ac;_0x173e38[_0x2f5a21(0x11c)]['remove']('active');}_0x52956f[_0x2a18ac(0x25f)](_0x2a18ac(0x15b),_0x4f0e01),_0x45cea3[_0x2a18ac(0x25f)](_0x2a18ac(0x15b),_0x4f0e01),_0x47dde4['forEach'](_0x72a4a6=>{_0x72a4a6['addEventListener']('click',()=>{const _0x513f4a=_0x586e;_0x47dde4[_0x513f4a(0x9a)](_0x47526a=>_0x47526a['classList'][_0x513f4a(0x27f)](_0x513f4a(0x238))),_0x72a4a6[_0x513f4a(0x11c)][_0x513f4a(0xf3)](_0x513f4a(0x238)),_0x237ffb=_0x72a4a6[_0x513f4a(0x18f)](_0x513f4a(0x222)),_0x237ffb==='url'?_0xf94226[_0x513f4a(0x11c)]['add']('active'):_0xf94226[_0x513f4a(0x11c)][_0x513f4a(0x27f)](_0x513f4a(0x1bb)),_0x22b7bc();});}),_0x3dfd0b[_0x2a18ac(0x25f)](_0x2a18ac(0x153),_0x22b7bc),_0x5cf74c[_0x2a18ac(0x25f)](_0x2a18ac(0x9d),_0x22b7bc),_0x4a6dbf[_0x2a18ac(0x25f)](_0x2a18ac(0x153),_0x22b7bc);function _0x22b7bc(){const _0x45bf45=_0x2a18ac;if(!_0x237ffb){_0x550d29[_0x45bf45(0x170)][_0x45bf45(0x1c4)]=_0x45bf45(0x298);return;}let _0x48b514='';const _0x4da0e8=_0x3dfd0b[_0x45bf45(0x1a8)],_0x83d6b6=_0x5cf74c[_0x45bf45(0x1b0)][_0x45bf45(0x154)]();switch(_0x237ffb){case _0x45bf45(0xc5):_0x48b514=_0x45bf45(0x1f2);break;case _0x45bf45(0x178):_0x48b514=_0x45bf45(0xc0);break;case _0x45bf45(0x253):const _0x2a895c=_0x4a6dbf[_0x45bf45(0x1a8)];_0x2a895c?_0x48b514=_0x45bf45(0x14d):_0x48b514=_0x45bf45(0xa2);break;}let _0x9d3e8c='';_0x83d6b6&&(_0x9d3e8c=_0x83d6b6+':\x20'),_0x4da0e8?_0x9d3e8c+=_0x45bf45(0x16e)+_0x48b514+_0x45bf45(0x121):_0x9d3e8c+=_0x48b514,_0x550d29[_0x45bf45(0x267)]=_0x9d3e8c,_0x550d29[_0x45bf45(0x170)][_0x45bf45(0x1c4)]=_0x45bf45(0x135);}function _0x4ce18d(_0x1996fc,_0x50665f){const _0xdc97b8=_0x2a18ac,_0x4c84a8=_0x1996fc[_0xdc97b8(0xe4)]('.url-text-input');_0x4c84a8&&(_0x50665f?_0x4c84a8['classList'][_0xdc97b8(0xf3)](_0xdc97b8(0x1bb)):_0x4c84a8[_0xdc97b8(0x11c)][_0xdc97b8(0x27f)](_0xdc97b8(0x1bb)));}_0x104202[_0x2a18ac(0x25f)](_0x2a18ac(0x15b),()=>{const _0x217fa9=_0x2a18ac;if(!_0x237ffb){alert(_0x217fa9(0xa3));return;}if(_0x2c45b5)_0x2b05e0(_0x2c45b5);else{_0x1ef66a++;const _0x178ad4=document[_0x217fa9(0x1f0)](_0x217fa9(0x20b));_0x178ad4[_0x217fa9(0x161)]=_0x217fa9(0x126),_0x178ad4[_0x217fa9(0x246)](_0x217fa9(0x222),_0x237ffb),_0x47374e(_0x178ad4,_0x237ffb,_0x3dfd0b[_0x217fa9(0x1a8)],_0x5cf74c[_0x217fa9(0x1b0)][_0x217fa9(0x154)](),_0x4a6dbf['checked']),_0x415781[_0x217fa9(0xc4)](_0x178ad4),_0x485dca(_0x178ad4);}_0x4f0e01();});function _0x47374e(_0x2fb70d,_0x53bd2a,_0x529c10,_0x20201f,_0x32fdee){const _0x151ce8=_0x2a18ac;let _0x435a66='';switch(_0x53bd2a){case _0x151ce8(0xc5):_0x435a66=_0x151ce8(0x211)+_0x20201f+_0x151ce8(0x1ba);break;case _0x151ce8(0x178):_0x435a66=_0x151ce8(0x23e)+_0x20201f+_0x151ce8(0x19b);break;case'url':_0x435a66=_0x151ce8(0x109)+_0x20201f+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22checkbox-group\x20url-options-inline\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20class=\x22url-clickable-field\x22\x20'+(_0x32fdee?_0x151ce8(0x1a8):'')+'>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label>Use\x20clickable\x20text</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-url\x22\x20placeholder=\x22URL\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22url-text-input\x20'+(_0x32fdee?_0x151ce8(0x1bb):'')+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-url-text\x22\x20placeholder=\x22Link\x20Text\x22\x20value=\x22\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';break;}_0x2fb70d[_0x151ce8(0x199)]=_0x151ce8(0x28c)+_0x1ef66a+_0x151ce8(0x29f)+(_0x53bd2a[_0x151ce8(0x107)](0x0)[_0x151ce8(0x13a)]()+_0x53bd2a[_0x151ce8(0x125)](0x1))+_0x151ce8(0x1c3)+(_0x529c10?_0x151ce8(0x1a8):'')+_0x151ce8(0x131)+_0x435a66+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20';}function _0x2b05e0(_0x4eaaba){const _0x570d2c=_0x2a18ac,_0x4baca0=_0x4eaaba['getAttribute'](_0x570d2c(0x222)),_0x35b2f0=_0x3dfd0b['checked'],_0x51cac0=_0x5cf74c[_0x570d2c(0x1b0)][_0x570d2c(0x154)](),_0x179456=_0x4a6dbf[_0x570d2c(0x1a8)];_0x47374e(_0x4eaaba,_0x4baca0,_0x35b2f0,_0x51cac0,_0x179456),_0x485dca(_0x4eaaba);}function _0x485dca(_0x4c44df){const _0x1b0c25=_0x2a18ac,_0x43fa65=_0x4c44df[_0x1b0c25(0xe4)]('.remove-evidence');_0x43fa65[_0x1b0c25(0x25f)](_0x1b0c25(0x15b),()=>{_0x4c44df['remove'](),_0x56492a();});const _0x3d114f=_0x4c44df[_0x1b0c25(0xe4)](_0x1b0c25(0x176));_0x3d114f[_0x1b0c25(0x25f)]('click',()=>{_0x17d6a6(_0x4c44df);});if(_0x4c44df[_0x1b0c25(0x18f)](_0x1b0c25(0x222))===_0x1b0c25(0x253)){const _0xeaa240=_0x4c44df[_0x1b0c25(0xe4)](_0x1b0c25(0x24f));_0xeaa240[_0x1b0c25(0x25f)](_0x1b0c25(0x153),()=>{const _0x4c1b53=_0x1b0c25;_0x4ce18d(_0x4c44df,_0xeaa240[_0x4c1b53(0x1a8)]);});}if(_0x4c44df['getAttribute'](_0x1b0c25(0x222))==='image'){const _0x49e2ed=_0x4c44df[_0x1b0c25(0xe4)](_0x1b0c25(0x241)),_0x548d9d=_0x4c44df['querySelector'](_0x1b0c25(0xfe));_0x49e2ed['addEventListener'](_0x1b0c25(0x15b),()=>{const _0xc91f2a=_0x1b0c25,_0x45d3d6=document[_0xc91f2a(0x1f0)](_0xc91f2a(0x20b));_0x45d3d6[_0xc91f2a(0x161)]=_0xc91f2a(0x286),_0x45d3d6[_0xc91f2a(0x199)]=_0xc91f2a(0x94),_0x548d9d[_0xc91f2a(0xc4)](_0x45d3d6);const _0x948b14=_0x45d3d6[_0xc91f2a(0xe4)](_0xc91f2a(0xbe));_0x948b14[_0xc91f2a(0x25f)](_0xc91f2a(0x15b),()=>{const _0x194e61=_0xc91f2a;_0x45d3d6[_0x194e61(0x27f)]();});});const _0x4616c7=_0x4c44df['querySelectorAll'](_0x1b0c25(0xbe));_0x4616c7[_0x1b0c25(0x9a)](_0x302b4a=>{const _0x24b198=_0x1b0c25;_0x302b4a[_0x24b198(0x25f)](_0x24b198(0x15b),function(){const _0x3162ac=_0x24b198;this[_0x3162ac(0x151)](_0x3162ac(0x218))[_0x3162ac(0x27f)]();});});}}function _0x17d6a6(_0x103d89){const _0x362afd=_0x2a18ac,_0x18a7ad=_0x103d89['getAttribute'](_0x362afd(0x222)),_0x37eb9a=_0x103d89[_0x362afd(0xe4)](_0x362afd(0x119)),_0x3ec3c8=_0x103d89['querySelector'](_0x362afd(0x1d5));_0x237ffb=_0x18a7ad,_0x47dde4[_0x362afd(0x9a)](_0x57bd19=>{const _0x37bd39=_0x362afd;_0x57bd19[_0x37bd39(0x18f)](_0x37bd39(0x222))===_0x18a7ad?_0x57bd19['classList'][_0x37bd39(0xf3)](_0x37bd39(0x238)):_0x57bd19[_0x37bd39(0x11c)][_0x37bd39(0x27f)](_0x37bd39(0x238));}),_0x5cf74c[_0x362afd(0x1b0)]=_0x37eb9a?_0x37eb9a[_0x362afd(0x1b0)]:'',_0x3dfd0b[_0x362afd(0x1a8)]=_0x3ec3c8?_0x3ec3c8[_0x362afd(0x1a8)]:![];if(_0x18a7ad==='url'){_0xf94226[_0x362afd(0x11c)][_0x362afd(0xf3)](_0x362afd(0x1bb));const _0x10b61a=_0x103d89[_0x362afd(0xe4)](_0x362afd(0x24f));_0x4a6dbf[_0x362afd(0x1a8)]=_0x10b61a?_0x10b61a[_0x362afd(0x1a8)]:![];const _0x3db114=_0x103d89[_0x362afd(0xe4)]('.evidence-url'),_0x90417e=_0x103d89[_0x362afd(0xe4)](_0x362afd(0x156));_0x3db114&&setTimeout(()=>{const _0xc405d7=_0x362afd,_0x483f61=document[_0xc405d7(0xe4)](_0xc405d7(0x179));if(_0x483f61)_0x483f61[_0xc405d7(0x1b0)]=_0x3db114[_0xc405d7(0x1b0)];},0x64),_0x90417e&&setTimeout(()=>{const _0x1d1d33=_0x362afd,_0x1c67ef=document[_0x1d1d33(0xe4)](_0x1d1d33(0xed));if(_0x1c67ef)_0x1c67ef[_0x1d1d33(0x1b0)]=_0x90417e[_0x1d1d33(0x1b0)];},0x64);}else _0xf94226['classList'][_0x362afd(0x27f)](_0x362afd(0x1bb)),_0x4a6dbf[_0x362afd(0x1a8)]=![];_0x22b7bc(),_0x2c45b5=_0x103d89,_0x104202[_0x362afd(0x199)]='<i\x20class=\x22fas\x20fa-save\x22></i>\x20Update\x20Evidence',_0x173e38[_0x362afd(0x11c)][_0x362afd(0xf3)](_0x362afd(0x1bb));}function _0x56492a(){const _0x2fc9c6=_0x2a18ac,_0x5cd634=_0x415781[_0x2fc9c6(0xcc)](_0x2fc9c6(0x19a));_0x1ef66a=_0x5cd634[_0x2fc9c6(0x28e)],_0x5cd634[_0x2fc9c6(0x9a)]((_0x280a4d,_0x2cbb71)=>{const _0x5940a3=_0x2fc9c6,_0x4e5e0e=_0x280a4d[_0x5940a3(0xe4)](_0x5940a3(0x138));_0x4e5e0e['textContent']=_0x2cbb71+0x1+'.';});}const _0x54cc69=document['getElementById'](_0x2a18ac(0x242)),_0x2e6a99=document[_0x2a18ac(0x7d)]('sp-output-container'),_0x5b0205=document[_0x2a18ac(0x7d)]('sp-title-output'),_0x1bf8df=document['getElementById'](_0x2a18ac(0x225)),_0x499d72=document['getElementById'](_0x2a18ac(0x26b)),_0xe3ab7e=document[_0x2a18ac(0x7d)](_0x2a18ac(0x1f5)),_0x22e347=document[_0x2a18ac(0x7d)](_0x2a18ac(0x9b));_0x54cc69[_0x2a18ac(0x25f)](_0x2a18ac(0x15b),()=>{const _0x3dec0d=_0x2a18ac,_0x2c4fb7=document[_0x3dec0d(0x7d)](_0x3dec0d(0x13c))[_0x3dec0d(0x1b0)],_0x39a6d3=document[_0x3dec0d(0x7d)](_0x3dec0d(0x1b6))[_0x3dec0d(0x1b0)],_0x372378=document['getElementById'](_0x3dec0d(0xda))[_0x3dec0d(0x1b0)],_0x137096=document[_0x3dec0d(0x7d)](_0x3dec0d(0xfd))[_0x3dec0d(0x1b0)],_0x80ac79=document[_0x3dec0d(0x7d)]('sp-vehicle-details')[_0x3dec0d(0x1b0)],_0x40fa07=document[_0x3dec0d(0x7d)]('sp-vehicle-owner')['value'],_0x118518=document[_0x3dec0d(0x7d)]('sp-call-id')[_0x3dec0d(0x1b0)],_0x4b6477=document[_0x3dec0d(0x7d)](_0x3dec0d(0xbf))[_0x3dec0d(0x1b0)],_0x579ba8=document['getElementById']('sp-victim-statement')[_0x3dec0d(0x1b0)],_0x42ff89=document[_0x3dec0d(0x7d)](_0x3dec0d(0x21f))[_0x3dec0d(0x1b0)],_0x2df04b=document[_0x3dec0d(0x7d)](_0x3dec0d(0x25d))[_0x3dec0d(0x1b0)],_0xf4bef=document[_0x3dec0d(0x7d)](_0x3dec0d(0xe0))[_0x3dec0d(0x1b0)],_0x2f5ff6=document[_0x3dec0d(0x7d)](_0x3dec0d(0x78))[_0x3dec0d(0x1b0)],_0x3dfb49=document[_0x3dec0d(0x7d)](_0x3dec0d(0x8f))['value'],_0x3d00b4=document[_0x3dec0d(0x7d)](_0x3dec0d(0x21d))['value'],_0x3eaa33=_0x2c4fb7||_0x3dec0d(0x22a);_0x5b0205[_0x3dec0d(0x267)]=_0x3eaa33;let _0x263d28=_0x3dec0d(0x130);_0x263d28+=_0x3dec0d(0x1c5),_0x263d28+=_0x3dec0d(0x158),_0x263d28+=_0x3dec0d(0x1d8),_0x263d28+=_0x3dec0d(0x158),_0x263d28+='[/divbox]\x0a',_0x263d28+=_0x3dec0d(0x158),_0x263d28+='[divbox=#323564][center][color=white][b]Stolen\x20Plate\x20Report[/b][/color][/center][/divbox]\x0a',_0x263d28+='[divbox=transparent]\x0a',_0x263d28+=_0x3dec0d(0x1ed),_0x263d28+='[b]Time\x20&\x20Date:[/b]\x20'+(_0x39a6d3||_0x3dec0d(0xf8))+'\x0a',_0x263d28+=_0x3dec0d(0x1d7)+(_0x372378||_0x3dec0d(0xf6))+'\x0a',_0x263d28+=_0x3dec0d(0xc3)+(_0x137096||_0x3dec0d(0x1c0))+'\x0a',_0x263d28+=_0x3dec0d(0x93)+(_0x80ac79||'COLOR\x20MAKE\x20MODEL\x20OF\x20PLATE\x20#')+'\x0a',_0x263d28+=_0x3dec0d(0x12f)+(_0x40fa07||_0x3dec0d(0x118))+'\x0a',_0x263d28+=_0x3dec0d(0x137)+(_0x118518||'#XXXX/Self-Initiated')+'\x0a',_0x263d28+=_0x3dec0d(0x29e),_0x263d28+=_0x3dec0d(0x28f)+(_0x4b6477||_0x3dec0d(0xe2))+'\x0a',_0x263d28+='[/list]\x0a',_0x263d28+=_0x3dec0d(0x200),_0x263d28+=_0x3dec0d(0x28f)+(_0x579ba8||_0x3dec0d(0x282))+'\x0a',_0x263d28+=_0x3dec0d(0xaf),_0x263d28+='[b]Evidence:[/b]\x0a',_0x263d28+=_0x3dec0d(0x108);const _0x2a0259=_0x415781[_0x3dec0d(0xcc)](_0x3dec0d(0x19a));_0x2a0259[_0x3dec0d(0x28e)]>0x0?_0x2a0259[_0x3dec0d(0x9a)](_0x218a23=>{const _0x4a5ba4=_0x3dec0d,_0x8f09e=_0x218a23[_0x4a5ba4(0x18f)]('data-type'),_0xe0ed59=_0x218a23[_0x4a5ba4(0xe4)](_0x4a5ba4(0x1d5))[_0x4a5ba4(0x1a8)],_0x45e667=_0x218a23['querySelector']('.evidence-title-field'),_0x2f2b83=_0x45e667?_0x45e667[_0x4a5ba4(0x1b0)]['trim']():'';let _0x4b3f47='';switch(_0x8f09e){case _0x4a5ba4(0xc5):const _0x36faae=_0x218a23['querySelector'](_0x4a5ba4(0xe9))['value'];_0x4b3f47=_0x36faae;break;case _0x4a5ba4(0x178):const _0x2de000=_0x218a23[_0x4a5ba4(0xcc)](_0x4a5ba4(0x148));let _0x380c96='';_0x2de000[_0x4a5ba4(0x9a)](_0x2137ab=>{const _0x3b5de9=_0x4a5ba4;_0x2137ab[_0x3b5de9(0x1b0)][_0x3b5de9(0x154)]()&&(_0x380c96+=_0x3b5de9(0x212)+_0x2137ab['value']+'[/img]\x0a');}),_0x4b3f47=_0x380c96;break;case _0x4a5ba4(0x253):const _0x4e7fd9=_0x218a23[_0x4a5ba4(0xe4)](_0x4a5ba4(0x103))[_0x4a5ba4(0x1b0)],_0x4384fe=_0x218a23[_0x4a5ba4(0xe4)](_0x4a5ba4(0x156));_0x4384fe&&_0x4384fe[_0x4a5ba4(0x1b0)]?_0x4b3f47='[url='+_0x4e7fd9+']'+_0x4384fe['value']+'[/url]':_0x4b3f47=_0x4a5ba4(0x1ce)+_0x4e7fd9+_0x4a5ba4(0x22b);break;}let _0x390731='';_0x2f2b83&&(_0x390731=_0x2f2b83+':\x20'),_0xe0ed59?_0x390731+=_0x4a5ba4(0x16e)+_0x4b3f47+_0x4a5ba4(0x15d):_0x390731+=_0x4b3f47,_0x263d28+=_0x4a5ba4(0x28f)+_0x390731+'\x0a';}):(_0x263d28+=_0x3dec0d(0x1b1),_0x263d28+=_0x3dec0d(0x20d),_0x263d28+=_0x3dec0d(0x23d)),_0x263d28+=_0x3dec0d(0xaf),_0x263d28+=_0x3dec0d(0x273)+_0x42ff89+'\x0a',_0x263d28+=_0x3dec0d(0xba)+_0x2df04b+'\x0a',_0x2df04b===_0x3dec0d(0x1cb)?(_0x263d28+=_0x3dec0d(0x262)+_0xf4bef+'\x0a',_0xf4bef===_0x3dec0d(0x136)&&_0x2f5ff6?_0x263d28+=_0x3dec0d(0x1d4)+_0x2f5ff6+'\x0a':_0x263d28+=_0x3dec0d(0x230)):(_0x263d28+=_0x3dec0d(0x80),_0x263d28+=_0x3dec0d(0x230)),_0x263d28+='[b]Link\x20to\x20SSB\x20report:[/b]\x20'+(_0x3dfb49||'')+'\x0a',_0x263d28+=_0x3dec0d(0x268)+(_0x3d00b4||'')+'\x0a',_0x263d28+=_0x3dec0d(0x1ed),_0x263d28+='[/divbox]',_0x1bf8df['textContent']=_0x263d28,_0x2e6a99[_0x3dec0d(0x170)][_0x3dec0d(0x1c4)]=_0x3dec0d(0x135),_0x2e6a99[_0x3dec0d(0x1dc)]({'behavior':_0x3dec0d(0x167)});}),_0x499d72[_0x2a18ac(0x25f)](_0x2a18ac(0x15b),()=>{const _0x307b32=_0x2a18ac;navigator[_0x307b32(0xb3)]['writeText'](_0x5b0205[_0x307b32(0x267)])[_0x307b32(0xcf)](()=>{_0xd9d2b0(_0x499d72);})[_0x307b32(0xf2)](_0x555f25=>{const _0x40e8e4=_0x307b32;console[_0x40e8e4(0x141)](_0x40e8e4(0x110),_0x555f25);});}),_0xe3ab7e[_0x2a18ac(0x25f)](_0x2a18ac(0x15b),()=>{const _0x34d468=_0x2a18ac;navigator['clipboard'][_0x34d468(0x9f)](_0x1bf8df[_0x34d468(0x267)])['then'](()=>{_0xd9d2b0(_0xe3ab7e);})[_0x34d468(0xf2)](_0x48f39a=>{const _0x7dc2cb=_0x34d468;console[_0x7dc2cb(0x141)](_0x7dc2cb(0x110),_0x48f39a);});});function _0xd9d2b0(_0x3149eb){const _0x477998=_0x2a18ac,_0x173aa9=_0x3149eb['innerHTML'];_0x3149eb[_0x477998(0x199)]='<i\x20class=\x22fas\x20fa-check\x22></i>\x20Copied!',_0x3149eb['disabled']=!![],setTimeout(()=>{const _0x2b7d6d=_0x477998;_0x3149eb[_0x2b7d6d(0x199)]=_0x173aa9,_0x3149eb['disabled']=![];},0x7d0);}_0x22e347['addEventListener'](_0x2a18ac(0x15b),()=>{const _0xa786c5=_0x2a18ac;confirm(_0xa786c5(0x113))&&(document[_0xa786c5(0x7d)](_0xa786c5(0x13c))[_0xa786c5(0x1b0)]='',document[_0xa786c5(0x7d)]('sp-time-date')['value']='',document['getElementById'](_0xa786c5(0xda))[_0xa786c5(0x1b0)]='',document[_0xa786c5(0x7d)]('sp-vehicle-plate')['value']='',document['getElementById']('sp-vehicle-details')[_0xa786c5(0x1b0)]='',document['getElementById'](_0xa786c5(0x208))[_0xa786c5(0x1b0)]='',document[_0xa786c5(0x7d)](_0xa786c5(0x98))[_0xa786c5(0x1b0)]='',document['getElementById'](_0xa786c5(0xbf))['value']='',document[_0xa786c5(0x7d)](_0xa786c5(0x81))[_0xa786c5(0x1b0)]='',document[_0xa786c5(0x7d)](_0xa786c5(0x21f))[_0xa786c5(0x1b0)]='No',document[_0xa786c5(0x7d)](_0xa786c5(0x25d))['value']='No',document[_0xa786c5(0x7d)](_0xa786c5(0xe0))['value']=_0xa786c5(0xe1),document['getElementById']('sp-recovered-vehicle-details')[_0xa786c5(0x1b0)]='',document[_0xa786c5(0x7d)](_0xa786c5(0x8f))[_0xa786c5(0x1b0)]='',document['getElementById']('sp-additional-info')[_0xa786c5(0x1b0)]='',_0x3f4866['style'][_0xa786c5(0x1c4)]=_0xa786c5(0x298),_0x16908a[_0xa786c5(0x170)][_0xa786c5(0x1c4)]='none',_0x415781[_0xa786c5(0x199)]='',_0x1ef66a=0x0,_0x2e6a99[_0xa786c5(0x170)]['display']=_0xa786c5(0x298),alert(_0xa786c5(0x1e8)));});}function initTrapDatabaseUpdateGenerator(){const _0x2a2cca=_0x5d6fcd,_0x243ba0=document[_0x2a2cca(0x7d)](_0x2a2cca(0xc6)),_0x149deb=document[_0x2a2cca(0xcc)](_0x2a2cca(0x171));_0x243ba0[_0x2a2cca(0x25f)](_0x2a2cca(0x153),()=>{const _0x3e3036=_0x2a2cca,_0x36c107=_0x243ba0[_0x3e3036(0x1b0)];_0x149deb[_0x3e3036(0x9a)](_0x52e5f7=>{const _0x405871=_0x3e3036;_0x52e5f7[_0x405871(0x170)][_0x405871(0x1c4)]=_0x405871(0x298);}),document['getElementById'](_0x3e3036(0xd6)+_0x36c107+_0x3e3036(0x165))['style']['display']=_0x3e3036(0x135);});const _0x3d379b=document[_0x2a2cca(0x7d)](_0x2a2cca(0x223)),_0x1438af=document[_0x2a2cca(0x7d)]('trap-add-suspect-evidence-btn'),_0x4e986c=document['getElementById'](_0x2a2cca(0x17c)),_0x440b4e=document['querySelectorAll']('#trap-suspect-evidence-modal\x20.evidence-type-option'),_0x558a13=document[_0x2a2cca(0x7d)](_0x2a2cca(0x92)),_0x24c40d=document['getElementById'](_0x2a2cca(0x1d9)),_0x26c115=document[_0x2a2cca(0x7d)](_0x2a2cca(0x17e)),_0x4964be=document[_0x2a2cca(0x7d)](_0x2a2cca(0x16b)),_0x427b76=document[_0x2a2cca(0x7d)](_0x2a2cca(0x181)),_0x5e685c=document[_0x2a2cca(0x7d)](_0x2a2cca(0x19d)),_0x19f10b=document[_0x2a2cca(0x7d)](_0x2a2cca(0x258)),_0x18fda3=document[_0x2a2cca(0x7d)](_0x2a2cca(0xb8));let _0x126339='',_0x27f649=0x0,_0x53cfea=null;_0x1438af[_0x2a2cca(0x25f)](_0x2a2cca(0x15b),()=>{const _0x1f5aa0=_0x2a2cca;_0x4e986c['classList'][_0x1f5aa0(0xf3)](_0x1f5aa0(0x1bb)),_0x126339='',_0x440b4e[_0x1f5aa0(0x9a)](_0x5f0212=>_0x5f0212['classList'][_0x1f5aa0(0x27f)](_0x1f5aa0(0x238))),_0x558a13['checked']=![],_0x24c40d[_0x1f5aa0(0x1b0)]='',_0x26c115[_0x1f5aa0(0x170)][_0x1f5aa0(0x1c4)]=_0x1f5aa0(0x298),_0x19f10b[_0x1f5aa0(0x11c)][_0x1f5aa0(0x27f)](_0x1f5aa0(0x1bb)),_0x18fda3['checked']=![],_0x53cfea=null,_0x4964be[_0x1f5aa0(0x199)]=_0x1f5aa0(0x1bc);});function _0x529bce(){const _0x43abb9=_0x2a2cca;_0x4e986c[_0x43abb9(0x11c)]['remove']('active');}_0x5e685c[_0x2a2cca(0x25f)](_0x2a2cca(0x15b),_0x529bce),_0x427b76[_0x2a2cca(0x25f)](_0x2a2cca(0x15b),_0x529bce),_0x440b4e[_0x2a2cca(0x9a)](_0x2322a9=>{_0x2322a9['addEventListener']('click',()=>{const _0x9a2e4f=_0x586e;_0x440b4e[_0x9a2e4f(0x9a)](_0x3251b8=>_0x3251b8['classList'][_0x9a2e4f(0x27f)](_0x9a2e4f(0x238))),_0x2322a9[_0x9a2e4f(0x11c)][_0x9a2e4f(0xf3)](_0x9a2e4f(0x238)),_0x126339=_0x2322a9[_0x9a2e4f(0x18f)](_0x9a2e4f(0x222)),_0x126339===_0x9a2e4f(0x253)?_0x19f10b[_0x9a2e4f(0x11c)]['add']('active'):_0x19f10b[_0x9a2e4f(0x11c)]['remove'](_0x9a2e4f(0x1bb)),_0x242ec3();});}),_0x558a13[_0x2a2cca(0x25f)](_0x2a2cca(0x153),_0x242ec3),_0x24c40d['addEventListener'](_0x2a2cca(0x9d),_0x242ec3),_0x18fda3[_0x2a2cca(0x25f)](_0x2a2cca(0x153),_0x242ec3);function _0x242ec3(){const _0x5b9a89=_0x2a2cca;if(!_0x126339){_0x26c115[_0x5b9a89(0x170)][_0x5b9a89(0x1c4)]=_0x5b9a89(0x298);return;}let _0xd9ea='';const _0x1af345=_0x558a13[_0x5b9a89(0x1a8)],_0x4c3c0e=_0x24c40d[_0x5b9a89(0x1b0)][_0x5b9a89(0x154)]();switch(_0x126339){case _0x5b9a89(0xc5):_0xd9ea=_0x5b9a89(0x1f2);break;case _0x5b9a89(0x178):_0xd9ea=_0x5b9a89(0xc0);break;case'url':const _0x4d1d86=_0x18fda3[_0x5b9a89(0x1a8)];_0x4d1d86?_0xd9ea=_0x5b9a89(0x14d):_0xd9ea=_0x5b9a89(0xa2);break;}let _0x22abcb='';_0x4c3c0e&&(_0x22abcb=_0x4c3c0e+':\x20'),_0x1af345?_0x22abcb+=_0x5b9a89(0x16e)+_0xd9ea+'\x0a[/spoiler]':_0x22abcb+=_0xd9ea,_0x26c115[_0x5b9a89(0x267)]=_0x22abcb,_0x26c115['style'][_0x5b9a89(0x1c4)]=_0x5b9a89(0x135);}function _0x475442(_0x59c2b0,_0x3848d4){const _0x35e07a=_0x2a2cca,_0x2f98e4=_0x59c2b0[_0x35e07a(0xe4)](_0x35e07a(0x237));_0x2f98e4&&(_0x3848d4?_0x2f98e4[_0x35e07a(0x11c)][_0x35e07a(0xf3)](_0x35e07a(0x1bb)):_0x2f98e4[_0x35e07a(0x11c)]['remove']('active'));}_0x4964be['addEventListener'](_0x2a2cca(0x15b),()=>{const _0x4bd5d2=_0x2a2cca;if(!_0x126339){alert('Please\x20select\x20an\x20evidence\x20type');return;}if(_0x53cfea)_0x932105(_0x53cfea);else{_0x27f649++;const _0x1071b3=document[_0x4bd5d2(0x1f0)](_0x4bd5d2(0x20b));_0x1071b3[_0x4bd5d2(0x161)]=_0x4bd5d2(0x126),_0x1071b3[_0x4bd5d2(0x246)](_0x4bd5d2(0x222),_0x126339),_0x40ddba(_0x1071b3,_0x126339,_0x558a13[_0x4bd5d2(0x1a8)],_0x24c40d[_0x4bd5d2(0x1b0)][_0x4bd5d2(0x154)](),_0x18fda3['checked']),_0x3d379b[_0x4bd5d2(0xc4)](_0x1071b3),_0x196f83(_0x1071b3);}_0x529bce();});function _0x40ddba(_0x15e6dc,_0xf90e3c,_0x1477cc,_0x40f5b6,_0x380008){const _0x34961b=_0x2a2cca;let _0x53a6dc='';switch(_0xf90e3c){case _0x34961b(0xc5):_0x53a6dc=_0x34961b(0x211)+_0x40f5b6+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line-with-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<textarea\x20class=\x22evidence-text-content\x22\x20placeholder=\x22Enter\x20text\x20evidence\x20here...\x22></textarea>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';break;case _0x34961b(0x178):_0x53a6dc='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-title-input\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-title-field\x22\x20placeholder=\x22Image\x20Title\x20(Optional)\x22\x20value=\x22'+_0x40f5b6+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22image-urls-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22image-url-line\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-image-url\x22\x20placeholder=\x22Image\x20URL\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line-actions\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22remove-image-btn\x22><i\x20class=\x22fas\x20fa-trash\x22></i></button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22add-image-btn\x22><i\x20class=\x22fas\x20fa-plus\x22></i>\x20Add\x20Another\x20Image</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';break;case _0x34961b(0x253):_0x53a6dc='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-title-input\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-title-field\x22\x20placeholder=\x22Link\x20Title\x20(Optional)\x22\x20value=\x22'+_0x40f5b6+_0x34961b(0x27c)+(_0x380008?_0x34961b(0x1a8):'')+_0x34961b(0x87)+(_0x380008?_0x34961b(0x1bb):'')+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-line\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22evidence-url-text\x22\x20placeholder=\x22Link\x20Text\x22\x20value=\x22\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';break;}_0x15e6dc[_0x34961b(0x199)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22evidence-type\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22evidence-number\x22>'+_0x27f649+'.</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0xf90e3c[_0x34961b(0x107)](0x0)['toUpperCase']()+_0xf90e3c[_0x34961b(0x125)](0x1))+_0x34961b(0x1c3)+(_0x1477cc?'checked':'')+_0x34961b(0x131)+_0x53a6dc+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20';}function _0x932105(_0x182dda){const _0x38001c=_0x2a2cca,_0x5c87b=_0x182dda['getAttribute'](_0x38001c(0x222)),_0x52a586=_0x558a13[_0x38001c(0x1a8)],_0x51c9a8=_0x24c40d['value']['trim'](),_0x2f3202=_0x18fda3[_0x38001c(0x1a8)];_0x40ddba(_0x182dda,_0x5c87b,_0x52a586,_0x51c9a8,_0x2f3202),_0x196f83(_0x182dda);}function _0x196f83(_0x150e9c){const _0x226d9a=_0x2a2cca,_0x3dc8aa=_0x150e9c[_0x226d9a(0xe4)]('.remove-evidence');_0x3dc8aa[_0x226d9a(0x25f)](_0x226d9a(0x15b),()=>{_0x150e9c['remove'](),_0x5598ae();});const _0xfb54b1=_0x150e9c[_0x226d9a(0xe4)](_0x226d9a(0x176));_0xfb54b1[_0x226d9a(0x25f)](_0x226d9a(0x15b),()=>{_0x41ba70(_0x150e9c);});if(_0x150e9c[_0x226d9a(0x18f)]('data-type')===_0x226d9a(0x253)){const _0x2e4ace=_0x150e9c['querySelector'](_0x226d9a(0x24f));_0x2e4ace[_0x226d9a(0x25f)](_0x226d9a(0x153),()=>{const _0x2dfb5a=_0x226d9a;_0x475442(_0x150e9c,_0x2e4ace[_0x2dfb5a(0x1a8)]);});}if(_0x150e9c[_0x226d9a(0x18f)](_0x226d9a(0x222))==='image'){const _0x57261d=_0x150e9c[_0x226d9a(0xe4)]('.add-image-btn'),_0x1def05=_0x150e9c['querySelector'](_0x226d9a(0xfe));_0x57261d['addEventListener'](_0x226d9a(0x15b),()=>{const _0x519a51=_0x226d9a,_0x2cda7d=document[_0x519a51(0x1f0)](_0x519a51(0x20b));_0x2cda7d[_0x519a51(0x161)]=_0x519a51(0x286),_0x2cda7d[_0x519a51(0x199)]=_0x519a51(0x94),_0x1def05[_0x519a51(0xc4)](_0x2cda7d);const _0x5cbab5=_0x2cda7d[_0x519a51(0xe4)](_0x519a51(0xbe));_0x5cbab5[_0x519a51(0x25f)](_0x519a51(0x15b),()=>{_0x2cda7d['remove']();});});const _0x3ab5f7=_0x150e9c[_0x226d9a(0xcc)](_0x226d9a(0xbe));_0x3ab5f7['forEach'](_0x3241f5=>{const _0x56dd64=_0x226d9a;_0x3241f5[_0x56dd64(0x25f)](_0x56dd64(0x15b),function(){const _0x3dc23f=_0x56dd64;this[_0x3dc23f(0x151)](_0x3dc23f(0x218))[_0x3dc23f(0x27f)]();});});}}function _0x41ba70(_0x223eb3){const _0x1a3139=_0x2a2cca,_0x5f381e=_0x223eb3[_0x1a3139(0x18f)](_0x1a3139(0x222)),_0x12cbea=_0x223eb3['querySelector'](_0x1a3139(0x119)),_0x1436f9=_0x223eb3['querySelector'](_0x1a3139(0x1d5));_0x126339=_0x5f381e,_0x440b4e[_0x1a3139(0x9a)](_0x1a018a=>{const _0x46995a=_0x1a3139;_0x1a018a[_0x46995a(0x18f)](_0x46995a(0x222))===_0x5f381e?_0x1a018a[_0x46995a(0x11c)]['add'](_0x46995a(0x238)):_0x1a018a[_0x46995a(0x11c)][_0x46995a(0x27f)](_0x46995a(0x238));}),_0x24c40d[_0x1a3139(0x1b0)]=_0x12cbea?_0x12cbea[_0x1a3139(0x1b0)]:'',_0x558a13['checked']=_0x1436f9?_0x1436f9['checked']:![];if(_0x5f381e===_0x1a3139(0x253)){_0x19f10b[_0x1a3139(0x11c)][_0x1a3139(0xf3)](_0x1a3139(0x1bb));const _0x33d5c7=_0x223eb3[_0x1a3139(0xe4)](_0x1a3139(0x24f));_0x18fda3[_0x1a3139(0x1a8)]=_0x33d5c7?_0x33d5c7[_0x1a3139(0x1a8)]:![];const _0x2daadb=_0x223eb3[_0x1a3139(0xe4)](_0x1a3139(0x103)),_0x100374=_0x223eb3['querySelector'](_0x1a3139(0x156));_0x2daadb&&setTimeout(()=>{const _0x5f055c=_0x1a3139,_0x2b415e=document[_0x5f055c(0xe4)](_0x5f055c(0x91));if(_0x2b415e)_0x2b415e[_0x5f055c(0x1b0)]=_0x2daadb[_0x5f055c(0x1b0)];},0x64),_0x100374&&setTimeout(()=>{const _0x317b3f=_0x1a3139,_0x29c99e=document['querySelector']('#trap-suspect-evidence-modal\x20.evidence-url-text');if(_0x29c99e)_0x29c99e[_0x317b3f(0x1b0)]=_0x100374[_0x317b3f(0x1b0)];},0x64);}else _0x19f10b['classList']['remove'](_0x1a3139(0x1bb)),_0x18fda3[_0x1a3139(0x1a8)]=![];_0x242ec3(),_0x53cfea=_0x223eb3,_0x4964be[_0x1a3139(0x199)]=_0x1a3139(0x14c),_0x4e986c[_0x1a3139(0x11c)]['add'](_0x1a3139(0x1bb));}function _0x5598ae(){const _0x1bcde1=_0x2a2cca,_0x28c102=_0x3d379b[_0x1bcde1(0xcc)](_0x1bcde1(0x19a));_0x27f649=_0x28c102[_0x1bcde1(0x28e)],_0x28c102[_0x1bcde1(0x9a)]((_0x35bbaa,_0x3ce099)=>{const _0xb6b437=_0x1bcde1,_0x19e50f=_0x35bbaa[_0xb6b437(0xe4)](_0xb6b437(0x138));_0x19e50f[_0xb6b437(0x267)]=_0x3ce099+0x1+'.';});}const _0x5efbb8=document['getElementById'](_0x2a2cca(0x1c7)),_0x4ceb32=document[_0x2a2cca(0x7d)](_0x2a2cca(0x15e)),_0x512b63=document[_0x2a2cca(0x7d)]('trap-bbcode-output'),_0x46a4c5=document[_0x2a2cca(0x7d)](_0x2a2cca(0x12c)),_0x265168=document[_0x2a2cca(0x7d)]('trap-reset-btn');_0x5efbb8[_0x2a2cca(0x25f)]('click',()=>{const _0x3aec88=_0x2a2cca,_0x40503f=_0x243ba0['value'];let _0x4bbaec='';switch(_0x40503f){case'general':const _0x5280bc=document[_0x3aec88(0x7d)](_0x3aec88(0xa7))[_0x3aec88(0x1b0)];_0x4bbaec=_0x3aec88(0x284),_0x4bbaec+=_0x3aec88(0x11d)+(_0x5280bc||_0x3aec88(0x1b3))+_0x3aec88(0x155);break;case _0x3aec88(0x291):const _0x5b05ab=document['getElementById']('trap-forensics-update')[_0x3aec88(0x1b0)];_0x4bbaec='[divbox=#323564][center][color=white][b]Forensics\x20Update[/b][/color][/center][/divbox]\x0a',_0x4bbaec+=_0x3aec88(0x11d)+(_0x5b05ab||'ENTER\x20FORENSICS\x20UPDATE\x20HERE')+_0x3aec88(0x155);break;case _0x3aec88(0x23b):const _0x513f86=document[_0x3aec88(0x7d)](_0x3aec88(0x231))['value'],_0x4ec864=document[_0x3aec88(0x7d)]('trap-suspect-name')[_0x3aec88(0x1b0)],_0x196c28=document['getElementById'](_0x3aec88(0x1c2))[_0x3aec88(0x1b0)];_0x4bbaec=_0x3aec88(0x276),_0x4bbaec+=_0x3aec88(0x173);_0x513f86&&(_0x4bbaec+=_0x3aec88(0x212)+_0x513f86+'[/img]\x0a');_0x4bbaec+=(_0x4ec864||_0x3aec88(0xb5))+_0x3aec88(0x19f),_0x4bbaec+=_0x3aec88(0x89),_0x4bbaec+=(_0x196c28?_0x196c28[_0x3aec88(0xf5)]('\x0a')['map'](_0x1e611e=>_0x1e611e?'-\x20'+_0x1e611e:'-')['join']('\x0a'):'-')+'\x0a',_0x4bbaec+='[b]Evidence:[/b]\x0a',_0x4bbaec+=_0x3aec88(0x101);const _0x346ec2=_0x3d379b[_0x3aec88(0xcc)](_0x3aec88(0x19a));_0x346ec2[_0x3aec88(0x28e)]>0x0?_0x346ec2[_0x3aec88(0x9a)](_0x2cecb9=>{const _0x508779=_0x3aec88,_0x3eef3d=_0x2cecb9[_0x508779(0x18f)](_0x508779(0x222)),_0x310990=_0x2cecb9[_0x508779(0xe4)](_0x508779(0x1d5))[_0x508779(0x1a8)],_0x223b26=_0x2cecb9['querySelector'](_0x508779(0x119)),_0x482857=_0x223b26?_0x223b26[_0x508779(0x1b0)][_0x508779(0x154)]():'';let _0x3007eb='';switch(_0x3eef3d){case _0x508779(0xc5):const _0x216196=_0x2cecb9[_0x508779(0xe4)](_0x508779(0xe9))['value'];_0x3007eb=_0x216196;break;case _0x508779(0x178):const _0x40885b=_0x2cecb9[_0x508779(0xcc)](_0x508779(0x148));let _0x572543='';_0x40885b[_0x508779(0x9a)](_0x3f358a=>{const _0x341435=_0x508779;_0x3f358a['value'][_0x341435(0x154)]()&&(_0x572543+=_0x341435(0x212)+_0x3f358a[_0x341435(0x1b0)]+'[/img]\x0a');}),_0x3007eb=_0x572543;break;case _0x508779(0x253):const _0x99c972=_0x2cecb9[_0x508779(0xe4)](_0x508779(0x103))['value'],_0x4e4d28=_0x2cecb9[_0x508779(0xe4)](_0x508779(0x156));_0x4e4d28&&_0x4e4d28[_0x508779(0x1b0)]?_0x3007eb='[url='+_0x99c972+']'+_0x4e4d28[_0x508779(0x1b0)]+'[/url]':_0x3007eb=_0x508779(0x1ce)+_0x99c972+'[/url]';break;}let _0x4fc1e8='';_0x482857&&(_0x4fc1e8=_0x482857+':\x20'),_0x310990?_0x4fc1e8+=_0x508779(0x16e)+_0x3007eb+_0x508779(0x15d):_0x4fc1e8+=_0x3007eb,_0x4bbaec+='[*]\x20'+_0x4fc1e8+'\x0a';}):_0x4bbaec+=_0x3aec88(0xcb);_0x4bbaec+=_0x3aec88(0xaf),_0x4bbaec+=_0x3aec88(0x155);break;case _0x3aec88(0x1fa):const _0x43c57e=document['getElementById'](_0x3aec88(0x24b))[_0x3aec88(0x1b0)];_0x4bbaec=_0x3aec88(0x224),_0x4bbaec+=_0x3aec88(0x11d)+(_0x43c57e||'ENTER\x20WARRANT\x20STATUS\x20HERE')+_0x3aec88(0x155);break;}_0x512b63['textContent']=_0x4bbaec,_0x4ceb32[_0x3aec88(0x170)][_0x3aec88(0x1c4)]='block',_0x4ceb32[_0x3aec88(0x1dc)]({'behavior':'smooth'});}),_0x46a4c5[_0x2a2cca(0x25f)]('click',()=>{const _0x5e0074=_0x2a2cca;navigator[_0x5e0074(0xb3)][_0x5e0074(0x9f)](_0x512b63[_0x5e0074(0x267)])[_0x5e0074(0xcf)](()=>{_0x4f7ca7(_0x46a4c5);})[_0x5e0074(0xf2)](_0x3cce5c=>{const _0x118568=_0x5e0074;console[_0x118568(0x141)]('Failed\x20to\x20copy:\x20',_0x3cce5c);});});function _0x4f7ca7(_0x17ff03){const _0x13c1bb=_0x2a2cca,_0x3a5e21=_0x17ff03[_0x13c1bb(0x199)];_0x17ff03[_0x13c1bb(0x199)]=_0x13c1bb(0x18a),_0x17ff03[_0x13c1bb(0x83)]=!![],setTimeout(()=>{const _0x3d974f=_0x13c1bb;_0x17ff03[_0x3d974f(0x199)]=_0x3a5e21,_0x17ff03['disabled']=![];},0x7d0);}_0x265168[_0x2a2cca(0x25f)](_0x2a2cca(0x15b),()=>{const _0x4e7c44=_0x2a2cca;confirm(_0x4e7c44(0x113))&&(document[_0x4e7c44(0x7d)](_0x4e7c44(0xc6))['value']=_0x4e7c44(0xff),document[_0x4e7c44(0x7d)](_0x4e7c44(0xa7))[_0x4e7c44(0x1b0)]='',document[_0x4e7c44(0x7d)]('trap-forensics-update')[_0x4e7c44(0x1b0)]='',document['getElementById'](_0x4e7c44(0x231))[_0x4e7c44(0x1b0)]='',document[_0x4e7c44(0x7d)](_0x4e7c44(0xd9))[_0x4e7c44(0x1b0)]='',document[_0x4e7c44(0x7d)](_0x4e7c44(0x1c2))['value']='',document[_0x4e7c44(0x7d)](_0x4e7c44(0x24b))[_0x4e7c44(0x1b0)]='',_0x3d379b[_0x4e7c44(0x199)]='',_0x27f649=0x0,_0x149deb[_0x4e7c44(0x9a)](_0x54353f=>{const _0x5b7a07=_0x4e7c44;_0x54353f[_0x5b7a07(0x170)][_0x5b7a07(0x1c4)]='none';}),document[_0x4e7c44(0x7d)](_0x4e7c44(0x265))['style']['display']=_0x4e7c44(0x135),_0x4ceb32[_0x4e7c44(0x170)][_0x4e7c44(0x1c4)]='none',alert(_0x4e7c44(0x1e8)));}),_0x149deb[_0x2a2cca(0x9a)](_0x4f1c06=>{const _0x4f5982=_0x2a2cca;_0x4f1c06[_0x4f5982(0x170)][_0x4f5982(0x1c4)]=_0x4f5982(0x298);}),document[_0x2a2cca(0x7d)](_0x2a2cca(0x265))[_0x2a2cca(0x170)]['display']=_0x2a2cca(0x135);}
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const html = document.documentElement;
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    // Set initial theme
+    html.setAttribute('data-theme', currentTheme);
+    updateThemeButton(currentTheme);
+
+    // Theme toggle button click
+    themeToggleBtn.addEventListener('click', toggleTheme);
+
+    // Initialize dropdown functionality
+    initDropdowns();
+
+    // Initialize the current tool
+    let currentTool = 'dashboard';
+    switchTool(currentTool);
+
+    // Initialize tool functionalities
+    initCitationsCalculator();
+    initPatrolLogGenerator();
+    initTrafficWarningGenerator();
+    initTrapCasefileGenerator();
+    initSupplementalReportGenerator();
+    initStolenVehicleReportGenerator();
+    initStolenPlateReportGenerator();
+    initTrapDatabaseUpdateGenerator();
+});
+
+function initDropdowns() {
+    // Dropdown toggle functionality
+    document.querySelectorAll('.dropdown-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Only prevent default for the dropdown button itself
+            if (e.target.classList.contains('dropdown-btn') || 
+                e.target.classList.contains('dropdown-icon') || 
+                e.target.parentElement.classList.contains('dropdown-btn')) {
+                e.preventDefault();
+            }
+            
+            const parent = this.closest('.sidebar-dropdown');
+            parent.classList.toggle('active');
+            
+            // Close other dropdowns
+            document.querySelectorAll('.sidebar-dropdown').forEach(dropdown => {
+                if (dropdown !== parent) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // Handle clicks on all sidebar menu items (including Dashboard and Changelog)
+    document.querySelectorAll('.sidebar-menu a[data-tool]').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tool = this.getAttribute('data-tool');
+            switchTool(tool);
+            
+            // If it's in a dropdown, keep the parent dropdown open
+            const dropdown = this.closest('.dropdown-container');
+            if (dropdown) {
+                const dropdownParent = dropdown.closest('.sidebar-dropdown');
+                dropdownParent.classList.add('active');
+            }
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.sidebar-dropdown')) {
+            document.querySelectorAll('.sidebar-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+}
+
+function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeButton(newTheme);
+}
+
+function updateThemeButton(theme) {
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const icon = themeToggleBtn.querySelector('i');
+    const text = themeToggleBtn.querySelector('span');
+    
+    if (theme === 'dark') {
+        icon.className = 'fas fa-sun';
+        text.textContent = 'Light Mode';
+    } else {
+        icon.className = 'fas fa-moon';
+        text.textContent = 'Dark Mode';
+    }
+}
+
+function switchTool(tool) {
+    // Update current tool
+    currentTool = tool;
+    
+    // Update active menu items
+    document.querySelectorAll('.sidebar-menu a').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Find and activate the correct menu item
+    const activeItem = document.querySelector(`.sidebar-menu a[data-tool="${tool}"]`);
+    if (activeItem) {
+        activeItem.classList.add('active');
+        
+        // If it's in a dropdown, open that dropdown
+        const dropdown = activeItem.closest('.dropdown-container');
+        if (dropdown) {
+            const dropdownParent = dropdown.closest('.sidebar-dropdown');
+            dropdownParent.classList.add('active');
+        }
+    }
+    
+    // Update current tool title
+    const toolTitles = {
+        'dashboard': 'Dashboard',
+        'citations': 'Unpaid Citations Calculator',
+        'patrol': 'Patrol Log Generator',
+        'traffic-warning': 'Traffic Warning Generator',
+        'trap-casefile': 'TRAP Casefile Generator',
+        'supplemental-report': 'Supplemental Report Generator',
+        'stolen-vehicle': 'Stolen Vehicle Report Generator',
+        'stolen-plate': 'Stolen Plate Report Generator',
+        'trap-database-update': 'Database Update Generator',
+        'tbd': 'Medical Report Tool',
+        'changelog': 'Changelog'
+    };
+    document.getElementById('current-tool').textContent = toolTitles[tool] || 'Tool Panel';
+    
+    // Show the selected tool section
+    document.querySelectorAll('.tool-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(`${tool}-section`).classList.add('active');
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+}
+
+function initCitationsCalculator() {
+    // DOM Elements
+    const countBtn = document.getElementById('countBtn');
+    const templateBtn = document.getElementById('templateBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const inputText = document.getElementById('inputText');
+    const fullName = document.getElementById('fullName');
+    const fswFiled = document.getElementById('fswFiled');
+    const outputDiv = document.getElementById('output');
+    const summaryDiv = document.getElementById('summary');
+    const resultsDiv = document.getElementById('results');
+    const templateContent = document.getElementById('templateContent');
+    const templateOutput = document.getElementById('templateOutput');
+    
+    let grandTotal = 0;
+    let totalFines = 0;
+    
+    // Count amounts button click
+    countBtn.addEventListener('click', countAmounts);
+    
+    // Generate template button click
+    templateBtn.addEventListener('click', generateTemplate);
+    
+    // Copy template button click
+    copyBtn.addEventListener('click', copyTemplate);
+    
+    function countAmounts() {
+        const text = inputText.value;
+        
+        // Clear previous results
+        outputDiv.innerHTML = '';
+        summaryDiv.innerHTML = '';
+        grandTotal = 0;
+        totalFines = 0;
+        
+        // Regular expression to match dollar amounts ending with 0
+        const regex = /\$[\d,]+0\b/g;
+        const matches = text.match(regex);
+        
+        if (!matches || matches.length === 0) {
+            outputDiv.innerHTML = '<p>No dollar amounts ending with 0 found.</p>';
+            templateBtn.disabled = true;
+            resultsDiv.style.display = 'block';
+            return;
+        }
+        
+        // Count occurrences of each amount
+        const amountCounts = {};
+        matches.forEach(amount => {
+            amountCounts[amount] = (amountCounts[amount] || 0) + 1;
+            totalFines++;
+        });
+        
+        // Convert to array and sort by amount (descending)
+        const sortedAmounts = Object.entries(amountCounts)
+            .sort((a, b) => {
+                const numA = parseFloat(a[0].replace(/[$,]/g, ''));
+                const numB = parseFloat(b[0].replace(/[$,]/g, ''));
+                return numB - numA;
+            });
+        
+        // Display counts in a table
+        let tableHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Count</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+        
+        sortedAmounts.forEach(([amount, count]) => {
+            const numericValue = parseFloat(amount.replace(/[$,]/g, ''));
+            const subtotal = numericValue * count;
+            grandTotal += subtotal;
+            
+            tableHTML += `
+                <tr>
+                    <td>${amount}</td>
+                    <td>${count}</td>
+                    <td>${formatCurrency(subtotal)}</td>
+                </tr>
+            `;
+        });
+        
+        tableHTML += `
+                </tbody>
+            </table>
+        `;
+        
+        outputDiv.innerHTML = tableHTML;
+        
+        // Display grand total
+        summaryDiv.innerHTML = `
+            <p><strong>Total Fines Count:</strong> ${totalFines}</p>
+            <p><strong>Grand Total Amount:</strong> ${formatCurrency(grandTotal)}</p>
+        `;
+        
+        // Enable template button and show results
+        templateBtn.disabled = false;
+        resultsDiv.style.display = 'block';
+    }
+    
+    function generateTemplate() {
+        const name = fullName.value || "First Last";
+        const fsw = fswFiled.value;
+        
+        // Generate the template with the new format
+        templateContent.textContent = `[b]Full Name:[/b] ${name}
+[b]Amount of Unpaid Fines:[/b] ${totalFines}
+[b]Amount Owed:[/b] ${formatCurrency(grandTotal)}
+[b]FSW Filed:[/b] ${fsw}`;
+        
+        templateOutput.style.display = 'block';
+        templateOutput.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    function copyTemplate() {
+        const range = document.createRange();
+        range.selectNode(templateContent);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        
+        // Show copied feedback
+        const originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => {
+            copyBtn.innerHTML = originalHTML;
+        }, 2000);
+    }
+    
+    function formatCurrency(value) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(value);
+    }
+}
+
+function initPatrolLogGenerator() {
+    // Form functionality
+    const form = document.getElementById('patrol-form');
+    const addReportBtn = document.getElementById('add-report');
+    const reportsContainer = document.getElementById('reports-container');
+    const outputContainer = document.getElementById('output-container');
+    const bbcodeOutput = document.getElementById('bbcode-output');
+    const copyBtn = document.getElementById('copy-bbcode');
+    
+    // Add report field
+    addReportBtn.addEventListener('click', () => {
+        const reportItem = document.createElement('div');
+        reportItem.className = 'report-item';
+        reportItem.innerHTML = `
+            <input type="text" class="report-name" placeholder="Report Name (e.g., Arrest Report)">
+            <input type="text" class="report-url" placeholder="Report URL">
+            <button type="button" class="remove-report"><i class="fas fa-times"></i></button>
+        `;
+        reportsContainer.appendChild(reportItem);
+        
+        // Add event listener to remove button
+        reportItem.querySelector('.remove-report').addEventListener('click', () => {
+            reportsContainer.removeChild(reportItem);
+        });
+    });
+
+    // Form submission
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Show spinner
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.querySelector('.spinner').classList.add('visible');
+        submitBtn.querySelector('.btn-text').textContent = 'Generating...';
+        submitBtn.disabled = true;
+        
+        // Simulate processing delay
+        setTimeout(() => {
+            generateBBcode();
+            
+            // Hide spinner
+            submitBtn.querySelector('.spinner').classList.remove('visible');
+            submitBtn.querySelector('.btn-text').textContent = 'Generate BB Code';
+            submitBtn.disabled = false;
+        }, 500);
+    });
+
+    // Generate BBcode
+    function generateBBcode() {
+        // Get form values
+        const reportDate = document.getElementById('report-date').value;
+        const reportTime = document.getElementById('report-time').value;
+        const patrolNumber = document.getElementById('patrol-number').value;
+        const traineeName = document.getElementById('trainee-name').value;
+        const employeeNumber = document.getElementById('employee-number').value;
+        const callsign = document.getElementById('callsign').value;
+        const narrative = document.getElementById('narrative').value;
+        
+        // Get reports
+        const reportItems = document.querySelectorAll('.report-item');
+        const reports = [];
+        
+        reportItems.forEach(item => {
+            const name = item.querySelector('.report-name').value;
+            const url = item.querySelector('.report-url').value;
+            
+            if (name && url) {
+                reports.push({ name, url });
+            } else if (name) {
+                reports.push({ name, url: '#' });
+            }
+        });
+        
+        // Generate BBcode
+        let bbcode = `[center][color=Transparent][/color]
+    [img]https://i.postimg.cc/gjxmBXm7/image.png[/img]
+    
+    [color=grey][size=100]LOS SANTOS COUNTY SHERIFF'S DEPARTMENT[/size][/color]
+    [color=black][size=150][b]FIELD TRAINING KING PATROL LOG[/b][/size][/color]
+    [/center]
+    
+    
+                    [transtable=Arial]
+                    [tr]
+                    [td][b]REPORT DATE[/b][/td]
+                    [td][b]REPORT TIME[/b][/td]
+                    [td][b]PATROL #[/b][/td][/tr]
+                    [tr]
+                    [td]${reportDate}[/td]
+                    [td]${reportTime}[/td]
+                    [td]${patrolNumber}[/td]
+                    [/tr]
+                    [/transtable]
+    
+                    [transtable=Arial]
+                    [tr]
+                    [td][b]TRAINEE NAME[/b][/td]
+                    [td][b]EMPLOYEE NUMBER[/b][/td]
+                    [td][b]CALLSIGN[/b][/td]
+                    [/tr]
+                    [tr]
+                    [td]${traineeName}[/TD]
+                    [td]${employeeNumber}[/TD]
+                    [td]${callsign}[/TD][/transtable]
+    
+    [transtable=Arial][tr]
+                    [td][b][center]ASSOCIATED REPORTS & PATROL NARRATIVE[/center][/b][/td][/tr][/transtable][hr][/hr]
+                    [transtable=Arial]
+                    [tr]
+                    [td][justify][b]INSTRUCTIONS:[/b] Please fill out the "Associated Reports" section if you handle/fill out any reports during your King patrol. Provide the link in the specified area and also include a general name for the report (i.e. Arrest Report - John Doe). If you do not use/need the reports section, please fill in the "REPORT NAME" with D.N.A.
+                    
+For the "Patrol Narrative", please try and use general timestamps to log your patrol (i.e. 1345 - Traffic stop on a black sedan, Hawick Avenue. I noticed the vehicle driving quite recklessly and it was picked up on my dashcam. I decided to pull the vehicle over and the plates read, XXXXXX. After approaching the driver and asking for a backup unit, I decided to issue a citation for reckless driving). Again, this is an example, but please provide depth to the scenarios you find yourself in during the patrol. However, utilize time stamps to track everything that you encounter during your patrol. For example:
+[list][*]1600 - Start of patrol under 111 King.
+[*]1622 - I performed a traffic stop on a black Asbo on Elgin Avenue. I required a backup unit since the vehicle matched the description from a crime broadcast from earlier. You could then expand on that and write about what occurred before or after, for example.
+[*]1648 - 923s were heard around Davis LTD. Utilize that to write about what you did, did you respond? Did you find the shooter? All of this can be included.
+[*]1700 - End of patrol.[/list][/justify][/td][/tr][/transtable][hr][/hr]`;
+        
+        // Add associated reports if any
+        if (reports.length > 0) {
+            bbcode += `\n                    [transtable=Arial]
+                    [tr][td][b]ASSOCIATED REPORTS[/b][/TD][/TR]
+                    [tr][td][list]`;
+            
+            reports.forEach(report => {
+                bbcode += `\n[*][url=${report.url}]${report.name}[/url]`;
+            });
+            
+            bbcode += `\n[/list][/TD][/TR][/transtable][hr][/hr]`;
+        } else {
+            bbcode += `\n                    [transtable=Arial]
+                    [tr][td][b]ASSOCIATED REPORTS[/b][/TD][/TR]
+                    [tr][td][list][*]D.N.A.[/list][/TD][/TR][/transtable][hr][/hr]`;
+        }
+        
+        // Add narrative
+        bbcode += `\n                    [transtable=Arial]
+                    [tr][td][b]PATROL NARRATIVE[/b][/TD][/TR]
+                    [tr][td]
+${narrative}
+[/TD][/TR][/transtable][hr][/hr]
+                    [transtable=Arial]
+                    [tr]
+                    [td][b][center]SIGNATURE[/center][/b][/td][/tr][/transtable][hr][/hr]
+                    [transtable=Arial]
+                    [tr]
+                    [td][b]TRAINEE SIGNATURE[/b][/td]
+                    [td][b]DATE[/b][/td][/tr]
+                    [tr]
+                    [td][i]${traineeName}[/i][/TD]
+                    [td]${reportDate}[/TD][/tr][/transtable]`;
+        
+        // Display the BBcode
+        bbcodeOutput.value = bbcode;
+        outputContainer.style.display = 'block';
+        
+        // Scroll to the output
+        outputContainer.scrollIntoView({ behavior: 'smooth' });
+        
+        // Copy to clipboard automatically
+        copyToClipboard();
+    }
+
+    // Copy to clipboard
+    function copyToClipboard() {
+        bbcodeOutput.select();
+        document.execCommand('copy');
+        
+        // Show feedback
+        const originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => {
+            copyBtn.innerHTML = originalHTML;
+        }, 2000);
+    }
+
+    // Copy button
+    copyBtn.addEventListener('click', copyToClipboard);
+}
+
+// Traffic Warning Generator Functions
+function initTrafficWarningGenerator() {
+    // Set default date to today
+    const today = new Date();
+    document.getElementById('date').value = today.toISOString().split('T')[0];
+    
+    // Set default time to current time
+    document.getElementById('time').value = today.toTimeString().slice(0,5);
+    
+    // Initialize the preview
+    updateTrafficWarningPreview();
+    
+    // Close success message
+    document.getElementById('close-traffic-success').addEventListener('click', function() {
+        document.getElementById('traffic-success-message').classList.remove('visible');
+    });
+}
+
+// GTA V lore-friendly data for traffic warnings
+const streetNames = [
+    "Vinewood Blvd", "Mirror Park Ave", "Davis Ave", "Strawberry Ave", 
+    "Elgin Ave", "Popular St", "Innocence Blvd", "Alta St", 
+    "Power St", "Adam's Apple Blvd", "Spanish Ave", "Portola Dr"
+];
+
+const lastNames = [
+    "DeSanta", "Phillips", "Johnston", "Harris", "Clinton", 
+    "Espinoza", "Bell", "Richards", "Atkins", "Simpson"
+];
+
+const firstNames = [
+    "Michael", "Franklin", "Trevor", "Lamar", "Amanda", 
+    "Jimmy", "Tracey", "Dave", "Steve", "Andreas"
+];
+
+function getRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function generateRandomTrafficData() {
+    // Set random location
+    const street1 = getRandomElement(streetNames);
+    let street2;
+    do {
+        street2 = getRandomElement(streetNames);
+    } while (street2 === street1);
+    
+    document.getElementById('location').value = `${street1} & ${street2}`;
+    
+    // Set random driver name
+    const firstName = getRandomElement(firstNames);
+    const lastName = getRandomElement(lastNames);
+    document.getElementById('driverName').value = `${lastName}, ${firstName}`;
+    
+    // Set random license plate
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    let plate = '';
+    for (let i = 0; i < 3; i++) {
+        plate += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+    plate += ' ';
+    for (let i = 0; i < 4; i++) {
+        plate += numbers.charAt(Math.floor(Math.random() * numbers.length));
+    }
+    document.getElementById('licensePlate').value = plate;
+    
+    // Set random badge number
+    document.getElementById('badgeNumber').value = Math.floor(1000 + Math.random() * 9000);
+    
+    // Set random officer name
+    const officerFirst = getRandomElement(firstNames);
+    const officerLast = getRandomElement(lastNames);
+    document.getElementById('officerName').value = `${officerFirst} ${officerLast}`;
+    
+    // Set random address
+    document.getElementById('address').value = `${Math.floor(100 + Math.random() * 9000)} ${getRandomElement(streetNames)}`;
+    
+    // Set random vehicle color
+    const colors = ["Metallic Black", "Classic Red", "Racing Green", "Metallic Blue", "Sunset Orange", "Silver", "Yellow", "White"];
+    document.getElementById('vehicleColor').value = getRandomElement(colors);
+    
+    // Set random vehicle model based on make
+    const vehicleModels = {
+        "Albany": ["Emperor", "Cavalcade", "Romero", "Virgo"],
+        "Bravado": ["Buffalo", "Banshee", "Gauntlet", "Gresley"],
+        "Declasse": ["Tornado", "Sabre", "Rancher", "Premier"],
+        "Grotti": ["Carbonizzare", "Cheetah", "Turismo"],
+        "Karin": ["Sultan", "Futo", "Asterope", "Dilettante"],
+        "Vapid": ["Dominator", "Stanier", "Bullet", "Sandking"]
+    };
+    
+    const makeSelect = document.getElementById('vehicleMake');
+    const makes = Array.from(makeSelect.options)
+        .map(option => option.value)
+        .filter(value => value !== "");
+    const randomMake = getRandomElement(makes);
+    makeSelect.value = randomMake;
+    
+    if (vehicleModels[randomMake]) {
+        document.getElementById('vehicleModel').value = getRandomElement(vehicleModels[randomMake]);
+    } else {
+        document.getElementById('vehicleModel').value = "Unknown";
+    }
+    
+    // Set random infraction
+    const infractionSelect = document.getElementById('infractionType');
+    const infractions = Array.from(infractionSelect.options)
+        .map(option => option.value)
+        .filter(value => value !== "");
+    document.getElementById('infractionType').value = getRandomElement(infractions);
+    
+    // Set random description
+    const descriptions = [
+        "Vehicle was observed exceeding the posted speed limit by more than 15 mph in a residential area.",
+        "Driver failed to come to a complete stop at a clearly marked stop sign, creating a hazardous situation.",
+        "Vehicle was parked in a designated no-parking zone, obstructing traffic flow.",
+        "Driver was observed using a mobile device while operating a motor vehicle.",
+        "Vehicle made an illegal U-turn at a controlled intersection."
+    ];
+    document.getElementById('violationDescription').value = getRandomElement(descriptions);
+    
+    // Set random comments
+    const comments = [
+        "Driver was cooperative and acknowledged the violation.",
+        "Driver appeared unaware of the traffic regulation.",
+        "Weather conditions were clear at the time of the violation.",
+        "Traffic was light at the time of the observed violation."
+    ];
+    document.getElementById('officerComments').value = getRandomElement(comments);
+    
+    // Update the preview
+    updateTrafficWarningPreview();
+}
+
+function updateTrafficWarningPreview() {
+    const preview = document.getElementById('trafficWarningPreview');
+    const agency = document.getElementById('agency').value;
+    const agencyName = agency === 'LSPD' ? 'LOS SANTOS POLICE DEPARTMENT' : 'LOS SANTOS SHERIFF\'S DEPARTMENT';
+    
+    // Get form values
+    const badgeNumber = document.getElementById('badgeNumber').value || 'N/A';
+    const officerName = document.getElementById('officerName').value || 'N/A';
+    const date = document.getElementById('date').value || 'N/A';
+    const time = document.getElementById('time').value || 'N/A';
+    const location = document.getElementById('location').value || 'N/A';
+    const driverName = document.getElementById('driverName').value || 'N/A';
+    const dlNumber = document.getElementById('dlNumber').value || 'N/A';
+    const dlState = document.getElementById('dlState').value || 'N/A';
+    const address = document.getElementById('address').value || 'N/A';
+    const city = document.getElementById('city').value || 'N/A';
+    const vehicleMake = document.getElementById('vehicleMake').value || 'N/A';
+    const vehicleModel = document.getElementById('vehicleModel').value || 'N/A';
+    const vehicleColor = document.getElementById('vehicleColor').value || 'N/A';
+    const licensePlate = document.getElementById('licensePlate').value || 'N/A';
+    const plateState = document.getElementById('plateState').value || 'N/A';
+    const infractionType = document.getElementById('infractionType').value || 'N/A';
+    const violationDescription = document.getElementById('violationDescription').value || 'N/A';
+    const officerComments = document.getElementById('officerComments').value || 'N/A';
+    
+    // Format date for display
+    const displayDate = date !== 'N/A' ? new Date(date).toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    }) : 'N/A';
+    
+    // Generate preview HTML
+    preview.innerHTML = `
+        <div class="warning-header">
+            <div class="agency-name">${agencyName}</div>
+            <div class="form-title">TRAFFIC WARNING NOTICE</div>
+        </div>
+        
+        <div class="officer-info-grid">
+            <div class="officer-info-item">
+                <div class="officer-info-label">BADGE/ID NUMBER</div>
+                <div class="officer-info-value">${badgeNumber}</div>
+            </div>
+            <div class="officer-info-item">
+                <div class="officer-info-label">OFFICER NAME</div>
+                <div class="officer-info-value">${officerName}</div>
+            </div>
+            <div class="officer-info-item">
+                <div class="officer-info-label">DATE OF VIOLATION</div>
+                <div class="officer-info-value">${displayDate}</div>
+            </div>
+            <div class="officer-info-item">
+                <div class="officer-info-label">TIME OF VIOLATION</div>
+                <div class="officer-info-value">${time}</div>
+            </div>
+            <div class="officer-info-item" style="grid-column: 1 / -1;">
+                <div class="officer-info-label">LOCATION OF VIOLATION</div>
+                <div class="officer-info-value">${location}</div>
+            </div>
+        </div>
+        
+        <div class="section-separator"></div>
+        
+        <div class="info-section">
+            <div class="info-label">DRIVER INFORMATION</div>
+            <div class="form-row">
+                <div>
+                    <div class="info-label">Full Name:</div>
+                    <div class="info-value">${driverName}</div>
+                </div>
+                <div>
+                    <div class="info-label">License Number:</div>
+                    <div class="info-value">${dlNumber}</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <div class="info-label">License State:</div>
+                    <div class="info-value">${dlState}</div>
+                </div>
+                <div>
+                    <div class="info-label">Address:</div>
+                    <div class="info-value">${address}, ${city}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-separator"></div>
+        
+        <div class="info-section">
+            <div class="info-label">VEHICLE INFORMATION</div>
+            <div class="form-row">
+                <div>
+                    <div class="info-label">Make/Model:</div>
+                    <div class="info-value">${vehicleMake} / ${vehicleModel}</div>
+                </div>
+                <div>
+                    <div class="info-label">Color:</div>
+                    <div class="info-value">${vehicleColor}</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <div class="info-label">License Plate:</div>
+                    <div class="info-value">${licensePlate}</div>
+                </div>
+                <div>
+                    <div class="info-label">Plate State:</div>
+                    <div class="info-value">${plateState}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-separator"></div>
+        
+        <div class="violation-section">
+            <div class="info-label">VIOLATION DETAILS</div>
+            <div class="violation-grid">
+                <div class="info-label">Infraction Type:</div>
+                <div class="info-value">${infractionType}</div>
+                
+                <div class="info-label">Description:</div>
+                <div class="info-value">${violationDescription}</div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-label">OFFICER COMMENTS</div>
+            <div class="info-value">${officerComments}</div>
+        </div>
+        
+        <div class="officer-signature">
+            <div class="info-section">
+                <div class="info-label">OFFICER SIGNATURE</div>
+                <div class="signature-area">${officerName}</div>
+            </div>
+        </div>
+        
+        <div class="notice-section">
+            <strong>NOTICE:</strong> This document serves as an official warning for the traffic violation detailed above. 
+            Failure to comply with traffic regulations may result in citation or arrest. This warning will be recorded in 
+            the department's database for future reference.
+        </div>
+        
+        <div class="form-note">
+            This is a warning notice only. No fine is assessed at this time.
+        </div>
+    `;
+}
+
+function downloadTrafficWarningAsPNG() {
+    const preview = document.getElementById('trafficWarningPreview');
+    const agency = document.getElementById('agency').value;
+    const agencyName = agency === 'LSPD' ? 'LOS SANTOS POLICE DEPARTMENT' : 'LOS SANTOS SHERIFF\'S DEPARTMENT';
+    
+    // Get form values
+    const badgeNumber = document.getElementById('badgeNumber').value || 'N/A';
+    const officerName = document.getElementById('officerName').value || 'N/A';
+    const date = document.getElementById('date').value || 'N/A';
+    const time = document.getElementById('time').value || 'N/A';
+    const location = document.getElementById('location').value || 'N/A';
+    const driverName = document.getElementById('driverName').value || 'N/A';
+    const dlNumber = document.getElementById('dlNumber').value || 'N/A';
+    const dlState = document.getElementById('dlState').value || 'N/A';
+    const address = document.getElementById('address').value || 'N/A';
+    const city = document.getElementById('city').value || 'N/A';
+    const vehicleMake = document.getElementById('vehicleMake').value || 'N/A';
+    const vehicleModel = document.getElementById('vehicleModel').value || 'N/A';
+    const vehicleColor = document.getElementById('vehicleColor').value || 'N/A';
+    const licensePlate = document.getElementById('licensePlate').value || 'N/A';
+    const plateState = document.getElementById('plateState').value || 'N/A';
+    const infractionType = document.getElementById('infractionType').value || 'N/A';
+    const violationDescription = document.getElementById('violationDescription').value || 'N/A';
+    const officerComments = document.getElementById('officerComments').value || 'N/A';
+    
+    // Format date for display
+    const displayDate = date !== 'N/A' ? new Date(date).toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    }) : 'N/A';
+    
+    // Create a temporary div for PNG export with always black text on white background
+    const pngContainer = document.createElement('div');
+    pngContainer.style.position = 'absolute';
+    pngContainer.style.left = '-9999px';
+    pngContainer.style.top = '-9999px';
+    pngContainer.style.width = '800px';
+    pngContainer.style.padding = '25px';
+    pngContainer.style.backgroundColor = 'white';
+    pngContainer.style.color = 'black';
+    pngContainer.style.fontFamily = 'Arial, sans-serif';
+    
+    pngContainer.innerHTML = `
+        <div class="warning-form-png">
+            <div class="warning-header-png">
+                <div class="agency-name-png">${agencyName}</div>
+                <div class="form-title-png">TRAFFIC WARNING NOTICE</div>
+            </div>
+            
+            <div class="officer-info-grid-png">
+                <div class="officer-info-item-png">
+                    <div class="officer-info-label-png">BADGE/ID NUMBER</div>
+                    <div class="officer-info-value-png">${badgeNumber}</div>
+                </div>
+                <div class="officer-info-item-png">
+                    <div class="officer-info-label-png">OFFICER NAME</div>
+                    <div class="officer-info-value-png">${officerName}</div>
+                </div>
+                <div class="officer-info-item-png">
+                    <div class="officer-info-label-png">DATE OF VIOLATION</div>
+                    <div class="officer-info-value-png">${displayDate}</div>
+                </div>
+                <div class="officer-info-item-png">
+                    <div class="officer-info-label-png">TIME OF VIOLATION</div>
+                    <div class="officer-info-value-png">${time}</div>
+                </div>
+                <div class="officer-info-item-png" style="grid-column: 1 / -1;">
+                    <div class="officer-info-label-png">LOCATION OF VIOLATION</div>
+                    <div class="officer-info-value-png">${location}</div>
+                </div>
+            </div>
+            
+            <div class="section-separator-png"></div>
+            
+            <div class="info-section-png">
+                <div class="info-label-png">DRIVER INFORMATION</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <div class="info-label-png">Full Name:</div>
+                        <div class="info-value-png">${driverName}</div>
+                    </div>
+                    <div>
+                        <div class="info-label-png">License Number:</div>
+                        <div class="info-value-png">${dlNumber}</div>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                    <div>
+                        <div class="info-label-png">License State:</div>
+                        <div class="info-value-png">${dlState}</div>
+                    </div>
+                    <div>
+                        <div class="info-label-png">Address:</div>
+                        <div class="info-value-png">${address}, ${city}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-separator-png"></div>
+            
+            <div class="info-section-png">
+                <div class="info-label-png">VEHICLE INFORMATION</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <div class="info-label-png">Make/Model:</div>
+                        <div class="info-value-png">${vehicleMake} / ${vehicleModel}</div>
+                    </div>
+                    <div>
+                        <div class="info-label-png">Color:</div>
+                        <div class="info-value-png">${vehicleColor}</div>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                    <div>
+                        <div class="info-label-png">License Plate:</div>
+                        <div class="info-value-png">${licensePlate}</div>
+                    </div>
+                    <div>
+                        <div class="info-label-png">Plate State:</div>
+                        <div class="info-value-png">${plateState}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-separator-png"></div>
+            
+            <div class="violation-section-png">
+                <div class="info-label-png">VIOLATION DETAILS</div>
+                <div class="violation-grid-png">
+                    <div class="info-label-png">Infraction Type:</div>
+                    <div class="info-value-png">${infractionType}</div>
+                    
+                    <div class="info-label-png">Description:</div>
+                    <div class="info-value-png">${violationDescription}</div>
+                </div>
+            </div>
+            
+            <div class="info-section-png">
+                <div class="info-label-png">OFFICER COMMENTS</div>
+                <div class="info-value-png">${officerComments}</div>
+            </div>
+            
+            <div class="officer-signature-png">
+                <div class="info-section-png">
+                    <div class="info-label-png">OFFICER SIGNATURE</div>
+                    <div class="signature-area-png">${officerName}</div>
+                </div>
+            </div>
+            
+            <div class="notice-section-png">
+                <strong>NOTICE:</strong> This document serves as an official warning for the traffic violation detailed above. 
+                Failure to comply with traffic regulations may result in citation or arrest. This warning will be recorded in 
+                the department's database for future reference.
+            </div>
+            
+            <div class="form-note">
+                This is a warning notice only. No fine is assessed at this time.
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(pngContainer);
+    
+    // Use html2canvas to capture the PNG container
+    html2canvas(pngContainer, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff'
+    }).then(canvas => {
+        // Create download link
+        const link = document.createElement('a');
+        link.download = `traffic_warning_${new Date().getTime()}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        
+        // Remove temporary container
+        document.body.removeChild(pngContainer);
+        
+        // Show success message
+        document.getElementById('traffic-success-message').classList.add('visible');
+    });
+}
+
+// TRAP Casefile Generator Functions
+function initTrapCasefileGenerator() {
+    // Person management
+    const personsContainer = document.getElementById('persons-container');
+    const addPersonBtn = document.getElementById('add-person-btn');
+    let personCount = 0;
+
+    function addPerson() {
+        personCount++;
+        const personSection = document.createElement('div');
+        personSection.className = 'person-section';
+        personSection.innerHTML = `
+            <div class="person-header">
+                <h3 class="person-number">Person #${personCount}</h3>
+                <div class="person-actions">
+                    <button class="remove-person">
+                        <i class="fas fa-trash"></i> Remove
+                    </button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="person-name-${personCount}">Full Name</label>
+                    <input type="text" id="person-name-${personCount}" placeholder="Forename Surname">
+                </div>
+                <div class="form-group">
+                    <label for="person-classification-${personCount}">Classification</label>
+                    <select id="person-classification-${personCount}">
+                        <option value="Victim">Victim</option>
+                        <option value="Suspect">Suspect</option>
+                        <option value="Witness">Witness</option>
+                        <option value="Informant">Informant</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="person-dob-${personCount}">Date of Birth</label>
+                    <input type="text" id="person-dob-${personCount}" placeholder="e.g., 05/15/1990">
+                </div>
+                <div class="form-group">
+                    <label for="person-phone-${personCount}">Phone Number</label>
+                    <input type="text" id="person-phone-${personCount}" placeholder="e.g., 555-1234">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="person-residence-${personCount}">Residence</label>
+                    <input type="text" id="person-residence-${personCount}" placeholder="e.g., 123 Main Street">
+                </div>
+                <div class="form-group">
+                    <label for="person-relation-${personCount}">Relation to Incident</label>
+                    <input type="text" id="person-relation-${personCount}" placeholder="e.g., Owner of the property">
+                </div>
+            </div>
+        `;
+        personsContainer.appendChild(personSection);
+        
+        // Add event listener to remove button
+        const removeBtn = personSection.querySelector('.remove-person');
+        removeBtn.addEventListener('click', () => {
+            personSection.remove();
+            updatePersonNumbers();
+        });
+    }
+
+    function updatePersonNumbers() {
+        const personSections = personsContainer.querySelectorAll('.person-section');
+        personCount = personSections.length;
+        personSections.forEach((section, index) => {
+            const personNumber = section.querySelector('.person-number');
+            personNumber.textContent = `Person #${index + 1}`;
+        });
+    }
+
+    addPersonBtn.addEventListener('click', addPerson);
+
+    // Add initial person
+    addPerson();
+
+    // Evidence management
+    const evidenceContainer = document.getElementById('evidence-container');
+    const addEvidenceBtn = document.getElementById('add-evidence-btn');
+    const evidenceModal = document.getElementById('evidence-modal');
+    const evidenceTypeOptions = document.querySelectorAll('.evidence-type-option');
+    const evidenceSpoilerCheckbox = document.getElementById('evidence-spoiler');
+    const evidenceTitleInput = document.getElementById('evidence-title');
+    const evidencePreview = document.getElementById('evidence-preview');
+    const addEvidenceConfirmBtn = document.getElementById('add-evidence-confirm');
+    const cancelEvidenceBtn = document.getElementById('cancel-evidence');
+    const closeModalBtn = document.getElementById('close-modal');
+    const urlOptions = document.getElementById('url-options');
+    const urlClickableCheckbox = document.getElementById('url-clickable');
+
+    let selectedEvidenceType = '';
+    let evidenceCount = 0;
+    let editingEvidenceItem = null;
+
+    // Open evidence modal
+    addEvidenceBtn.addEventListener('click', () => {
+        evidenceModal.classList.add('active');
+        selectedEvidenceType = '';
+        evidenceTypeOptions.forEach(option => option.classList.remove('selected'));
+        evidenceSpoilerCheckbox.checked = false;
+        evidenceTitleInput.value = '';
+        evidencePreview.style.display = 'none';
+        urlOptions.classList.remove('active');
+        urlClickableCheckbox.checked = false;
+        editingEvidenceItem = null;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-plus"></i> Add Evidence';
+    });
+
+    // Close evidence modal
+    function closeEvidenceModal() {
+        evidenceModal.classList.remove('active');
+    }
+
+    closeModalBtn.addEventListener('click', closeEvidenceModal);
+    cancelEvidenceBtn.addEventListener('click', closeEvidenceModal);
+
+    // Select evidence type
+    evidenceTypeOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            evidenceTypeOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedEvidenceType = option.getAttribute('data-type');
+            
+            // Show/hide URL options
+            if (selectedEvidenceType === 'url') {
+                urlOptions.classList.add('active');
+            } else {
+                urlOptions.classList.remove('active');
+            }
+            
+            updateEvidencePreview();
+        });
+    });
+
+    // Update evidence preview when inputs change
+    evidenceSpoilerCheckbox.addEventListener('change', updateEvidencePreview);
+    evidenceTitleInput.addEventListener('input', updateEvidencePreview);
+    urlClickableCheckbox.addEventListener('change', updateEvidencePreview);
+
+    function updateEvidencePreview() {
+        if (!selectedEvidenceType) {
+            evidencePreview.style.display = 'none';
+            return;
+        }
+        
+        let previewContent = '';
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        
+        switch(selectedEvidenceType) {
+            case 'text':
+                previewContent = '[Text content here]';
+                break;
+            case 'image':
+                previewContent = '[img]https://example.com/image.jpg[/img]';
+                break;
+            case 'url':
+                const isClickable = urlClickableCheckbox.checked;
+                if (isClickable) {
+                    previewContent = '[url=https://example.com]Clickable Text[/url]';
+                } else {
+                    previewContent = '[url]https://example.com[/url]';
+                }
+                break;
+        }
+        
+        // Title is now outside the spoiler
+        let finalPreview = '';
+        if (title) {
+            finalPreview = `[${title}:] `;
+        }
+        
+        if (isSpoiler) {
+            finalPreview += `[spoiler]\n${previewContent}\n[/spoiler]`;
+        } else {
+            finalPreview += previewContent;
+        }
+        
+        evidencePreview.textContent = finalPreview;
+        evidencePreview.style.display = 'block';
+    }
+
+    // Function to toggle URL text field visibility
+    function toggleUrlTextInput(evidenceItem, isVisible) {
+        const urlTextInput = evidenceItem.querySelector('.url-text-input');
+        if (urlTextInput) {
+            if (isVisible) {
+                urlTextInput.classList.add('active');
+            } else {
+                urlTextInput.classList.remove('active');
+            }
+        }
+    }
+
+    // Add evidence
+    addEvidenceConfirmBtn.addEventListener('click', () => {
+        if (!selectedEvidenceType) {
+            alert('Please select an evidence type');
+            return;
+        }
+        
+        if (editingEvidenceItem) {
+            // Update existing evidence item
+            updateEvidenceItem(editingEvidenceItem);
+        } else {
+            // Create new evidence item
+            evidenceCount++;
+            const evidenceItem = document.createElement('div');
+            evidenceItem.className = 'evidence-item';
+            evidenceItem.setAttribute('data-type', selectedEvidenceType);
+            
+            createEvidenceContent(evidenceItem, selectedEvidenceType, evidenceSpoilerCheckbox.checked, evidenceTitleInput.value.trim(), urlClickableCheckbox.checked);
+            evidenceContainer.appendChild(evidenceItem);
+            
+            setupEvidenceEventListeners(evidenceItem);
+        }
+        
+        closeEvidenceModal();
+    });
+
+    // Function to create evidence content
+    function createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable) {
+        let evidenceContent = '';
+        
+        switch(type) {
+            case 'text':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Evidence Title" value="${title}">
+                    </div>
+                    <div class="evidence-line-with-title">
+                        <textarea class="evidence-text-content" placeholder="Enter text evidence here..."></textarea>
+                    </div>
+                `;
+                break;
+            case 'image':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Image Title (Optional)" value="${title}">
+                    </div>
+                    <div class="image-urls-container">
+                        <div class="image-url-line">
+                            <input type="text" class="evidence-image-url" placeholder="Image URL">
+                            <div class="evidence-line-actions">
+                                <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-image-btn"><i class="fas fa-plus"></i> Add Another Image</button>
+                `;
+                break;
+            case 'url':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Link Title (Optional)" value="${title}">
+                    </div>
+                    <div class="checkbox-group url-options-inline">
+                        <input type="checkbox" class="url-clickable-field" ${isClickable ? 'checked' : ''}>
+                        <label>Use clickable text</label>
+                    </div>
+                    <div class="evidence-line">
+                        <input type="text" class="evidence-url" placeholder="URL">
+                    </div>
+                    <div class="url-text-input ${isClickable ? 'active' : ''}">
+                        <div class="evidence-line">
+                            <input type="text" class="evidence-url-text" placeholder="Link Text" value="">
+                        </div>
+                    </div>
+                `;
+                break;
+        }
+        
+        evidenceItem.innerHTML = `
+            <div class="evidence-header">
+                <div class="evidence-type">
+                    <span class="evidence-number">${evidenceCount}.</span>
+                    ${type.charAt(0).toUpperCase() + type.slice(1)} Evidence
+                </div>
+                <div class="evidence-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="evidence-spoiler-field" ${isSpoiler ? 'checked' : ''}>
+                        <label>Spoiler</label>
+                    </div>
+                    <button class="edit-evidence">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="remove-evidence">
+                        <i class="fas fa-trash"></i> Remove
+                    </button>
+                </div>
+            </div>
+            <div class="evidence-content">
+                ${evidenceContent}
+            </div>
+        `;
+    }
+
+    // Function to update existing evidence item
+    function updateEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        const isClickable = urlClickableCheckbox.checked;
+        
+        createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable);
+        setupEvidenceEventListeners(evidenceItem);
+    }
+
+    // Function to setup event listeners for evidence items
+    function setupEvidenceEventListeners(evidenceItem) {
+        // Add event listeners for dynamic elements
+        const removeBtn = evidenceItem.querySelector('.remove-evidence');
+        removeBtn.addEventListener('click', () => {
+            evidenceItem.remove();
+            updateEvidenceNumbers();
+        });
+        
+        // Add event listener for edit button
+        const editBtn = evidenceItem.querySelector('.edit-evidence');
+        editBtn.addEventListener('click', () => {
+            editEvidenceItem(evidenceItem);
+        });
+        
+        // For URL type, add functionality to toggle clickable text
+        if (evidenceItem.getAttribute('data-type') === 'url') {
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableField.addEventListener('change', () => {
+                toggleUrlTextInput(evidenceItem, urlClickableField.checked);
+            });
+        }
+        
+        // For image type, add functionality to add/remove images
+        if (evidenceItem.getAttribute('data-type') === 'image') {
+            const addImageBtn = evidenceItem.querySelector('.add-image-btn');
+            const imageUrlsContainer = evidenceItem.querySelector('.image-urls-container');
+            
+            addImageBtn.addEventListener('click', () => {
+                const newImageLine = document.createElement('div');
+                newImageLine.className = 'image-url-line';
+                newImageLine.innerHTML = `
+                    <input type="text" class="evidence-image-url" placeholder="Image URL">
+                    <div class="evidence-line-actions">
+                        <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+                imageUrlsContainer.appendChild(newImageLine);
+                
+                // Add event listener to remove button
+                const removeImageBtn = newImageLine.querySelector('.remove-image-btn');
+                removeImageBtn.addEventListener('click', () => {
+                    newImageLine.remove();
+                });
+            });
+            
+            // Add event listeners to existing remove buttons
+            const removeImageBtns = evidenceItem.querySelectorAll('.remove-image-btn');
+            removeImageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.closest('.image-url-line').remove();
+                });
+            });
+        }
+    }
+
+    // Function to edit an evidence item
+    function editEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const titleField = evidenceItem.querySelector('.evidence-title-field');
+        const spoilerField = evidenceItem.querySelector('.evidence-spoiler-field');
+        
+        // Set modal values based on existing evidence
+        selectedEvidenceType = type;
+        evidenceTypeOptions.forEach(option => {
+            if (option.getAttribute('data-type') === type) {
+                option.classList.add('selected');
+            } else {
+                option.classList.remove('selected');
+            }
+        });
+        
+        evidenceTitleInput.value = titleField ? titleField.value : '';
+        evidenceSpoilerCheckbox.checked = spoilerField ? spoilerField.checked : false;
+        
+        // Handle URL-specific options
+        if (type === 'url') {
+            urlOptions.classList.add('active');
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableCheckbox.checked = urlClickableField ? urlClickableField.checked : false;
+            
+            // Populate URL fields if they exist
+            const urlField = evidenceItem.querySelector('.evidence-url');
+            const urlTextField = evidenceItem.querySelector('.evidence-url-text');
+            
+            if (urlField) {
+                // Store the current URL value to restore after modal opens
+                setTimeout(() => {
+                    const urlInput = document.querySelector('#evidence-modal .evidence-url');
+                    if (urlInput) urlInput.value = urlField.value;
+                }, 100);
+            }
+            
+            if (urlTextField) {
+                setTimeout(() => {
+                    const urlTextInput = document.querySelector('#evidence-modal .evidence-url-text');
+                    if (urlTextInput) urlTextInput.value = urlTextField.value;
+                }, 100);
+            }
+        } else {
+            urlOptions.classList.remove('active');
+            urlClickableCheckbox.checked = false;
+        }
+        
+        // Update preview
+        updateEvidencePreview();
+        
+        // Set editing mode
+        editingEvidenceItem = evidenceItem;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-save"></i> Update Evidence';
+        
+        // Open modal
+        evidenceModal.classList.add('active');
+    }
+
+    // Update evidence numbers when items are removed
+    function updateEvidenceNumbers() {
+        const evidenceItems = evidenceContainer.querySelectorAll('.evidence-item');
+        evidenceCount = evidenceItems.length;
+        evidenceItems.forEach((item, index) => {
+            const evidenceNumber = item.querySelector('.evidence-number');
+            evidenceNumber.textContent = `${index + 1}.`;
+        });
+    }
+
+        // Generate BB Code for TRAP Casefile
+    const generateBtn = document.getElementById('generate-casefile-btn');
+    const outputContainer = document.getElementById('casefile-output-container');
+    const titleOutput = document.getElementById('casefile-title-output');
+    const bbcodeOutput = document.getElementById('casefile-bbcode-output');
+    const copyTitleBtn = document.getElementById('copy-casefile-title-btn');
+    const copyBbcodeBtn = document.getElementById('copy-casefile-bbcode-btn');
+    const resetBtn = document.getElementById('reset-casefile-btn');
+
+    generateBtn.addEventListener('click', () => {
+        // Get case information
+        const caseTitle = document.getElementById('case-title').value;
+        const caseDate = document.getElementById('case-date').value;
+        
+        // Generate title - use the date exactly as entered
+        const generatedTitle = `${caseDate} ${caseTitle}`;
+        titleOutput.textContent = generatedTitle;
+        
+        // Generate BB Code
+        let bbcode = `[font=Arial][color=black]\n\n`;
+        bbcode += `[center][img]https://i.imgur.com/LEWTXbL.png[/img]\n\n`;
+        bbcode += `[size=125][b]SHERIFF'S DEPARTMENT\nCOUNTY OF LOS SANTOS[/b]\n[i]"A Tradition of Service Since 1850"[/i][/size]\n\n`;
+        bbcode += `[size=110][u]CASE PACKAGE[/u][/size][/center][hr][/hr]\n\n`;
+        bbcode += `[font=arial][color=black][indent][size=105][b]Investigative Background and Assignment[/b][/size]\n\n`;
+        bbcode += `[indent]\n`;
+        
+        // Add investigative background
+        const timeDate = document.getElementById('time-date').value;
+        const penalCode = document.getElementById('penal-code').value;
+        const location = document.getElementById('location').value;
+        const investigators = document.getElementById('investigators').value;
+        
+        bbcode += `[b]Time & Date:[/b] ${timeDate || '0000, Month Day, Year'}\n`;
+        bbcode += `[b]Penal Code (if Criminal):[/b] ${penalCode || '123MC, PENAL CODE TITLE; 456MC, PENAL CODE TITLE'}\n`;
+        bbcode += `[b]Location:[/b] ${location || ''}\n\n`;
+        bbcode += `[b]Handling Investigator(s):[/b] ${investigators || 'Rank Forename Surname (Lead); Rank Forename Surname; Rank Forename Surname'}\n`;
+        bbcode += `[/indent]\n\n`;
+        
+        // Add involved persons
+        bbcode += `[size=105][b]Involved Persons[/b][/size]\n`;
+        bbcode += `[indent]`;
+        
+        const personSections = personsContainer.querySelectorAll('.person-section');
+        personSections.forEach((section, index) => {
+            const name = section.querySelector(`#person-name-${index+1}`).value || `Forename Surname`;
+            const classification = section.querySelector(`#person-classification-${index+1}`).value;
+            const dob = section.querySelector(`#person-dob-${index+1}`).value;
+            const phone = section.querySelector(`#person-phone-${index+1}`).value;
+            const residence = section.querySelector(`#person-residence-${index+1}`).value;
+            const relation = section.querySelector(`#person-relation-${index+1}`).value;
+            
+            // Use date of birth exactly as entered
+            let formattedDob = dob || '';
+            
+            bbcode += `[u]Person #${index+1} - ${name}[/u]\n`;
+            bbcode += `[b]Classification:[/b] ${classification}\n`;
+            bbcode += `[b]Date of Birth:[/b] ${formattedDob}\n`;
+            bbcode += `[b]Phone Number:[/b] ${phone}\n`;
+            bbcode += `[b]Residence:[/b] ${residence}\n`;
+            bbcode += `[b]Relation to Incident:[/b] ${relation}\n\n`;
+        });
+        
+        bbcode += `[/indent]\n\n`;
+        
+        // Add narrative - THIS WAS THE PROBLEM AREA
+        const narrative = document.getElementById('casefile-narrative').value;
+        bbcode += `[size=105][b]Narrative[/b][/size]\n`;
+        bbcode += `[indent]${narrative || 'Write narrative here.'}[/indent]\n\n`;
+        
+        // Add evidence
+        bbcode += `[size=105][b]Evidence[/b][/size]\n`;
+        bbcode += `[list=1]`;
+        
+        const evidenceItems = evidenceContainer.querySelectorAll('.evidence-item');
+        evidenceItems.forEach(item => {
+            const type = item.getAttribute('data-type');
+            const isSpoiler = item.querySelector('.evidence-spoiler-field').checked;
+            const titleField = item.querySelector('.evidence-title-field');
+            const title = titleField ? titleField.value.trim() : '';
+            
+            let evidenceContent = '';
+            
+            switch(type) {
+                case 'text':
+                    const textContent = item.querySelector('.evidence-text-content').value;
+                    evidenceContent = textContent;
+                    break;
+                case 'image':
+                    const imageUrls = item.querySelectorAll('.evidence-image-url');
+                    let imageContent = '';
+                    imageUrls.forEach(urlInput => {
+                        if (urlInput.value.trim()) {
+                            imageContent += `[img]${urlInput.value}[/img]\n`;
+                        }
+                    });
+                    evidenceContent = imageContent;
+                    break;
+                case 'url':
+                    const url = item.querySelector('.evidence-url').value;
+                    const urlText = item.querySelector('.evidence-url-text');
+                    if (urlText && urlText.value) {
+                        evidenceContent = `[url=${url}]${urlText.value}[/url]`;
+                    } else {
+                        evidenceContent = `[url]${url}[/url]`;
+                    }
+                    break;
+            }
+            
+            // Title is now outside the spoiler
+            let finalEvidence = '';
+            if (title) {
+                finalEvidence = `${title}: `;
+            }
+            
+            if (isSpoiler) {
+                finalEvidence += `[spoiler]\n${evidenceContent}[/spoiler]`;
+            } else {
+                finalEvidence += evidenceContent;
+            }
+            
+            bbcode += `[*] ${finalEvidence}\n`;
+        });
+        
+        bbcode += `[/list]`;
+        
+        bbcodeOutput.textContent = bbcode;
+        outputContainer.style.display = 'block';
+        
+        // Scroll to output
+        outputContainer.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Copy functionality
+    copyTitleBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(titleOutput.textContent)
+            .then(() => {
+                showCopySuccess(copyTitleBtn);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    });
+
+    copyBbcodeBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(bbcodeOutput.textContent)
+            .then(() => {
+                showCopySuccess(copyBbcodeBtn);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    });
+
+    function showCopySuccess(button) {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+        }, 2000);
+    }
+
+    // Reset form
+    resetBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
+            document.getElementById('case-title').value = '';
+            document.getElementById('case-date').value = '';
+            document.getElementById('time-date').value = '';
+            document.getElementById('penal-code').value = '';
+            document.getElementById('location').value = '';
+            document.getElementById('investigators').value = '';
+            document.getElementById('casefile-narrative').value = '';            
+            
+            // Remove all persons except the first one
+            const personSections = personsContainer.querySelectorAll('.person-section');
+            for (let i = 1; i < personSections.length; i++) {
+                personSections[i].remove();
+            }
+            
+            // Reset first person
+            document.getElementById('person-name-1').value = '';
+            document.getElementById('person-classification-1').value = 'Victim';
+            document.getElementById('person-dob-1').value = '';
+            document.getElementById('person-phone-1').value = '';
+            document.getElementById('person-residence-1').value = '';
+            document.getElementById('person-relation-1').value = '';
+            
+            // Remove all evidence
+            evidenceContainer.innerHTML = '';
+            evidenceCount = 0;
+            
+            // Hide output
+            outputContainer.style.display = 'none';
+            
+            alert('Form has been reset.');
+        }
+    });
+}
+
+// Supplemental Report Generator Functions
+function initSupplementalReportGenerator() {
+    const evidenceContainer = document.getElementById('supplemental-evidence-container');
+    const addEvidenceBtn = document.getElementById('add-supplemental-evidence-btn');
+    const evidenceModal = document.getElementById('evidence-modal');
+    const evidenceTypeOptions = document.querySelectorAll('.evidence-type-option');
+    const evidenceSpoilerCheckbox = document.getElementById('evidence-spoiler');
+    const evidenceTitleInput = document.getElementById('evidence-title');
+    const evidencePreview = document.getElementById('evidence-preview');
+    const addEvidenceConfirmBtn = document.getElementById('add-evidence-confirm');
+    const cancelEvidenceBtn = document.getElementById('cancel-evidence');
+    const closeModalBtn = document.getElementById('close-modal');
+    const urlOptions = document.getElementById('url-options');
+    const urlClickableCheckbox = document.getElementById('url-clickable');
+
+    let selectedEvidenceType = '';
+    let evidenceCount = 0;
+    let editingEvidenceItem = null;
+
+    // Open evidence modal
+    addEvidenceBtn.addEventListener('click', () => {
+        evidenceModal.classList.add('active');
+        selectedEvidenceType = '';
+        evidenceTypeOptions.forEach(option => option.classList.remove('selected'));
+        evidenceSpoilerCheckbox.checked = false;
+        evidenceTitleInput.value = '';
+        evidencePreview.style.display = 'none';
+        urlOptions.classList.remove('active');
+        urlClickableCheckbox.checked = false;
+        editingEvidenceItem = null;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-plus"></i> Add Evidence';
+    });
+
+    // Close evidence modal
+    function closeEvidenceModal() {
+        evidenceModal.classList.remove('active');
+    }
+
+    closeModalBtn.addEventListener('click', closeEvidenceModal);
+    cancelEvidenceBtn.addEventListener('click', closeEvidenceModal);
+
+    // Select evidence type
+    evidenceTypeOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            evidenceTypeOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedEvidenceType = option.getAttribute('data-type');
+            
+            // Show/hide URL options
+            if (selectedEvidenceType === 'url') {
+                urlOptions.classList.add('active');
+            } else {
+                urlOptions.classList.remove('active');
+            }
+            
+            updateEvidencePreview();
+        });
+    });
+
+    // Update evidence preview when inputs change
+    evidenceSpoilerCheckbox.addEventListener('change', updateEvidencePreview);
+    evidenceTitleInput.addEventListener('input', updateEvidencePreview);
+    urlClickableCheckbox.addEventListener('change', updateEvidencePreview);
+
+    function updateEvidencePreview() {
+        if (!selectedEvidenceType) {
+            evidencePreview.style.display = 'none';
+            return;
+        }
+        
+        let previewContent = '';
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        
+        switch(selectedEvidenceType) {
+            case 'text':
+                previewContent = '[Text content here]';
+                break;
+            case 'image':
+                previewContent = '[img]https://example.com/image.jpg[/img]';
+                break;
+            case 'url':
+                const isClickable = urlClickableCheckbox.checked;
+                if (isClickable) {
+                    previewContent = '[url=https://example.com]Clickable Text[/url]';
+                } else {
+                    previewContent = '[url]https://example.com[/url]';
+                }
+                break;
+        }
+        
+        // Title is now outside the spoiler
+        let finalPreview = '';
+        if (title) {
+            finalPreview = `${title}: `;
+        }
+        
+        if (isSpoiler) {
+            finalPreview += `[spoiler]\n${previewContent}\n[/spoiler]`;
+        } else {
+            finalPreview += previewContent;
+        }
+        
+        evidencePreview.textContent = finalPreview;
+        evidencePreview.style.display = 'block';
+    }
+
+    // Function to toggle URL text field visibility
+    function toggleUrlTextInput(evidenceItem, isVisible) {
+        const urlTextInput = evidenceItem.querySelector('.url-text-input');
+        if (urlTextInput) {
+            if (isVisible) {
+                urlTextInput.classList.add('active');
+            } else {
+                urlTextInput.classList.remove('active');
+            }
+        }
+    }
+
+    // Add evidence
+    addEvidenceConfirmBtn.addEventListener('click', () => {
+        if (!selectedEvidenceType) {
+            alert('Please select an evidence type');
+            return;
+        }
+        
+        if (editingEvidenceItem) {
+            // Update existing evidence item
+            updateEvidenceItem(editingEvidenceItem);
+        } else {
+            // Create new evidence item
+            evidenceCount++;
+            const evidenceItem = document.createElement('div');
+            evidenceItem.className = 'evidence-item';
+            evidenceItem.setAttribute('data-type', selectedEvidenceType);
+            
+            createEvidenceContent(evidenceItem, selectedEvidenceType, evidenceSpoilerCheckbox.checked, evidenceTitleInput.value.trim(), urlClickableCheckbox.checked);
+            evidenceContainer.appendChild(evidenceItem);
+            
+            setupEvidenceEventListeners(evidenceItem);
+        }
+        
+        closeEvidenceModal();
+    });
+
+    // Function to create evidence content
+    function createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable) {
+        let evidenceContent = '';
+        
+        switch(type) {
+            case 'text':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Evidence Title" value="${title}">
+                    </div>
+                    <div class="evidence-line-with-title">
+                        <textarea class="evidence-text-content" placeholder="Enter text evidence here..."></textarea>
+                    </div>
+                `;
+                break;
+            case 'image':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Image Title (Optional)" value="${title}">
+                    </div>
+                    <div class="image-urls-container">
+                        <div class="image-url-line">
+                            <input type="text" class="evidence-image-url" placeholder="Image URL">
+                            <div class="evidence-line-actions">
+                                <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-image-btn"><i class="fas fa-plus"></i> Add Another Image</button>
+                `;
+                break;
+            case 'url':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Link Title (Optional)" value="${title}">
+                    </div>
+                    <div class="checkbox-group url-options-inline">
+                        <input type="checkbox" class="url-clickable-field" ${isClickable ? 'checked' : ''}>
+                        <label>Use clickable text</label>
+                    </div>
+                    <div class="evidence-line">
+                        <input type="text" class="evidence-url" placeholder="URL">
+                    </div>
+                    <div class="url-text-input ${isClickable ? 'active' : ''}">
+                        <div class="evidence-line">
+                            <input type="text" class="evidence-url-text" placeholder="Link Text" value="">
+                        </div>
+                    </div>
+                `;
+                break;
+        }
+        
+        evidenceItem.innerHTML = `
+            <div class="evidence-header">
+                <div class="evidence-type">
+                    <span class="evidence-number">${evidenceCount}.</span>
+                    ${type.charAt(0).toUpperCase() + type.slice(1)} Evidence
+                </div>
+                <div class="evidence-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="evidence-spoiler-field" ${isSpoiler ? 'checked' : ''}>
+                        <label>Spoiler</label>
+                    </div>
+                    <button class="edit-evidence">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="remove-evidence">
+                        <i class="fas fa-trash"></i> Remove
+                    </button>
+                </div>
+            </div>
+            <div class="evidence-content">
+                ${evidenceContent}
+            </div>
+        `;
+    }
+
+    // Function to update existing evidence item
+    function updateEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        const isClickable = urlClickableCheckbox.checked;
+        
+        createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable);
+        setupEvidenceEventListeners(evidenceItem);
+    }
+
+    // Function to setup event listeners for evidence items
+    function setupEvidenceEventListeners(evidenceItem) {
+        // Add event listeners for dynamic elements
+        const removeBtn = evidenceItem.querySelector('.remove-evidence');
+        removeBtn.addEventListener('click', () => {
+            evidenceItem.remove();
+            updateEvidenceNumbers();
+        });
+        
+        // Add event listener for edit button
+        const editBtn = evidenceItem.querySelector('.edit-evidence');
+        editBtn.addEventListener('click', () => {
+            editEvidenceItem(evidenceItem);
+        });
+        
+        // For URL type, add functionality to toggle clickable text
+        if (evidenceItem.getAttribute('data-type') === 'url') {
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableField.addEventListener('change', () => {
+                toggleUrlTextInput(evidenceItem, urlClickableField.checked);
+            });
+        }
+        
+        // For image type, add functionality to add/remove images
+        if (evidenceItem.getAttribute('data-type') === 'image') {
+            const addImageBtn = evidenceItem.querySelector('.add-image-btn');
+            const imageUrlsContainer = evidenceItem.querySelector('.image-urls-container');
+            
+            addImageBtn.addEventListener('click', () => {
+                const newImageLine = document.createElement('div');
+                newImageLine.className = 'image-url-line';
+                newImageLine.innerHTML = `
+                    <input type="text" class="evidence-image-url" placeholder="Image URL">
+                    <div class="evidence-line-actions">
+                        <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+                imageUrlsContainer.appendChild(newImageLine);
+                
+                // Add event listener to remove button
+                const removeImageBtn = newImageLine.querySelector('.remove-image-btn');
+                removeImageBtn.addEventListener('click', () => {
+                    newImageLine.remove();
+                });
+            });
+            
+            // Add event listeners to existing remove buttons
+            const removeImageBtns = evidenceItem.querySelectorAll('.remove-image-btn');
+            removeImageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.closest('.image-url-line').remove();
+                });
+            });
+        }
+    }
+
+    // Function to edit an evidence item
+    function editEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const titleField = evidenceItem.querySelector('.evidence-title-field');
+        const spoilerField = evidenceItem.querySelector('.evidence-spoiler-field');
+        
+        // Set modal values based on existing evidence
+        selectedEvidenceType = type;
+        evidenceTypeOptions.forEach(option => {
+            if (option.getAttribute('data-type') === type) {
+                option.classList.add('selected');
+            } else {
+                option.classList.remove('selected');
+            }
+        });
+        
+        evidenceTitleInput.value = titleField ? titleField.value : '';
+        evidenceSpoilerCheckbox.checked = spoilerField ? spoilerField.checked : false;
+        
+        // Handle URL-specific options
+        if (type === 'url') {
+            urlOptions.classList.add('active');
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableCheckbox.checked = urlClickableField ? urlClickableField.checked : false;
+            
+            // Populate URL fields if they exist
+            const urlField = evidenceItem.querySelector('.evidence-url');
+            const urlTextField = evidenceItem.querySelector('.evidence-url-text');
+            
+            if (urlField) {
+                // Store the current URL value to restore after modal opens
+                setTimeout(() => {
+                    const urlInput = document.querySelector('#evidence-modal .evidence-url');
+                    if (urlInput) urlInput.value = urlField.value;
+                }, 100);
+            }
+            
+            if (urlTextField) {
+                setTimeout(() => {
+                    const urlTextInput = document.querySelector('#evidence-modal .evidence-url-text');
+                    if (urlTextInput) urlTextInput.value = urlTextField.value;
+                }, 100);
+            }
+        } else {
+            urlOptions.classList.remove('active');
+            urlClickableCheckbox.checked = false;
+        }
+        
+        // Update preview
+        updateEvidencePreview();
+        
+        // Set editing mode
+        editingEvidenceItem = evidenceItem;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-save"></i> Update Evidence';
+        
+        // Open modal
+        evidenceModal.classList.add('active');
+    }
+
+    // Update evidence numbers when items are removed
+    function updateEvidenceNumbers() {
+        const evidenceItems = evidenceContainer.querySelectorAll('.evidence-item');
+        evidenceCount = evidenceItems.length;
+        evidenceItems.forEach((item, index) => {
+            const evidenceNumber = item.querySelector('.evidence-number');
+            evidenceNumber.textContent = `${index + 1}.`;
+        });
+    }
+
+    // Generate BB Code for Supplemental Report
+    const generateBtn = document.getElementById('generate-supplemental-btn');
+    const outputContainer = document.getElementById('supplemental-output-container');
+    const bbcodeOutput = document.getElementById('supplemental-bbcode-output');
+    const copyBbcodeBtn = document.getElementById('copy-supplemental-bbcode-btn');
+    const resetBtn = document.getElementById('reset-supplemental-btn');
+
+    generateBtn.addEventListener('click', () => {
+        // Get form values
+        const narrative = document.getElementById('supplemental-narrative').value;
+        const filedBy = document.getElementById('supplemental-filed-by').value;
+        
+        // Generate BB Code
+        let bbcode = `[font=Arial][color=black]\n\n`;
+        bbcode += `[center][img]https://i.imgur.com/LEWTXbL.png[/img]\n\n`;
+        bbcode += `[size=125][b]SHERIFF'S DEPARTMENT\nCOUNTY OF LOS SANTOS[/b]\n[i]"A Tradition of Service Since 1850"[/i][/size]\n\n`;
+        bbcode += `[size=110][u]SUPPLEMENTAL REPORT[/u][/size][/center][hr][/hr]\n\n`;
+        bbcode += `[font=arial][color=black]\n`;
+        
+        // Add narrative
+        bbcode += `[size=105][b]Narrative[/b][/size]\n`;
+        bbcode += `[indent]${narrative || 'Write narrative here.'}[/indent]\n\n`;
+        
+        // Add evidence
+        bbcode += `[size=105][b]Evidence[/b][/size]\n`;
+        bbcode += `[list=1]`;
+        
+        const evidenceItems = evidenceContainer.querySelectorAll('.evidence-item');
+        if (evidenceItems.length === 0) {
+            bbcode += `[*] EL Number: Description of evidence\n`;
+        } else {
+            evidenceItems.forEach(item => {
+                const type = item.getAttribute('data-type');
+                const isSpoiler = item.querySelector('.evidence-spoiler-field').checked;
+                const titleField = item.querySelector('.evidence-title-field');
+                const title = titleField ? titleField.value.trim() : '';
+                
+                let evidenceContent = '';
+                
+                switch(type) {
+                    case 'text':
+                        const textContent = item.querySelector('.evidence-text-content').value;
+                        evidenceContent = textContent;
+                        break;
+                    case 'image':
+                        const imageUrls = item.querySelectorAll('.evidence-image-url');
+                        let imageContent = '';
+                        imageUrls.forEach(urlInput => {
+                            if (urlInput.value.trim()) {
+                                imageContent += `[img]${urlInput.value}[/img]\n`;
+                            }
+                        });
+                        evidenceContent = imageContent;
+                        break;
+                    case 'url':
+                        const url = item.querySelector('.evidence-url').value;
+                        const urlText = item.querySelector('.evidence-url-text');
+                        if (urlText && urlText.value) {
+                            evidenceContent = `[url=${url}]${urlText.value}[/url]`;
+                        } else {
+                            evidenceContent = `[url]${url}[/url]`;
+                        }
+                        break;
+                }
+                
+                // Title is now outside the spoiler
+                let finalEvidence = '';
+                if (title) {
+                    finalEvidence = `${title}: `;
+                }
+                
+                if (isSpoiler) {
+                    finalEvidence += `[spoiler]\n${evidenceContent}[/spoiler]`;
+                } else {
+                    finalEvidence += evidenceContent;
+                }
+                
+                bbcode += `[*] ${finalEvidence}\n`;
+            });
+        }
+        
+        bbcode += `[/list]\n\n`;
+        
+        // Add filed by
+        bbcode += `[size=105][b]Filed By:[/b][/size]\n`;
+        bbcode += `[indent]${filedBy || 'Rank Forename Surname'}[/indent]`;
+        
+        bbcodeOutput.textContent = bbcode;
+        outputContainer.style.display = 'block';
+        
+        // Scroll to output
+        outputContainer.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Copy functionality
+    copyBbcodeBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(bbcodeOutput.textContent)
+            .then(() => {
+                showCopySuccess(copyBbcodeBtn);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    });
+
+    function showCopySuccess(button) {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+        }, 2000);
+    }
+
+    // Reset form
+    resetBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
+            document.getElementById('supplemental-narrative').value = '';
+            document.getElementById('supplemental-filed-by').value = '';
+            
+            // Remove all evidence
+            evidenceContainer.innerHTML = '';
+            evidenceCount = 0;
+            
+            // Hide output
+            outputContainer.style.display = 'none';
+            
+            alert('Form has been reset.');
+        }
+    });
+}
+
+// Stolen Vehicle Report Generator Functions
+function initStolenVehicleReportGenerator() {
+    // Conditional field for stolen items
+    const itemsStolenSelect = document.getElementById('sv-items-stolen');
+    const stolenItemsContainer = document.getElementById('sv-stolen-items-container');
+
+    itemsStolenSelect.addEventListener('change', () => {
+        if (itemsStolenSelect.value === 'Yes') {
+            stolenItemsContainer.style.display = 'block';
+        } else {
+            stolenItemsContainer.style.display = 'none';
+        }
+    });
+
+    // Evidence management for stolen vehicle report
+    const evidenceContainer = document.getElementById('sv-evidence-container');
+    const addEvidenceBtn = document.getElementById('sv-add-evidence-btn');
+    const evidenceModal = document.getElementById('evidence-modal');
+    const evidenceTypeOptions = document.querySelectorAll('.evidence-type-option');
+    const evidenceSpoilerCheckbox = document.getElementById('evidence-spoiler');
+    const evidenceTitleInput = document.getElementById('evidence-title');
+    const evidencePreview = document.getElementById('evidence-preview');
+    const addEvidenceConfirmBtn = document.getElementById('add-evidence-confirm');
+    const cancelEvidenceBtn = document.getElementById('cancel-evidence');
+    const closeModalBtn = document.getElementById('close-modal');
+    const urlOptions = document.getElementById('url-options');
+    const urlClickableCheckbox = document.getElementById('url-clickable');
+
+    let selectedEvidenceType = '';
+    let evidenceCount = 0;
+    let editingEvidenceItem = null;
+
+    // Open evidence modal for stolen vehicle report
+    addEvidenceBtn.addEventListener('click', () => {
+        evidenceModal.classList.add('active');
+        selectedEvidenceType = '';
+        evidenceTypeOptions.forEach(option => option.classList.remove('selected'));
+        evidenceSpoilerCheckbox.checked = false;
+        evidenceTitleInput.value = '';
+        evidencePreview.style.display = 'none';
+        urlOptions.classList.remove('active');
+        urlClickableCheckbox.checked = false;
+        editingEvidenceItem = null;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-plus"></i> Add Evidence';
+    });
+
+    // Close evidence modal
+    function closeEvidenceModal() {
+        evidenceModal.classList.remove('active');
+    }
+
+    closeModalBtn.addEventListener('click', closeEvidenceModal);
+    cancelEvidenceBtn.addEventListener('click', closeEvidenceModal);
+
+    // Select evidence type
+    evidenceTypeOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            evidenceTypeOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedEvidenceType = option.getAttribute('data-type');
+            
+            // Show/hide URL options
+            if (selectedEvidenceType === 'url') {
+                urlOptions.classList.add('active');
+            } else {
+                urlOptions.classList.remove('active');
+            }
+            
+            updateEvidencePreview();
+        });
+    });
+
+    // Update evidence preview when inputs change
+    evidenceSpoilerCheckbox.addEventListener('change', updateEvidencePreview);
+    evidenceTitleInput.addEventListener('input', updateEvidencePreview);
+    urlClickableCheckbox.addEventListener('change', updateEvidencePreview);
+
+    function updateEvidencePreview() {
+        if (!selectedEvidenceType) {
+            evidencePreview.style.display = 'none';
+            return;
+        }
+        
+        let previewContent = '';
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        
+        switch(selectedEvidenceType) {
+            case 'text':
+                previewContent = '[Text content here]';
+                break;
+            case 'image':
+                previewContent = '[img]https://example.com/image.jpg[/img]';
+                break;
+            case 'url':
+                const isClickable = urlClickableCheckbox.checked;
+                if (isClickable) {
+                    previewContent = '[url=https://example.com]Clickable Text[/url]';
+                } else {
+                    previewContent = '[url]https://example.com[/url]';
+                }
+                break;
+        }
+        
+        // Title is now outside the spoiler
+        let finalPreview = '';
+        if (title) {
+            finalPreview = `${title}: `;
+        }
+        
+        if (isSpoiler) {
+            finalPreview += `[spoiler]\n${previewContent}\n[/spoiler]`;
+        } else {
+            finalPreview += previewContent;
+        }
+        
+        evidencePreview.textContent = finalPreview;
+        evidencePreview.style.display = 'block';
+    }
+
+    // Function to toggle URL text field visibility
+    function toggleUrlTextInput(evidenceItem, isVisible) {
+        const urlTextInput = evidenceItem.querySelector('.url-text-input');
+        if (urlTextInput) {
+            if (isVisible) {
+                urlTextInput.classList.add('active');
+            } else {
+                urlTextInput.classList.remove('active');
+            }
+        }
+    }
+
+    // Add evidence
+    addEvidenceConfirmBtn.addEventListener('click', () => {
+        if (!selectedEvidenceType) {
+            alert('Please select an evidence type');
+            return;
+        }
+        
+        if (editingEvidenceItem) {
+            // Update existing evidence item
+            updateEvidenceItem(editingEvidenceItem);
+        } else {
+            // Create new evidence item
+            evidenceCount++;
+            const evidenceItem = document.createElement('div');
+            evidenceItem.className = 'evidence-item';
+            evidenceItem.setAttribute('data-type', selectedEvidenceType);
+            
+            createEvidenceContent(evidenceItem, selectedEvidenceType, evidenceSpoilerCheckbox.checked, evidenceTitleInput.value.trim(), urlClickableCheckbox.checked);
+            evidenceContainer.appendChild(evidenceItem);
+            
+            setupEvidenceEventListeners(evidenceItem);
+        }
+        
+        closeEvidenceModal();
+    });
+
+    // Function to create evidence content
+    function createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable) {
+        let evidenceContent = '';
+        
+        switch(type) {
+            case 'text':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Evidence Title" value="${title}">
+                    </div>
+                    <div class="evidence-line-with-title">
+                        <textarea class="evidence-text-content" placeholder="Enter text evidence here..."></textarea>
+                    </div>
+                `;
+                break;
+            case 'image':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Image Title (Optional)" value="${title}">
+                    </div>
+                    <div class="image-urls-container">
+                        <div class="image-url-line">
+                            <input type="text" class="evidence-image-url" placeholder="Image URL">
+                            <div class="evidence-line-actions">
+                                <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-image-btn"><i class="fas fa-plus"></i> Add Another Image</button>
+                `;
+                break;
+            case 'url':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Link Title (Optional)" value="${title}">
+                    </div>
+                    <div class="checkbox-group url-options-inline">
+                        <input type="checkbox" class="url-clickable-field" ${isClickable ? 'checked' : ''}>
+                        <label>Use clickable text</label>
+                    </div>
+                    <div class="evidence-line">
+                        <input type="text" class="evidence-url" placeholder="URL">
+                    </div>
+                    <div class="url-text-input ${isClickable ? 'active' : ''}">
+                        <div class="evidence-line">
+                            <input type="text" class="evidence-url-text" placeholder="Link Text" value="">
+                        </div>
+                    </div>
+                `;
+                break;
+        }
+        
+        evidenceItem.innerHTML = `
+            <div class="evidence-header">
+                <div class="evidence-type">
+                    <span class="evidence-number">${evidenceCount}.</span>
+                    ${type.charAt(0).toUpperCase() + type.slice(1)} Evidence
+                </div>
+                <div class="evidence-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="evidence-spoiler-field" ${isSpoiler ? 'checked' : ''}>
+                        <label>Spoiler</label>
+                    </div>
+                    <button class="edit-evidence">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="remove-evidence">
+                        <i class="fas fa-trash"></i> Remove
+                    </button>
+                </div>
+            </div>
+            <div class="evidence-content">
+                ${evidenceContent}
+            </div>
+        `;
+    }
+
+    // Function to update existing evidence item
+    function updateEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        const isClickable = urlClickableCheckbox.checked;
+        
+        createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable);
+        setupEvidenceEventListeners(evidenceItem);
+    }
+
+    // Function to setup event listeners for evidence items
+    function setupEvidenceEventListeners(evidenceItem) {
+        // Add event listeners for dynamic elements
+        const removeBtn = evidenceItem.querySelector('.remove-evidence');
+        removeBtn.addEventListener('click', () => {
+            evidenceItem.remove();
+            updateEvidenceNumbers();
+        });
+        
+        // Add event listener for edit button
+        const editBtn = evidenceItem.querySelector('.edit-evidence');
+        editBtn.addEventListener('click', () => {
+            editEvidenceItem(evidenceItem);
+        });
+        
+        // For URL type, add functionality to toggle clickable text
+        if (evidenceItem.getAttribute('data-type') === 'url') {
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableField.addEventListener('change', () => {
+                toggleUrlTextInput(evidenceItem, urlClickableField.checked);
+            });
+        }
+        
+        // For image type, add functionality to add/remove images
+        if (evidenceItem.getAttribute('data-type') === 'image') {
+            const addImageBtn = evidenceItem.querySelector('.add-image-btn');
+            const imageUrlsContainer = evidenceItem.querySelector('.image-urls-container');
+            
+            addImageBtn.addEventListener('click', () => {
+                const newImageLine = document.createElement('div');
+                newImageLine.className = 'image-url-line';
+                newImageLine.innerHTML = `
+                    <input type="text" class="evidence-image-url" placeholder="Image URL">
+                    <div class="evidence-line-actions">
+                        <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+                imageUrlsContainer.appendChild(newImageLine);
+                
+                // Add event listener to remove button
+                const removeImageBtn = newImageLine.querySelector('.remove-image-btn');
+                removeImageBtn.addEventListener('click', () => {
+                    newImageLine.remove();
+                });
+            });
+            
+            // Add event listeners to existing remove buttons
+            const removeImageBtns = evidenceItem.querySelectorAll('.remove-image-btn');
+            removeImageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.closest('.image-url-line').remove();
+                });
+            });
+        }
+    }
+
+    // Function to edit an evidence item
+    function editEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const titleField = evidenceItem.querySelector('.evidence-title-field');
+        const spoilerField = evidenceItem.querySelector('.evidence-spoiler-field');
+        
+        // Set modal values based on existing evidence
+        selectedEvidenceType = type;
+        evidenceTypeOptions.forEach(option => {
+            if (option.getAttribute('data-type') === type) {
+                option.classList.add('selected');
+            } else {
+                option.classList.remove('selected');
+            }
+        });
+        
+        evidenceTitleInput.value = titleField ? titleField.value : '';
+        evidenceSpoilerCheckbox.checked = spoilerField ? spoilerField.checked : false;
+        
+        // Handle URL-specific options
+        if (type === 'url') {
+            urlOptions.classList.add('active');
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableCheckbox.checked = urlClickableField ? urlClickableField.checked : false;
+            
+            // Populate URL fields if they exist
+            const urlField = evidenceItem.querySelector('.evidence-url');
+            const urlTextField = evidenceItem.querySelector('.evidence-url-text');
+            
+            if (urlField) {
+                // Store the current URL value to restore after modal opens
+                setTimeout(() => {
+                    const urlInput = document.querySelector('#evidence-modal .evidence-url');
+                    if (urlInput) urlInput.value = urlField.value;
+                }, 100);
+            }
+            
+            if (urlTextField) {
+                setTimeout(() => {
+                    const urlTextInput = document.querySelector('#evidence-modal .evidence-url-text');
+                    if (urlTextInput) urlTextInput.value = urlTextField.value;
+                }, 100);
+            }
+        } else {
+            urlOptions.classList.remove('active');
+            urlClickableCheckbox.checked = false;
+        }
+        
+        // Update preview
+        updateEvidencePreview();
+        
+        // Set editing mode
+        editingEvidenceItem = evidenceItem;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-save"></i> Update Evidence';
+        
+        // Open modal
+        evidenceModal.classList.add('active');
+    }
+
+    // Update evidence numbers when items are removed
+    function updateEvidenceNumbers() {
+        const evidenceItems = evidenceContainer.querySelectorAll('.evidence-item');
+        evidenceCount = evidenceItems.length;
+        evidenceItems.forEach((item, index) => {
+            const evidenceNumber = item.querySelector('.evidence-number');
+            evidenceNumber.textContent = `${index + 1}.`;
+        });
+    }
+
+    // Generate BB Code for Stolen Vehicle Report
+    const generateBtn = document.getElementById('sv-generate-btn');
+    const outputContainer = document.getElementById('sv-output-container');
+    const titleOutput = document.getElementById('sv-title-output');
+    const bbcodeOutput = document.getElementById('sv-bbcode-output');
+    const copyTitleBtn = document.getElementById('sv-copy-title-btn');
+    const copyBbcodeBtn = document.getElementById('sv-copy-bbcode-btn');
+    const resetBtn = document.getElementById('sv-reset-btn');
+
+    generateBtn.addEventListener('click', () => {
+        // Get form values
+        const caseTitle = document.getElementById('sv-case-title').value;
+        const timeDate = document.getElementById('sv-time-date').value;
+        const location = document.getElementById('sv-location').value;
+        const vehicleDetails = document.getElementById('sv-vehicle-details').value;
+        const vehiclePlate = document.getElementById('sv-vehicle-plate').value;
+        const vehicleOwner = document.getElementById('sv-vehicle-owner').value;
+        const callId = document.getElementById('sv-call-id').value;
+        const narrative = document.getElementById('sv-narrative').value;
+        const victimStatement = document.getElementById('sv-victim-statement').value;
+        const armedRobbery = document.getElementById('sv-armed-robbery').value;
+        const itemsStolen = document.getElementById('sv-items-stolen').value;
+        const stolenItems = document.getElementById('sv-stolen-items').value;
+        const fingerprints = document.getElementById('sv-fingerprints').value;
+        const recovered = document.getElementById('sv-recovered').value;
+        const ssbReport = document.getElementById('sv-ssb-report').value;
+        const additionalInfo = document.getElementById('sv-additional-info').value;
+        
+        // Generate Title
+        const generatedTitle = caseTitle || '[PLATE] Vehicle Make Model (Status)';
+        titleOutput.textContent = generatedTitle;
+        
+        // Generate BB Code
+        let bbcode = `[divbox=transparent]\n`;
+        bbcode += `[center][img]https://i.imgur.com/5Jhd9NC.png[/img]\n`;
+        bbcode += `[hr][/hr]\n`;
+        bbcode += `[size=150][b][b]Taskforce for Regional Autotheft Prevention - Stolen Vehicle Database[/b][/b][/size]\n`;
+        bbcode += `[hr][/hr]\n`;
+        bbcode += `[/divbox]\n`;
+        bbcode += `[hr][/hr]\n`;
+        bbcode += `[divbox=#323564][center][color=white][b]Stolen Vehicle Report[/b][/color][/center][/divbox]\n`;
+        bbcode += `[divbox=transparent]\n`;
+        bbcode += `[br][/br]\n`;
+        bbcode += `[b]Time & Date:[/b] ${timeDate || 'DAY/MM/YEAR'}\n`;
+        bbcode += `[b]Location:[/b] ${location || 'AREA/STREET'}\n`;
+        bbcode += `[b]Vehicle Color, Make, & Model:[/b] ${vehicleDetails || 'COLOR MAKE MODEL'}\n`;
+        bbcode += `[b]Vehicle Plate:[/b] ${vehiclePlate || 'PLATE'}\n`;
+        bbcode += `[b]Owner:[/b] ${vehicleOwner || 'OWNER FIRST LAST'}\n`;
+        bbcode += `[b]Call-ID:[/b] ${callId || '#XXXX/Self-Initiated'}\n`;
+        bbcode += `[b]Narrative:[/b][list]\n`;
+        bbcode += `[*] ${narrative || 'Write Narrative Here'}\n`;
+        bbcode += `[/list]\n`;
+        bbcode += `[b]Victim Statement:[/b][list]\n`;
+        bbcode += `[*] ${victimStatement || 'Attach Statement Here'}\n`;
+        bbcode += `[/list]\n`;
+        
+        // Add evidence section
+        bbcode += `[b]Evidence:[/b]\n`;
+        bbcode += `[list]\n`;
+        
+        const evidenceItems = evidenceContainer.querySelectorAll('.evidence-item');
+        if (evidenceItems.length > 0) {
+            evidenceItems.forEach(item => {
+                const type = item.getAttribute('data-type');
+                const isSpoiler = item.querySelector('.evidence-spoiler-field').checked;
+                const titleField = item.querySelector('.evidence-title-field');
+                const title = titleField ? titleField.value.trim() : '';
+                
+                let evidenceContent = '';
+                
+                switch(type) {
+                    case 'text':
+                        const textContent = item.querySelector('.evidence-text-content').value;
+                        evidenceContent = textContent;
+                        break;
+                    case 'image':
+                        const imageUrls = item.querySelectorAll('.evidence-image-url');
+                        let imageContent = '';
+                        imageUrls.forEach(urlInput => {
+                            if (urlInput.value.trim()) {
+                                imageContent += `[img]${urlInput.value}[/img]\n`;
+                            }
+                        });
+                        evidenceContent = imageContent;
+                        break;
+                    case 'url':
+                        const url = item.querySelector('.evidence-url').value;
+                        const urlText = item.querySelector('.evidence-url-text');
+                        if (urlText && urlText.value) {
+                            evidenceContent = `[url=${url}]${urlText.value}[/url]`;
+                        } else {
+                            evidenceContent = `[url]${url}[/url]`;
+                        }
+                        break;
+                }
+                
+                // Title is now outside the spoiler
+                let finalEvidence = '';
+                if (title) {
+                    finalEvidence = `${title}: `;
+                }
+                
+                if (isSpoiler) {
+                    finalEvidence += `[spoiler]\n${evidenceContent}[/spoiler]`;
+                } else {
+                    finalEvidence += evidenceContent;
+                }
+                
+                bbcode += `[*] ${finalEvidence}\n`;
+            });
+        } else {
+            bbcode += `[*] - Photos/Videos (Add/Delete lines as needed)\n`;
+            bbcode += `[*] - CCTV\n`;
+            bbcode += `[*] - Additional Statements\n`;
+        }
+        
+        bbcode += `[/list]\n`;
+        
+        // Add additional information
+        bbcode += `[b]Armed Robbery?[/b] ${armedRobbery}\n`;
+        bbcode += `[b]Additional Items Stolen?[/b] ${itemsStolen}\n`;
+        
+        if (itemsStolen === 'Yes' && stolenItems) {
+            bbcode += `[b]If Yes;[/b]\n`;
+            bbcode += `[list][*]${stolenItems}[/list]\n`;
+        } else {
+            bbcode += `[b]If Yes;[/b]\n`;
+            bbcode += `[list][*]List Items Here, If No: Delete this line[/list]\n`;
+        }
+        
+        bbcode += `[b]Finger prints taken?[/b] ${fingerprints}\n`;
+        bbcode += `[b]Recovered?[/b] ${recovered}\n`;
+        bbcode += `[b]Link to SSB report:[/b] ${ssbReport || ''}\n`;
+        bbcode += `[b]Additional Information:[/b] ${additionalInfo || ''}\n`;
+        bbcode += `[br][/br]\n`;
+        bbcode += `[/divbox]`;
+        
+        bbcodeOutput.textContent = bbcode;
+        outputContainer.style.display = 'block';
+        
+        // Scroll to output
+        outputContainer.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Copy functionality
+    copyTitleBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(titleOutput.textContent)
+            .then(() => {
+                showCopySuccess(copyTitleBtn);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    });
+
+    copyBbcodeBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(bbcodeOutput.textContent)
+            .then(() => {
+                showCopySuccess(copyBbcodeBtn);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    });
+
+    function showCopySuccess(button) {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+        }, 2000);
+    }
+
+    // Reset form
+    resetBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
+            // Reset all form fields
+            document.getElementById('sv-case-title').value = '';
+            document.getElementById('sv-time-date').value = '';
+            document.getElementById('sv-location').value = '';
+            document.getElementById('sv-vehicle-details').value = '';
+            document.getElementById('sv-vehicle-plate').value = '';
+            document.getElementById('sv-vehicle-owner').value = '';
+            document.getElementById('sv-call-id').value = '';
+            document.getElementById('sv-narrative').value = '';
+            document.getElementById('sv-victim-statement').value = '';
+            document.getElementById('sv-armed-robbery').value = 'No';
+            document.getElementById('sv-items-stolen').value = 'No';
+            document.getElementById('sv-stolen-items').value = '';
+            document.getElementById('sv-fingerprints').value = 'No';
+            document.getElementById('sv-recovered').value = 'No';
+            document.getElementById('sv-ssb-report').value = '';
+            document.getElementById('sv-additional-info').value = '';
+            
+            // Hide stolen items container
+            stolenItemsContainer.style.display = 'none';
+            
+            // Remove all evidence
+            evidenceContainer.innerHTML = '';
+            evidenceCount = 0;
+            
+            // Hide output
+            outputContainer.style.display = 'none';
+            
+            alert('Form has been reset.');
+        }
+    });
+}
+
+// Stolen Plate Report Generator Functions
+function initStolenPlateReportGenerator() {
+    // Conditional fields for recovery information
+    const recoveredSelect = document.getElementById('sp-recovered');
+    const recoveredTypeContainer = document.getElementById('sp-recovered-type-container');
+    const vehicleDetailsContainer = document.getElementById('sp-vehicle-details-container');
+
+    recoveredSelect.addEventListener('change', () => {
+        if (recoveredSelect.value === 'Yes') {
+            recoveredTypeContainer.style.display = 'block';
+        } else {
+            recoveredTypeContainer.style.display = 'none';
+            vehicleDetailsContainer.style.display = 'none';
+        }
+    });
+
+    // Conditional field for vehicle details
+    const recoveredTypeSelect = document.getElementById('sp-recovered-type');
+    recoveredTypeSelect.addEventListener('change', () => {
+        if (recoveredTypeSelect.value === 'Vehicle') {
+            vehicleDetailsContainer.style.display = 'block';
+        } else {
+            vehicleDetailsContainer.style.display = 'none';
+        }
+    });
+
+    // Evidence management
+    const evidenceContainer = document.getElementById('sp-evidence-container');
+    const addEvidenceBtn = document.getElementById('sp-add-evidence-btn');
+    const evidenceModal = document.getElementById('evidence-modal');
+    const evidenceTypeOptions = document.querySelectorAll('.evidence-type-option');
+    const evidenceSpoilerCheckbox = document.getElementById('evidence-spoiler');
+    const evidenceTitleInput = document.getElementById('evidence-title');
+    const evidencePreview = document.getElementById('evidence-preview');
+    const addEvidenceConfirmBtn = document.getElementById('add-evidence-confirm');
+    const cancelEvidenceBtn = document.getElementById('cancel-evidence');
+    const closeModalBtn = document.getElementById('close-modal');
+    const urlOptions = document.getElementById('url-options');
+    const urlClickableCheckbox = document.getElementById('url-clickable');
+
+    let selectedEvidenceType = '';
+    let evidenceCount = 0;
+    let editingEvidenceItem = null;
+
+    // Open evidence modal
+    addEvidenceBtn.addEventListener('click', () => {
+        evidenceModal.classList.add('active');
+        selectedEvidenceType = '';
+        evidenceTypeOptions.forEach(option => option.classList.remove('selected'));
+        evidenceSpoilerCheckbox.checked = false;
+        evidenceTitleInput.value = '';
+        evidencePreview.style.display = 'none';
+        urlOptions.classList.remove('active');
+        urlClickableCheckbox.checked = false;
+        editingEvidenceItem = null;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-plus"></i> Add Evidence';
+    });
+
+    // Close evidence modal
+    function closeEvidenceModal() {
+        evidenceModal.classList.remove('active');
+    }
+
+    closeModalBtn.addEventListener('click', closeEvidenceModal);
+    cancelEvidenceBtn.addEventListener('click', closeEvidenceModal);
+
+    // Select evidence type
+    evidenceTypeOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            evidenceTypeOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedEvidenceType = option.getAttribute('data-type');
+            
+            // Show/hide URL options
+            if (selectedEvidenceType === 'url') {
+                urlOptions.classList.add('active');
+            } else {
+                urlOptions.classList.remove('active');
+            }
+            
+            updateEvidencePreview();
+        });
+    });
+
+    // Update evidence preview when inputs change
+    evidenceSpoilerCheckbox.addEventListener('change', updateEvidencePreview);
+    evidenceTitleInput.addEventListener('input', updateEvidencePreview);
+    urlClickableCheckbox.addEventListener('change', updateEvidencePreview);
+
+    function updateEvidencePreview() {
+        if (!selectedEvidenceType) {
+            evidencePreview.style.display = 'none';
+            return;
+        }
+        
+        let previewContent = '';
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        
+        switch(selectedEvidenceType) {
+            case 'text':
+                previewContent = '[Text content here]';
+                break;
+            case 'image':
+                previewContent = '[img]https://example.com/image.jpg[/img]';
+                break;
+            case 'url':
+                const isClickable = urlClickableCheckbox.checked;
+                if (isClickable) {
+                    previewContent = '[url=https://example.com]Clickable Text[/url]';
+                } else {
+                    previewContent = '[url]https://example.com[/url]';
+                }
+                break;
+        }
+        
+        // Title is now outside the spoiler
+        let finalPreview = '';
+        if (title) {
+            finalPreview = `${title}: `;
+        }
+        
+        if (isSpoiler) {
+            finalPreview += `[spoiler]\n${previewContent}\n[/spoiler]`;
+        } else {
+            finalPreview += previewContent;
+        }
+        
+        evidencePreview.textContent = finalPreview;
+        evidencePreview.style.display = 'block';
+    }
+
+    // Function to toggle URL text field visibility
+    function toggleUrlTextInput(evidenceItem, isVisible) {
+        const urlTextInput = evidenceItem.querySelector('.url-text-input');
+        if (urlTextInput) {
+            if (isVisible) {
+                urlTextInput.classList.add('active');
+            } else {
+                urlTextInput.classList.remove('active');
+            }
+        }
+    }
+
+    // Add evidence
+    addEvidenceConfirmBtn.addEventListener('click', () => {
+        if (!selectedEvidenceType) {
+            alert('Please select an evidence type');
+            return;
+        }
+        
+        if (editingEvidenceItem) {
+            // Update existing evidence item
+            updateEvidenceItem(editingEvidenceItem);
+        } else {
+            // Create new evidence item
+            evidenceCount++;
+            const evidenceItem = document.createElement('div');
+            evidenceItem.className = 'evidence-item';
+            evidenceItem.setAttribute('data-type', selectedEvidenceType);
+            
+            createEvidenceContent(evidenceItem, selectedEvidenceType, evidenceSpoilerCheckbox.checked, evidenceTitleInput.value.trim(), urlClickableCheckbox.checked);
+            evidenceContainer.appendChild(evidenceItem);
+            
+            setupEvidenceEventListeners(evidenceItem);
+        }
+        
+        closeEvidenceModal();
+    });
+
+    // Function to create evidence content
+    function createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable) {
+        let evidenceContent = '';
+        
+        switch(type) {
+            case 'text':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Evidence Title" value="${title}">
+                    </div>
+                    <div class="evidence-line-with-title">
+                        <textarea class="evidence-text-content" placeholder="Enter text evidence here..."></textarea>
+                    </div>
+                `;
+                break;
+            case 'image':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Image Title (Optional)" value="${title}">
+                    </div>
+                    <div class="image-urls-container">
+                        <div class="image-url-line">
+                            <input type="text" class="evidence-image-url" placeholder="Image URL">
+                            <div class="evidence-line-actions">
+                                <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-image-btn"><i class="fas fa-plus"></i> Add Another Image</button>
+                `;
+                break;
+            case 'url':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Link Title (Optional)" value="${title}">
+                    </div>
+                    <div class="checkbox-group url-options-inline">
+                        <input type="checkbox" class="url-clickable-field" ${isClickable ? 'checked' : ''}>
+                        <label>Use clickable text</label>
+                    </div>
+                    <div class="evidence-line">
+                        <input type="text" class="evidence-url" placeholder="URL">
+                    </div>
+                    <div class="url-text-input ${isClickable ? 'active' : ''}">
+                        <div class="evidence-line">
+                            <input type="text" class="evidence-url-text" placeholder="Link Text" value="">
+                        </div>
+                    </div>
+                `;
+                break;
+        }
+        
+        evidenceItem.innerHTML = `
+            <div class="evidence-header">
+                <div class="evidence-type">
+                    <span class="evidence-number">${evidenceCount}.</span>
+                    ${type.charAt(0).toUpperCase() + type.slice(1)} Evidence
+                </div>
+                <div class="evidence-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="evidence-spoiler-field" ${isSpoiler ? 'checked' : ''}>
+                        <label>Spoiler</label>
+                    </div>
+                    <button class="edit-evidence">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="remove-evidence">
+                        <i class="fas fa-trash"></i> Remove
+                    </button>
+                </div>
+            </div>
+            <div class="evidence-content">
+                ${evidenceContent}
+            </div>
+        `;
+    }
+
+    // Function to update existing evidence item
+    function updateEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        const isClickable = urlClickableCheckbox.checked;
+        
+        createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable);
+        setupEvidenceEventListeners(evidenceItem);
+    }
+
+    // Function to setup event listeners for evidence items
+    function setupEvidenceEventListeners(evidenceItem) {
+        // Add event listeners for dynamic elements
+        const removeBtn = evidenceItem.querySelector('.remove-evidence');
+        removeBtn.addEventListener('click', () => {
+            evidenceItem.remove();
+            updateEvidenceNumbers();
+        });
+        
+        // Add event listener for edit button
+        const editBtn = evidenceItem.querySelector('.edit-evidence');
+        editBtn.addEventListener('click', () => {
+            editEvidenceItem(evidenceItem);
+        });
+        
+        // For URL type, add functionality to toggle clickable text
+        if (evidenceItem.getAttribute('data-type') === 'url') {
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableField.addEventListener('change', () => {
+                toggleUrlTextInput(evidenceItem, urlClickableField.checked);
+            });
+        }
+        
+        // For image type, add functionality to add/remove images
+        if (evidenceItem.getAttribute('data-type') === 'image') {
+            const addImageBtn = evidenceItem.querySelector('.add-image-btn');
+            const imageUrlsContainer = evidenceItem.querySelector('.image-urls-container');
+            
+            addImageBtn.addEventListener('click', () => {
+                const newImageLine = document.createElement('div');
+                newImageLine.className = 'image-url-line';
+                newImageLine.innerHTML = `
+                    <input type="text" class="evidence-image-url" placeholder="Image URL">
+                    <div class="evidence-line-actions">
+                        <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+                imageUrlsContainer.appendChild(newImageLine);
+                
+                // Add event listener to remove button
+                const removeImageBtn = newImageLine.querySelector('.remove-image-btn');
+                removeImageBtn.addEventListener('click', () => {
+                    newImageLine.remove();
+                });
+            });
+            
+            // Add event listeners to existing remove buttons
+            const removeImageBtns = evidenceItem.querySelectorAll('.remove-image-btn');
+            removeImageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.closest('.image-url-line').remove();
+                });
+            });
+        }
+    }
+
+    // Function to edit an evidence item
+    function editEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const titleField = evidenceItem.querySelector('.evidence-title-field');
+        const spoilerField = evidenceItem.querySelector('.evidence-spoiler-field');
+        
+        // Set modal values based on existing evidence
+        selectedEvidenceType = type;
+        evidenceTypeOptions.forEach(option => {
+            if (option.getAttribute('data-type') === type) {
+                option.classList.add('selected');
+            } else {
+                option.classList.remove('selected');
+            }
+        });
+        
+        evidenceTitleInput.value = titleField ? titleField.value : '';
+        evidenceSpoilerCheckbox.checked = spoilerField ? spoilerField.checked : false;
+        
+        // Handle URL-specific options
+        if (type === 'url') {
+            urlOptions.classList.add('active');
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableCheckbox.checked = urlClickableField ? urlClickableField.checked : false;
+            
+            // Populate URL fields if they exist
+            const urlField = evidenceItem.querySelector('.evidence-url');
+            const urlTextField = evidenceItem.querySelector('.evidence-url-text');
+            
+            if (urlField) {
+                // Store the current URL value to restore after modal opens
+                setTimeout(() => {
+                    const urlInput = document.querySelector('#evidence-modal .evidence-url');
+                    if (urlInput) urlInput.value = urlField.value;
+                }, 100);
+            }
+            
+            if (urlTextField) {
+                setTimeout(() => {
+                    const urlTextInput = document.querySelector('#evidence-modal .evidence-url-text');
+                    if (urlTextInput) urlTextInput.value = urlTextField.value;
+                }, 100);
+            }
+        } else {
+            urlOptions.classList.remove('active');
+            urlClickableCheckbox.checked = false;
+        }
+        
+        // Update preview
+        updateEvidencePreview();
+        
+        // Set editing mode
+        editingEvidenceItem = evidenceItem;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-save"></i> Update Evidence';
+        
+        // Open modal
+        evidenceModal.classList.add('active');
+    }
+
+    // Update evidence numbers when items are removed
+    function updateEvidenceNumbers() {
+        const evidenceItems = evidenceContainer.querySelectorAll('.evidence-item');
+        evidenceCount = evidenceItems.length;
+        evidenceItems.forEach((item, index) => {
+            const evidenceNumber = item.querySelector('.evidence-number');
+            evidenceNumber.textContent = `${index + 1}.`;
+        });
+    }
+
+    // Generate BB Code for Stolen Plate Report
+    const generateBtn = document.getElementById('sp-generate-btn');
+    const outputContainer = document.getElementById('sp-output-container');
+    const titleOutput = document.getElementById('sp-title-output');
+    const bbcodeOutput = document.getElementById('sp-bbcode-output');
+    const copyTitleBtn = document.getElementById('sp-copy-title-btn');
+    const copyBbcodeBtn = document.getElementById('sp-copy-bbcode-btn');
+    const resetBtn = document.getElementById('sp-reset-btn');
+
+    generateBtn.addEventListener('click', () => {
+        // Get form values
+        const caseTitle = document.getElementById('sp-case-title').value;
+        const timeDate = document.getElementById('sp-time-date').value;
+        const location = document.getElementById('sp-location').value;
+        const vehiclePlate = document.getElementById('sp-vehicle-plate').value;
+        const vehicleDetails = document.getElementById('sp-vehicle-details').value;
+        const vehicleOwner = document.getElementById('sp-vehicle-owner').value;
+        const callId = document.getElementById('sp-call-id').value;
+        const narrative = document.getElementById('sp-narrative').value;
+        const victimStatement = document.getElementById('sp-victim-statement').value;
+        const fingerprints = document.getElementById('sp-fingerprints').value;
+        const recovered = document.getElementById('sp-recovered').value;
+        const recoveredType = document.getElementById('sp-recovered-type').value;
+        const recoveredVehicleDetails = document.getElementById('sp-recovered-vehicle-details').value;
+        const ssbReport = document.getElementById('sp-ssb-report').value;
+        const additionalInfo = document.getElementById('sp-additional-info').value;
+        
+        // Generate Title
+        const generatedTitle = caseTitle || '[PLATE] Vehicle Make Model (Status)';
+        titleOutput.textContent = generatedTitle;
+        
+        // Generate BB Code
+        let bbcode = `[divbox=transparent]\n`;
+        bbcode += `[center][img]https://i.imgur.com/5Jhd9NC.png[/img]\n`;
+        bbcode += `[hr][/hr]\n`;
+        bbcode += `[size=150][b][b]Taskforce for Regional Autotheft Prevention - Stolen Vehicle Database[/b][/b][/size]\n`;
+        bbcode += `[hr][/hr]\n`;
+        bbcode += `[/divbox]\n`;
+        bbcode += `[hr][/hr]\n`;
+        bbcode += `[divbox=#323564][center][color=white][b]Stolen Plate Report[/b][/color][/center][/divbox]\n`;
+        bbcode += `[divbox=transparent]\n`;
+        bbcode += `[br][/br]\n`;
+        bbcode += `[b]Time & Date:[/b] ${timeDate || 'DAY/MM/YEAR'}\n`;
+        bbcode += `[b]Location:[/b] ${location || 'AREA/STREET'}\n`;
+        bbcode += `[b]Vehicle Plate:[/b] ${vehiclePlate || 'PLATE'}\n`;
+        bbcode += `[b]Vehicle Color Make Model of Plate:[/b] ${vehicleDetails || 'COLOR MAKE MODEL OF PLATE #'}\n`;
+        bbcode += `[b]Owner:[/b] ${vehicleOwner || 'OWNER FIRST LAST'}\n`;
+        bbcode += `[b]Call-ID:[/b] ${callId || '#XXXX/Self-Initiated'}\n`;
+        bbcode += `[b]Narrative:[/b][list]\n`;
+        bbcode += `[*] ${narrative || 'Write Narrative Here'}\n`;
+        bbcode += `[/list]\n`;
+        bbcode += `[b]Victim Statement:[/b][list]\n`;
+        bbcode += `[*] ${victimStatement || 'Attach Statement Here'}\n`;
+        bbcode += `[/list]\n`;
+        
+        // Add evidence section
+        bbcode += `[b]Evidence:[/b]\n`;
+        bbcode += `[list]\n`;
+        
+        const evidenceItems = evidenceContainer.querySelectorAll('.evidence-item');
+        if (evidenceItems.length > 0) {
+            evidenceItems.forEach(item => {
+                const type = item.getAttribute('data-type');
+                const isSpoiler = item.querySelector('.evidence-spoiler-field').checked;
+                const titleField = item.querySelector('.evidence-title-field');
+                const title = titleField ? titleField.value.trim() : '';
+                
+                let evidenceContent = '';
+                
+                switch(type) {
+                    case 'text':
+                        const textContent = item.querySelector('.evidence-text-content').value;
+                        evidenceContent = textContent;
+                        break;
+                    case 'image':
+                        const imageUrls = item.querySelectorAll('.evidence-image-url');
+                        let imageContent = '';
+                        imageUrls.forEach(urlInput => {
+                            if (urlInput.value.trim()) {
+                                imageContent += `[img]${urlInput.value}[/img]\n`;
+                            }
+                        });
+                        evidenceContent = imageContent;
+                        break;
+                    case 'url':
+                        const url = item.querySelector('.evidence-url').value;
+                        const urlText = item.querySelector('.evidence-url-text');
+                        if (urlText && urlText.value) {
+                            evidenceContent = `[url=${url}]${urlText.value}[/url]`;
+                        } else {
+                            evidenceContent = `[url]${url}[/url]`;
+                        }
+                        break;
+                }
+                
+                // Title is now outside the spoiler
+                let finalEvidence = '';
+                if (title) {
+                    finalEvidence = `${title}: `;
+                }
+                
+                if (isSpoiler) {
+                    finalEvidence += `[spoiler]\n${evidenceContent}[/spoiler]`;
+                } else {
+                    finalEvidence += evidenceContent;
+                }
+                
+                bbcode += `[*] ${finalEvidence}\n`;
+            });
+        } else {
+            bbcode += `[*] - Photos/Videos (Add/Delete lines as needed)\n`;
+            bbcode += `[*] - CCTV\n`;
+            bbcode += `[*] - Additional Statements\n`;
+        }
+        
+        bbcode += `[/list]\n`;
+        
+        // Add additional information
+        bbcode += `[b]Finger prints taken?[/b] ${fingerprints}\n`;
+        bbcode += `[b]Recovered?[/b] ${recovered}\n`;
+        
+        if (recovered === 'Yes') {
+            bbcode += `[b]If Yes; Was it on a person or a vehicle?[/b] ${recoveredType}\n`;
+            
+            if (recoveredType === 'Vehicle' && recoveredVehicleDetails) {
+                bbcode += `[b]If Vehicle; Make Model, & VIN?[/b] ${recoveredVehicleDetails}\n`;
+            } else {
+                bbcode += `[b]If Vehicle; Make Model, & VIN?[/b] MAKE MODEL VIN\n`;
+            }
+        } else {
+            bbcode += `[b]If Yes; Was it on a person or a vehicle?[/b] Person/Vehicle\n`;
+            bbcode += `[b]If Vehicle; Make Model, & VIN?[/b] MAKE MODEL VIN\n`;
+        }
+        
+        bbcode += `[b]Link to SSB report:[/b] ${ssbReport || ''}\n`;
+        bbcode += `[b]Additional Information:[/b] ${additionalInfo || ''}\n`;
+        bbcode += `[br][/br]\n`;
+        bbcode += `[/divbox]`;
+        
+        bbcodeOutput.textContent = bbcode;
+        outputContainer.style.display = 'block';
+        
+        // Scroll to output
+        outputContainer.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Copy functionality
+    copyTitleBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(titleOutput.textContent)
+            .then(() => {
+                showCopySuccess(copyTitleBtn);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    });
+
+    copyBbcodeBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(bbcodeOutput.textContent)
+            .then(() => {
+                showCopySuccess(copyBbcodeBtn);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    });
+
+    function showCopySuccess(button) {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+        }, 2000);
+    }
+
+    // Reset form
+    resetBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
+            // Reset all form fields
+            document.getElementById('sp-case-title').value = '';
+            document.getElementById('sp-time-date').value = '';
+            document.getElementById('sp-location').value = '';
+            document.getElementById('sp-vehicle-plate').value = '';
+            document.getElementById('sp-vehicle-details').value = '';
+            document.getElementById('sp-vehicle-owner').value = '';
+            document.getElementById('sp-call-id').value = '';
+            document.getElementById('sp-narrative').value = '';
+            document.getElementById('sp-victim-statement').value = '';
+            document.getElementById('sp-fingerprints').value = 'No';
+            document.getElementById('sp-recovered').value = 'No';
+            document.getElementById('sp-recovered-type').value = 'Person';
+            document.getElementById('sp-recovered-vehicle-details').value = '';
+            document.getElementById('sp-ssb-report').value = '';
+            document.getElementById('sp-additional-info').value = '';
+            
+            // Hide conditional containers
+            recoveredTypeContainer.style.display = 'none';
+            vehicleDetailsContainer.style.display = 'none';
+            
+            // Remove all evidence
+            evidenceContainer.innerHTML = '';
+            evidenceCount = 0;
+            
+            // Hide output
+            outputContainer.style.display = 'none';
+            
+            alert('Form has been reset.');
+        }
+    });
+}
+
+// TRAP Database Update Generator Functions - UPDATED WITH EVIDENCE MANAGEMENT SYSTEM
+function initTrapDatabaseUpdateGenerator() {
+    // Update type selection
+    const updateTypeSelect = document.getElementById('trap-update-type');
+    const updateSections = document.querySelectorAll('#trap-database-update-section .update-section');
+
+    updateTypeSelect.addEventListener('change', () => {
+        const selectedType = updateTypeSelect.value;
+        
+        // Hide all sections
+        updateSections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Show selected section
+        document.getElementById(`trap-${selectedType}-section`).style.display = 'block';
+    });
+
+    // Evidence management for suspect section - USING TRAP CASEFILE SYSTEM
+    const suspectEvidenceContainer = document.getElementById('trap-suspect-evidence-container');
+    const addSuspectEvidenceBtn = document.getElementById('trap-add-suspect-evidence-btn');
+    const evidenceModal = document.getElementById('trap-suspect-evidence-modal');
+    const evidenceTypeOptions = document.querySelectorAll('#trap-suspect-evidence-modal .evidence-type-option');
+    const evidenceSpoilerCheckbox = document.getElementById('trap-suspect-evidence-spoiler');
+    const evidenceTitleInput = document.getElementById('trap-suspect-evidence-title');
+    const evidencePreview = document.getElementById('trap-suspect-evidence-preview');
+    const addEvidenceConfirmBtn = document.getElementById('trap-suspect-add-evidence-confirm');
+    const cancelEvidenceBtn = document.getElementById('trap-suspect-cancel-evidence');
+    const closeModalBtn = document.getElementById('trap-suspect-close-modal');
+    const urlOptions = document.getElementById('trap-suspect-url-options');
+    const urlClickableCheckbox = document.getElementById('trap-suspect-url-clickable');
+
+    let selectedEvidenceType = '';
+    let evidenceCount = 0;
+    let editingEvidenceItem = null;
+
+    // Open evidence modal for suspect section
+    addSuspectEvidenceBtn.addEventListener('click', () => {
+        evidenceModal.classList.add('active');
+        selectedEvidenceType = '';
+        evidenceTypeOptions.forEach(option => option.classList.remove('selected'));
+        evidenceSpoilerCheckbox.checked = false;
+        evidenceTitleInput.value = '';
+        evidencePreview.style.display = 'none';
+        urlOptions.classList.remove('active');
+        urlClickableCheckbox.checked = false;
+        editingEvidenceItem = null;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-plus"></i> Add Evidence';
+    });
+
+    // Close evidence modal
+    function closeEvidenceModal() {
+        evidenceModal.classList.remove('active');
+    }
+
+    closeModalBtn.addEventListener('click', closeEvidenceModal);
+    cancelEvidenceBtn.addEventListener('click', closeEvidenceModal);
+
+    // Select evidence type
+    evidenceTypeOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            evidenceTypeOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedEvidenceType = option.getAttribute('data-type');
+            
+            // Show/hide URL options
+            if (selectedEvidenceType === 'url') {
+                urlOptions.classList.add('active');
+            } else {
+                urlOptions.classList.remove('active');
+            }
+            
+            updateEvidencePreview();
+        });
+    });
+
+    // Update evidence preview when inputs change
+    evidenceSpoilerCheckbox.addEventListener('change', updateEvidencePreview);
+    evidenceTitleInput.addEventListener('input', updateEvidencePreview);
+    urlClickableCheckbox.addEventListener('change', updateEvidencePreview);
+
+    function updateEvidencePreview() {
+        if (!selectedEvidenceType) {
+            evidencePreview.style.display = 'none';
+            return;
+        }
+        
+        let previewContent = '';
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        
+        switch(selectedEvidenceType) {
+            case 'text':
+                previewContent = '[Text content here]';
+                break;
+            case 'image':
+                previewContent = '[img]https://example.com/image.jpg[/img]';
+                break;
+            case 'url':
+                const isClickable = urlClickableCheckbox.checked;
+                if (isClickable) {
+                    previewContent = '[url=https://example.com]Clickable Text[/url]';
+                } else {
+                    previewContent = '[url]https://example.com[/url]';
+                }
+                break;
+        }
+        
+        // Title is now outside the spoiler
+        let finalPreview = '';
+        if (title) {
+            finalPreview = `${title}: `;
+        }
+        
+        if (isSpoiler) {
+            finalPreview += `[spoiler]\n${previewContent}\n[/spoiler]`;
+        } else {
+            finalPreview += previewContent;
+        }
+        
+        evidencePreview.textContent = finalPreview;
+        evidencePreview.style.display = 'block';
+    }
+
+    // Function to toggle URL text field visibility
+    function toggleUrlTextInput(evidenceItem, isVisible) {
+        const urlTextInput = evidenceItem.querySelector('.url-text-input');
+        if (urlTextInput) {
+            if (isVisible) {
+                urlTextInput.classList.add('active');
+            } else {
+                urlTextInput.classList.remove('active');
+            }
+        }
+    }
+
+    // Add evidence
+    addEvidenceConfirmBtn.addEventListener('click', () => {
+        if (!selectedEvidenceType) {
+            alert('Please select an evidence type');
+            return;
+        }
+        
+        if (editingEvidenceItem) {
+            // Update existing evidence item
+            updateEvidenceItem(editingEvidenceItem);
+        } else {
+            // Create new evidence item
+            evidenceCount++;
+            const evidenceItem = document.createElement('div');
+            evidenceItem.className = 'evidence-item';
+            evidenceItem.setAttribute('data-type', selectedEvidenceType);
+            
+            createEvidenceContent(evidenceItem, selectedEvidenceType, evidenceSpoilerCheckbox.checked, evidenceTitleInput.value.trim(), urlClickableCheckbox.checked);
+            suspectEvidenceContainer.appendChild(evidenceItem);
+            
+            setupEvidenceEventListeners(evidenceItem);
+        }
+        
+        closeEvidenceModal();
+    });
+
+    // Function to create evidence content
+    function createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable) {
+        let evidenceContent = '';
+        
+        switch(type) {
+            case 'text':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Evidence Title" value="${title}">
+                    </div>
+                    <div class="evidence-line-with-title">
+                        <textarea class="evidence-text-content" placeholder="Enter text evidence here..."></textarea>
+                    </div>
+                `;
+                break;
+            case 'image':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Image Title (Optional)" value="${title}">
+                    </div>
+                    <div class="image-urls-container">
+                        <div class="image-url-line">
+                            <input type="text" class="evidence-image-url" placeholder="Image URL">
+                            <div class="evidence-line-actions">
+                                <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-image-btn"><i class="fas fa-plus"></i> Add Another Image</button>
+                `;
+                break;
+            case 'url':
+                evidenceContent = `
+                    <div class="evidence-title-input">
+                        <input type="text" class="evidence-title-field" placeholder="Link Title (Optional)" value="${title}">
+                    </div>
+                    <div class="checkbox-group url-options-inline">
+                        <input type="checkbox" class="url-clickable-field" ${isClickable ? 'checked' : ''}>
+                        <label>Use clickable text</label>
+                    </div>
+                    <div class="evidence-line">
+                        <input type="text" class="evidence-url" placeholder="URL">
+                    </div>
+                    <div class="url-text-input ${isClickable ? 'active' : ''}">
+                        <div class="evidence-line">
+                            <input type="text" class="evidence-url-text" placeholder="Link Text" value="">
+                        </div>
+                    </div>
+                `;
+                break;
+        }
+        
+        evidenceItem.innerHTML = `
+            <div class="evidence-header">
+                <div class="evidence-type">
+                    <span class="evidence-number">${evidenceCount}.</span>
+                    ${type.charAt(0).toUpperCase() + type.slice(1)} Evidence
+                </div>
+                <div class="evidence-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="evidence-spoiler-field" ${isSpoiler ? 'checked' : ''}>
+                        <label>Spoiler</label>
+                    </div>
+                    <button class="edit-evidence">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="remove-evidence">
+                        <i class="fas fa-trash"></i> Remove
+                    </button>
+                </div>
+            </div>
+            <div class="evidence-content">
+                ${evidenceContent}
+            </div>
+        `;
+    }
+
+    // Function to update existing evidence item
+    function updateEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const isSpoiler = evidenceSpoilerCheckbox.checked;
+        const title = evidenceTitleInput.value.trim();
+        const isClickable = urlClickableCheckbox.checked;
+        
+        createEvidenceContent(evidenceItem, type, isSpoiler, title, isClickable);
+        setupEvidenceEventListeners(evidenceItem);
+    }
+
+    // Function to setup event listeners for evidence items
+    function setupEvidenceEventListeners(evidenceItem) {
+        // Add event listeners for dynamic elements
+        const removeBtn = evidenceItem.querySelector('.remove-evidence');
+        removeBtn.addEventListener('click', () => {
+            evidenceItem.remove();
+            updateEvidenceNumbers();
+        });
+        
+        // Add event listener for edit button
+        const editBtn = evidenceItem.querySelector('.edit-evidence');
+        editBtn.addEventListener('click', () => {
+            editEvidenceItem(evidenceItem);
+        });
+        
+        // For URL type, add functionality to toggle clickable text
+        if (evidenceItem.getAttribute('data-type') === 'url') {
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableField.addEventListener('change', () => {
+                toggleUrlTextInput(evidenceItem, urlClickableField.checked);
+            });
+        }
+        
+        // For image type, add functionality to add/remove images
+        if (evidenceItem.getAttribute('data-type') === 'image') {
+            const addImageBtn = evidenceItem.querySelector('.add-image-btn');
+            const imageUrlsContainer = evidenceItem.querySelector('.image-urls-container');
+            
+            addImageBtn.addEventListener('click', () => {
+                const newImageLine = document.createElement('div');
+                newImageLine.className = 'image-url-line';
+                newImageLine.innerHTML = `
+                    <input type="text" class="evidence-image-url" placeholder="Image URL">
+                    <div class="evidence-line-actions">
+                        <button class="remove-image-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+                imageUrlsContainer.appendChild(newImageLine);
+                
+                // Add event listener to remove button
+                const removeImageBtn = newImageLine.querySelector('.remove-image-btn');
+                removeImageBtn.addEventListener('click', () => {
+                    newImageLine.remove();
+                });
+            });
+            
+            // Add event listeners to existing remove buttons
+            const removeImageBtns = evidenceItem.querySelectorAll('.remove-image-btn');
+            removeImageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.closest('.image-url-line').remove();
+                });
+            });
+        }
+    }
+
+    // Function to edit an evidence item
+    function editEvidenceItem(evidenceItem) {
+        const type = evidenceItem.getAttribute('data-type');
+        const titleField = evidenceItem.querySelector('.evidence-title-field');
+        const spoilerField = evidenceItem.querySelector('.evidence-spoiler-field');
+        
+        // Set modal values based on existing evidence
+        selectedEvidenceType = type;
+        evidenceTypeOptions.forEach(option => {
+            if (option.getAttribute('data-type') === type) {
+                option.classList.add('selected');
+            } else {
+                option.classList.remove('selected');
+            }
+        });
+        
+        evidenceTitleInput.value = titleField ? titleField.value : '';
+        evidenceSpoilerCheckbox.checked = spoilerField ? spoilerField.checked : false;
+        
+        // Handle URL-specific options
+        if (type === 'url') {
+            urlOptions.classList.add('active');
+            const urlClickableField = evidenceItem.querySelector('.url-clickable-field');
+            urlClickableCheckbox.checked = urlClickableField ? urlClickableField.checked : false;
+            
+            // Populate URL fields if they exist
+            const urlField = evidenceItem.querySelector('.evidence-url');
+            const urlTextField = evidenceItem.querySelector('.evidence-url-text');
+            
+            if (urlField) {
+                // Store the current URL value to restore after modal opens
+                setTimeout(() => {
+                    const urlInput = document.querySelector('#trap-suspect-evidence-modal .evidence-url');
+                    if (urlInput) urlInput.value = urlField.value;
+                }, 100);
+            }
+            
+            if (urlTextField) {
+                setTimeout(() => {
+                    const urlTextInput = document.querySelector('#trap-suspect-evidence-modal .evidence-url-text');
+                    if (urlTextInput) urlTextInput.value = urlTextField.value;
+                }, 100);
+            }
+        } else {
+            urlOptions.classList.remove('active');
+            urlClickableCheckbox.checked = false;
+        }
+        
+        // Update preview
+        updateEvidencePreview();
+        
+        // Set editing mode
+        editingEvidenceItem = evidenceItem;
+        addEvidenceConfirmBtn.innerHTML = '<i class="fas fa-save"></i> Update Evidence';
+        
+        // Open modal
+        evidenceModal.classList.add('active');
+    }
+
+    // Update evidence numbers when items are removed
+    function updateEvidenceNumbers() {
+        const evidenceItems = suspectEvidenceContainer.querySelectorAll('.evidence-item');
+        evidenceCount = evidenceItems.length;
+        evidenceItems.forEach((item, index) => {
+            const evidenceNumber = item.querySelector('.evidence-number');
+            evidenceNumber.textContent = `${index + 1}.`;
+        });
+    }
+
+    // Generate BB Code
+    const generateBtn = document.getElementById('trap-generate-btn');
+    const outputContainer = document.getElementById('trap-output-container');
+    const bbcodeOutput = document.getElementById('trap-bbcode-output');
+    const copyBbcodeBtn = document.getElementById('trap-copy-bbcode-btn');
+    const resetBtn = document.getElementById('trap-reset-btn');
+
+    generateBtn.addEventListener('click', () => {
+        const updateType = updateTypeSelect.value;
+        let bbcode = '';
+        
+        switch(updateType) {
+            case 'general':
+                const generalNarrative = document.getElementById('trap-general-narrative').value;
+                bbcode = `[divbox=#323564][center][color=white][b]General Update[/b][/color][/center][/divbox]\n`;
+                bbcode += `[divbox=transparent]${generalNarrative || 'ENTER UPDATE NARRATIVE HERE'}[/divbox]`;
+                break;
+                
+            case 'forensics':
+                const forensicsUpdate = document.getElementById('trap-forensics-update').value;
+                bbcode = `[divbox=#323564][center][color=white][b]Forensics Update[/b][/color][/center][/divbox]\n`;
+                bbcode += `[divbox=transparent]${forensicsUpdate || 'ENTER FORENSICS UPDATE HERE'}[/divbox]`;
+                break;
+                
+            case 'suspect':
+                const suspectPhoto = document.getElementById('trap-suspect-photo').value;
+                const suspectName = document.getElementById('trap-suspect-name').value;
+                const relationIncident = document.getElementById('trap-relation-incident').value;
+                
+                bbcode = `[divbox=#323564][center][color=white][b]Potential Suspect[/b][/color][/center][/divbox]\n`;
+                bbcode += `[divbox=transparent][center]`;
+                
+                if (suspectPhoto) {
+                    bbcode += `[img]${suspectPhoto}[/img]\n`;
+                }
+                
+                bbcode += `${suspectName || 'FIRSTNAME LASTNAME'}[/center]\n`;
+                bbcode += `[b]Relation to incident:[/b]\n`;
+                bbcode += `${relationIncident ? relationIncident.split('\n').map(line => line ? `- ${line}` : '-').join('\n') : '-'}\n`;
+                bbcode += `[b]Evidence:[/b]\n`;
+                bbcode += `[list]`;
+                
+                const evidenceItems = suspectEvidenceContainer.querySelectorAll('.evidence-item');
+                if (evidenceItems.length > 0) {
+                    evidenceItems.forEach(item => {
+                        const type = item.getAttribute('data-type');
+                        const isSpoiler = item.querySelector('.evidence-spoiler-field').checked;
+                        const titleField = item.querySelector('.evidence-title-field');
+                        const title = titleField ? titleField.value.trim() : '';
+                        
+                        let evidenceContent = '';
+                        
+                        switch(type) {
+                            case 'text':
+                                const textContent = item.querySelector('.evidence-text-content').value;
+                                evidenceContent = textContent;
+                                break;
+                            case 'image':
+                                const imageUrls = item.querySelectorAll('.evidence-image-url');
+                                let imageContent = '';
+                                imageUrls.forEach(urlInput => {
+                                    if (urlInput.value.trim()) {
+                                        imageContent += `[img]${urlInput.value}[/img]\n`;
+                                    }
+                                });
+                                evidenceContent = imageContent;
+                                break;
+                            case 'url':
+                                const url = item.querySelector('.evidence-url').value;
+                                const urlText = item.querySelector('.evidence-url-text');
+                                if (urlText && urlText.value) {
+                                    evidenceContent = `[url=${url}]${urlText.value}[/url]`;
+                                } else {
+                                    evidenceContent = `[url]${url}[/url]`;
+                                }
+                                break;
+                        }
+                        
+                        // Title is now outside the spoiler
+                        let finalEvidence = '';
+                        if (title) {
+                            finalEvidence = `${title}: `;
+                        }
+                        
+                        if (isSpoiler) {
+                            finalEvidence += `[spoiler]\n${evidenceContent}[/spoiler]`;
+                        } else {
+                            finalEvidence += evidenceContent;
+                        }
+                        
+                        bbcode += `[*] ${finalEvidence}\n`;
+                    });
+                } else {
+                    bbcode += `[*]\n`;
+                }
+                
+                bbcode += `[/list]\n`;
+                bbcode += `[/divbox]`;
+                break;
+                
+            case 'warrant':
+                const warrantStatus = document.getElementById('trap-warrant-status').value;
+                bbcode = `[divbox=#323564][center][color=white][b]Warrant Status Update[/b][/color][/center][/divbox]\n`;
+                bbcode += `[divbox=transparent]${warrantStatus || 'ENTER WARRANT STATUS HERE'}[/divbox]`;
+                break;
+        }
+        
+        bbcodeOutput.textContent = bbcode;
+        outputContainer.style.display = 'block';
+        
+        // Scroll to output
+        outputContainer.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Copy functionality
+    copyBbcodeBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(bbcodeOutput.textContent)
+            .then(() => {
+                showCopySuccess(copyBbcodeBtn);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    });
+
+    function showCopySuccess(button) {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+        }, 2000);
+    }
+
+    // Reset form
+    resetBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
+            // Reset all form fields
+            document.getElementById('trap-update-type').value = 'general';
+            document.getElementById('trap-general-narrative').value = '';
+            document.getElementById('trap-forensics-update').value = '';
+            document.getElementById('trap-suspect-photo').value = '';
+            document.getElementById('trap-suspect-name').value = '';
+            document.getElementById('trap-relation-incident').value = '';
+            document.getElementById('trap-warrant-status').value = '';
+            
+            // Reset evidence
+            suspectEvidenceContainer.innerHTML = '';
+            evidenceCount = 0;
+            
+            // Show general section by default
+            updateSections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('trap-general-section').style.display = 'block';
+            
+            // Hide output
+            outputContainer.style.display = 'none';
+            
+            alert('Form has been reset.');
+        }
+    });
+
+    // Initialize the form
+    updateSections.forEach(section => {
+        section.style.display = 'none';
+    });
+    document.getElementById('trap-general-section').style.display = 'block';
+}
