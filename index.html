@@ -46,8 +46,11 @@
                     <i class="fas fa-chevron-down dropdown-icon"></i>
                 </a>
                 <div class="dropdown-container">
-                    <a href="#" data-tool="case-package"><i class="fas fa-file-alt"></i> TRAP Case Package</a>
-                    <a href="#" data-tool="supplemental"><i class="fas fa-file-medical-alt"></i> Supplemental Report</a>
+                    <a href="#" data-tool="trap-casefile"><i class="fas fa-file-alt"></i> TRAP Casefile Generator</a>
+                    <a href="#" data-tool="supplemental-report"><i class="fas fa-file-medical"></i> Supplemental Report</a>
+                    <a href="#" data-tool="stolen-vehicle"><i class="fas fa-car"></i> Stolen Vehicle Report</a>
+                    <a href="#" data-tool="stolen-plate"><i class="fas fa-tag"></i> Stolen Plate Report</a>
+                    <a href="#" data-tool="trap-database-update"><i class="fas fa-database"></i> Database Update Generator</a>
                 </div>
             </li>
             <li>
@@ -91,15 +94,30 @@
                             <h3>Traffic Warning Generator</h3>
                             <p>Generate official-looking traffic warnings for law enforcement.</p>
                         </div>
-                        <div class="dashboard-tool" onclick="switchTool('case-package')">
+                        <div class="dashboard-tool" onclick="switchTool('trap-casefile')">
                             <i class="fas fa-folder"></i>
-                            <h3>TRAP Case Package Generator</h3>
-                            <p>Create comprehensive case packages with evidence management.</p>
+                            <h3>TRAP Casefile Generator</h3>
+                            <p>Generate comprehensive case packages with BBCode formatting.</p>
                         </div>
-                        <div class="dashboard-tool" onclick="switchTool('supplemental')">
-                            <i class="fas fa-file-medical-alt"></i>
+                        <div class="dashboard-tool" onclick="switchTool('supplemental-report')">
+                            <i class="fas fa-file-medical"></i>
                             <h3>Supplemental Report Generator</h3>
-                            <p>Generate follow-up supplemental reports.</p>
+                            <p>Generate supplemental reports with evidence management.</p>
+                        </div>
+                        <div class="dashboard-tool" onclick="switchTool('stolen-vehicle')">
+                            <i class="fas fa-car"></i>
+                            <h3>Stolen Vehicle Report Generator</h3>
+                            <p>Generate TRAP stolen vehicle reports with BBCode formatting.</p>
+                        </div>
+                        <div class="dashboard-tool" onclick="switchTool('stolen-plate')">
+                            <i class="fas fa-tag"></i>
+                            <h3>Stolen Plate Report Generator</h3>
+                            <p>Generate TRAP stolen plate reports with BBCode formatting.</p>
+                        </div>
+                        <div class="dashboard-tool" onclick="switchTool('trap-database-update')">
+                            <i class="fas fa-database"></i>
+                            <h3>Database Update Generator</h3>
+                            <p>Generate TRAP database updates with various update types.</p>
                         </div>
                     </div>
                 </div>
@@ -438,27 +456,25 @@
                     </div>
                 </div>
 
-                <!-- Case Package Generator -->
-                <div class="tool-section" id="case-package-section">
-                    <h2><i class="fas fa-folder"></i> TRAP Case Package Generator</h2>
+                <!-- TRAP Casefile Generator -->
+                <div class="tool-section" id="trap-casefile-section">
+                    <h2><i class="fas fa-folder"></i> TRAP Casefile Generator</h2>
                     
-                    <div class="form-section">
-                        <h3>Case Information</h3>
-                        <div class="form-container">
+                    <div class="form-container">
+                        <div class="form-section">
+                            <h3><i class="fas fa-file-alt"></i> Case Information</h3>
                             <div class="form-group">
                                 <label for="case-title">Case Title</label>
-                                <input type="text" id="case-title" placeholder="e.g., Grand Theft Auto x3, Mission Row">
+                                <input type="text" id="case-title" placeholder="e.g., Grand Theft Auto, Mission Row">
                             </div>
                             <div class="form-group">
                                 <label for="case-date">Date</label>
-                                <input type="text" id="case-date" placeholder="e.g., 10/18/2025">
+                                <input type="text" id="case-date" placeholder="e.g., [10/18/2025]">
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <h3>Investigative Background</h3>
-                        <div class="form-container">
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> Investigative Background</h3>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="time-date">Time & Date</label>
@@ -478,125 +494,503 @@
                                 <input type="text" id="investigators" placeholder="e.g., Sergeant John Doe (Lead); Deputy Jane Smith">
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <h3>Involved Persons</h3>
-                        <div class="form-container" id="persons-container">
-                            <!-- Person sections will be added here dynamically -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-users"></i> Involved Persons</h3>
+                            <div class="form-container" id="persons-container">
+                                <!-- Person sections will be added here dynamically -->
+                            </div>
+                            <button class="add-btn" id="add-person-btn">
+                                <i class="fas fa-plus"></i> Add Person
+                            </button>
                         </div>
-                        <button class="add-btn" id="add-person-btn">
-                            <i class="fas fa-plus"></i> Add Person
-                        </button>
-                    </div>
 
-                    <div class="form-section">
-                        <h3>Narrative</h3>
-                        <div class="form-container">
+                        <div class="form-section">
+                            <h3><i class="fas fa-book"></i> Narrative</h3>
                             <div class="form-group">
-                                <textarea id="narrative-case" placeholder="Write narrative here..."></textarea>
+                                <textarea id="narrative" placeholder="Write narrative here..."></textarea>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <h3>Evidence</h3>
-                        <div class="form-container">
-                            <div id="evidence-container-case">
+                        <div class="form-section">
+                            <h3><i class="fas fa-clipboard-list"></i> Evidence</h3>
+                            <div id="evidence-container">
                                 <!-- Evidence items will be added here dynamically -->
                             </div>
-                            <button class="add-btn" id="add-evidence-btn-case">
+                            <button class="add-btn" id="add-evidence-btn">
                                 <i class="fas fa-plus"></i> Add Evidence
+                            </button>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="primary-btn" id="generate-casefile-btn">
+                                <i class="fas fa-code"></i> Generate BB Code
+                            </button>
+                            <button class="secondary-btn" id="reset-casefile-btn">
+                                <i class="fas fa-redo"></i> Reset Form
                             </button>
                         </div>
                     </div>
 
-                    <div class="button-group">
-                        <button class="primary-btn" id="generate-case-btn">
-                            <i class="fas fa-code"></i> Generate BB Code
-                        </button>
-                        <button class="secondary-btn" id="reset-case-btn">
-                            <i class="fas fa-redo"></i> Reset Form
-                        </button>
-                    </div>
-
-                    <div id="output-container-case">
+                    <div id="casefile-output-container">
                         <div class="output-section">
                             <div class="template-header">
                                 <h3>Generated Title</h3>
-                                <button class="secondary-btn" id="copy-title-btn">
+                                <button class="secondary-btn" id="copy-casefile-title-btn">
                                     <i class="fas fa-copy"></i> Copy Title
                                 </button>
                             </div>
-                            <div id="title-output"></div>
+                            <div id="casefile-title-output"></div>
                         </div>
                         
                         <div class="output-section">
                             <div class="template-header">
                                 <h3>Generated BB Code</h3>
-                                <button class="primary-btn" id="copy-bbcode-case-btn">
+                                <button class="primary-btn" id="copy-casefile-bbcode-btn">
                                     <i class="fas fa-copy"></i> Copy BB Code
                                 </button>
                             </div>
-                            <div id="bbcode-output-case"></div>
+                            <div id="casefile-bbcode-output"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Supplemental Report Generator -->
-                <div class="tool-section" id="supplemental-section">
-                    <h2><i class="fas fa-file-medical-alt"></i> Supplemental Report Generator</h2>
+                <div class="tool-section" id="supplemental-report-section">
+                    <h2><i class="fas fa-file-medical"></i> Supplemental Report Generator</h2>
                     
-                    <div class="form-section">
-                        <h3>Supplemental Report</h3>
-                        <div class="form-container">
+                    <div class="form-container">
+                        <div class="form-section">
+                            <h3><i class="fas fa-file-alt"></i> Supplemental Report</h3>
                             <div class="form-group">
                                 <label for="supplemental-narrative">Narrative</label>
                                 <textarea id="supplemental-narrative" placeholder="Write narrative here..."></textarea>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <h3>Evidence</h3>
-                        <div class="form-container">
-                            <div id="evidence-container-supplemental">
+                        <div class="form-section">
+                            <h3><i class="fas fa-clipboard-list"></i> Evidence</h3>
+                            <div id="supplemental-evidence-container">
                                 <!-- Evidence items will be added here dynamically -->
                             </div>
-                            <button class="add-btn" id="add-evidence-btn-supplemental">
+                            <button class="add-btn" id="add-supplemental-evidence-btn">
                                 <i class="fas fa-plus"></i> Add Evidence
+                            </button>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> Filed By</h3>
+                            <div class="form-group">
+                                <label for="supplemental-filed-by">Rank and Name</label>
+                                <input type="text" id="supplemental-filed-by" placeholder="Rank Forename Surname">
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="primary-btn" id="generate-supplemental-btn">
+                                <i class="fas fa-code"></i> Generate BB Code
+                            </button>
+                            <button class="secondary-btn" id="reset-supplemental-btn">
+                                <i class="fas fa-redo"></i> Reset Form
                             </button>
                         </div>
                     </div>
 
-                    <div class="form-section">
-                        <h3>Filed By</h3>
+                    <div id="supplemental-output-container">
+                        <div class="output-section">
+                            <div class="template-header">
+                                <h3>Generated Supplemental Report BB Code</h3>
+                                <button class="primary-btn" id="copy-supplemental-bbcode-btn">
+                                    <i class="fas fa-copy"></i> Copy BB Code
+                                </button>
+                            </div>
+                            <div id="supplemental-bbcode-output"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stolen Vehicle Report Generator -->
+                <div class="tool-section" id="stolen-vehicle-section">
+                    <h2><i class="fas fa-car"></i> TRAP Stolen Vehicle Report Generator</h2>
+                    
+                    <div class="form-container">
+                        <div class="form-section">
+                            <h3><i class="fas fa-file-alt"></i> Case Information</h3>
+                            <div class="form-group">
+                                <label for="sv-case-title">Case Title</label>
+                                <input type="text" id="sv-case-title" placeholder="e.g., [ZZH931] Benefactor Scharmann (Ongoing)">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sv-time-date">Time & Date</label>
+                                    <input type="text" id="sv-time-date" placeholder="e.g., 14:30, 15/10/2023">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sv-location">Location</label>
+                                    <input type="text" id="sv-location" placeholder="e.g., Vespucci Beach, Los Santos">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sv-vehicle-details">Vehicle Color, Make & Model</label>
+                                    <input type="text" id="sv-vehicle-details" placeholder="e.g., Red Bravado Gauntlet">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sv-vehicle-plate">Vehicle Plate</label>
+                                    <input type="text" id="sv-vehicle-plate" placeholder="e.g., TRAP123">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sv-vehicle-owner">Owner</label>
+                                    <input type="text" id="sv-vehicle-owner" placeholder="e.g., John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sv-call-id">Call-ID</label>
+                                    <input type="text" id="sv-call-id" placeholder="e.g., #1234/Self-Initiated">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-file-alt"></i> Report Details</h3>
+                            <div class="form-group">
+                                <label for="sv-narrative">Narrative</label>
+                                <textarea id="sv-narrative" placeholder="Write narrative here..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="sv-victim-statement">Victim Statement</label>
+                                <textarea id="sv-victim-statement" placeholder="Attach statement here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-clipboard-list"></i> Evidence</h3>
+                            <div id="sv-evidence-container">
+                                <!-- Evidence items will be added here dynamically -->
+                            </div>
+                            <button class="add-btn" id="sv-add-evidence-btn">
+                                <i class="fas fa-plus"></i> Add Evidence
+                            </button>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-check-circle"></i> Additional Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sv-armed-robbery">Armed Robbery?</label>
+                                    <select id="sv-armed-robbery">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sv-items-stolen">Additional Items Stolen?</label>
+                                    <select id="sv-items-stolen">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="sv-stolen-items-container" style="display: none;">
+                                <label for="sv-stolen-items">Stolen Items</label>
+                                <textarea id="sv-stolen-items" placeholder="List items stolen..."></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sv-fingerprints">Fingerprints Taken?</label>
+                                    <select id="sv-fingerprints">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sv-recovered">Recovered?</label>
+                                    <select id="sv-recovered">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sv-ssb-report">Link to SSB Report</label>
+                                <input type="text" id="sv-ssb-report" placeholder="Paste SSB report link here">
+                            </div>
+                            <div class="form-group">
+                                <label for="sv-additional-info">Additional Information</label>
+                                <textarea id="sv-additional-info" placeholder="Any additional information..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="primary-btn" id="sv-generate-btn">
+                                <i class="fas fa-code"></i> Generate BB Code
+                            </button>
+                            <button class="secondary-btn" id="sv-reset-btn">
+                                <i class="fas fa-redo"></i> Reset Form
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="sv-output-container">
+                        <div class="output-section">
+                            <div class="template-header">
+                                <h3>Generated Case Title</h3>
+                                <button class="primary-btn" id="sv-copy-title-btn">
+                                    <i class="fas fa-copy"></i> Copy Title
+                                </button>
+                            </div>
+                            <div id="sv-title-output"></div>
+                        </div>
+                        
+                        <div class="output-section">
+                            <div class="template-header">
+                                <h3>Generated BB Code</h3>
+                                <button class="primary-btn" id="sv-copy-bbcode-btn">
+                                    <i class="fas fa-copy"></i> Copy BB Code
+                                </button>
+                            </div>
+                            <div id="sv-bbcode-output"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stolen Plate Report Generator -->
+                <div class="tool-section" id="stolen-plate-section">
+                    <h2><i class="fas fa-tag"></i> TRAP Stolen Plate Report Generator</h2>
+                    
+                    <div class="form-container">
+                        <div class="form-section">
+                            <h3><i class="fas fa-file-alt"></i> Case Information</h3>
+                            <div class="form-group">
+                                <label for="sp-case-title">Case Title</label>
+                                <input type="text" id="sp-case-title" placeholder="e.g., [ZZH931] Benefactor Scharmann (Ongoing)">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sp-time-date">Time & Date</label>
+                                    <input type="text" id="sp-time-date" placeholder="e.g., 14:30, 15/10/2023">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sp-location">Location</label>
+                                    <input type="text" id="sp-location" placeholder="e.g., Vespucci Beach, Los Santos">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sp-vehicle-plate">Vehicle Plate</label>
+                                    <input type="text" id="sp-vehicle-plate" placeholder="e.g., TRAP123">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sp-vehicle-details">Vehicle Color Make Model of Plate</label>
+                                    <input type="text" id="sp-vehicle-details" placeholder="e.g., Red Bravado Gauntlet">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sp-vehicle-owner">Owner</label>
+                                    <input type="text" id="sp-vehicle-owner" placeholder="e.g., John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sp-call-id">Call-ID</label>
+                                    <input type="text" id="sp-call-id" placeholder="e.g., #1234/Self-Initiated">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-file-alt"></i> Report Details</h3>
+                            <div class="form-group">
+                                <label for="sp-narrative">Narrative</label>
+                                <textarea id="sp-narrative" placeholder="Write narrative here..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="sp-victim-statement">Victim Statement</label>
+                                <textarea id="sp-victim-statement" placeholder="Attach statement here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-clipboard-list"></i> Evidence</h3>
+                            <div class="form-container">
+                                <div id="sp-evidence-container">
+                                    <!-- Evidence items will be added here dynamically -->
+                                </div>
+                                <button class="add-btn" id="sp-add-evidence-btn">
+                                    <i class="fas fa-plus"></i> Add Evidence
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-check-circle"></i> Additional Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sp-fingerprints">Fingerprints Taken?</label>
+                                    <select id="sp-fingerprints">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sp-recovered">Recovered?</label>
+                                    <select id="sp-recovered">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="sp-recovered-type-container" style="display: none;">
+                                <label for="sp-recovered-type">If Yes; Was it on a person or a vehicle?</label>
+                                <select id="sp-recovered-type">
+                                    <option value="Person">Person</option>
+                                    <option value="Vehicle">Vehicle</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="sp-vehicle-details-container" style="display: none;">
+                                <label for="sp-recovered-vehicle-details">If Vehicle; Make Model, & VIN?</label>
+                                <input type="text" id="sp-recovered-vehicle-details" placeholder="e.g., Bravado Gauntlet, VIN123456">
+                            </div>
+                            <div class="form-group">
+                                <label for="sp-ssb-report">Link to SSB Report</label>
+                                <input type="text" id="sp-ssb-report" placeholder="Paste SSB report link here">
+                            </div>
+                            <div class="form-group">
+                                <label for="sp-additional-info">Additional Information</label>
+                                <textarea id="sp-additional-info" placeholder="Any additional information..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="primary-btn" id="sp-generate-btn">
+                                <i class="fas fa-code"></i> Generate BB Code
+                            </button>
+                            <button class="secondary-btn" id="sp-reset-btn">
+                                <i class="fas fa-redo"></i> Reset Form
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="sp-output-container">
+                        <div class="output-section">
+                            <div class="template-header">
+                                <h3>Generated Case Title</h3>
+                                <button class="primary-btn" id="sp-copy-title-btn">
+                                    <i class="fas fa-copy"></i> Copy Title
+                                </button>
+                            </div>
+                            <div id="sp-title-output"></div>
+                        </div>
+                        
+                        <div class="output-section">
+                            <div class="template-header">
+                                <h3>Generated BB Code</h3>
+                                <button class="primary-btn" id="sp-copy-bbcode-btn">
+                                    <i class="fas fa-copy"></i> Copy BB Code
+                                </button>
+                            </div>
+                            <div id="sp-bbcode-output"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRAP Database Update Generator -->
+                <div class="tool-section" id="trap-database-update-section">
+                    <h2><i class="fas fa-database"></i> TRAP Database Update Generator</h2>
+                    
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label for="trap-update-type">Select Update Type</label>
+                            <select id="trap-update-type">
+                                <option value="general">Database Entry Update (General Information/Communication)</option>
+                                <option value="forensics">Database Entry Forensics Update</option>
+                                <option value="suspect">Potential Suspect Update</option>
+                                <option value="warrant">Database Entry Warrant Status</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- General Update Fields -->
+                    <div class="update-section" id="trap-general-section">
+                        <h3><i class="fas fa-info-circle"></i> General Update Information</h3>
                         <div class="form-container">
                             <div class="form-group">
-                                <label for="filed-by">Rank and Name</label>
-                                <input type="text" id="filed-by" placeholder="Rank Forename Surname">
+                                <label for="trap-general-narrative">Update Narrative</label>
+                                <textarea id="trap-general-narrative" placeholder="Enter the general update narrative here..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Forensics Update Fields -->
+                    <div class="update-section" id="trap-forensics-section" style="display: none;">
+                        <h3><i class="fas fa-microscope"></i> Forensics Update Information</h3>
+                        <div class="form-container">
+                            <div class="form-group">
+                                <label for="trap-forensics-update">Forensics Update</label>
+                                <textarea id="trap-forensics-update" placeholder="Enter forensics update details here..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Suspect Update Fields - UPDATED WITH EVIDENCE MANAGEMENT SYSTEM -->
+                    <div class="update-section" id="trap-suspect-section" style="display: none;">
+                        <h3><i class="fas fa-user-secret"></i> Suspect Information</h3>
+                        <div class="form-container">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="trap-suspect-photo">MDC Photo Link</label>
+                                    <input type="text" id="trap-suspect-photo" placeholder="Paste MDC photo link here">
+                                </div>
+                                <div class="form-group">
+                                    <label for="trap-suspect-name">Suspect Name</label>
+                                    <input type="text" id="trap-suspect-name" placeholder="Firstname Lastname">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="trap-relation-incident">Relation to Incident</label>
+                                <textarea id="trap-relation-incident" placeholder="Describe the suspect's relation to the incident..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <h4><i class="fas fa-clipboard-list"></i> Evidence</h4>
+                                <div id="trap-suspect-evidence-container">
+                                    <!-- Evidence items will be added here dynamically using the TRAP casefile system -->
+                                </div>
+                                <button class="add-btn" id="trap-add-suspect-evidence-btn">
+                                    <i class="fas fa-plus"></i> Add Evidence
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Warrant Update Fields -->
+                    <div class="update-section" id="trap-warrant-section" style="display: none;">
+                        <h3><i class="fas fa-gavel"></i> Warrant Status Information</h3>
+                        <div class="form-container">
+                            <div class="form-group">
+                                <label for="trap-warrant-status">Warrant Status Update</label>
+                                <textarea id="trap-warrant-status" placeholder="Enter warrant status update here..."></textarea>
                             </div>
                         </div>
                     </div>
 
                     <div class="button-group">
-                        <button class="primary-btn" id="generate-supplemental-btn">
+                        <button class="primary-btn" id="trap-generate-btn">
                             <i class="fas fa-code"></i> Generate BB Code
                         </button>
-                        <button class="secondary-btn" id="reset-supplemental-btn">
+                        <button class="secondary-btn" id="trap-reset-btn">
                             <i class="fas fa-redo"></i> Reset Form
                         </button>
                     </div>
 
-                    <div id="output-container-supplemental">
+                    <div id="trap-output-container">
                         <div class="output-section">
                             <div class="template-header">
-                                <h3>Generated Supplemental Report BB Code</h3>
-                                <button class="primary-btn" id="copy-bbcode-supplemental-btn">
+                                <h3>Generated BB Code</h3>
+                                <button class="primary-btn" id="trap-copy-bbcode-btn">
                                     <i class="fas fa-copy"></i> Copy BB Code
                                 </button>
                             </div>
-                            <div id="bbcode-output-supplemental"></div>
+                            <div id="trap-bbcode-output"></div>
                         </div>
                     </div>
                 </div>
@@ -606,16 +1000,20 @@
                     <h2><i class="fas fa-history"></i> Changelog</h2>
                     <div class="changelog-content">
                         <div class="changelog-item">
-                            <div class="changelog-date">July 5, 2025</div>
-                            <div class="changelog-text">Implemented new template for Unpaid Citations + ability to count amount of fines.</div>
+                            <div class="changelog-date">Octorber 30, 2025</div>
+                            <div class="changelog-text">Added Stolen Vehicle Report Generator, Stolen Plate Report and other supliment reports regarding to the Trap Generators section.</div>
+                        </div>
+                        <div class="changelog-item">
+                            <div class="changelog-date">October 23, 2025</div>
+                            <div class="changelog-text">Added TRAP Generators section with Case Package and Supplemental Report tools.</div>
                         </div>
                         <div class="changelog-item">
                             <div class="changelog-date">July 6, 2025</div>
                             <div class="changelog-text">Added Traffic Warning Generator tool to LSSD Tools section.</div>
                         </div>
                         <div class="changelog-item">
-                            <div class="changelog-date">October 23, 2025</div>
-                            <div class="changelog-text">Added TRAP Generators section with Case Package and Supplemental Report tools.</div>
+                            <div class="changelog-date">July 5, 2025</div>
+                            <div class="changelog-text">Implemented new template for Unpaid Citations + ability to count amount of fines.</div>
                         </div>
                     </div>
                 </div>
@@ -623,15 +1021,19 @@
 
             <div class="changelog-panel">
                 <h3>Recent Updates</h3>
-                <div class="changelog-item">
+                    <div class="changelog-item">
+                    <div class="changelog-date">Octorber 30, 2025</div>
+                    <div class="changelog-text">Added Stolen Vehicle Report Generator, Stolen Plate Report and other supliment reports regarding to the Trap Generators section.</div>
+                </div>
+                    <div class="changelog-item">
                     <div class="changelog-date">October 23, 2025</div>
                     <div class="changelog-text">Added TRAP Generators section with Case Package and Supplemental Report tools.</div>
                 </div>
-                <div class="changelog-item">
+                    <div class="changelog-item">
                     <div class="changelog-date">July 6, 2025</div>
                     <div class="changelog-text">Added Traffic Warning Generator tool to LSSD Tools section.</div>
                 </div>
-                <div class="changelog-item">
+                    <div class="changelog-item">
                     <div class="changelog-date">July 5, 2025</div>
                     <div class="changelog-text">Implemented new template for Unpaid Citations + ability to count amount of fines.</div>
                 </div>
@@ -685,7 +1087,7 @@
             </div>
             <div class="form-group">
                 <label for="evidence-title">Evidence Title (Optional)</label>
-                <input type="text" id="evidence-title" placeholder="e.g., Crime Scene Photo, Witness Statement">
+                <input type="text" id="evidence-title" placeholder="e.g., Witness Statement, Crime Scene Photo">
             </div>
             <div class="evidence-preview" id="evidence-preview"></div>
             <div class="button-group">
@@ -693,6 +1095,62 @@
                     <i class="fas fa-plus"></i> Add Evidence
                 </button>
                 <button class="secondary-btn" id="cancel-evidence">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRAP Suspect Evidence Modal -->
+    <div class="modal-overlay" id="trap-suspect-evidence-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Select Evidence Type</h3>
+                <button class="close-modal" id="trap-suspect-close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="evidence-type-options">
+                <div class="evidence-type-option" data-type="text">
+                    <div class="evidence-type-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <div class="evidence-type-name">Text Evidence</div>
+                </div>
+                <div class="evidence-type-option" data-type="image">
+                    <div class="evidence-type-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="evidence-type-name">Image Evidence</div>
+                </div>
+                <div class="evidence-type-option" data-type="url">
+                    <div class="evidence-type-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="evidence-type-name">URL Evidence</div>
+                </div>
+            </div>
+            
+            <!-- URL Evidence Options -->
+            <div class="checkbox-group url-options" id="trap-suspect-url-options">
+                <input type="checkbox" id="trap-suspect-url-clickable">
+                <label for="trap-suspect-url-clickable">Use clickable text</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="trap-suspect-evidence-spoiler">
+                <label for="trap-suspect-evidence-spoiler">Mark as spoiler</label>
+            </div>
+            <div class="form-group">
+                <label for="trap-suspect-evidence-title">Evidence Title (Optional)</label>
+                <input type="text" id="trap-suspect-evidence-title" placeholder="e.g., Witness Statement, Crime Scene Photo">
+            </div>
+            <div class="evidence-preview" id="trap-suspect-evidence-preview"></div>
+            <div class="button-group">
+                <button class="primary-btn" id="trap-suspect-add-evidence-confirm">
+                    <i class="fas fa-plus"></i> Add Evidence
+                </button>
+                <button class="secondary-btn" id="trap-suspect-cancel-evidence">
                     Cancel
                 </button>
             </div>
