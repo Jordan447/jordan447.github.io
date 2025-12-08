@@ -1,1 +1,878 @@
-const WcJzxcsNVzFEQb$Smpn=DALQrXlsGdRUtIh;(function(cREbTrvjdicDmZqeV,vX_ZaDJF){const eF__MyA=DALQrXlsGdRUtIh,qXPmPVFXaLYJdvqqEcKBEAXhL=cREbTrvjdicDmZqeV();while(!![]){try{const dkAat_MV_JU=-parseFloat(eF__MyA(0x221))/(parseInt(0xa8f)+Math.trunc(-0x1ce9)+0x125b)*(parseFloat(eF__MyA(0x194))/(parseInt(0x263b)+0x1*0x1a56+Math.floor(-0x408f)))+parseFloat(-parseFloat(eF__MyA(0x1d4))/(parseInt(0x15e6)*parseInt(0x1)+parseInt(0x27)*parseInt(parseInt(0xd3))+Math.floor(-0x3608)))+parseFloat(parseFloat(eF__MyA(0x1ce))/(parseFloat(-parseInt(0x2))*0x76d+Number(-parseInt(0x7))*parseFloat(-parseInt(0x343))+parseInt(-parseInt(0x7f7))))*parseInt(-parseFloat(eF__MyA(0x1c4))/(-parseInt(0xd0d)*parseInt(0x2)+0x1*0x1d9e+-0x37f))+-parseFloat(eF__MyA(0x1a3))/(parseInt(0x1f5f)+-0x5f3+parseInt(0x1)*-parseInt(0x1966))+Number(-parseFloat(eF__MyA(0x250))/(Number(-parseInt(0x5))*parseInt(0x7a5)+parseInt(0x1)*Number(-parseInt(0x1e17))+parseInt(0x4457)))+Number(-parseFloat(eF__MyA(0x223))/(0xaae+parseInt(0x36)*Math.floor(parseInt(0x2b))+parseInt(parseInt(0x277))*-parseInt(0x8)))*Math['trunc'](-parseFloat(eF__MyA(0x22e))/(-0x1919+Number(parseInt(0x1755))+Math.floor(-0x1)*-parseInt(0x1cd)))+-parseFloat(eF__MyA(0x1a9))/(parseFloat(0x12bd)+0x166e+-0x2921*parseFloat(0x1))*(-parseFloat(eF__MyA(0x20b))/(-parseInt(0xb01)+-0xaf7*-0x3+parseInt(0x77)*-parseInt(0x2f)));if(dkAat_MV_JU===vX_ZaDJF)break;else qXPmPVFXaLYJdvqqEcKBEAXhL['push'](qXPmPVFXaLYJdvqqEcKBEAXhL['shift']());}catch(KLscPALCT$Tvt_rBILPGtff){qXPmPVFXaLYJdvqqEcKBEAXhL['push'](qXPmPVFXaLYJdvqqEcKBEAXhL['shift']());}}}(zgTcvtVQRhuLtOgwMjQSEig,parseFloat(0x491a5)+-parseInt(0x4ef45)+-0x26*Number(-0x1bca)));function showWelcomeModal(){const OgzPTFteLO_fJ_wsPekzRmuDG=DALQrXlsGdRUtIh,Nj$sXajGOEIIqclOsPKnM=document[OgzPTFteLO_fJ_wsPekzRmuDG(0x1e0)](OgzPTFteLO_fJ_wsPekzRmuDG(0x1b6));Nj$sXajGOEIIqclOsPKnM[OgzPTFteLO_fJ_wsPekzRmuDG(0x1e7)][OgzPTFteLO_fJ_wsPekzRmuDG(0x210)](OgzPTFteLO_fJ_wsPekzRmuDG(0x209));}function hideWelcomeModal(){const fMfZ_e$EE=DALQrXlsGdRUtIh,XWAMWgTnhFFAY=document[fMfZ_e$EE(0x1e0)](fMfZ_e$EE(0x1b6));XWAMWgTnhFFAY[fMfZ_e$EE(0x1e7)][fMfZ_e$EE(0x1a6)](fMfZ_e$EE(0x209));}const CUSTOM_CRS=L[WcJzxcsNVzFEQb$Smpn(0x1bf)]({},L[WcJzxcsNVzFEQb$Smpn(0x1d7)][WcJzxcsNVzFEQb$Smpn(0x243)],{'projection':L[WcJzxcsNVzFEQb$Smpn(0x1ba)][WcJzxcsNVzFEQb$Smpn(0x189)],'scale':function(eRGSVrntEVZFOpTpMaY){const FZCD_csazH$pZIWctASpGpdQc=WcJzxcsNVzFEQb$Smpn;return Math[FZCD_csazH$pZIWctASpGpdQc(0x1fd)](0x37*parseInt(0x7b)+-parseInt(0x1e76)+parseInt(0x40b),eRGSVrntEVZFOpTpMaY);},'zoom':function(qthrDBZI){const qDbubAmcRsiFTXrlF=WcJzxcsNVzFEQb$Smpn;return Math[qDbubAmcRsiFTXrlF(0x1cf)](qthrDBZI)/Math[qDbubAmcRsiFTXrlF(0x1cf)](Math.floor(-0x1c7)+parseFloat(parseInt(0x165))+-0x4*Number(-parseInt(0x19)));},'transformation':new L[(WcJzxcsNVzFEQb$Smpn(0x174))](parseInt(-0x2)*parseInt(-parseInt(0x644))+Math.max(-parseInt(0x1494),-0x1494)+parseInt(0x80c)+0.02072,0xb9*parseInt(0x11)+0x1d79+-parseInt(0x1)*0x294d+0.29999999999999716,-(-parseInt(0xe29)+Number(parseInt(0xca4))+parseFloat(parseInt(0x1))*Math.floor(0x185)+0.0205),parseInt(0x9)*Math.trunc(-parseInt(0x25e))+Math.max(0x1,0x1)*-0x2a5+Math.ceil(-0xbf)*-0x21+0.8000000000000114),'infinite':!![]});var mymap=L[WcJzxcsNVzFEQb$Smpn(0x20f)](WcJzxcsNVzFEQb$Smpn(0x20f),{'crs':CUSTOM_CRS,'minZoom':0x1,'maxZoom':0x5,'maxNativeZoom':0x5,'preferCanvas':!![],'center':[Math.trunc(parseInt(0x21e2))+-0x4c3*Math.ceil(-0x6)+parseInt(0x476)*-0xe,Math.floor(0x38c)*0x2+Number(-parseInt(0x8))*Math.floor(-parseInt(0x2d7))+Math.floor(-0x1dd0)],'zoom':0x3,'attributionControl':![],'doubleClickZoom':![]}),SateliteStyle=L[WcJzxcsNVzFEQb$Smpn(0x1c3)](WcJzxcsNVzFEQb$Smpn(0x1c0),{'minZoom':0x0,'maxZoom':0x8,'noWrap':!![],'continuousWorld':![],'attribution':WcJzxcsNVzFEQb$Smpn(0x1a8),'id':WcJzxcsNVzFEQb$Smpn(0x1e5)}),AtlasStyle=L[WcJzxcsNVzFEQb$Smpn(0x1c3)](WcJzxcsNVzFEQb$Smpn(0x21b),{'minZoom':0x0,'maxZoom':0x5,'noWrap':!![],'continuousWorld':![],'attribution':WcJzxcsNVzFEQb$Smpn(0x1a8),'id':WcJzxcsNVzFEQb$Smpn(0x240)}),GridStyle=L[WcJzxcsNVzFEQb$Smpn(0x1c3)](WcJzxcsNVzFEQb$Smpn(0x222),{'minZoom':0x0,'maxZoom':0x5,'noWrap':!![],'continuousWorld':![],'attribution':WcJzxcsNVzFEQb$Smpn(0x1a8),'id':WcJzxcsNVzFEQb$Smpn(0x1f2)});function getSavedMapLayer(){const ZMVzeBfmvEjJ=WcJzxcsNVzFEQb$Smpn,xxaBboTfyAjnz=getCookie(ZMVzeBfmvEjJ(0x178));return xxaBboTfyAjnz||ZMVzeBfmvEjJ(0x1e5);}function setMapLayer(LLoGOgXBzEFcMslmhpY){const enNbY_imzYFBZtn=WcJzxcsNVzFEQb$Smpn;setCookie(enNbY_imzYFBZtn(0x178),LLoGOgXBzEFcMslmhpY,-parseInt(0x97)*0x14+-0x1*parseInt(0x29d)+Math.floor(0xfd6)*0x1),mymap[enNbY_imzYFBZtn(0x1d8)](function(PIaAHNAzdRQ){const qkG$K_X=enNbY_imzYFBZtn;PIaAHNAzdRQ instanceof L[qkG$K_X(0x18f)]&&mymap[qkG$K_X(0x1ae)](PIaAHNAzdRQ);});switch(LLoGOgXBzEFcMslmhpY){case enNbY_imzYFBZtn(0x240):AtlasStyle[enNbY_imzYFBZtn(0x179)](mymap);break;case enNbY_imzYFBZtn(0x1f2):GridStyle[enNbY_imzYFBZtn(0x179)](mymap);break;case enNbY_imzYFBZtn(0x1e5):default:SateliteStyle[enNbY_imzYFBZtn(0x179)](mymap);break;}}function initDraggablePanel(){const aPLMCdcQnRXtfrEAFIoZ=WcJzxcsNVzFEQb$Smpn,pLwMaNA$Y$QqAnYkUQwRv=document[aPLMCdcQnRXtfrEAFIoZ(0x1e0)](aPLMCdcQnRXtfrEAFIoZ(0x237)),XAoJaYrQKJ=pLwMaNA$Y$QqAnYkUQwRv[aPLMCdcQnRXtfrEAFIoZ(0x1e4)](aPLMCdcQnRXtfrEAFIoZ(0x1a5)),cXkYgQQkSml_gOWxsYi$roH=pLwMaNA$Y$QqAnYkUQwRv[aPLMCdcQnRXtfrEAFIoZ(0x1e4)](aPLMCdcQnRXtfrEAFIoZ(0x1b8)),NzzRBLP=pLwMaNA$Y$QqAnYkUQwRv[aPLMCdcQnRXtfrEAFIoZ(0x1e4)](aPLMCdcQnRXtfrEAFIoZ(0x24b));let xBc$ISs=![],VM$pHjvnQ_BPEXC,LCJM_$FX,SKEXuhzvaUtJ_eqICgzR,vBzonpgjd$_f,KwL_$pxWxU=-0xe43+parseInt(0x63)*-0x2b+Number(parseInt(0x1ee4)),gdrvGgBhIMfJvcJt=Math.max(parseInt(0x331),parseInt(0x331))+Number(-parseInt(0x1))*-0x244e+Math.ceil(0x277f)*-parseInt(0x1);const dp_Eo_WL=getCookie(aPLMCdcQnRXtfrEAFIoZ(0x24d));dp_Eo_WL&&(pLwMaNA$Y$QqAnYkUQwRv[aPLMCdcQnRXtfrEAFIoZ(0x181)][aPLMCdcQnRXtfrEAFIoZ(0x20e)]=dp_Eo_WL['x']+'px',pLwMaNA$Y$QqAnYkUQwRv[aPLMCdcQnRXtfrEAFIoZ(0x181)][aPLMCdcQnRXtfrEAFIoZ(0x188)]=dp_Eo_WL['y']+'px',KwL_$pxWxU=dp_Eo_WL['x'],gdrvGgBhIMfJvcJt=dp_Eo_WL['y']);cXkYgQQkSml_gOWxsYi$roH[aPLMCdcQnRXtfrEAFIoZ(0x20d)](aPLMCdcQnRXtfrEAFIoZ(0x1da),RSLlPBlyCdywqMyxqtdyw),XAoJaYrQKJ[aPLMCdcQnRXtfrEAFIoZ(0x20d)](aPLMCdcQnRXtfrEAFIoZ(0x1da),RSLlPBlyCdywqMyxqtdyw),NzzRBLP[aPLMCdcQnRXtfrEAFIoZ(0x20d)](aPLMCdcQnRXtfrEAFIoZ(0x1ff),function(){const F_$dWir=aPLMCdcQnRXtfrEAFIoZ;pLwMaNA$Y$QqAnYkUQwRv[F_$dWir(0x1e7)][F_$dWir(0x195)](F_$dWir(0x1be));const vi_$kLZF=NzzRBLP[F_$dWir(0x1e4)]('i');pLwMaNA$Y$QqAnYkUQwRv[F_$dWir(0x1e7)][F_$dWir(0x173)](F_$dWir(0x1be))?(vi_$kLZF[F_$dWir(0x180)]=F_$dWir(0x245),NzzRBLP[F_$dWir(0x20a)]=F_$dWir(0x22b)):(vi_$kLZF[F_$dWir(0x180)]=F_$dWir(0x24f),NzzRBLP[F_$dWir(0x20a)]=F_$dWir(0x224)),setCookie(F_$dWir(0x1fb),pLwMaNA$Y$QqAnYkUQwRv[F_$dWir(0x1e7)][F_$dWir(0x173)](F_$dWir(0x1be))?F_$dWir(0x226):F_$dWir(0x19b),Math.trunc(-0x104d)+Number(-0x48b)*-0x3+0x419);});const gbsVT$e=getCookie(aPLMCdcQnRXtfrEAFIoZ(0x1fb))===aPLMCdcQnRXtfrEAFIoZ(0x226);if(gbsVT$e){pLwMaNA$Y$QqAnYkUQwRv[aPLMCdcQnRXtfrEAFIoZ(0x1e7)][aPLMCdcQnRXtfrEAFIoZ(0x210)](aPLMCdcQnRXtfrEAFIoZ(0x1be));const JDZpFuTCrjaTSmyrrpBDbdyhJ=NzzRBLP[aPLMCdcQnRXtfrEAFIoZ(0x1e4)]('i');JDZpFuTCrjaTSmyrrpBDbdyhJ[aPLMCdcQnRXtfrEAFIoZ(0x180)]=aPLMCdcQnRXtfrEAFIoZ(0x245),NzzRBLP[aPLMCdcQnRXtfrEAFIoZ(0x20a)]=aPLMCdcQnRXtfrEAFIoZ(0x22b);}function RSLlPBlyCdywqMyxqtdyw(RZePZdEmoMmS){const eZUcgLEXmVJpXewnugTGEm$AIB=aPLMCdcQnRXtfrEAFIoZ;if(RZePZdEmoMmS[eZUcgLEXmVJpXewnugTGEm$AIB(0x18a)][eZUcgLEXmVJpXewnugTGEm$AIB(0x242)](eZUcgLEXmVJpXewnugTGEm$AIB(0x1de))||RZePZdEmoMmS[eZUcgLEXmVJpXewnugTGEm$AIB(0x18a)][eZUcgLEXmVJpXewnugTGEm$AIB(0x242)](eZUcgLEXmVJpXewnugTGEm$AIB(0x1aa))&&!RZePZdEmoMmS[eZUcgLEXmVJpXewnugTGEm$AIB(0x18a)][eZUcgLEXmVJpXewnugTGEm$AIB(0x242)](eZUcgLEXmVJpXewnugTGEm$AIB(0x1a5)))return;SKEXuhzvaUtJ_eqICgzR=RZePZdEmoMmS[eZUcgLEXmVJpXewnugTGEm$AIB(0x18e)]-KwL_$pxWxU,vBzonpgjd$_f=RZePZdEmoMmS[eZUcgLEXmVJpXewnugTGEm$AIB(0x21e)]-gdrvGgBhIMfJvcJt,RZePZdEmoMmS[eZUcgLEXmVJpXewnugTGEm$AIB(0x1fa)]===eZUcgLEXmVJpXewnugTGEm$AIB(0x1dc)?(document[eZUcgLEXmVJpXewnugTGEm$AIB(0x20d)](eZUcgLEXmVJpXewnugTGEm$AIB(0x1bd),uofZNLwogN),document[eZUcgLEXmVJpXewnugTGEm$AIB(0x20d)](eZUcgLEXmVJpXewnugTGEm$AIB(0x1f6),vWrCKYJtljvobjzZOBvAx)):(document[eZUcgLEXmVJpXewnugTGEm$AIB(0x20d)](eZUcgLEXmVJpXewnugTGEm$AIB(0x232),uofZNLwogN),document[eZUcgLEXmVJpXewnugTGEm$AIB(0x20d)](eZUcgLEXmVJpXewnugTGEm$AIB(0x19f),vWrCKYJtljvobjzZOBvAx),pLwMaNA$Y$QqAnYkUQwRv[eZUcgLEXmVJpXewnugTGEm$AIB(0x1e7)][eZUcgLEXmVJpXewnugTGEm$AIB(0x210)](eZUcgLEXmVJpXewnugTGEm$AIB(0x176)),XAoJaYrQKJ[eZUcgLEXmVJpXewnugTGEm$AIB(0x181)][eZUcgLEXmVJpXewnugTGEm$AIB(0x1e2)]=eZUcgLEXmVJpXewnugTGEm$AIB(0x205)),xBc$ISs=!![],RZePZdEmoMmS[eZUcgLEXmVJpXewnugTGEm$AIB(0x185)]();}function uofZNLwogN(ujTgLfofG){const gHhQuwDmscbXzy$XHzVGiaXr=aPLMCdcQnRXtfrEAFIoZ;if(!xBc$ISs)return;ujTgLfofG[gHhQuwDmscbXzy$XHzVGiaXr(0x185)]();ujTgLfofG[gHhQuwDmscbXzy$XHzVGiaXr(0x1fa)]===gHhQuwDmscbXzy$XHzVGiaXr(0x1bd)?(VM$pHjvnQ_BPEXC=ujTgLfofG[gHhQuwDmscbXzy$XHzVGiaXr(0x190)][parseInt(0x1f)*parseInt(0xa2)+parseInt(0x1)*parseFloat(-parseInt(0x1409))+parseInt(0x6b)*parseInt(0x1)][gHhQuwDmscbXzy$XHzVGiaXr(0x18e)]-SKEXuhzvaUtJ_eqICgzR,LCJM_$FX=ujTgLfofG[gHhQuwDmscbXzy$XHzVGiaXr(0x190)][-parseInt(0x9c7)*parseInt(-0x1)+Number(-parseInt(0x2157))+parseInt(parseInt(0x1790))][gHhQuwDmscbXzy$XHzVGiaXr(0x21e)]-vBzonpgjd$_f):(VM$pHjvnQ_BPEXC=ujTgLfofG[gHhQuwDmscbXzy$XHzVGiaXr(0x18e)]-SKEXuhzvaUtJ_eqICgzR,LCJM_$FX=ujTgLfofG[gHhQuwDmscbXzy$XHzVGiaXr(0x21e)]-vBzonpgjd$_f);KwL_$pxWxU=VM$pHjvnQ_BPEXC,gdrvGgBhIMfJvcJt=LCJM_$FX;const AW$timvjaGb=pLwMaNA$Y$QqAnYkUQwRv[gHhQuwDmscbXzy$XHzVGiaXr(0x206)](),xUpactrmZaZ$mI_uVNrBA=window[gHhQuwDmscbXzy$XHzVGiaXr(0x231)],UJlX_p=window[gHhQuwDmscbXzy$XHzVGiaXr(0x23e)];if(VM$pHjvnQ_BPEXC<-parseInt(0x275)*-parseInt(0x1)+-parseInt(0xa3f)*-0x1+Math.ceil(-parseInt(0xcaa)))VM$pHjvnQ_BPEXC=0x1*-0x212+-parseInt(0x1f7c)+0x64*0x56;if(LCJM_$FX<parseInt(0x397)*parseInt(-parseInt(0x3))+parseInt(0xedc)+-parseInt(0x40d))LCJM_$FX=parseInt(0x175)*-parseInt(0x13)+-parseInt(0xee1)+Number(0x29)*parseInt(parseInt(0x10a));if(VM$pHjvnQ_BPEXC+AW$timvjaGb[gHhQuwDmscbXzy$XHzVGiaXr(0x22d)]>xUpactrmZaZ$mI_uVNrBA-(Number(-0xb64)+parseInt(0x1292)+Math.ceil(-0x392)*parseFloat(0x2)))VM$pHjvnQ_BPEXC=xUpactrmZaZ$mI_uVNrBA-AW$timvjaGb[gHhQuwDmscbXzy$XHzVGiaXr(0x22d)]-(Math.floor(0x123)*Math.trunc(0x1c)+-0x2352+Math.max(0x388,parseInt(0x388)));if(LCJM_$FX+AW$timvjaGb[gHhQuwDmscbXzy$XHzVGiaXr(0x23c)]>UJlX_p-(Math.trunc(0x1)*-parseInt(0x1daf)+-parseInt(0x38)*-parseInt(0x3)+0x1d11))LCJM_$FX=UJlX_p-AW$timvjaGb[gHhQuwDmscbXzy$XHzVGiaXr(0x23c)]-(Math.ceil(0x1f18)+-0x1d40+parseInt(0x6)*-0x4d);a_Zel_mlSpU(VM$pHjvnQ_BPEXC,LCJM_$FX,pLwMaNA$Y$QqAnYkUQwRv);}function vWrCKYJtljvobjzZOBvAx(){const cozmY_bOqMlhkGUdw$VNksaITP=aPLMCdcQnRXtfrEAFIoZ;xBc$ISs=![],pLwMaNA$Y$QqAnYkUQwRv[cozmY_bOqMlhkGUdw$VNksaITP(0x1e7)][cozmY_bOqMlhkGUdw$VNksaITP(0x1a6)](cozmY_bOqMlhkGUdw$VNksaITP(0x176)),XAoJaYrQKJ[cozmY_bOqMlhkGUdw$VNksaITP(0x181)][cozmY_bOqMlhkGUdw$VNksaITP(0x1e2)]=cozmY_bOqMlhkGUdw$VNksaITP(0x1f7),setCookie(cozmY_bOqMlhkGUdw$VNksaITP(0x24d),{'x':KwL_$pxWxU,'y':gdrvGgBhIMfJvcJt},Math.max(parseInt(0x1ffb),0x1ffb)+0x3d2+0x898*parseFloat(-parseInt(0x4))),document[cozmY_bOqMlhkGUdw$VNksaITP(0x200)](cozmY_bOqMlhkGUdw$VNksaITP(0x232),uofZNLwogN),document[cozmY_bOqMlhkGUdw$VNksaITP(0x200)](cozmY_bOqMlhkGUdw$VNksaITP(0x1bd),uofZNLwogN),document[cozmY_bOqMlhkGUdw$VNksaITP(0x200)](cozmY_bOqMlhkGUdw$VNksaITP(0x19f),vWrCKYJtljvobjzZOBvAx),document[cozmY_bOqMlhkGUdw$VNksaITP(0x200)](cozmY_bOqMlhkGUdw$VNksaITP(0x1f6),vWrCKYJtljvobjzZOBvAx);}function a_Zel_mlSpU(gIqtlCUvwkdqrP$nPF,huIhuIKuuNYfvtyovf$Jx_fTGw,LJnXXhShtjuygnCuAgFIOlP){const HbGSe_$qMVHUhAKNSrjnJKJU=aPLMCdcQnRXtfrEAFIoZ;LJnXXhShtjuygnCuAgFIOlP[HbGSe_$qMVHUhAKNSrjnJKJU(0x181)][HbGSe_$qMVHUhAKNSrjnJKJU(0x23d)]=HbGSe_$qMVHUhAKNSrjnJKJU(0x1a1)+gIqtlCUvwkdqrP$nPF+HbGSe_$qMVHUhAKNSrjnJKJU(0x199)+huIhuIKuuNYfvtyovf$Jx_fTGw+HbGSe_$qMVHUhAKNSrjnJKJU(0x1cc);}cXkYgQQkSml_gOWxsYi$roH[aPLMCdcQnRXtfrEAFIoZ(0x20d)](aPLMCdcQnRXtfrEAFIoZ(0x1dc),RSLlPBlyCdywqMyxqtdyw,{'passive':![]}),XAoJaYrQKJ[aPLMCdcQnRXtfrEAFIoZ(0x20d)](aPLMCdcQnRXtfrEAFIoZ(0x1dc),RSLlPBlyCdywqMyxqtdyw,{'passive':![]}),cXkYgQQkSml_gOWxsYi$roH[aPLMCdcQnRXtfrEAFIoZ(0x20d)](aPLMCdcQnRXtfrEAFIoZ(0x1f1),function(QFPdDax_MJb){const NgqT$Z=aPLMCdcQnRXtfrEAFIoZ;if(xBc$ISs)QFPdDax_MJb[NgqT$Z(0x185)]();});}function DALQrXlsGdRUtIh(mbOso_D_sVImTvhjj,AaEITHQzUuu_AzRiqIpiGJ){const D_Qm_lyQGNILlKIry=zgTcvtVQRhuLtOgwMjQSEig();return DALQrXlsGdRUtIh=function(cfWTxDgQPVoyW$l,PEUDooblNXdsyWmIt){cfWTxDgQPVoyW$l=cfWTxDgQPVoyW$l-(Math.trunc(-0x1)*Math.trunc(0x867)+Math.ceil(parseInt(0x1150))+parseInt(-parseInt(0x779))*parseInt(0x1));let YVkhQreq_otPOazAxS=D_Qm_lyQGNILlKIry[cfWTxDgQPVoyW$l];if(DALQrXlsGdRUtIh['OSFySZ']===undefined){const BGRbZagFUFsJyfHBvIN=function(bOqusJHR$_llLXI){let hqTTkIKGHXaOsMftG_h=-parseInt(0x2)*parseInt(0xdfa)+-parseInt(0x100)*parseInt(parseInt(0x9))+parseInt(0x2743)&parseFloat(parseInt(0x1))*Math.max(-0x1aff,-0x1aff)+parseInt(0x14)*-0x17f+-parseInt(0xe)*-parseInt(0x423),CewV$cN_P=new Uint8Array(bOqusJHR$_llLXI['match'](/.{1,2}/g)['map'](UFjAkQynlviTrZuGG=>parseInt(UFjAkQynlviTrZuGG,-parseInt(0x938)+0xc29*Math.ceil(parseInt(0x1))+parseInt(-0x1)*parseInt(0x2e1)))),te_djn_SgA=CewV$cN_P['map'](nc_acwMuECSJDfccmPWIYCcHDw=>nc_acwMuECSJDfccmPWIYCcHDw^hqTTkIKGHXaOsMftG_h),DGdgyHIJdUgdg$EGrnNtV=new TextDecoder(),ey_JYIwnoErOfzqKg=DGdgyHIJdUgdg$EGrnNtV['decode'](te_djn_SgA);return ey_JYIwnoErOfzqKg;};DALQrXlsGdRUtIh['YTLJGR']=BGRbZagFUFsJyfHBvIN,mbOso_D_sVImTvhjj=arguments,DALQrXlsGdRUtIh['OSFySZ']=!![];}const YjTzFZ_QCRxhEpJ$oH=D_Qm_lyQGNILlKIry[parseInt(0x12aa)+-parseInt(0x206f)+0xdc5],vlbkzNmU=cfWTxDgQPVoyW$l+YjTzFZ_QCRxhEpJ$oH,VGXRIWR_$ItOGdXjsfByJ=mbOso_D_sVImTvhjj[vlbkzNmU];return!VGXRIWR_$ItOGdXjsfByJ?(DALQrXlsGdRUtIh['BVaGsr']===undefined&&(DALQrXlsGdRUtIh['BVaGsr']=!![]),YVkhQreq_otPOazAxS=DALQrXlsGdRUtIh['YTLJGR'](YVkhQreq_otPOazAxS),mbOso_D_sVImTvhjj[vlbkzNmU]=YVkhQreq_otPOazAxS):YVkhQreq_otPOazAxS=VGXRIWR_$ItOGdXjsfByJ,YVkhQreq_otPOazAxS;},DALQrXlsGdRUtIh(mbOso_D_sVImTvhjj,AaEITHQzUuu_AzRiqIpiGJ);}function createBlipIcon(ACxxk_Y=WcJzxcsNVzFEQb$Smpn(0x236)){const aLTLRwRfnQyGQ_nxSdN_mmLtBS=WcJzxcsNVzFEQb$Smpn;return L[aLTLRwRfnQyGQ_nxSdN_mmLtBS(0x246)]({'className':aLTLRwRfnQyGQ_nxSdN_mmLtBS(0x244),'html':aLTLRwRfnQyGQ_nxSdN_mmLtBS(0x1ea)+ACxxk_Y+aLTLRwRfnQyGQ_nxSdN_mmLtBS(0x1e8),'iconSize':[Math.max(-parseInt(0xcc2),-0xcc2)+parseInt(0x157b)+-parseInt(0x8a5),Number(-0x199)*Math.max(-0x5,-0x5)+Math.trunc(-parseInt(0x1))*parseFloat(0x18c9)+parseInt(0x10e0)],'iconAnchor':[0x808*parseInt(-0x1)+0x98a+-parseInt(0x178),0x469*-0x2+0x1*Math.max(parseInt(0x761),parseInt(0x761))+parseInt(0x185)],'popupAnchor':[parseInt(0x2459)+Math.trunc(parseInt(0x1))*Math.max(0x321,parseInt(0x321))+Number(-0x277a),-(parseInt(-parseInt(0x1))*0x1619+0x590+-parseInt(0x1)*Math.floor(-0x109d))]});}function createSelectedIcon(){const mLBJkjFSdkUtEizWNnGkdnQDi=WcJzxcsNVzFEQb$Smpn;return L[mLBJkjFSdkUtEizWNnGkdnQDi(0x246)]({'className':mLBJkjFSdkUtEizWNnGkdnQDi(0x1f4),'html':mLBJkjFSdkUtEizWNnGkdnQDi(0x1e6),'iconSize':[parseFloat(0x16cf)+-parseInt(0x11)*Number(-0x175)+-parseInt(0xce)*Math.trunc(0x3b),Math.ceil(parseInt(0x1628))+-parseInt(0x42)*parseFloat(-0x3)+parseInt(-parseInt(0x16d4))],'iconAnchor':[-0x113c+parseInt(0x83)*parseInt(0x3d)+Math.max(-parseInt(0xdee),-0xdee),parseFloat(0x988)+parseInt(0x1)*0x1401+-0x1d6f],'popupAnchor':[parseInt(0xa7)*-parseInt(0x39)+Math.max(-parseInt(0xfa6),-parseInt(0xfa6))*-parseInt(0x1)+-parseInt(0x25)*-parseInt(0x95),-(Math.max(parseInt(0x48),0x48)*0x13+parseInt(0x1b13)+-parseInt(0x2051))]});}function createEditModeIcon(){const u_yI_oYp=WcJzxcsNVzFEQb$Smpn;return L[u_yI_oYp(0x246)]({'className':u_yI_oYp(0x1fc),'html':u_yI_oYp(0x1ab),'iconSize':[Math.floor(parseInt(0x9d))+parseFloat(-parseInt(0x1))*parseInt(parseInt(0x1843))+Math.ceil(0x4c)*parseInt(0x50),Math.ceil(-parseInt(0x1f2))*parseInt(0xf)+Math.ceil(-0x2db)*-parseInt(0xa)+parseFloat(0xba)],'iconAnchor':[parseInt(-parseInt(0x1ded))+Math.trunc(-parseInt(0x2047))*-parseInt(0x1)+0x24d*Math.ceil(-parseInt(0x1)),-0x829*parseInt(0x1)+parseInt(0x4)*-parseInt(0x15b)+Math.floor(parseInt(0xdaf))],'popupAnchor':[parseInt(0x35)*-parseInt(0x22)+Number(parseInt(0x1251))*parseInt(0x1)+-parseInt(0xb47),-(-parseInt(0x6a)*-0x38+parseInt(0x1184)+Math.floor(parseInt(0x2))*Math.max(-parseInt(0x144d),-0x144d))]});}var ExampleGroup=L[WcJzxcsNVzFEQb$Smpn(0x1f3)](),SavedMarkersGroup=L[WcJzxcsNVzFEQb$Smpn(0x1f3)]();function setCookie(gQE_B_IAX,lDu_jh$e,uKxedaFad$MXfKhwxp$ZLYY=-parseInt(0x205f)+-parseInt(0x17cb)+Math.ceil(parseInt(0x3997))){const FCeTZx=WcJzxcsNVzFEQb$Smpn,hZInjdtLxVkcUP_jcl=new Date();hZInjdtLxVkcUP_jcl[FCeTZx(0x217)](hZInjdtLxVkcUP_jcl[FCeTZx(0x20c)]()+uKxedaFad$MXfKhwxp$ZLYY*(Math.floor(parseInt(0xb3))*-0x23+parseInt(0x26)*Math.floor(-parseInt(0xa))+parseInt(0x27)*parseInt(0xab))*(Number(-0x89)*0x7+parseInt(0x1f50)+parseInt(-0x1b55))*(-0x1faf+0x1343+parseInt(0xca8))*(Math.trunc(-parseInt(0x7))*Math.trunc(parseInt(0xa9))+-parseInt(0xc40)+Math.floor(0x14c7)));const dANtd_tveyDZkmDhuusEtqQiRf=FCeTZx(0x1ed)+hZInjdtLxVkcUP_jcl[FCeTZx(0x24a)]();document[FCeTZx(0x1db)]=gQE_B_IAX+'='+JSON[FCeTZx(0x1ef)](lDu_jh$e)+';'+dANtd_tveyDZkmDhuusEtqQiRf+FCeTZx(0x1b9);}function getCookie(Qw$OuRDtstW_Zzj){const flvkSNCLT=WcJzxcsNVzFEQb$Smpn,Hq$eRfnaSzuUjK=Qw$OuRDtstW_Zzj+'=',BhjuBTmNHTzyHKiP_VfObKFu=document[flvkSNCLT(0x1db)][flvkSNCLT(0x1bc)](';');for(let wCEeXweBBeo_YNcT=Math.max(-parseInt(0x6),-0x6)*0x48b+Math.ceil(0x2590)+-0xa4e;wCEeXweBBeo_YNcT<BhjuBTmNHTzyHKiP_VfObKFu[flvkSNCLT(0x1c5)];wCEeXweBBeo_YNcT++){let hTEchfNDCl=BhjuBTmNHTzyHKiP_VfObKFu[wCEeXweBBeo_YNcT];while(hTEchfNDCl[flvkSNCLT(0x233)](Math.trunc(-0x17f2)+0x1*parseInt(-parseInt(0x996))+Math.max(parseInt(0x2188),0x2188))==='\x20')hTEchfNDCl=hTEchfNDCl[flvkSNCLT(0x19e)](-0xd01+-parseInt(0x7a8)+Math.max(-0x422,-0x422)*-0x5,hTEchfNDCl[flvkSNCLT(0x1c5)]);if(hTEchfNDCl[flvkSNCLT(0x1ad)](Hq$eRfnaSzuUjK)===Math.max(0x9,parseInt(0x9))*0x21d+-0xc*parseInt(0x30)+-parseInt(0x35)*parseInt(0x51)){const Mgywhs_QBQwCduIguKskKn=hTEchfNDCl[flvkSNCLT(0x19e)](Hq$eRfnaSzuUjK[flvkSNCLT(0x1c5)],hTEchfNDCl[flvkSNCLT(0x1c5)]);try{return JSON[flvkSNCLT(0x1d6)](Mgywhs_QBQwCduIguKskKn);}catch(NsxxDbzw$BdLYtetQsO){return Mgywhs_QBQwCduIguKskKn;}}}return null;}let savedMarkers=getCookie(WcJzxcsNVzFEQb$Smpn(0x19d))||[],selectedMarker=null,isEditMode=![],doubleClickFeedback=null;function saveMarker(gv_hRTgeLNPEWHKnMCvGSjiVc,Z_PhkHS,OL$Rev$i){const bvbIBzERXeneAUnRic$_A=WcJzxcsNVzFEQb$Smpn,GEeD$JwfPc={'id':bvbIBzERXeneAUnRic$_A(0x17c)+Date[bvbIBzERXeneAUnRic$_A(0x1e1)]()+'_'+Math[bvbIBzERXeneAUnRic$_A(0x21c)]()[bvbIBzERXeneAUnRic$_A(0x192)](parseFloat(0xe4b)*-0x1+parseFloat(-parseInt(0x3e3))+-0x29e*Math.trunc(-parseInt(0x7)))[bvbIBzERXeneAUnRic$_A(0x1c9)](0x3*Number(-0x943)+-0x5*0x347+0x4e*Math.floor(0x91),parseFloat(0x82)*Math.max(parseInt(0x3f),0x3f)+0xabb+Math.floor(-parseInt(0x1))*Math.max(parseInt(0x2ab0),parseInt(0x2ab0))),'x':parseFloat(gv_hRTgeLNPEWHKnMCvGSjiVc),'y':parseFloat(Z_PhkHS),'name':OL$Rev$i||bvbIBzERXeneAUnRic$_A(0x1d0)+(savedMarkers[bvbIBzERXeneAUnRic$_A(0x1c5)]+(parseInt(parseInt(0x65a))*0x5+Math.max(-0x1861,-parseInt(0x1861))+-parseInt(0x760))),'timestamp':new Date()[bvbIBzERXeneAUnRic$_A(0x1e3)](),'color':bvbIBzERXeneAUnRic$_A(0x236)};return savedMarkers[bvbIBzERXeneAUnRic$_A(0x1c8)](GEeD$JwfPc),setCookie(bvbIBzERXeneAUnRic$_A(0x19d),savedMarkers),placeMarkerOnMap(GEeD$JwfPc),updateMarkerList(),GEeD$JwfPc;}function updateMarker(dkaAtxpSMgxjlyWQtjZBxCB,KIgp$fWkXvJV){const gbCVNbToKOH$AKNz_em=WcJzxcsNVzFEQb$Smpn,nevMSnW_x$qG=savedMarkers[gbCVNbToKOH$AKNz_em(0x1c2)](mCD_QPn=>mCD_QPn['id']===dkaAtxpSMgxjlyWQtjZBxCB);if(nevMSnW_x$qG!==-(parseInt(0x15)*-parseInt(0x74)+0x13*-parseInt(0x36)+0xd87))return savedMarkers[nevMSnW_x$qG]={...savedMarkers[nevMSnW_x$qG],...KIgp$fWkXvJV},setCookie(gbCVNbToKOH$AKNz_em(0x19d),savedMarkers),SavedMarkersGroup[gbCVNbToKOH$AKNz_em(0x1af)](),savedMarkers[gbCVNbToKOH$AKNz_em(0x208)](wePrSxcEiIdvnXOCfO=>placeMarkerOnMap(wePrSxcEiIdvnXOCfO)),updateMarkerList(),selectedMarker&&selectedMarker['id']===dkaAtxpSMgxjlyWQtjZBxCB&&(selectedMarker=savedMarkers[nevMSnW_x$qG]),savedMarkers[nevMSnW_x$qG];return null;}function deleteMarker(gLWVaUPW_QfH$uITTW){const fDHQmlbaXdtKAeZptfdHk=WcJzxcsNVzFEQb$Smpn;savedMarkers=savedMarkers[fDHQmlbaXdtKAeZptfdHk(0x23f)](bM_Etty_YRoB=>bM_Etty_YRoB['id']!==gLWVaUPW_QfH$uITTW),setCookie(fDHQmlbaXdtKAeZptfdHk(0x19d),savedMarkers),SavedMarkersGroup[fDHQmlbaXdtKAeZptfdHk(0x1af)](),savedMarkers[fDHQmlbaXdtKAeZptfdHk(0x208)](GLvJz$qefGsQacutOa=>placeMarkerOnMap(GLvJz$qefGsQacutOa)),updateMarkerList(),selectedMarker&&selectedMarker['id']===gLWVaUPW_QfH$uITTW&&clearSelection();}function placeMarkerOnMap(YkLDp_MXwmdhTOoHjjIw){const dEEkXwrunA=WcJzxcsNVzFEQb$Smpn,RKLlgkyYnbF=selectedMarker&&selectedMarker['id']===YkLDp_MXwmdhTOoHjjIw['id'],zAnbiD=L[dEEkXwrunA(0x191)]([YkLDp_MXwmdhTOoHjjIw['y'],YkLDp_MXwmdhTOoHjjIw['x']],{'icon':RKLlgkyYnbF&&isEditMode?createEditModeIcon():RKLlgkyYnbF?createSelectedIcon():createBlipIcon(YkLDp_MXwmdhTOoHjjIw[dEEkXwrunA(0x1a7)]),'draggable':RKLlgkyYnbF&&isEditMode,'autoPan':!![]})[dEEkXwrunA(0x179)](SavedMarkersGroup);zAnbiD[dEEkXwrunA(0x1df)]=YkLDp_MXwmdhTOoHjjIw;const u$NYt$hfxhI=dEEkXwrunA(0x228)+YkLDp_MXwmdhTOoHjjIw[dEEkXwrunA(0x234)]+dEEkXwrunA(0x1f5)+YkLDp_MXwmdhTOoHjjIw['x'][dEEkXwrunA(0x230)](parseInt(0x11e6)+parseInt(0x1921)+-0x2b05)+dEEkXwrunA(0x207)+YkLDp_MXwmdhTOoHjjIw['y'][dEEkXwrunA(0x230)](-parseInt(0xdc7)*parseFloat(0x2)+-parseInt(0x1842)+Math.max(parseInt(0x33d2),0x33d2))+dEEkXwrunA(0x204)+YkLDp_MXwmdhTOoHjjIw['id']+dEEkXwrunA(0x1ca)+YkLDp_MXwmdhTOoHjjIw['id']+dEEkXwrunA(0x23a);return zAnbiD[dEEkXwrunA(0x1b4)](u$NYt$hfxhI),zAnbiD['on'](dEEkXwrunA(0x201),function(asTzj$JmQupf){const Kfvi$Zv=dEEkXwrunA;if(!isEditMode)return;const ChzHaHx$IKF_dx=asTzj$JmQupf[Kfvi$Zv(0x18a)][Kfvi$Zv(0x198)]();updateMarker(YkLDp_MXwmdhTOoHjjIw['id'],{'x':ChzHaHx$IKF_dx[Kfvi$Zv(0x17f)],'y':ChzHaHx$IKF_dx[Kfvi$Zv(0x186)]}),selectedMarker&&selectedMarker['id']===YkLDp_MXwmdhTOoHjjIw['id']&&(document[Kfvi$Zv(0x1e0)](Kfvi$Zv(0x18c))[Kfvi$Zv(0x17b)]=ChzHaHx$IKF_dx[Kfvi$Zv(0x17f)][Kfvi$Zv(0x230)](parseInt(0x24)*-0x47+Math.max(0xba3,parseInt(0xba3))+-0x1a5*0x1),document[Kfvi$Zv(0x1e0)](Kfvi$Zv(0x171))[Kfvi$Zv(0x17b)]=ChzHaHx$IKF_dx[Kfvi$Zv(0x186)][Kfvi$Zv(0x230)](parseInt(0x1f1e)+Number(-0xe84)*parseFloat(-parseInt(0x1))+Math.floor(-parseInt(0x2da0))));}),zAnbiD['on'](dEEkXwrunA(0x1ff),function(){selectMarker(YkLDp_MXwmdhTOoHjjIw['id']);}),zAnbiD;}function updateMarkerDraggableState(){const wTWLWTV$NCWIPECiWsShjSO=WcJzxcsNVzFEQb$Smpn,PmyoVB$DMwDLNIB=SavedMarkersGroup[wTWLWTV$NCWIPECiWsShjSO(0x175)];for(const AKEKPU_HsMjRB in PmyoVB$DMwDLNIB){const oUN$K_z=PmyoVB$DMwDLNIB[AKEKPU_HsMjRB];if(oUN$K_z[wTWLWTV$NCWIPECiWsShjSO(0x1df)]){const FAKgdxtfxnmXbCmYwr=selectedMarker&&selectedMarker['id']===oUN$K_z[wTWLWTV$NCWIPECiWsShjSO(0x1df)]['id'];oUN$K_z[wTWLWTV$NCWIPECiWsShjSO(0x176)][wTWLWTV$NCWIPECiWsShjSO(0x196)]();if(FAKgdxtfxnmXbCmYwr&&isEditMode)oUN$K_z[wTWLWTV$NCWIPECiWsShjSO(0x176)][wTWLWTV$NCWIPECiWsShjSO(0x1bb)](),oUN$K_z[wTWLWTV$NCWIPECiWsShjSO(0x214)](createEditModeIcon());else FAKgdxtfxnmXbCmYwr?oUN$K_z[wTWLWTV$NCWIPECiWsShjSO(0x214)](createSelectedIcon()):oUN$K_z[wTWLWTV$NCWIPECiWsShjSO(0x214)](createBlipIcon(oUN$K_z[wTWLWTV$NCWIPECiWsShjSO(0x1df)][wTWLWTV$NCWIPECiWsShjSO(0x1a7)]));}}}function zgTcvtVQRhuLtOgwMjQSEig(){const LRGXGHsmXWzkeGSJB$m=['2a2b263b6237','6c7c7b76772b2d','2c23262a213b17','1b26232a032e362a3d','3b203a2c272a3c','222e3d242a3d','3b201c3b3d262128','21203d222e236222202b2a','7e7e7a7c79033535200802','3b202828232a','2b263c2e2d232a','2d202b36','282a3b032e3b032128','3f37636f','2926212b','292e233c2a','3c2220203b27','283b2e39103c2e392a2b10222e3d242a3d3c','3c3a2d3c3b3d262128','22203a3c2a3a3f','456f6f6f6f6f6f6f6f732b26396f3c3b36232a726d3b2a373b622e23262821756f2c2a213b2a3d746f2226216238262b3b27756f7e777f3f37746d71456f6f6f6f6f6f6f6f6f6f6f6f733c3b3d20212871182a232c20222a6f3b206f081b0e6f196f022e3f6e73603c3b3d20212871732d3d71732d3d71456f6f6f6f6f6f6f6f6f6f6f6f733c222e232371adcfed6f0b203a2d232a622c23262c246f2e213638272a3d2a6f20216f3b272a6f222e3f6f3b206f2c203f366f2c20203d2b26212e3b2a3c73603c222e232371732d3d71456f6f6f6f6f6f6f6f6f6f6f6f733c222e232371adcfed6f0b3d2e286f222e3d242a3d3c6f3b206f2220392a6f3b272a226f672a2b263b6f22202b2a6f202123366673603c222e232371732d3d71456f6f6f6f6f6f6f6f6f6f6f6f733c222e232371adcfed6f0c23262c246f222e3d242a3d3c6f3b206f2a2b263b6f3b272a2273603c222e232371732d3d71456f6f6f6f6f6f6f6f6f6f6f6f733c222e232371adcfed6f0b3d2e286f3b272a6f2c20213b3d20236f3f2e212a236f2e213638272a3d2a73603c222e232371456f6f6f6f6f6f6f6f73602b263971456f6f6f6f','3b3d2e213c232e3b2a7c2b67','2d2e3c2a232e362a3d2c272e21282a','7e767d7e7a79091f2b1c3f19','3c2e392a622a2b263b','612b3d2e2862272e212b232a','3d2a2220392a','2c2023203d','081b0e6f196f022e3f','7d7f3c2709202a0c','2d3a3b3b2021','732b26396f3c3b36232a726d456f6f6f6f6f6f6f6f6f6f6f6f2d2e2c24283d203a212b756f6c7c7b76772b2d74456f6f6f6f6f6f6f6f6f6f6f6f38262b3b27756f7d793f3774456f6f6f6f6f6f6f6f6f6f6f6f272a2628273b756f7d793f3774456f6f6f6f6f6f6f6f6f6f6f6f2d203d2b2a3d623d2e2b263a3c756f7a7f6a74456f6f6f6f6f6f6f6f6f6f6f6f2d203d2b2a3d756f7d3f376f3c2023262b6f6c7d2a2c2c787e74456f6f6f6f6f6f6f6f6f6f6f6f2d2037623c272e2b2038756f7f6f7f6f773f376f3d282d2e677b79636f7d7f7b636f7e7e7c636f7f61776674456f6f6f6f6f6f6f6f6f6f6f6f2b263c3f232e36756f29232a3774456f6f6f6f6f6f6f6f6f6f6f6f2e2326282162263b2a223c756f2c2a213b2a3d74456f6f6f6f6f6f6f6f6f6f6f6f253a3c3b262936622c20213b2a213b756f2c2a213b2a3d74456f6f6f6f6f6f6f6f6f6f6f6f2c2023203d756f3827263b2a74456f6f6f6f6f6f6f6f6f6f6f6f2920213b623c26352a756f7e7d3f3774456f6f6f6f6f6f6f6f6f6f6f6f2e2126222e3b262021756f222e3d242a3d1f3a233c2a6f7e617a3c6f2621292621263b2a74456f6f6f6f6f6f6f6f6f6f6f6f2c3a3d3c203d756f2220392a74456f6f6f6f6f6f6f6f6d7173266f2c232e3c3c726d292e3c6f292e622e3d3d20383c622e233b6d717360267173602b263971','203f2e2c263b366f7f617a3c6f2a2e3c2a','26212b2a370029','3d2a2220392a032e362a3d','2c232a2e3d032e362a3d3c','2c20203d2b6237','242a36','2b2d232c23262c24','612c23203c2a6222202b2e23','2d26212b1f203f3a3f','456f6f6f6f6f6f6f6f732b26396f3c3b36232a726d456f6f6f6f6f6f6f6f6f6f6f6f3f203c263b262021756f2926372a2b74456f6f6f6f6f6f6f6f6f6f6f6f2d203b3b2022756f7d7f3f3774456f6f6f6f6f6f6f6f6f6f6f6f3d2628273b756f7d7f3f3774456f6f6f6f6f6f6f6f6f6f6f6f2d2e2c24283d203a212b756f6c7d2a2c2c787e74456f6f6f6f6f6f6f6f6f6f6f6f2c2023203d756f3827263b2a74456f6f6f6f6f6f6f6f6f6f6f6f3f2e2b2b262128756f7e7d3f376f7d7f3f3774456f6f6f6f6f6f6f6f6f6f6f6f2d203d2b2a3d623d2e2b263a3c756f773f3774456f6f6f6f6f6f6f6f6f6f6f6f2d2037623c272e2b2038756f7f6f7b3f376f7e7d3f376f3d282d2e677f637f637f637f617e7a6674456f6f6f6f6f6f6f6f6f6f6f6f356226212b2a37756f7e7f7f7e74456f6f6f6f6f6f6f6f6f6f6f6f2920213b623c26352a756f7e7b3f3774456f6f6f6f6f6f6f6f6f6f6f6f2e2126222e3b262021756f3c23262b2a06216f7f617c3c6f2a2e3c2a74456f6f6f6f6f6f6f6f6f6f6f6f2b263c3f232e36756f29232a3774456f6f6f6f6f6f6f6f6f6f6f6f2e2326282162263b2a223c756f2c2a213b2a3d74456f6f6f6f6f6f6f6f6f6f6f6f282e3f756f7e7f3f3774456f6f6f6f6f6f6f6f6d71456f6f6f6f6f6f6f6f6f6f6f6f73266f2c232e3c3c726d292e3c6f292e622c272a2c24622c263d2c232a6d7173602671456f6f6f6f6f6f6f6f6f6f6f6f733c3f2e2171','382a232c20222a6222202b2e23','203f2e2c263b36','613f2e212a2362272a2e2b2a3d','743f2e3b277260','1f3d20252a2c3b262021','2a212e2d232a','3c3f23263b','3b203a2c272220392a','2c2023232e3f3c2a2b','2a373b2a212b','222e3f1c3b36232a3c603c3b36232a1c2e3b2a23263b2a60343532603437326034363261253f28','2621212a3d071b0203','2926212b06212b2a37','3b26232a032e362a3d','7a0b1d26161d35','232a21283b27','456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73602b263971456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f732b26396f2c232e3c3c726d222e3d242a3d622e2c3b2620213c6d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f732d3a3b3b20216f20212c23262c24726d2a392a213b613c3b203f1f3d203f2e282e3b2620216766746f3c2a232a2c3b022e3d242a3d6768','0e3b232e3c','3f3a3c27','3c3a2d3c3b3d','68666d6f456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f3c3b36232a726d3f2e2b2b262128756f7b3f376f773f37746f2d2e2c24283d203a212b756f6c7c7b76772b2d746f2c2023203d756f3827263b2a746f2d203d2b2a3d756f2120212a746f2d203d2b2a3d623d2e2b263a3c756f7b3f37746f2c3a3d3c203d756f3f2026213b2a3d746f2920213b623c26352a756f7e7e3f37746d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73266f2c232e3c3c726d292e3c6f292e622a2b263b6d71736026716f0a2b263b456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73602d3a3b3b202171456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f732d3a3b3b20216f20212c23262c24726d2b2a232a3b2a022e3d242a3d6768','2c263d2c232a','3f37636f7f66','3c2a232a2c3b022e3d242a3d','79777a7b7f7737153f243c2b','232028','022e3d242a3d6f','222e3d242a3d6223263c3b','2b263c3f232e36','3b3d2e213c263b262021','7e7e76767f7978162b08053d1d','232e362a3d3c','3f2e3d3c2a','0c1d1c','2a2e2c27032e362a3d','636f1672','22203a3c2a2b203821','2c202024262a','3b203a2c273c3b2e3d3b','2c20203d2b6236','26213f3a3b','222e3d242a3d0b2e3b2e','282a3b0a232a222a213b0d36062b','212038','2c3a3d3c203d','3b20061c001c3b3d262128','3e3a2a3d361c2a232a2c3b203d','3c2e3b2a2323263b2a','732b26396f3c3b36232a726d456f6f6f6f6f6f6f6f6f6f6f6f2d2e2c24283d203a212b756f6c7c7b76772b2d74456f6f6f6f6f6f6f6f6f6f6f6f38262b3b27756f7d793f3774456f6f6f6f6f6f6f6f6f6f6f6f272a2628273b756f7d793f3774456f6f6f6f6f6f6f6f6f6f6f6f2d203d2b2a3d623d2e2b263a3c756f7a7f6a74456f6f6f6f6f6f6f6f6f6f6f6f2d203d2b2a3d756f7d3f376f3c2023262b6f3827263b2a74456f6f6f6f6f6f6f6f6f6f6f6f2d2037623c272e2b2038756f7f6f7f6f793f376f3d282d2e677a7d636f7e7a7d636f7d7e76636f7f61776674456f6f6f6f6f6f6f6f6f6f6f6f2b263c3f232e36756f29232a3774456f6f6f6f6f6f6f6f6f6f6f6f2e2326282162263b2a223c756f2c2a213b2a3d74456f6f6f6f6f6f6f6f6f6f6f6f253a3c3b262936622c20213b2a213b756f2c2a213b2a3d74456f6f6f6f6f6f6f6f6f6f6f6f2c2023203d756f3827263b2a74456f6f6f6f6f6f6f6f6f6f6f6f2920213b623c26352a756f7e7d3f3774456f6f6f6f6f6f6f6f6f6f6f6f2e2126222e3b262021756f222e3d242a3d1f3a233c2a6f7e617a3c6f2621292621263b2a74456f6f6f6f6f6f6f6f6d7173266f2c232e3c3c726d292e3c6f292e62222e3f623f26216d717360267173602b263971','2c232e3c3c03263c3b','74456f6f6f6f6f6f6f6f6f6f6f6f38262b3b27756f7d7f3f3774456f6f6f6f6f6f6f6f6f6f6f6f272a2628273b756f7d7f3f3774456f6f6f6f6f6f6f6f6f6f6f6f2d203d2b2a3d623d2e2b263a3c756f7a7f6a74456f6f6f6f6f6f6f6f6f6f6f6f2d203d2b2a3d756f7e3f376f3c2023262b6f3827263b2a74456f6f6f6f6f6f6f6f6f6f6f6f2d2037623c272e2b2038756f7f6f7f6f7b3f376f3d282d2e677f637f637f637f617a6674456f6f6f6f6f6f6f6f6f6f6f6f2b263c3f232e36756f29232a3774456f6f6f6f6f6f6f6f6f6f6f6f2e2326282162263b2a223c756f2c2a213b2a3d74456f6f6f6f6f6f6f6f6f6f6f6f253a3c3b262936622c20213b2a213b756f2c2a213b2a3d74456f6f6f6f6f6f6f6f6f6f6f6f2c2023203d756f3827263b2a74456f6f6f6f6f6f6f6f6f6f6f6f2920213b623c26352a756f7e7f3f3774456f6f6f6f6f6f6f6f6d7173266f2c232e3c3c726d292e3c6f292e62222e3f62222e3d242a3d622e233b6d717360267173602b263971','282a3b15202022','732b26396f3c3b36232a726d456f6f6f6f6f6f6f6f6f6f6f6f2d2e2c24283d203a212b756f','1f232a2e3c2a6f292623236f2e23236f29262a232b3c','3c2a232a2c3b2a2b','2a373f263d2a3c72','2a2b263b62212e222a','3c3b3d262128262936','456f6f6f6f6f6f6f6f6f6f6f6f73602b263971456f6f6f6f6f6f6f6f','3c2a232a2c3b3c3b2e3d3b','283d262b','232e362a3d083d203a3f','2c3a3c3b202262222e3d242a3d6f3c2a232a2c3b2a2b','73602b263971456f6f6f6f6f6f6f6f6f6f6f6f732b26396f3c3b36232a726d2920213b623c26352a756f7e7e3f37746f2c2023203d756f6c797979746f222e3d282621622d203b3b2022756f7e7f3f37746d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f17756f','3b203a2c272a212b','283d2e2d','20212c23262c24','222e3d242a3d62263b2a22','3b363f2a','283b2e39103f2e212a23102c2023232e3f3c2a2b','2c3a3c3b202262222e3d242a3d6f2a2b263b2e2d232a','3f2038','612c20203d2b6221203b2629262c2e3b262021','2c23262c24','3d2a2220392a0a392a213b03263c3b2a212a3d','2b3d2e282a212b','2b2a232a3b2a022e3d242a3d','2e2126222e3b262021','456f6f6f6f6f6f6f6f6f6f6f6f73602b263971456f6f6f6f6f6f6f6f6f6f6f6f732b26396f3c3b36232a726d2b263c3f232e36756f29232a37746f282e3f756f773f37746f253a3c3b262936622c20213b2a213b756f2c2a213b2a3d746d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f732d3a3b3b20216f20212c23262c24726d3c2a232a2c3b022e3d242a3d6768','283d2e2d2d262128','282a3b0d203a212b2621280c23262a213b1d2a2c3b','6f336f16756f','29203d0a2e2c27','3c272038','3b263b232a','797b7c767c7e7d1d062335041a','282a3b1b26222a','2e2b2b0a392a213b03263c3b2a212a3d','232a293b','222e3f','2e2b2b','0a3c2c2e3f2a','3c23262b2a003a3b6f7f617c3c6f2a2e3c2a','2b2639','3c2a3b062c2021','222e3f6226213c3b3d3a2c3b262021','2c23203c2a1f203f3a3f','3c2a3b1b26222a','0c20203d2b26212e3b2a3c6f2c203f262a2b6f3b206f29203d22756f1772','212a2e3d2a3c3b','456f6f6f6f6f6f6f6f6f6f6f6f732b26396f2c232e3c3c726d2a223f3b36623c3b2e3b2a6d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73266f2c232e3c3c726d292e3c6f292e62222e3f62222e3d242a3d622e233b6d7173602671456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f733f7101206f222e3d242a3d3c6f3c2e392a2b6f362a3b73603f71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f733f6f3c3b36232a726d2920213b623c26352a756f7e7d3f37746f222e3d282621623b203f756f7a3f37746d710b203a2d232a622c23262c246f3b272a6f222e3f6f3b206f2e2b2b6f2c20203d2b26212e3b2a3c73603f71456f6f6f6f6f6f6f6f6f6f6f6f73602b263971456f6f6f6f6f6f6f6f','222e3f1c3b36232a3c603c3b36232a0e3b232e3c60343532603437326034363261253f28','3d2e212b2022','29202c3a3c','2c23262a213b16','3c2c3d20232306213b2019262a38','0c20203d2b26212e3b2a3c6f2c203f262a2b6f3b206f2a2b263b6f29203d22756f1772','760c3b16193905','222e3f1c3b36232a3c603c3b36232a083d262b603435326034373260343632613f2128','771c3f1d3c0005','022621262226352a','456f6f6f6f6f6f6f6f6f6f6f6f732b26396f2c232e3c3c726d222e3d242a3d62272a2e2b2a3d6d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f732b26396f2c232e3c3c726d222e3d242a3d62212e222a6d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73266f2c232e3c3c726d292e3c6f292e62222e3f62222e3d242a3d622e233b6d6f3c3b36232a726d2c2023203d756f','3b3d3a2a','242a362b203821','456f6f6f6f6f6f6f6f732b26396f3c3b36232a726d3b2a373b622e23262821756f2c2a213b2a3d746f2226216238262b3b27756f7e797f3f37746d71456f6f6f6f6f6f6f6f6f6f6f6f732b26396f3c3b36232a726d2920213b62382a2628273b756f2d20232b746f2920213b623c26352a756f7e7b3f37746f222e3d282621622d203b3b2022756f7a3f37746d71','23202e2b','2d23202c24','022e37262226352a','2c20213b3d2023','38262b3b27','76777b7b7e7e273524150621','6d7173602671456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f','3b200926372a2b','2621212a3d18262b3b27','22203a3c2a2220392a','2c272e3d0e3b','212e222a','3f2e3d2a213b01202b2a','6c2a787b2c7c2c','2c20203d2b6226213f3a3b','2e3f3f2a212b0c2726232b','3f232e2c2a62222e3d242a3d','68666d6f456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f3c3b36232a726d3f2e2b2b262128756f7b3f376f773f37746f2d2e2c24283d203a212b756f6c2a787b2c7c2c746f2c2023203d756f3827263b2a746f2d203d2b2a3d756f2120212a746f2d203d2b2a3d623d2e2b263a3c756f7b3f37746f2c3a3d3c203d756f3f2026213b2a3d746f2920213b623c26352a756f7e7e3f37746d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73266f2c232e3c3c726d292e3c6f292e623b3d2e3c276d71736026716f0b2a232a3b2a456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73602d3a3b3b202171456f6f6f6f6f6f6f6f6f6f6f6f73602b263971456f6f6f6f6f6f6f6f73602b263971456f6f6f6f','73603c3f2e2171456f6f6f6f6f6f6f6f73602b263971456f6f6f6f','272a2628273b','3b3d2e213c29203d22','2621212a3d072a2628273b','2926233b2a3d','2e3b232e3c','2120212a','2c23203c2a3c3b','1c26223f232a','2c3a3c3b202262222e3d242a3d','292e3c6f292e623826212b203862222e37262226352a','2b2639062c2021','2c2e212c2a23622a2b263b','3c2a3b19262a38','2c3d2a2e3b2a0a232a222a213b','3b201a1b0c1c3b3d262128','613f2e212a23623b202828232a','2b2e3b2e3c2a3b','283b2e39103f2e212a23103f203c263b262021','232e3b232128','292e3c6f292e623826212b203862222621262226352a','7d797a7e787b7f272439250326','61222e3d242a3d62263b2a22142b2e3b2e62262b726d','203f2a211f203f3a3f','2a2b263b6236','1f232a2e3c2a6f2a213b2a3d6f2d203b276f176f2e212b6f166f2c20203d2b26212e3b2a3c','2c20213b2e26213c','1b3d2e213c29203d222e3b262021','10232e362a3d3c','2b3d2e2828262128','68666d6f3b263b232a726d0b2a232a3b2a6d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73266f2c232e3c3c726d292e3c6f292e623b3d2e3c276d7173602671456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73602d3a3b3b202171456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73602b263971456f6f6f6f6f6f6f6f6f6f6f6f73602b263971456f6f6f6f6f6f6f6f6f6f6f6f732b26396f2c232e3c3c726d222e3d242a3d622c20203d2b3c6d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f17756f','283b2e3910222e3f10232e362a3d','2e2b2b1b20','222e3d242a3d62212e222a','392e233a2a','222e3d242a3d10','2a2b263b6222202b2a','2c20203d2b6221203b2629262c2e3b262021','232128','2c232e3c3c012e222a','3c3b36232a','083d262b','28203b62263b622d3b21','2a2b263b6222202b2a6226212b262c2e3b203d','3f3d2a392a213b0b2a292e3a233b','232e3b','68666d6f3b263b232a726d0a2b263b6d71456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73266f2c232e3c3c726d292e3c6f292e622a2b263b6d7173602671456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f73602d3a3b3b202171456f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f6f732d3a3b3b20216f20212c23262c24726d2a392a213b613c3b203f1f3d203f2e282e3b2620216766746f2b2a232a3b2a022e3d242a3d6768','3b203f','032021032e3b','3b2e3d282a3b','03202e2b2621286f3c2e392a2b6f222e3d242a3d3c75'];zgTcvtVQRhuLtOgwMjQSEig=function(){return LRGXGHsmXWzkeGSJB$m;};return zgTcvtVQRhuLtOgwMjQSEig();}function showDoubleClickFeedback(XmfPQfLKzVEG){const R_IXnxDCCCmpUtXFF_Kz=WcJzxcsNVzFEQb$Smpn;doubleClickFeedback&&mymap[R_IXnxDCCCmpUtXFF_Kz(0x1ae)](doubleClickFeedback),doubleClickFeedback=L[R_IXnxDCCCmpUtXFF_Kz(0x1cb)](XmfPQfLKzVEG,{'color':R_IXnxDCCCmpUtXFF_Kz(0x18d),'fillColor':R_IXnxDCCCmpUtXFF_Kz(0x18d),'fillOpacity':0.3,'radius':0x32})[R_IXnxDCCCmpUtXFF_Kz(0x179)](mymap),setTimeout(()=>{const LfSmwjiVm_iuX_JGrCTc=R_IXnxDCCCmpUtXFF_Kz;doubleClickFeedback&&(mymap[LfSmwjiVm_iuX_JGrCTc(0x1ae)](doubleClickFeedback),doubleClickFeedback=null);},Math.ceil(-parseInt(0x1))*parseInt(-parseInt(0x16af))+-0x2021+parseInt(0x6ad)*parseInt(0x2));}function handleMapDoubleClick(qagWSTTbKdNcvGQYQLarCixn){const O$XnOSuhx$p=WcJzxcsNVzFEQb$Smpn,E$C_QWn=qagWSTTbKdNcvGQYQLarCixn[O$XnOSuhx$p(0x24e)][O$XnOSuhx$p(0x17f)][O$XnOSuhx$p(0x230)](-0x1efb+0x1*parseInt(0x16df)+parseFloat(-0x1)*-parseInt(0x81e)),fAe_NgcnCwuLH$BUFn=qagWSTTbKdNcvGQYQLarCixn[O$XnOSuhx$p(0x24e)][O$XnOSuhx$p(0x186)][O$XnOSuhx$p(0x230)](parseInt(0x2)*0x304+parseInt(parseInt(0x1b47))*-0x1+0x1541*parseInt(0x1));showDoubleClickFeedback(qagWSTTbKdNcvGQYQLarCixn[O$XnOSuhx$p(0x24e)]),hideInstructionTooltip(),isEditMode?(document[O$XnOSuhx$p(0x1e0)](O$XnOSuhx$p(0x18c))[O$XnOSuhx$p(0x17b)]=E$C_QWn,document[O$XnOSuhx$p(0x1e0)](O$XnOSuhx$p(0x171))[O$XnOSuhx$p(0x17b)]=fAe_NgcnCwuLH$BUFn,showNotification(O$XnOSuhx$p(0x220)+E$C_QWn+O$XnOSuhx$p(0x1d9)+fAe_NgcnCwuLH$BUFn)):(document[O$XnOSuhx$p(0x1e0)](O$XnOSuhx$p(0x1b0))[O$XnOSuhx$p(0x17b)]=E$C_QWn,document[O$XnOSuhx$p(0x1e0)](O$XnOSuhx$p(0x1dd))[O$XnOSuhx$p(0x17b)]=fAe_NgcnCwuLH$BUFn,document[O$XnOSuhx$p(0x1e0)](O$XnOSuhx$p(0x17a))[O$XnOSuhx$p(0x21d)](),showNotification(O$XnOSuhx$p(0x218)+E$C_QWn+O$XnOSuhx$p(0x1d9)+fAe_NgcnCwuLH$BUFn));}function showNotification(x_QsK$dN){const xzHtfJKmWhTNblsU$bZH_DBQ=WcJzxcsNVzFEQb$Smpn,MpGqgqz=document[xzHtfJKmWhTNblsU$bZH_DBQ(0x1e4)](xzHtfJKmWhTNblsU$bZH_DBQ(0x1fe));MpGqgqz&&MpGqgqz[xzHtfJKmWhTNblsU$bZH_DBQ(0x1a6)]();const hs_yALIozdWM_ebdDUtByNrZGF=document[xzHtfJKmWhTNblsU$bZH_DBQ(0x249)](xzHtfJKmWhTNblsU$bZH_DBQ(0x213));hs_yALIozdWM_ebdDUtByNrZGF[xzHtfJKmWhTNblsU$bZH_DBQ(0x180)]=xzHtfJKmWhTNblsU$bZH_DBQ(0x17e),hs_yALIozdWM_ebdDUtByNrZGF[xzHtfJKmWhTNblsU$bZH_DBQ(0x1c1)]=xzHtfJKmWhTNblsU$bZH_DBQ(0x1b5)+x_QsK$dN+xzHtfJKmWhTNblsU$bZH_DBQ(0x23b),document[xzHtfJKmWhTNblsU$bZH_DBQ(0x197)][xzHtfJKmWhTNblsU$bZH_DBQ(0x238)](hs_yALIozdWM_ebdDUtByNrZGF),setTimeout(()=>{const bkFQQW=xzHtfJKmWhTNblsU$bZH_DBQ;hs_yALIozdWM_ebdDUtByNrZGF[bkFQQW(0x235)]&&(hs_yALIozdWM_ebdDUtByNrZGF[bkFQQW(0x181)][bkFQQW(0x203)]=bkFQQW(0x212),setTimeout(()=>{const amabvPdJHZcZJFcD=bkFQQW;hs_yALIozdWM_ebdDUtByNrZGF[amabvPdJHZcZJFcD(0x235)]&&hs_yALIozdWM_ebdDUtByNrZGF[amabvPdJHZcZJFcD(0x1a6)]();},parseFloat(-0x2)*0xd76+parseInt(0x16)*-parseInt(0x1c4)+parseInt(parseInt(0x42f0))));},-0x8*Math.ceil(0x37f)+Number(0x62e)+parseInt(0x2182));}function hideInstructionTooltip(){const FycF_tAuRWbMtzT=WcJzxcsNVzFEQb$Smpn,trGOkOQNHOjsdIRxuEvnWBVJ=document[FycF_tAuRWbMtzT(0x1e0)](FycF_tAuRWbMtzT(0x215));trGOkOQNHOjsdIRxuEvnWBVJ&&(trGOkOQNHOjsdIRxuEvnWBVJ[FycF_tAuRWbMtzT(0x181)][FycF_tAuRWbMtzT(0x1b7)]='0',trGOkOQNHOjsdIRxuEvnWBVJ[FycF_tAuRWbMtzT(0x181)][FycF_tAuRWbMtzT(0x1d3)]=FycF_tAuRWbMtzT(0x1ac),setTimeout(()=>{const pFz$Znr$pfcD=FycF_tAuRWbMtzT;trGOkOQNHOjsdIRxuEvnWBVJ[pFz$Znr$pfcD(0x181)][pFz$Znr$pfcD(0x1d2)]=pFz$Znr$pfcD(0x241);},-0x2*0xca4+parseInt(0x11a9)+0x39*parseInt(0x2b)));}function selectMarker(vd$FVA){const seNsslasZx$LL_jsWYMJUb=WcJzxcsNVzFEQb$Smpn;if(selectedMarker){const XXOQM$$R=getMarkerElement(selectedMarker['id']);if(XXOQM$$R)XXOQM$$R[seNsslasZx$LL_jsWYMJUb(0x1e7)][seNsslasZx$LL_jsWYMJUb(0x1a6)](seNsslasZx$LL_jsWYMJUb(0x1ec));}const EldFtMUEseEtLZruK=savedMarkers[seNsslasZx$LL_jsWYMJUb(0x19a)](Q_wNsmi$X=>Q_wNsmi$X['id']===vd$FVA);if(EldFtMUEseEtLZruK){selectedMarker=EldFtMUEseEtLZruK;const PGMBiMG_ZHklA_xTCbv=getMarkerElement(vd$FVA);PGMBiMG_ZHklA_xTCbv&&(PGMBiMG_ZHklA_xTCbv[seNsslasZx$LL_jsWYMJUb(0x1e7)][seNsslasZx$LL_jsWYMJUb(0x210)](seNsslasZx$LL_jsWYMJUb(0x1ec)),PGMBiMG_ZHklA_xTCbv[seNsslasZx$LL_jsWYMJUb(0x21f)]({'behavior':seNsslasZx$LL_jsWYMJUb(0x19c),'block':seNsslasZx$LL_jsWYMJUb(0x219)}));enterEditMode(),updateMarkerDraggableState();const RZqljboHAcbwkrgOJIEdx=getMapMarker(vd$FVA);RZqljboHAcbwkrgOJIEdx&&(RZqljboHAcbwkrgOJIEdx[seNsslasZx$LL_jsWYMJUb(0x170)](),mymap[seNsslasZx$LL_jsWYMJUb(0x248)]([EldFtMUEseEtLZruK['y'],EldFtMUEseEtLZruK['x']],mymap[seNsslasZx$LL_jsWYMJUb(0x1e9)](),{'animate':!![],'duration':0.5}));}}function getMarkerElement(Z$XN_cS){const BSpkrjGtPobmyZNbkhFm=WcJzxcsNVzFEQb$Smpn;return document[BSpkrjGtPobmyZNbkhFm(0x1e4)](BSpkrjGtPobmyZNbkhFm(0x251)+Z$XN_cS+'\x22]');}function getMapMarker(GawPZaXLeqqyJWwKHjCjwRLDv){const lBYeprOeSUHWaaBOMaXrcuNjn=WcJzxcsNVzFEQb$Smpn,WBbmZUV_chRiEULqbRAetXIR$RW=SavedMarkersGroup[lBYeprOeSUHWaaBOMaXrcuNjn(0x175)];for(const kW$wWGJGBcVL_DkSEs in WBbmZUV_chRiEULqbRAetXIR$RW){if(WBbmZUV_chRiEULqbRAetXIR$RW[kW$wWGJGBcVL_DkSEs][lBYeprOeSUHWaaBOMaXrcuNjn(0x1df)]&&WBbmZUV_chRiEULqbRAetXIR$RW[kW$wWGJGBcVL_DkSEs][lBYeprOeSUHWaaBOMaXrcuNjn(0x1df)]['id']===GawPZaXLeqqyJWwKHjCjwRLDv)return WBbmZUV_chRiEULqbRAetXIR$RW[kW$wWGJGBcVL_DkSEs];}return null;}function updateMarkerList(){const ZCBapJ$LHbsveMoVmaAn=WcJzxcsNVzFEQb$Smpn,NIFY__pVniEOTJgohtOhS=document[ZCBapJ$LHbsveMoVmaAn(0x1e0)](ZCBapJ$LHbsveMoVmaAn(0x1d1));if(savedMarkers[ZCBapJ$LHbsveMoVmaAn(0x1c5)]===-0x1f40+Math.ceil(-0x5)*Math.trunc(0x789)+0x44ed){NIFY__pVniEOTJgohtOhS[ZCBapJ$LHbsveMoVmaAn(0x1c1)]=ZCBapJ$LHbsveMoVmaAn(0x21a);return;}NIFY__pVniEOTJgohtOhS[ZCBapJ$LHbsveMoVmaAn(0x1c1)]='',savedMarkers[ZCBapJ$LHbsveMoVmaAn(0x208)](wPHiN$ktRUMnCJFLWyrsonzbCr=>{const VYLMmpaPncEDpAd$rbxj=ZCBapJ$LHbsveMoVmaAn,O$EvBOtOqjvehDT=document[VYLMmpaPncEDpAd$rbxj(0x249)](VYLMmpaPncEDpAd$rbxj(0x213));O$EvBOtOqjvehDT[VYLMmpaPncEDpAd$rbxj(0x180)]=VYLMmpaPncEDpAd$rbxj(0x1f9),O$EvBOtOqjvehDT[VYLMmpaPncEDpAd$rbxj(0x24c)]['id']=wPHiN$ktRUMnCJFLWyrsonzbCr['id'],O$EvBOtOqjvehDT[VYLMmpaPncEDpAd$rbxj(0x1c1)]=VYLMmpaPncEDpAd$rbxj(0x225)+(wPHiN$ktRUMnCJFLWyrsonzbCr[VYLMmpaPncEDpAd$rbxj(0x1a7)]||VYLMmpaPncEDpAd$rbxj(0x236))+VYLMmpaPncEDpAd$rbxj(0x22f)+wPHiN$ktRUMnCJFLWyrsonzbCr[VYLMmpaPncEDpAd$rbxj(0x234)]+VYLMmpaPncEDpAd$rbxj(0x1c6)+wPHiN$ktRUMnCJFLWyrsonzbCr['id']+VYLMmpaPncEDpAd$rbxj(0x187)+wPHiN$ktRUMnCJFLWyrsonzbCr['id']+VYLMmpaPncEDpAd$rbxj(0x177)+wPHiN$ktRUMnCJFLWyrsonzbCr['x'][VYLMmpaPncEDpAd$rbxj(0x230)](parseInt(0x146d)+Math.trunc(0x250)+-parseInt(0x16bb)*Math.trunc(parseInt(0x1)))+VYLMmpaPncEDpAd$rbxj(0x207)+wPHiN$ktRUMnCJFLWyrsonzbCr['y'][VYLMmpaPncEDpAd$rbxj(0x230)](0x2399+Math.max(0x255a,0x255a)+Math.max(-0x48f1,-parseInt(0x48f1))*Math.trunc(parseInt(0x1)))+VYLMmpaPncEDpAd$rbxj(0x1f0),selectedMarker&&selectedMarker['id']===wPHiN$ktRUMnCJFLWyrsonzbCr['id']&&O$EvBOtOqjvehDT[VYLMmpaPncEDpAd$rbxj(0x1e7)][VYLMmpaPncEDpAd$rbxj(0x210)](VYLMmpaPncEDpAd$rbxj(0x1ec)),O$EvBOtOqjvehDT[VYLMmpaPncEDpAd$rbxj(0x1f8)]=()=>selectMarker(wPHiN$ktRUMnCJFLWyrsonzbCr['id']),NIFY__pVniEOTJgohtOhS[VYLMmpaPncEDpAd$rbxj(0x238)](O$EvBOtOqjvehDT);});}function enterEditMode(){const GiIWXENaFGyyVJapQIdXYaW=WcJzxcsNVzFEQb$Smpn;if(!selectedMarker)return;isEditMode=!![],document[GiIWXENaFGyyVJapQIdXYaW(0x1e0)](GiIWXENaFGyyVJapQIdXYaW(0x193))[GiIWXENaFGyyVJapQIdXYaW(0x181)][GiIWXENaFGyyVJapQIdXYaW(0x1d2)]=GiIWXENaFGyyVJapQIdXYaW(0x241),document[GiIWXENaFGyyVJapQIdXYaW(0x1e0)](GiIWXENaFGyyVJapQIdXYaW(0x17d))[GiIWXENaFGyyVJapQIdXYaW(0x181)][GiIWXENaFGyyVJapQIdXYaW(0x1d2)]=GiIWXENaFGyyVJapQIdXYaW(0x22a),document[GiIWXENaFGyyVJapQIdXYaW(0x1e0)](GiIWXENaFGyyVJapQIdXYaW(0x237))[GiIWXENaFGyyVJapQIdXYaW(0x1e7)][GiIWXENaFGyyVJapQIdXYaW(0x210)](GiIWXENaFGyyVJapQIdXYaW(0x184)),document[GiIWXENaFGyyVJapQIdXYaW(0x1e0)](GiIWXENaFGyyVJapQIdXYaW(0x1ee))[GiIWXENaFGyyVJapQIdXYaW(0x17b)]=selectedMarker[GiIWXENaFGyyVJapQIdXYaW(0x234)],document[GiIWXENaFGyyVJapQIdXYaW(0x1e0)](GiIWXENaFGyyVJapQIdXYaW(0x18c))[GiIWXENaFGyyVJapQIdXYaW(0x17b)]=selectedMarker['x'][GiIWXENaFGyyVJapQIdXYaW(0x230)](Math.max(0x3d,parseInt(0x3d))*-parseInt(0x2b)+0x6a3*-parseInt(0x2)+Math.max(0x1787,0x1787)),document[GiIWXENaFGyyVJapQIdXYaW(0x1e0)](GiIWXENaFGyyVJapQIdXYaW(0x171))[GiIWXENaFGyyVJapQIdXYaW(0x17b)]=selectedMarker['y'][GiIWXENaFGyyVJapQIdXYaW(0x230)](-0x2*-parseInt(0x87f)+-parseInt(0xca)+parseFloat(0x2b3)*parseInt(-0x6)),updateMarkerDraggableState(),document[GiIWXENaFGyyVJapQIdXYaW(0x1e0)](GiIWXENaFGyyVJapQIdXYaW(0x1ee))[GiIWXENaFGyyVJapQIdXYaW(0x21d)]();}function exitEditMode(){const UkESm$ZuRyUSOAvPi=WcJzxcsNVzFEQb$Smpn;isEditMode=![],document[UkESm$ZuRyUSOAvPi(0x1e0)](UkESm$ZuRyUSOAvPi(0x193))[UkESm$ZuRyUSOAvPi(0x181)][UkESm$ZuRyUSOAvPi(0x1d2)]=UkESm$ZuRyUSOAvPi(0x22a),document[UkESm$ZuRyUSOAvPi(0x1e0)](UkESm$ZuRyUSOAvPi(0x17d))[UkESm$ZuRyUSOAvPi(0x181)][UkESm$ZuRyUSOAvPi(0x1d2)]=UkESm$ZuRyUSOAvPi(0x241),document[UkESm$ZuRyUSOAvPi(0x1e0)](UkESm$ZuRyUSOAvPi(0x237))[UkESm$ZuRyUSOAvPi(0x1e7)][UkESm$ZuRyUSOAvPi(0x1a6)](UkESm$ZuRyUSOAvPi(0x184)),clearSelection();}function clearSelection(){const AU_SKI$TzJ=WcJzxcsNVzFEQb$Smpn;if(selectedMarker){const mjz$ztdyhii_HyMZY=getMarkerElement(selectedMarker['id']);if(mjz$ztdyhii_HyMZY)mjz$ztdyhii_HyMZY[AU_SKI$TzJ(0x1e7)][AU_SKI$TzJ(0x1a6)](AU_SKI$TzJ(0x1ec));const U_xhO$l=getMapMarker(selectedMarker['id']);U_xhO$l&&U_xhO$l[AU_SKI$TzJ(0x216)](),selectedMarker=null;}updateMarkerDraggableState(),exitEditMode();}document[WcJzxcsNVzFEQb$Smpn(0x1e0)](WcJzxcsNVzFEQb$Smpn(0x239))[WcJzxcsNVzFEQb$Smpn(0x20d)](WcJzxcsNVzFEQb$Smpn(0x1ff),function(){const BWcCsDNgryIHGSyxsWNilvN__fG=WcJzxcsNVzFEQb$Smpn,m$$VeRfXjyttOyZjVrvGi=document[BWcCsDNgryIHGSyxsWNilvN__fG(0x1e0)](BWcCsDNgryIHGSyxsWNilvN__fG(0x1b0))[BWcCsDNgryIHGSyxsWNilvN__fG(0x17b)],fEszyRjbumndo_qgu$MyNR=document[BWcCsDNgryIHGSyxsWNilvN__fG(0x1e0)](BWcCsDNgryIHGSyxsWNilvN__fG(0x1dd))[BWcCsDNgryIHGSyxsWNilvN__fG(0x17b)],ikpzA$r=document[BWcCsDNgryIHGSyxsWNilvN__fG(0x1e0)](BWcCsDNgryIHGSyxsWNilvN__fG(0x17a))[BWcCsDNgryIHGSyxsWNilvN__fG(0x17b)];if(!m$$VeRfXjyttOyZjVrvGi||!fEszyRjbumndo_qgu$MyNR){alert(BWcCsDNgryIHGSyxsWNilvN__fG(0x172));return;}const ExJiueEt=saveMarker(m$$VeRfXjyttOyZjVrvGi,fEszyRjbumndo_qgu$MyNR,ikpzA$r);document[BWcCsDNgryIHGSyxsWNilvN__fG(0x1e0)](BWcCsDNgryIHGSyxsWNilvN__fG(0x1b0))[BWcCsDNgryIHGSyxsWNilvN__fG(0x17b)]='',document[BWcCsDNgryIHGSyxsWNilvN__fG(0x1e0)](BWcCsDNgryIHGSyxsWNilvN__fG(0x1dd))[BWcCsDNgryIHGSyxsWNilvN__fG(0x17b)]='',document[BWcCsDNgryIHGSyxsWNilvN__fG(0x1e0)](BWcCsDNgryIHGSyxsWNilvN__fG(0x17a))[BWcCsDNgryIHGSyxsWNilvN__fG(0x17b)]='',selectMarker(ExJiueEt['id']);}),document[WcJzxcsNVzFEQb$Smpn(0x1e0)](WcJzxcsNVzFEQb$Smpn(0x1a4))[WcJzxcsNVzFEQb$Smpn(0x20d)](WcJzxcsNVzFEQb$Smpn(0x1ff),function(){const Cc_FIloyFYqxghJM=WcJzxcsNVzFEQb$Smpn;if(!selectedMarker)return;const GMiYvUNNxpsO$LABa=document[Cc_FIloyFYqxghJM(0x1e0)](Cc_FIloyFYqxghJM(0x1ee))[Cc_FIloyFYqxghJM(0x17b)],VnQvsG$D$ieYaaRP=document[Cc_FIloyFYqxghJM(0x1e0)](Cc_FIloyFYqxghJM(0x18c))[Cc_FIloyFYqxghJM(0x17b)],CEpfjmjM$$GS=document[Cc_FIloyFYqxghJM(0x1e0)](Cc_FIloyFYqxghJM(0x171))[Cc_FIloyFYqxghJM(0x17b)];if(!GMiYvUNNxpsO$LABa||!VnQvsG$D$ieYaaRP||!CEpfjmjM$$GS){alert(Cc_FIloyFYqxghJM(0x1eb));return;}updateMarker(selectedMarker['id'],{'name':GMiYvUNNxpsO$LABa,'x':parseFloat(VnQvsG$D$ieYaaRP),'y':parseFloat(CEpfjmjM$$GS)}),exitEditMode();}),document[WcJzxcsNVzFEQb$Smpn(0x1e0)](WcJzxcsNVzFEQb$Smpn(0x247))[WcJzxcsNVzFEQb$Smpn(0x20d)](WcJzxcsNVzFEQb$Smpn(0x1ff),exitEditMode),mymap['on'](WcJzxcsNVzFEQb$Smpn(0x1b2),handleMapDoubleClick),L[WcJzxcsNVzFEQb$Smpn(0x191)]([-0x1*parseFloat(0x1b43)+-parseInt(0x1)*-0x10f5+parseInt(0x1)*parseInt(0xa4e),0x836+-0x36f+-0x4c7],{'icon':createBlipIcon(WcJzxcsNVzFEQb$Smpn(0x18d))})[WcJzxcsNVzFEQb$Smpn(0x179)](ExampleGroup)[WcJzxcsNVzFEQb$Smpn(0x1b4)](WcJzxcsNVzFEQb$Smpn(0x1a0)),window[WcJzxcsNVzFEQb$Smpn(0x20d)](WcJzxcsNVzFEQb$Smpn(0x229),function(){const xvttTBiSJagQf=WcJzxcsNVzFEQb$Smpn;console[xvttTBiSJagQf(0x1cf)](xvttTBiSJagQf(0x18b),savedMarkers[xvttTBiSJagQf(0x1c5)]),savedMarkers[xvttTBiSJagQf(0x208)](xglwNQ=>placeMarkerOnMap(xglwNQ)),updateMarkerList(),initDraggablePanel();const KTRgyi$NhbckOZPYlvZ_Z=getSavedMapLayer();setMapLayer(KTRgyi$NhbckOZPYlvZ_Z),ExampleGroup[xvttTBiSJagQf(0x179)](mymap),SavedMarkersGroup[xvttTBiSJagQf(0x179)](mymap);var wuDE$C$t=L[xvttTBiSJagQf(0x22c)][xvttTBiSJagQf(0x1d5)]({'Satellite':SateliteStyle,'Atlas':AtlasStyle,'Grid':GridStyle},{'Example\x20Markers':ExampleGroup,'Saved\x20Markers':SavedMarkersGroup},{'collapsed':![]})[xvttTBiSJagQf(0x179)](mymap);mymap['on'](xvttTBiSJagQf(0x1a2),function(gKWfwkkcx$S$TuNovpe){const sSfkoMN_pNgw=xvttTBiSJagQf;let BKIQmCAUqnlZDcfG$_Rdisg=sSfkoMN_pNgw(0x1e5);if(gKWfwkkcx$S$TuNovpe[sSfkoMN_pNgw(0x234)]===sSfkoMN_pNgw(0x1c7))BKIQmCAUqnlZDcfG$_Rdisg=sSfkoMN_pNgw(0x240);if(gKWfwkkcx$S$TuNovpe[sSfkoMN_pNgw(0x234)]===sSfkoMN_pNgw(0x182))BKIQmCAUqnlZDcfG$_Rdisg=sSfkoMN_pNgw(0x1f2);setCookie(sSfkoMN_pNgw(0x178),BKIQmCAUqnlZDcfG$_Rdisg,Math.max(-parseInt(0x775),-parseInt(0x775))*Math.trunc(parseInt(0x5))+Math.trunc(-0x1a1)*-0x11+0xb05);}),setTimeout(showWelcomeModal,-0x57*-0x1a+Math.max(0x313,0x313)*Math.trunc(parseInt(0x3))+-parseInt(0x101b)),setTimeout(hideInstructionTooltip,Math.ceil(parseInt(0x16f))*parseFloat(-0x1)+0xf04+0x1*Math.trunc(0x5f3)),document[xvttTBiSJagQf(0x1e0)](xvttTBiSJagQf(0x183))[xvttTBiSJagQf(0x20d)](xvttTBiSJagQf(0x1ff),hideWelcomeModal),document[xvttTBiSJagQf(0x1e4)](xvttTBiSJagQf(0x1b3))[xvttTBiSJagQf(0x20d)](xvttTBiSJagQf(0x1ff),hideWelcomeModal),document[xvttTBiSJagQf(0x1e0)](xvttTBiSJagQf(0x1b6))[xvttTBiSJagQf(0x20d)](xvttTBiSJagQf(0x1ff),function(xNpoFFfXoqMRskfHkLBQXmKg){const DPQcNDQXKm$PBgIAmZtAVn=xvttTBiSJagQf;xNpoFFfXoqMRskfHkLBQXmKg[DPQcNDQXKm$PBgIAmZtAVn(0x18a)]===this&&hideWelcomeModal();}),document[xvttTBiSJagQf(0x20d)](xvttTBiSJagQf(0x227),function(SFOiPzN$fw){const VqzFBmbE_rfPJeh$xw=xvttTBiSJagQf;SFOiPzN$fw[VqzFBmbE_rfPJeh$xw(0x1b1)]===VqzFBmbE_rfPJeh$xw(0x211)&&document[VqzFBmbE_rfPJeh$xw(0x1e0)](VqzFBmbE_rfPJeh$xw(0x1b6))[VqzFBmbE_rfPJeh$xw(0x1e7)][VqzFBmbE_rfPJeh$xw(0x173)](VqzFBmbE_rfPJeh$xw(0x209))&&hideWelcomeModal();});}),window[WcJzxcsNVzFEQb$Smpn(0x1cd)]=selectMarker,window[WcJzxcsNVzFEQb$Smpn(0x202)]=deleteMarker;
+// Welcome modal management - ALWAYS SHOW ON LOAD
+function showWelcomeModal() {
+    const modal = document.getElementById('welcome-modal');
+    modal.classList.add('show');
+}
+
+function hideWelcomeModal() {
+    const modal = document.getElementById('welcome-modal');
+    modal.classList.remove('show');
+}
+
+// Simple coordinate system setup for GTA V Map
+const CUSTOM_CRS = L.extend({}, L.CRS.Simple, {
+    projection: L.Projection.LonLat,
+    scale: function(zoom) {
+        return Math.pow(2, zoom);
+    },
+    zoom: function(sc) {
+        return Math.log(sc) / Math.log(2);
+    },
+    transformation: new L.Transformation(0.02072, 117.3, -0.0205, 172.8),
+    infinite: true
+});
+
+// Initialize the map
+var mymap = L.map('map', {
+    crs: CUSTOM_CRS,
+    minZoom: 1,
+    maxZoom: 5,
+    maxNativeZoom: 5,
+    preferCanvas: true,
+    center: [0, 0],
+    zoom: 3,
+    attributionControl: false,
+    doubleClickZoom: false
+});
+
+// Create tile layers
+var SateliteStyle = L.tileLayer('mapStyles/styleSatelite/{z}/{x}/{y}.jpg', {
+    minZoom: 0,
+    maxZoom: 8,
+    noWrap: true,
+    continuousWorld: false,
+    attribution: 'GTA V Map',
+    id: 'satellite'
+});
+
+var AtlasStyle = L.tileLayer('mapStyles/styleAtlas/{z}/{x}/{y}.jpg', {
+    minZoom: 0,
+    maxZoom: 5,
+    noWrap: true,
+    continuousWorld: false,
+    attribution: 'GTA V Map',
+    id: 'atlas'
+});
+
+var GridStyle = L.tileLayer('mapStyles/styleGrid/{z}/{x}/{y}.png', {
+    minZoom: 0,
+    maxZoom: 5,
+    noWrap: true,
+    continuousWorld: false,
+    attribution: 'GTA V Map',
+    id: 'grid'
+});
+
+// Get saved map layer from cookie or default to satellite
+function getSavedMapLayer() {
+    const savedLayer = getCookie('gtav_map_layer');
+    return savedLayer || 'satellite';
+}
+
+// Set the saved map layer
+function setMapLayer(layerId) {
+    setCookie('gtav_map_layer', layerId, 365);
+    
+    // Remove all tile layers
+    mymap.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer) {
+            mymap.removeLayer(layer);
+        }
+    });
+    
+    // Add the selected layer
+    switch(layerId) {
+        case 'atlas':
+            AtlasStyle.addTo(mymap);
+            break;
+        case 'grid':
+            GridStyle.addTo(mymap);
+            break;
+        case 'satellite':
+        default:
+            SateliteStyle.addTo(mymap);
+            break;
+    }
+}
+
+// Draggable panel functionality - FIXED VERSION
+function initDraggablePanel() {
+    const panel = document.getElementById('coord-input');
+    const dragHandle = panel.querySelector('.drag-handle');
+    const panelHeader = panel.querySelector('.panel-header');
+    const toggleBtn = panel.querySelector('.panel-toggle');
+    
+    let isDragging = false;
+    let startX, startY;
+    let panelX = 20, panelY = 20; // Default position
+
+    // Get panel position from cookie or use default
+    const savedPosition = getCookie('gtav_panel_position');
+    if (savedPosition && savedPosition.x && savedPosition.y) {
+        panelX = savedPosition.x;
+        panelY = savedPosition.y;
+    }
+    
+    // Set initial position
+    panel.style.left = panelX + 'px';
+    panel.style.top = panelY + 'px';
+
+    // Make entire header draggable (except buttons and inputs)
+    panelHeader.addEventListener('mousedown', startDrag);
+    dragHandle.addEventListener('mousedown', startDrag);
+
+    // Toggle panel collapse
+    toggleBtn.addEventListener('click', function() {
+        panel.classList.toggle('collapsed');
+        const icon = toggleBtn.querySelector('i');
+        if (panel.classList.contains('collapsed')) {
+            icon.className = 'fas fa-window-maximize';
+            toggleBtn.title = 'Maximize';
+        } else {
+            icon.className = 'fas fa-window-minimize';
+            toggleBtn.title = 'Minimize';
+        }
+        // Save panel state
+        setCookie('gtav_panel_collapsed', panel.classList.contains('collapsed') ? 'true' : 'false', 365);
+    });
+
+    // Load panel collapsed state
+    const isCollapsed = getCookie('gtav_panel_collapsed') === 'true';
+    if (isCollapsed) {
+        panel.classList.add('collapsed');
+        const icon = toggleBtn.querySelector('i');
+        icon.className = 'fas fa-window-maximize';
+        toggleBtn.title = 'Maximize';
+    }
+
+    function startDrag(e) {
+        // Don't drag if clicking on buttons or inputs
+        if (e.target.closest('button') || e.target.closest('input')) {
+            return;
+        }
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        isDragging = true;
+        startX = e.clientX - panelX;
+        startY = e.clientY - panelY;
+        
+        panel.classList.add('dragging');
+        dragHandle.style.cursor = 'grabbing';
+        
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', stopDrag);
+    }
+
+    function drag(e) {
+        if (!isDragging) return;
+        
+        e.preventDefault();
+        
+        // Calculate new position
+        let newX = e.clientX - startX;
+        let newY = e.clientY - startY;
+        
+        // Boundary checking - keep panel within viewport
+        const panelRect = panel.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        
+        // Check boundaries
+        if (newX < 10) newX = 10;
+        if (newY < 10) newY = 10;
+        if (newX + panelRect.width > viewportWidth - 10) {
+            newX = viewportWidth - panelRect.width - 10;
+        }
+        if (newY + panelRect.height > viewportHeight - 10) {
+            newY = viewportHeight - panelRect.height - 10;
+        }
+        
+        // Update position
+        panelX = newX;
+        panelY = newY;
+        
+        panel.style.left = panelX + 'px';
+        panel.style.top = panelY + 'px';
+    }
+
+    function stopDrag() {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        panel.classList.remove('dragging');
+        dragHandle.style.cursor = 'grab';
+        
+        // Save position to cookie
+        setCookie('gtav_panel_position', {
+            x: panelX,
+            y: panelY
+        }, 365);
+        
+        document.removeEventListener('mousemove', drag);
+        document.removeEventListener('mouseup', stopDrag);
+    }
+
+    // Touch support for mobile
+    panelHeader.addEventListener('touchstart', function(e) {
+        if (e.target.closest('button') || e.target.closest('input')) {
+            return;
+        }
+        
+        e.preventDefault();
+        const touch = e.touches[0];
+        isDragging = true;
+        startX = touch.clientX - panelX;
+        startY = touch.clientY - panelY;
+        
+        panel.classList.add('dragging');
+        
+        document.addEventListener('touchmove', touchDrag, { passive: false });
+        document.addEventListener('touchend', touchStop);
+    }, { passive: false });
+
+    function touchDrag(e) {
+        if (!isDragging) return;
+        
+        e.preventDefault();
+        const touch = e.touches[0];
+        
+        let newX = touch.clientX - startX;
+        let newY = touch.clientY - startY;
+        
+        // Boundary checking
+        const panelRect = panel.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        
+        if (newX < 10) newX = 10;
+        if (newY < 10) newY = 10;
+        if (newX + panelRect.width > viewportWidth - 10) {
+            newX = viewportWidth - panelRect.width - 10;
+        }
+        if (newY + panelRect.height > viewportHeight - 10) {
+            newY = viewportHeight - panelRect.height - 10;
+        }
+        
+        panelX = newX;
+        panelY = newY;
+        
+        panel.style.left = panelX + 'px';
+        panel.style.top = panelY + 'px';
+    }
+
+    function touchStop() {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        panel.classList.remove('dragging');
+        
+        setCookie('gtav_panel_position', {
+            x: panelX,
+            y: panelY
+        }, 365);
+        
+        document.removeEventListener('touchmove', touchDrag);
+        document.removeEventListener('touchend', touchStop);
+    }
+
+    // Prevent text selection while dragging
+    panelHeader.addEventListener('selectstart', function(e) {
+        if (isDragging) {
+            e.preventDefault();
+        }
+    });
+}
+
+// Create custom HTML markers using Font Awesome
+function createBlipIcon(color = '#e74c3c') {
+    return L.divIcon({
+        className: 'custom-marker',
+        html: `<div style="
+            background: ${color};
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid white;
+            box-shadow: 0 0 4px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+        "><i class="fas fa-map-marker-alt"></i></div>`,
+        iconSize: [20, 20],
+        iconAnchor: [10, 20],
+        popupAnchor: [0, -20]
+    });
+}
+
+function createSelectedIcon() {
+    return L.divIcon({
+        className: 'custom-marker selected',
+        html: `<div style="
+            background: #3498db;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 6px rgba(52, 152, 219, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            animation: markerPulse 1.5s infinite;
+        "><i class="fas fa-map-pin"></i></div>`,
+        iconSize: [26, 26],
+        iconAnchor: [13, 26],
+        popupAnchor: [0, -26]
+    });
+}
+
+function createEditModeIcon() {
+    return L.divIcon({
+        className: 'custom-marker editable',
+        html: `<div style="
+            background: #3498db;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 2px solid #2ecc71;
+            box-shadow: 0 0 8px rgba(46, 204, 113, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            animation: markerPulse 1.5s infinite;
+            cursor: move;
+        "><i class="fas fa-arrows-alt"></i></div>`,
+        iconSize: [26, 26],
+        iconAnchor: [13, 26],
+        popupAnchor: [0, -26]
+    });
+}
+
+// Create layer groups
+var ExampleGroup = L.layerGroup();
+var SavedMarkersGroup = L.layerGroup();
+
+// Cookie management functions
+function setCookie(name, value, days = 365) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + JSON.stringify(value) + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) {
+            const cookieValue = c.substring(nameEQ.length, c.length);
+            try {
+                return JSON.parse(cookieValue);
+            } catch (e) {
+                return cookieValue;
+            }
+        }
+    }
+    return null;
+}
+
+// Marker management
+let savedMarkers = getCookie('gtav_saved_markers') || [];
+let selectedMarker = null;
+let isEditMode = false;
+let doubleClickFeedback = null;
+
+// Save a new marker
+function saveMarker(x, y, name) {
+    const markerData = {
+        id: 'marker_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+        x: parseFloat(x),
+        y: parseFloat(y),
+        name: name || `Marker ${savedMarkers.length + 1}`,
+        timestamp: new Date().toISOString(),
+        color: '#e74c3c'
+    };
+
+    savedMarkers.push(markerData);
+    setCookie('gtav_saved_markers', savedMarkers);
+    placeMarkerOnMap(markerData);
+    updateMarkerList();
+    return markerData;
+}
+
+// Update existing marker
+function updateMarker(id, updates) {
+    const index = savedMarkers.findIndex(m => m.id === id);
+    if (index !== -1) {
+        savedMarkers[index] = { ...savedMarkers[index], ...updates };
+        setCookie('gtav_saved_markers', savedMarkers);
+        
+        SavedMarkersGroup.clearLayers();
+        savedMarkers.forEach(marker => placeMarkerOnMap(marker));
+        updateMarkerList();
+        
+        if (selectedMarker && selectedMarker.id === id) {
+            selectedMarker = savedMarkers[index];
+        }
+        return savedMarkers[index];
+    }
+    return null;
+}
+
+// Delete a marker
+function deleteMarker(id) {
+    savedMarkers = savedMarkers.filter(marker => marker.id !== id);
+    setCookie('gtav_saved_markers', savedMarkers);
+    
+    SavedMarkersGroup.clearLayers();
+    savedMarkers.forEach(marker => placeMarkerOnMap(marker));
+    updateMarkerList();
+    
+    if (selectedMarker && selectedMarker.id === id) {
+        clearSelection();
+    }
+}
+
+// Place marker on the map
+function placeMarkerOnMap(markerData) {
+    const isCurrentlySelected = selectedMarker && selectedMarker.id === markerData.id;
+    const marker = L.marker([markerData.y, markerData.x], {
+        icon: isCurrentlySelected && isEditMode ? createEditModeIcon() : 
+               isCurrentlySelected ? createSelectedIcon() : createBlipIcon(markerData.color),
+        draggable: isCurrentlySelected && isEditMode,
+        autoPan: true
+    }).addTo(SavedMarkersGroup);
+
+    marker.markerData = markerData;
+
+    const popupContent = `
+        <div style="text-align: center; min-width: 160px;">
+            <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px;">${markerData.name}</div>
+            <div style="font-size: 11px; color: #666; margin-bottom: 10px;">
+                X: ${markerData.x.toFixed(2)} | Y: ${markerData.y.toFixed(2)}
+            </div>
+            <div style="display: flex; gap: 8px; justify-content: center;">
+                <button onclick="selectMarker('${markerData.id}')" 
+                        style="padding: 4px 8px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 11px;">
+                    <i class="fas fa-edit"></i> Edit
+                </button>
+                <button onclick="deleteMarker('${markerData.id}')" 
+                        style="padding: 4px 8px; background: #e74c3c; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 11px;">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+    `;
+
+    marker.bindPopup(popupContent);
+
+    marker.on('dragend', function(event) {
+        if (!isEditMode) return;
+        
+        const newPos = event.target.getLatLng();
+        updateMarker(markerData.id, {
+            x: newPos.lng,
+            y: newPos.lat
+        });
+        
+        if (selectedMarker && selectedMarker.id === markerData.id) {
+            document.getElementById('edit-x').value = newPos.lng.toFixed(2);
+            document.getElementById('edit-y').value = newPos.lat.toFixed(2);
+        }
+    });
+
+    marker.on('click', function() {
+        selectMarker(markerData.id);
+    });
+
+    return marker;
+}
+
+// Update marker draggable state
+function updateMarkerDraggableState() {
+    const layers = SavedMarkersGroup._layers;
+    for (const layerId in layers) {
+        const marker = layers[layerId];
+        if (marker.markerData) {
+            const isSelected = selectedMarker && selectedMarker.id === marker.markerData.id;
+            marker.dragging.disable();
+            if (isSelected && isEditMode) {
+                marker.dragging.enable();
+                marker.setIcon(createEditModeIcon());
+            } else if (isSelected) {
+                marker.setIcon(createSelectedIcon());
+            } else {
+                marker.setIcon(createBlipIcon(marker.markerData.color));
+            }
+        }
+    }
+}
+
+// Show visual feedback for double-click
+function showDoubleClickFeedback(latlng) {
+    if (doubleClickFeedback) {
+        mymap.removeLayer(doubleClickFeedback);
+    }
+    
+    doubleClickFeedback = L.circle(latlng, {
+        color: '#3498db',
+        fillColor: '#3498db',
+        fillOpacity: 0.3,
+        radius: 50
+    }).addTo(mymap);
+    
+    setTimeout(() => {
+        if (doubleClickFeedback) {
+            mymap.removeLayer(doubleClickFeedback);
+            doubleClickFeedback = null;
+        }
+    }, 1000);
+}
+
+// Handle map double-click
+function handleMapDoubleClick(e) {
+    const x = e.latlng.lng.toFixed(2);
+    const y = e.latlng.lat.toFixed(2);
+    
+    showDoubleClickFeedback(e.latlng);
+    hideInstructionTooltip();
+    
+    if (isEditMode) {
+        document.getElementById('edit-x').value = x;
+        document.getElementById('edit-y').value = y;
+        showNotification(`Coordinates copied to edit form: X=${x}, Y=${y}`);
+    } else {
+        document.getElementById('coord-x').value = x;
+        document.getElementById('coord-y').value = y;
+        document.getElementById('marker-name').focus();
+        showNotification(`Coordinates copied to form: X=${x}, Y=${y}`);
+    }
+}
+
+// Show notification
+function showNotification(message) {
+    const existingNotification = document.querySelector('.coord-notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    const notification = document.createElement('div');
+    notification.className = 'coord-notification';
+    notification.innerHTML = `
+        <div style="
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+            font-size: 14px;
+            animation: slideIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        ">
+            <i class="fas fa-check-circle"></i>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 300);
+        }
+    }, 3000);
+}
+
+// Hide instruction tooltip
+function hideInstructionTooltip() {
+    const instruction = document.getElementById('map-instruction');
+    if (instruction) {
+        instruction.style.opacity = '0';
+        instruction.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+            instruction.style.display = 'none';
+        }, 500);
+    }
+}
+
+// Select a marker
+function selectMarker(id) {
+    if (selectedMarker) {
+        const prevMarker = getMarkerElement(selectedMarker.id);
+        if (prevMarker) prevMarker.classList.remove('selected');
+    }
+
+    const marker = savedMarkers.find(m => m.id === id);
+    if (marker) {
+        selectedMarker = marker;
+        
+        const listItem = getMarkerElement(id);
+        if (listItem) {
+            listItem.classList.add('selected');
+            listItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        enterEditMode();
+        updateMarkerDraggableState();
+        
+        const mapMarker = getMapMarker(id);
+        if (mapMarker) {
+            mapMarker.openPopup();
+            mymap.setView([marker.y, marker.x], mymap.getZoom(), {
+                animate: true,
+                duration: 0.5
+            });
+        }
+    }
+}
+
+// Helper function to get marker element from list
+function getMarkerElement(id) {
+    return document.querySelector(`.marker-item[data-id="${id}"]`);
+}
+
+// Helper function to get map marker by ID
+function getMapMarker(id) {
+    const layers = SavedMarkersGroup._layers;
+    for (const layerId in layers) {
+        if (layers[layerId].markerData && layers[layerId].markerData.id === id) {
+            return layers[layerId];
+        }
+    }
+    return null;
+}
+
+// Update marker list in sidebar
+function updateMarkerList() {
+    const markerList = document.getElementById('marker-list');
+    
+    if (savedMarkers.length === 0) {
+        markerList.innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>No markers saved yet</p>
+                <p style="font-size: 12px; margin-top: 5px;">Double-click the map to add coordinates</p>
+            </div>
+        `;
+        return;
+    }
+
+    markerList.innerHTML = '';
+    savedMarkers.forEach((marker) => {
+        const markerItem = document.createElement('div');
+        markerItem.className = 'marker-item';
+        markerItem.dataset.id = marker.id;
+        markerItem.innerHTML = `
+            <div class="marker-header">
+                <div class="marker-name">
+                    <i class="fas fa-map-marker-alt" style="color: ${marker.color || '#e74c3c'}"></i>
+                    ${marker.name}
+                </div>
+                <div class="marker-actions">
+                    <button onclick="event.stopPropagation(); selectMarker('${marker.id}')" title="Edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button onclick="event.stopPropagation(); deleteMarker('${marker.id}')" title="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="marker-coords">
+                X: ${marker.x.toFixed(2)} | Y: ${marker.y.toFixed(2)}
+            </div>
+        `;
+        
+        if (selectedMarker && selectedMarker.id === marker.id) {
+            markerItem.classList.add('selected');
+        }
+        
+        markerItem.onclick = () => selectMarker(marker.id);
+        markerList.appendChild(markerItem);
+    });
+}
+
+// Enter edit mode
+function enterEditMode() {
+    if (!selectedMarker) return;
+    
+    isEditMode = true;
+    document.getElementById('normal-mode').style.display = 'none';
+    document.getElementById('edit-mode').style.display = 'block';
+    document.getElementById('coord-input').classList.add('edit-mode-indicator');
+    
+    document.getElementById('edit-name').value = selectedMarker.name;
+    document.getElementById('edit-x').value = selectedMarker.x.toFixed(2);
+    document.getElementById('edit-y').value = selectedMarker.y.toFixed(2);
+    
+    updateMarkerDraggableState();
+    document.getElementById('edit-name').focus();
+}
+
+// Exit edit mode
+function exitEditMode() {
+    isEditMode = false;
+    document.getElementById('normal-mode').style.display = 'block';
+    document.getElementById('edit-mode').style.display = 'none';
+    document.getElementById('coord-input').classList.remove('edit-mode-indicator');
+    clearSelection();
+}
+
+// Clear selection
+function clearSelection() {
+    if (selectedMarker) {
+        const listItem = getMarkerElement(selectedMarker.id);
+        if (listItem) listItem.classList.remove('selected');
+        
+        const mapMarker = getMapMarker(selectedMarker.id);
+        if (mapMarker) {
+            mapMarker.closePopup();
+        }
+        
+        selectedMarker = null;
+    }
+    
+    updateMarkerDraggableState();
+    exitEditMode();
+}
+
+// Event Listeners
+document.getElementById('place-marker').addEventListener('click', function() {
+    const x = document.getElementById('coord-x').value;
+    const y = document.getElementById('coord-y').value;
+    const name = document.getElementById('marker-name').value;
+
+    if (!x || !y) {
+        alert('Please enter both X and Y coordinates');
+        return;
+    }
+
+    const markerData = saveMarker(x, y, name);
+    
+    document.getElementById('coord-x').value = '';
+    document.getElementById('coord-y').value = '';
+    document.getElementById('marker-name').value = '';
+    
+    selectMarker(markerData.id);
+});
+
+document.getElementById('save-edit').addEventListener('click', function() {
+    if (!selectedMarker) return;
+    
+    const newName = document.getElementById('edit-name').value;
+    const newX = document.getElementById('edit-x').value;
+    const newY = document.getElementById('edit-y').value;
+    
+    if (!newName || !newX || !newY) {
+        alert('Please fill all fields');
+        return;
+    }
+    
+    updateMarker(selectedMarker.id, {
+        name: newName,
+        x: parseFloat(newX),
+        y: parseFloat(newY)
+    });
+    
+    exitEditMode();
+});
+
+document.getElementById('cancel-edit').addEventListener('click', exitEditMode);
+
+// Map double-click handler
+mymap.on('dblclick', handleMapDoubleClick);
+
+// Initialize example marker
+L.marker([0, 0], {icon: createBlipIcon('#3498db')})
+    .addTo(ExampleGroup)
+    .bindPopup(`
+        <div style="text-align: center; min-width: 180px;">
+            <strong>Welcome to GTA V Map!</strong><br><br>
+            <small>• Double-click anywhere on the map to copy coordinates</small><br>
+            <small>• Drag markers to move them (edit mode only)</small><br>
+            <small>• Click markers to edit them</small><br>
+            <small>• Drag the control panel anywhere</small>
+        </div>
+    `);
+
+// Load saved markers and show welcome modal on page load
+window.addEventListener('load', function() {
+    console.log('Loading saved markers:', savedMarkers.length);
+    savedMarkers.forEach(marker => placeMarkerOnMap(marker));
+    updateMarkerList();
+    
+    // Initialize draggable panel FIRST
+    initDraggablePanel();
+    
+    // Set the saved map layer
+    const savedLayer = getSavedMapLayer();
+    setMapLayer(savedLayer);
+    
+    // Add layer groups to map
+    ExampleGroup.addTo(mymap);
+    SavedMarkersGroup.addTo(mymap);
+    
+    // Add layer control
+    var layersControl = L.control.layers({
+        "Satellite": SateliteStyle,
+        "Atlas": AtlasStyle,
+        "Grid": GridStyle
+    }, {
+        "Example Markers": ExampleGroup,
+        "Saved Markers": SavedMarkersGroup
+    }, {
+        collapsed: false
+    }).addTo(mymap);
+    
+    // Listen for layer changes to save the selection
+    mymap.on('baselayerchange', function(e) {
+        let layerId = 'satellite';
+        if (e.name === 'Atlas') layerId = 'atlas';
+        if (e.name === 'Grid') layerId = 'grid';
+        setCookie('gtav_map_layer', layerId, 365);
+    });
+    
+    // ALWAYS show welcome modal on load
+    setTimeout(showWelcomeModal, 500);
+    
+    setTimeout(hideInstructionTooltip, 5000);
+    
+    // Modal event listeners
+    document.getElementById('got-it-btn').addEventListener('click', hideWelcomeModal);
+    document.querySelector('.close-modal').addEventListener('click', hideWelcomeModal);
+    
+    document.getElementById('welcome-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            hideWelcomeModal();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('welcome-modal').classList.contains('show')) {
+            hideWelcomeModal();
+        }
+    });
+});
+
+// Make functions globally accessible
+window.selectMarker = selectMarker;
+window.deleteMarker = deleteMarker;
