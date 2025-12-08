@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Jordan's Interactive Map</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="stylesheet" href="style.css">
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+   </head>
+   <body>
+      <!-- Welcome Modal -->
+      <div id="welcome-modal" class="modal">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h2><i class="fas fa-map-marked-alt"></i> Welcome to Jordan's Interactive GTA Map</h2>
+               <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+               <div class="welcome-icon">
+                  <i class="fas fa-map"></i>
+               </div>
+               <p>This interactive map allows you to:</p>
+               <ul>
+                  <li><i class="fas fa-mouse-pointer"></i> Double-click the map to copy coordinates</li>
+                  <li><i class="fas fa-map-marker-alt"></i> Create custom markers with names</li>
+                  <li><i class="fas fa-arrows-alt"></i> Drag markers to new positions (edit mode only)</li>
+                  <li><i class="fas fa-edit"></i> Edit existing markers</li>
+                  <li><i class="fas fa-save"></i> Save markers locally in your browser</li>
+                  <li><i class="fas fa-hand-paper"></i> Drag the control panel anywhere</li>
+                  <li><i class="fas fa-layer-group"></i> Your map selection is saved automatically</li>
+               </ul>
+               <div class="report-bug">
+                  <p><i class="fas fa-bug"></i> Please report any bugs to 
+                     <a href="https://forum.gta.world/en/profile/47870-jordan447/" target="_blank" class="forum-link">
+                        <i class="fas fa-user"></i> Jordan447
+                     </a> 
+                     on the GTA:W Forums
+                  </p>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button id="got-it-btn" class="modal-btn">
+                  <i class="fas fa-check"></i> Got it, let's explore!
+               </button>
+            </div>
+         </div>
+      </div>
+
+      <!-- Control Panel (now draggable) -->
+      <div id="coord-input" class="draggable-panel">
+         <div class="panel-header">
+            <h3><i class="fas fa-map-marked-alt"></i> Marker Controls</h3>
+            <div class="panel-controls">
+               <button class="panel-toggle" title="Minimize/Maximize">
+                  <i class="fas fa-window-minimize"></i>
+               </button>
+               <div class="drag-handle" title="Drag to move">
+                  <i class="fas fa-arrows-alt"></i>
+               </div>
+            </div>
+         </div>
+         
+         <div class="panel-content">
+            <div id="normal-mode">
+               <h4><i class="fas fa-map-marker-alt"></i> Add New Marker</h4>
+               <div class="input-group">
+                  <label for="marker-name">Marker Name</label>
+                  <input type="text" id="marker-name" placeholder="Enter marker name">
+               </div>
+               <div class="input-group">
+                  <label for="coord-x">X Coordinate</label>
+                  <input type="number" id="coord-x" step="0.01" placeholder="Double-click map for coordinates">
+               </div>
+               <div class="input-group">
+                  <label for="coord-y">Y Coordinate</label>
+                  <input type="number" id="coord-y" step="0.01" placeholder="Double-click map for coordinates">
+               </div>
+               <div class="button-group">
+                  <button id="place-marker"><i class="fas fa-plus"></i> Place Marker</button>
+               </div>
+            </div>
+            
+            <div id="edit-mode" style="display: none;">
+               <h4><i class="fas fa-edit"></i> Edit Marker <span class="edit-mode-badge">Drag Enabled</span></h4>
+               <div class="input-group">
+                  <label for="edit-name">Marker Name</label>
+                  <input type="text" id="edit-name">
+               </div>
+               <div class="input-group">
+                  <label for="edit-x">X Coordinate</label>
+                  <input type="number" id="edit-x" step="0.01">
+               </div>
+               <div class="input-group">
+                  <label for="edit-y">Y Coordinate</label>
+                  <input type="number" id="edit-y" step="0.01">
+               </div>
+               <div class="button-group">
+                  <button id="save-edit"><i class="fas fa-save"></i> Save Changes</button>
+                  <button id="cancel-edit"><i class="fas fa-times"></i> Cancel</button>
+               </div>
+            </div>
+            
+            <div class="saved-markers">
+               <h4><i class="fas fa-list"></i> Saved Markers</h4>
+               <div id="marker-list"></div>
+            </div>
+            
+            <div class="map-info">
+               <p><i class="fas fa-info-circle"></i> Map selection is saved automatically. Use the layer control (top-right) to switch between Satellite, Atlas, and Grid views.</p>
+            </div>
+         </div>
+      </div>
+      <div id="map"></div>
+      
+      <!-- Double-click instruction tooltip -->
+      <div id="map-instruction" class="map-instruction">
+         <i class="fas fa-mouse-pointer"></i>
+         <span>Double-click the map to copy coordinates</span>
+      </div>
+      
+      <script src="script.js"></script>
+   </body>
+</html>
