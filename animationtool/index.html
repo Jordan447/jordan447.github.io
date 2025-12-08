@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GTA V Style CustomAnim Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="information">
+      <h3>Information</h3>
+      <div class="info-content">
+        <strong>Flags:</strong><br>
+        <strong>normal</strong> – Anim plays once, then returns your character to its initial state<br>
+        <strong>repeat</strong> – makes moving anims start over when they finish<br>
+        <strong>stoplastframe</strong> – makes the anim freeze on the last frame of the animation<br>
+        <strong>upperbody</strong> – only applies the anim to your torso, head and arms. This can be used to make more walking anims if you only use one anim and flag
+      </div>
+      <div class="info-footer">
+        Found an issue/bug? Report it <a href="https://forum.gta.world/en/topic/143313-i-made-a-custom-anim-generator/" target="_blank">here</a>.<br> Discord: aetherion._.
+      </div>
+    </div>
+    <div class="container">
+      <h2>/customanim Generator</h2>
+      <label>Animation 1</label>
+      <input type="text" id="anim1" placeholder="e.g. wave">
+      <label>Flag 1</label>
+      <select id="flag1">
+        <option value="normal">normal</option>
+        <option value="repeat">repeat</option>
+        <option value="stoplastframe" selected>stoplastframe</option>
+        <option value="upperbody">upperbody</option>
+      </select>
+      <label><input type="checkbox" id="oneAnimToggle"> Use only one animation</label>
+      <div id="secondAnimSection">
+        <label>Animation 2</label>
+        <input type="text" id="anim2" placeholder="e.g. dance">
+        <label>Flag 2</label>
+        <select id="flag2">
+          <option value="normal">normal</option>
+          <option value="repeat">repeat</option>
+          <option value="stoplastframe">stoplastframe</option>
+          <option value="upperbody" selected>upperbody</option>
+        </select>
+      </div>
+      
+      <label>Favorite Name</label>
+      <input type="text" id="favName" placeholder="e.g. chillpose">
+      <label>Character Tag</label>
+      <input type="text" id="favCharacter" placeholder="e.g. Michael">
+      <div class="output" id="output">
+        <span class="output-text">/customanim ...</span>
+        <div class="action-buttons">
+          <button id="copyBtn">📋<span class="copy-tooltip" id="copyTooltip">Copied</span></button>
+          <button id="saveBtn" class="star-btn">★</button>
+          <button id="updateBtn" style="display:none;">Update</button>
+          <button id="cancelEditBtn" style="display:none;">Cancel</button>
+        </div>
+      </div>
+      <button class="btn btn-generate" onclick="generateCommand()">Generate</button>
+    </div>
+    <div class="favorites">
+      <h3>
+        <span>Favorites</span>
+        <button class="btn export-btn" onclick="exportFavorites()">Export</button>
+        <input type="file" id="importFile" accept=".txt" style="display:none" onchange="importFavorites(event)">
+        <button class="btn import-btn" onclick="document.getElementById('importFile').click()">Import</button>
+      </h3>
+      <input type="text" id="searchBox" placeholder="Search or filter by character..." oninput="renderFavorites()">
+      <div id="favoritesList"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
