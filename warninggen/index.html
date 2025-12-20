@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Jordan's Traffic Warning Generator</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="dark-mode-switch">
+        <label for="dark-mode-switch" class="dark-mode-label">
+            <div class="dark-mode-slider"></div>
+            <span class="dark-mode-text">Dark Mode</span>
+        </label>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-alt"></i>TRAFFIC WARNING GENERATOR</h1>
+            <p class="subtitle">Generate traffic warnings for your RP.</p>
+        </header>
+        
+        <div class="form-section">
+            <h2>Warning Details</h2>
+            
+            <div class="form-group">
+                <label for="agency">Law Enforcement Agency</label>
+                <select id="agency" onchange="updateAgencyLabels()">
+                    <option value="LSPD">LOS SANTOS POLICE DEPARTMENT</option>
+                    <option value="LSSD">LOS SANTOS SHERIFF'S DEPARTMENT</option>
+                </select>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="badgeNumber" id="badgeLabel">Officer Badge/ID Number</label>
+                    <input type="text" id="badgeNumber" placeholder="Enter badge number">
+                </div>
+                <div class="form-group">
+                    <label for="officerName" id="officerLabel">Officer Name</label>
+                    <input type="text" id="officerName" placeholder="Enter officer name">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Date of Violation</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time of Violation</label>
+                    <input type="time" id="time">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="location">Location of Violation</label>
+                    <input type="text" id="location" placeholder="Enter violation location">
+            </div>
+            
+            <div class="section-separator"></div>
+            
+            <h2>Driver Information</h2>
+            
+            <div class="form-group">
+                <label for="driverName">Driver's Full Name</label>
+                <input type="text" id="driverName" placeholder="Enter driver name">
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dlNumber">Driver's License Number</label>
+                    <input type="text" id="dlNumber" placeholder="Enter license number">
+                </div>
+                <div class="form-group">
+                    <label for="dlState">License State</label>
+                    <select id="dlState">
+                        <option value="SA">San Andreas</option>
+                        <option value="BC">Blaine County</option>
+                        <option value="LS">Los Santos</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="Enter street address">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <select id="city">
+                        <option value="Los Santos">Los Santos</option>
+                        <option value="Vinewood">Vinewood</option>
+                        <option value="Sandy Shores">Sandy Shores</option>
+                        <option value="Paleto Bay">Paleto Bay</option>
+                        <option value="Grapeseed">Grapeseed</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="section-separator"></div>
+            
+            <h2>Vehicle Information</h2>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="vehicleMake">Vehicle Make</label>
+                    <div class="searchable-select">
+                        <input type="text" id="vehicleMake" list="vehicleMakeOptions" placeholder="Start typing or select from dropdown">
+                        <datalist id="vehicleMakeOptions">
+                            <option value="Albany">Albany</option>
+                            <option value="Annis">Annis</option>
+                            <option value="Benefactor">Benefactor</option>
+                            <option value="Bravado">Bravado</option>
+                            <option value="Brute">Brute</option>
+                            <option value="Buckingham">Buckingham</option>
+                            <option value="Canis">Canis</option>
+                            <option value="Chariot">Chariot</option>
+                            <option value="Cheval">Cheval</option>
+                            <option value="Classique">Classique</option>
+                            <option value="Coil">Coil</option>
+                            <option value="Declasse">Declasse</option>
+                            <option value="Dewbauchee">Dewbauchee</option>
+                            <option value="Dinka">Dinka</option>
+                            <option value="Dundreary">Dundreary</option>
+                            <option value="Emperor">Emperor</option>
+                            <option value="Enus">Enus</option>
+                            <option value="Fathom">Fathom</option>
+                            <option value="Gallivanter">Gallivanter</option>
+                            <option value="Grotti">Grotti</option>
+                            <option value="HVY">HVY</option>
+                            <option value="Hijak">Hijak</option>
+                            <option value="Imponte">Imponte</option>
+                            <option value="Invetero">Invetero</option>
+                            <option value="JoBuilt">JoBuilt</option>
+                            <option value="Karin">Karin</option>
+                            <option value="Lampadati">Lampadati</option>
+                            <option value="Liberty">Liberty</option>
+                            <option value="Maibatsu">Maibatsu</option>
+                            <option value="Mammoth">Mammoth</option>
+                            <option value="MTL">MTL</option>
+                            <option value="Nagasaki">Nagasaki</option>
+                            <option value="Obey">Obey</option>
+                            <option value="Ocelot">Ocelot</option>
+                            <option value="Overflod">Overflod</option>
+                            <option value="Pegassi">Pegassi</option>
+                            <option value="Pfister">Pfister</option>
+                            <option value="Principe">Principe</option>
+                            <option value="Progen">Progen</option>
+                            <option value="RUNE">RUNE</option>
+                            <option value="Schyster">Schyster</option>
+                            <option value="Shitzu">Shitzu</option>
+                            <option value="Speedophile">Speedophile</option>
+                            <option value="Stanley">Stanley</option>
+                            <option value="Truffade">Truffade</option>
+                            <option value="Ubermacht">Ubermacht</option>
+                            <option value="Vapid">Vapid</option>
+                            <option value="Vulcar">Vulcar</option>
+                            <option value="Weeny">Weeny</option>
+                            <option value="Western">Western</option>
+                            <option value="Willard">Willard</option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="vehicleModel">Vehicle Model</label>
+                    <div class="searchable-select">
+                        <input type="text" id="vehicleModel" list="vehicleModelOptions" placeholder="Start typing or select from dropdown">
+                        <datalist id="vehicleModelOptions">
+                            <!-- Models will be populated by JavaScript based on make -->
+                        </datalist>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="vehicleColor">Color</label>
+                    <input type="text" id="vehicleColor" placeholder="Enter vehicle color">
+                </div>
+                <div class="form-group">
+                    <label for="licensePlate">License Plate</label>
+                    <input type="text" id="licensePlate" placeholder="Enter license plate">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="plateState">Plate State</label>
+                <select id="plateState">
+                    <option value="SA">San Andreas</option>
+                    <option value="BC">Blaine County</option>
+                    <option value="LS">Los Santos</option>
+                </select>
+            </div>
+            
+            <div class="section-separator"></div>
+            
+            <h2>Violation Details <button type="button" class="small-btn" onclick="addInfraction()"><i class="fas fa-plus"></i> Add Another</button></h2>
+            
+            <div id="infractionsContainer">
+                <!-- Infraction rows will be added here dynamically -->
+                <div class="infraction-row" data-infraction-id="1">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="infractionType1">Infraction Type</label>
+                            <select id="infractionType1" class="infraction-type">
+                                <option value="">Select infraction type</option>
+                                <option value="IC 405. Failure to Produce Proof of Insurance">IC 405. Failure to Produce Proof of Insurance</option>
+                                <option value="IC 406. Unregistered Vehicle">IC 406. Unregistered Vehicle</option>
+                                <option value="IC 407. No Insurance">IC 407. No Insurance</option>
+                                <option value="IC 410. Speeding">IC 410. Speeding</option>
+                                <option value="IC 411. Excessive Speeding">IC 411. Excessive Speeding</option>
+                                <option value="IC 412. Failure to Yield/Stop to a Traffic Control Device">IC 412. Failure to Yield/Stop to a Traffic Control Device</option>
+                                <option value="IC 413. Failure to Yield at Intersection">IC 413. Failure to Yield at Intersection</option>
+                                <option value="IC 414. Failure to Yield Entering Roadway">IC 414. Failure to Yield Entering Roadway</option>
+                                <option value="IC 415. Failure to Yield for Crosswalk">IC 415. Failure to Yield for Crosswalk</option>
+                                <option value="IC 416. Failure to Yield to an Emergency Vehicle">IC 416. Failure to Yield to an Emergency Vehicle</option>
+                                <option value="IC 417. Improper Lane Entry while Turning">IC 417. Improper Lane Entry while Turning</option>
+                                <option value="IC 418. Prohibited Parking">IC 418. Prohibited Parking</option>
+                                <option value="IC 421. Drive Without Headlights">IC 421. Drive Without Headlights</option>
+                                <option value="IC 422. Unsafe Reversing">IC 422. Unsafe Reversing</option>
+                                <option value="IC 423. Obstructing Traffic">IC 423. Obstructing Traffic</option>
+                                <option value="IC 424. Driving Against One-Way Traffic">IC 424. Driving Against One-Way Traffic</option>
+                                <option value="IC 425. Imprudent Driving">IC 425. Imprudent Driving</option>
+                                <option value="IC 426. Use of an Electronic Device while Driving">IC 426. Use of an Electronic Device while Driving</option>
+                                <option value="IC 427. Vehicular Noise Violation">IC 427. Vehicular Noise Violation</option>
+                                <option value="IC 428. Illegal Usage of Hydraulics">IC 428. Illegal Usage of Hydraulics</option>
+                                <option value="IC 429. Tinted Windows">IC 429. Tinted Windows</option>
+                                <option value="IC 433. Jaywalking">IC 433. Jaywalking</option>
+                                <option value="IC 434. Possession of Open Container">IC 434. Possession of Open Container</option>
+                                <option value="IC 435. Failure to Wear a Seatbelt/Safety Equipment">IC 435. Failure to Wear a Seatbelt/Safety Equipment</option>
+                                <option value="IC 436. Operation of Unsafe Motor Vehicle">IC 436. Operation of Unsafe Motor Vehicle</option>
+                                <option value="IC 441. Negligent Operation of Bicycle">IC 441. Negligent Operation of Bicycle</option>
+                                <option value="IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach">IC 442. Operation of an Unauthorized Vehicle on Vespucci Beach</option>
+                                <option value="IC 611. Fire Code Violation">IC 611. Fire Code Violation</option>
+                                <option value="IC 612. Littering">IC 612. Littering</option>
+                                <option value="IC 613. Noise Disturbance">IC 613. Noise Disturbance</option>
+                                <option value="IC 614. Public Nuisance">IC 614. Public Nuisance</option>
+                                <option value="IC 615. Trespassing (I)">IC 615. Trespassing (I)</option>
+                                <option value="IC 616. Public Intoxication (I)">IC 616. Public Intoxication (I)</option>
+                                <option value="IC 617. Unlawful Camping">IC 617. Unlawful Camping</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-header">
+                                <label for="violationDescription1">Violation Description</label>
+                                <button type="button" class="remove-btn" onclick="removeInfraction(this)" style="display: none;"><i class="fas fa-trash"></i></button>
+                            </div>
+                            <textarea id="violationDescription1" class="violation-description" placeholder="Enter details of the observed violation"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="officerComments" id="commentsLabel">Officer Comments</label>
+                <textarea id="officerComments" placeholder="Enter additional observations"></textarea>
+            </div>
+            
+            <div class="button-group">
+                <button class="discord-btn" onclick="updatePreview()"><i class="fas fa-sync-alt"></i> Update Preview</button>
+                <button class="secondary-btn" onclick="generateRandomData()"><i class="fas fa-dice"></i> Random Data</button>
+                <button class="discord-btn download-btn" onclick="downloadAsPNG()"><i class="fas fa-download"></i> Download as PNG</button>
+                <button class="secondary-btn" onclick="clearForm()"><i class="fas fa-eraser"></i> Clear Form</button>
+            </div>
+            
+            <p class="form-note">This is a fictional tool for entertainment purposes only</p>
+        </div>
+        
+        <div class="preview-section">
+            <h2>Warning Preview</h2>
+            <div id="warningPreview" class="warning-form">
+                <!-- Preview will be generated here -->
+            </div>
+            
+            <div class="instructions-section">
+                <h3><i class="fas fa-gamepad"></i> How to Use in FiveM RP</h3>
+                <div class="instructions-content">
+                    <div class="instruction-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>Download the image</strong>
+                            <p>Right click the preview image above and select "Save image as..." to save it to your computer.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Upload to image host</strong>
+                            <p>Go to <a href="https://imgbb.com/" target="_blank" class="link">IMGbb</a> and upload the downloaded image.</p>
+                            <p class="small-note">Any image hosting service that provides direct .png links will work.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Purchase blank notes</strong>
+                            <p>Go to any 24/7 store in-game and buy some blank note items.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <strong>Create the warning note</strong>
+                            <p>Use the following commands in-game:</p>
+                            <div class="command-box">
+                                <code>/note [id] 1 "Traffic Warning - [Driver Name]"</code>
+                                <p class="command-hint">Replace [id] with the blank note item ID in your inventory</p>
+                            </div>
+                            <div class="command-box">
+                                <code>/note [id] 1 "[Image URL ending with .png]"</code>
+                                <p class="command-hint">Replace [id] with the new note item ID and [Image URL] with your uploaded image link</p>
+                            </div>
+                            <p class="small-note">[!] If you keep the name and content the same for every note, they can be stacked.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <strong>Distribute warnings</strong>
+                            <p>Use the following command to give out your traffic warning notes to other players:</p>
+                            <div class="command-box">
+                                <code>/giveitem [player-id] [item-id] 1</code>
+                                <p class="command-hint">Replace [player-id] with the target player's ID and [item-id] with the note item ID</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <strong>Tip:</strong> For easier management, name all your traffic warning notes consistently, e.g., "LSPD Traffic Warning" or "LSSD Traffic Warning"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-message">
+        <div class="success-message-content">
+            <i class="fas fa-check-circle"></i>
+            <h2>Warning Generated Successfully!</h2>
+            <p>Your Los Santos traffic warning has been downloaded as a PNG file.</p>
+            <p class="success-instructions">Check the "How to Use in FiveM RP" section below for instructions on using it in-game.</p>
+            <button id="close-success">Close</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Created by <a href="https://github.com/jordan" target="_blank">Jordan</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
