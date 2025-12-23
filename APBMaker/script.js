@@ -43,9 +43,9 @@ const closeSuccess = document.getElementById('close-success');
 // Dark Mode Toggle
 const darkModeSwitch = document.getElementById('dark-mode-switch');
 
-// Store loaded images
-let loadedBulletinImage = null;
-let loadedMugshotImage = null;
+// Store image data URLs
+let mugshotDataURL = null;
+let bulletinDataURL = null;
 
 // Initialize character counts
 function updateCharacterCounts() {
@@ -78,28 +78,64 @@ function updatePreview() {
     updateCharacterCounts();
 }
 
-// Load an image with better error handling
-function loadImage(url) {
+// Convert any image to data URL (solves CORS issues)
+function imageToDataURL(url) {
     return new Promise((resolve, reject) => {
         if (!url) {
-            reject(new Error('No URL provided'));
+            resolve(null);
+            return;
+        }
+        
+        // If already a data URL, return it
+        if (url.startsWith('data:image')) {
+            resolve(url);
             return;
         }
         
         const img = new Image();
-        img.crossOrigin = 'anonymous'; // Try to allow CORS
         
-        img.onload = () => resolve(img);
-        img.onerror = (err) => {
-            console.warn('Failed to load image with CORS, trying without:', url);
-            // Try without CORS
-            const img2 = new Image();
-            img2.onload = () => resolve(img2);
-            img2.onerror = () => reject(new Error('Failed to load image: ' + url));
-            img2.src = url;
+        // Handle local files vs external URLs
+        if (url.includes('Bulletin.png') || url.includes('bulletin.png')) {
+            img.crossOrigin = 'anonymous';
+        } else {
+            img.crossOrigin = 'anonymous';
+        }
+        
+        img.onload = function() {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth || img.width;
+                canvas.height = img.naturalHeight || img.height;
+                
+                const ctx = canvas.getContext('2d');
+                
+                // Draw white background first for transparency issues
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw the image
+                ctx.drawImage(img, 0, 0);
+                
+                // Get data URL
+                const dataURL = canvas.toDataURL('image/png');
+                resolve(dataURL);
+            } catch (error) {
+                console.error('Error creating data URL:', error);
+                resolve(url); // Fallback to original URL
+            }
         };
         
-        img.src = url;
+        img.onerror = function() {
+            console.warn('Failed to load image for data URL conversion:', url);
+            resolve(null);
+        };
+        
+        // Load the image with cache busting
+        if (url.includes('Bulletin.png') || url.includes('bulletin.png')) {
+            img.src = url + (url.includes('?') ? '&' : '?') + 't=' + Date.now();
+        } else {
+            img.src = url;
+        }
     });
 }
 
@@ -110,30 +146,42 @@ async function handleMugshotInput() {
     if (!url) {
         mugshot.style.display = 'none';
         mugshot.src = '';
-        loadedMugshotImage = null;
+        mugshotDataURL = null;
         return;
     }
     
+    // Show loading
+    mugshot.style.display = 'block';
+    mugshot.src = ''; // Clear previous
+    
     try {
-        const img = await loadImage(url);
-        mugshot.src = url;
-        mugshot.style.display = 'block';
-        loadedMugshotImage = img;
+        // Convert to data URL for reliable loading
+        mugshotDataURL = await imageToDataURL(url);
+        
+        if (mugshotDataURL) {
+            mugshot.src = mugshotDataURL;
+            mugshot.style.display = 'block';
+        } else {
+            mugshot.style.display = 'none';
+            console.log('Failed to convert mugshot to data URL');
+        }
     } catch (error) {
-        console.error('Failed to load mugshot:', error);
+        console.error('Error handling mugshot:', error);
         mugshot.style.display = 'none';
-        loadedMugshotImage = null;
+        mugshotDataURL = null;
     }
 }
 
-// Preload bulletin image
-async function preloadBulletinImage() {
+// Load bulletin image as data URL
+async function loadBulletinImage() {
     try {
-        loadedBulletinImage = await loadImage('Bulletin.png');
-        bulletinImage.src = 'Bulletin.png';
+        bulletinDataURL = await imageToDataURL('Bulletin.png');
+        if (bulletinDataURL) {
+            bulletinImage.src = bulletinDataURL;
+        }
     } catch (error) {
-        console.warn('Failed to preload bulletin image:', error);
-        loadedBulletinImage = null;
+        console.warn('Could not load bulletin image:', error);
+        bulletinDataURL = null;
     }
 }
 
@@ -152,171 +200,88 @@ function setupEventListeners() {
     let mugshotTimeout;
     mugshotUrlInput.addEventListener('input', function() {
         clearTimeout(mugshotTimeout);
-        mugshotTimeout = setTimeout(() => handleMugshotInput(), 800);
+        mugshotTimeout = setTimeout(handleMugshotInput, 800);
     });
     
-    mugshotUrlInput.addEventListener('blur', () => handleMugshotInput());
+    mugshotUrlInput.addEventListener('blur', handleMugshotInput);
 }
 
-// Create a simple canvas-based poster as fallback
-function createPosterWithCanvas() {
-    return new Promise(async (resolve) => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
+// Wait for all images to load
+function waitForImages() {
+    return new Promise((resolve) => {
+        const images = document.querySelectorAll('#poster img');
+        let loadedCount = 0;
+        const totalImages = images.length;
         
-        // Set dimensions
-        canvas.width = 600 * 2;
-        canvas.height = 800 * 2;
-        
-        // Fill background
-        ctx.fillStyle = '#eaeaea';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        let yPos = 0;
-        
-        // Draw bulletin image if enabled and loaded
-        if (bulletinToggle.checked && loadedBulletinImage) {
-            try {
-                const imgHeight = (canvas.width / loadedBulletinImage.width) * loadedBulletinImage.height;
-                ctx.drawImage(loadedBulletinImage, 0, yPos, canvas.width, imgHeight);
-                yPos += imgHeight;
-                
-                // Draw border
-                ctx.strokeStyle = '#000';
-                ctx.lineWidth = 2;
-                ctx.strokeRect(0, yPos - 2, canvas.width, 2);
-            } catch (error) {
-                console.log('Could not draw bulletin image');
-            }
+        if (totalImages === 0) {
+            resolve();
+            return;
         }
         
-        // Draw WANTED header
-        const headerHeight = 60 * 2;
-        ctx.fillStyle = '#ffd800';
-        ctx.fillRect(0, yPos, canvas.width, headerHeight);
-        ctx.fillStyle = '#000';
-        ctx.font = 'bold 44px Anton, Arial';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(pWanted.textContent, canvas.width / 2, yPos + headerHeight / 2);
-        yPos += headerHeight;
-        
-        // Draw charge bar
-        const chargeHeight = 50 * 2;
-        ctx.fillStyle = '#5c5c5c';
-        ctx.fillRect(0, yPos, canvas.width, chargeHeight);
-        ctx.fillStyle = '#fff';
-        ctx.font = 'bold 22px Oswald, Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText(pCharge.textContent, canvas.width / 2, yPos + chargeHeight / 2);
-        yPos += chargeHeight;
-        
-        // Draw mugshot if available
-        const mugshotAreaY = yPos + 30 * 2;
-        if (loadedMugshotImage) {
-            try {
-                const mugshotSize = 200 * 2;
-                const mugshotX = canvas.width / 2 - mugshotSize / 2;
-                
-                // Draw white background
-                ctx.fillStyle = '#fff';
-                ctx.fillRect(mugshotX - 5, mugshotAreaY - 5, mugshotSize + 10, mugshotSize + 10);
-                
-                // Draw mugshot
-                ctx.drawImage(loadedMugshotImage, mugshotX, mugshotAreaY, mugshotSize, mugshotSize);
-                
-                // Draw border
-                ctx.strokeStyle = '#000';
-                ctx.lineWidth = 4;
-                ctx.strokeRect(mugshotX, mugshotAreaY, mugshotSize, mugshotSize);
-                
-                yPos = mugshotAreaY + mugshotSize + 30 * 2;
-            } catch (error) {
-                console.log('Could not draw mugshot');
-                yPos += 60 * 2;
-            }
-        } else {
-            yPos += 60 * 2;
-        }
-        
-        // Draw suspect name
-        ctx.fillStyle = '#000';
-        ctx.font = 'bold 22px Oswald, Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText(pName.textContent, canvas.width / 2, mugshotAreaY + (loadedMugshotImage ? 220 * 2 : 30 * 2));
-        
-        // Draw description
-        ctx.fillStyle = '#000';
-        ctx.font = '14px Courier Prime, monospace';
-        ctx.textAlign = 'left';
-        ctx.textBaseline = 'top';
-        
-        const description = pDescription.textContent;
-        const lineHeight = 20 * 2;
-        const maxWidth = canvas.width - 100 * 2;
-        const startX = 50 * 2;
-        
-        let lineY = yPos;
-        const words = description.split(' ');
-        let line = '';
-        
-        for (let i = 0; i < words.length; i++) {
-            const testLine = line + words[i] + ' ';
-            const metrics = ctx.measureText(testLine);
-            
-            if (metrics.width > maxWidth && i > 0) {
-                ctx.fillText(line, startX, lineY);
-                line = words[i] + ' ';
-                lineY += lineHeight;
+        images.forEach(img => {
+            if (img.complete) {
+                loadedCount++;
+                if (loadedCount === totalImages) resolve();
             } else {
-                line = testLine;
+                img.onload = function() {
+                    loadedCount++;
+                    if (loadedCount === totalImages) resolve();
+                };
+                img.onerror = function() {
+                    loadedCount++;
+                    if (loadedCount === totalImages) resolve();
+                };
             }
-        }
+        });
         
-        if (line) {
-            ctx.fillText(line, startX, lineY);
-        }
-        
-        lineY += 40 * 2;
-        
-        // Draw contact bar
-        const contactHeight = 80 * 2;
-        ctx.fillStyle = '#4f5f3a';
-        ctx.fillRect(0, lineY, canvas.width, contactHeight);
-        ctx.fillStyle = '#ffd800';
-        ctx.font = '14px Oswald, Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText('Any information, please contact:', canvas.width / 2, lineY + 20 * 2);
-        
-        ctx.font = 'bold 14px Oswald, Arial';
-        ctx.fillText(pContact.textContent, canvas.width / 2, lineY + 40 * 2);
-        
-        ctx.font = 'bold 16px Oswald, Arial';
-        ctx.fillText(`ATTENTION: ${pDetective.textContent}`, canvas.width / 2, lineY + 60 * 2);
-        
-        lineY += contactHeight;
-        
-        // Draw footer
-        const footerHeight = 40 * 2;
-        ctx.fillStyle = '#000';
-        ctx.fillRect(0, lineY, canvas.width, footerHeight);
-        ctx.fillStyle = '#fff';
-        ctx.font = '12px Share Tech Mono, monospace';
-        
-        // Date (left)
-        ctx.textAlign = 'left';
-        ctx.fillText(pDate.textContent, 50 * 2, lineY + footerHeight / 2);
-        
-        // APB (center)
-        ctx.textAlign = 'center';
-        ctx.fillText('APB', canvas.width / 2, lineY + footerHeight / 2);
-        
-        // Created by (right)
-        ctx.textAlign = 'right';
-        ctx.fillText('Created by SIB', canvas.width - 50 * 2, lineY + footerHeight / 2);
-        
-        resolve(canvas);
+        // Timeout after 5 seconds
+        setTimeout(resolve, 5000);
     });
+}
+
+// Create a cloned poster with data URLs
+function createPosterClone() {
+    const original = document.getElementById('poster');
+    const clone = original.cloneNode(true);
+    
+    // Update images in clone with data URLs
+    if (bulletinToggle.checked && bulletinDataURL) {
+        const bulletinImg = clone.querySelector('.bulletin-image');
+        if (bulletinImg) {
+            bulletinImg.src = bulletinDataURL;
+        }
+    } else {
+        // Hide bulletin container if not enabled
+        const bulletinContainer = clone.querySelector('.bulletin-image-container');
+        if (bulletinContainer) {
+            bulletinContainer.style.display = 'none';
+        }
+    }
+    
+    if (mugshotDataURL) {
+        const mugshotImg = clone.querySelector('#mugshot');
+        if (mugshotImg) {
+            mugshotImg.src = mugshotDataURL;
+            mugshotImg.style.display = 'block';
+        }
+    } else {
+        // Hide mugshot if no image
+        const mugshotImg = clone.querySelector('#mugshot');
+        if (mugshotImg) {
+            mugshotImg.style.display = 'none';
+        }
+    }
+    
+    // Style the clone for capture
+    clone.style.position = 'absolute';
+    clone.style.left = '-9999px';
+    clone.style.top = '0';
+    clone.style.width = '600px';
+    clone.style.background = '#eaeaea';
+    clone.style.visibility = 'visible';
+    clone.style.opacity = '1';
+    
+    return clone;
 }
 
 // Main function to generate APB Poster
@@ -327,20 +292,28 @@ async function generateAPBPoster() {
     generateBtn.disabled = true;
     
     try {
-        // First try html2canvas with the visible element
-        const posterElement = document.getElementById('poster');
+        // Wait for images to load
+        await waitForImages();
         
-        // Ensure all images are loaded
+        // Create a clone with data URLs
+        const clone = createPosterClone();
+        document.body.appendChild(clone);
+        
+        // Give browser time to render the clone
         await new Promise(resolve => setTimeout(resolve, 500));
         
-        const canvas = await html2canvas(posterElement, {
+        // Capture with html2canvas
+        const canvas = await html2canvas(clone, {
             scale: 2,
             backgroundColor: '#eaeaea',
             logging: false,
             useCORS: true,
             allowTaint: true,
-            imageTimeout: 10000 // 10 second timeout
+            imageTimeout: 10000
         });
+        
+        // Remove clone
+        document.body.removeChild(clone);
         
         // Download the image
         const link = document.createElement('a');
@@ -355,29 +328,35 @@ async function generateAPBPoster() {
         successMessage.classList.add('visible');
         
     } catch (error) {
-        console.error('html2canvas failed, trying canvas method:', error);
+        console.error('Error generating poster:', error);
         
-        // Try canvas method as fallback
+        // Fallback: Try without clone
         try {
-            const canvas = await createPosterWithCanvas();
+            alert('Trying alternative method...');
             
-            // Convert to blob and download
-            canvas.toBlob((blob) => {
-                const link = document.createElement('a');
-                const fileName = `apb-poster-canvas-${new Date().getTime()}.png`;
-                link.download = fileName;
-                link.href = URL.createObjectURL(blob);
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                URL.revokeObjectURL(link.href);
-                
-                successMessage.classList.add('visible');
-            }, 'image/png');
+            // Direct capture with longer timeout
+            const canvas = await html2canvas(document.getElementById('poster'), {
+                scale: 2,
+                backgroundColor: '#eaeaea',
+                logging: false,
+                useCORS: true,
+                allowTaint: true,
+                imageTimeout: 15000
+            });
             
-        } catch (canvasError) {
-            console.error('Canvas method also failed:', canvasError);
-            alert('Failed to generate poster. Please try:\n\n1. Using Chrome browser\n2. Running from a local web server\n3. Using smaller images or different image URLs\n4. Checking console for errors (F12)');
+            const link = document.createElement('a');
+            const fileName = `apb-poster-fallback-${new Date().getTime()}.png`;
+            link.download = fileName;
+            link.href = canvas.toDataURL('image/png');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            successMessage.classList.add('visible');
+            
+        } catch (fallbackError) {
+            console.error('Fallback also failed:', fallbackError);
+            alert('Error generating poster. Please try:\n\n1. Using a different image URL\n2. Making sure images are under 2MB\n3. Using Chrome browser\n4. Checking if images are accessible');
         }
     } finally {
         // Reset button state
@@ -424,7 +403,7 @@ resetBtn.addEventListener('click', function() {
         mugshotUrlInput.value = '';
         mugshot.src = '';
         mugshot.style.display = 'none';
-        loadedMugshotImage = null;
+        mugshotDataURL = null;
         
         updatePreview();
     }
@@ -468,11 +447,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Set initial mugshot display
     mugshot.style.display = 'none';
     
-    // Preload bulletin image
-    await preloadBulletinImage();
-    
-    // Load bulletin image for preview
-    bulletinImage.src = 'Bulletin.png';
+    // Load bulletin image as data URL
+    await loadBulletinImage();
     
     console.log('APB Generator initialized successfully');
 });
