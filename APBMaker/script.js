@@ -93,13 +93,7 @@ function imageToDataURL(url) {
         }
         
         const img = new Image();
-        
-        // Handle local files vs external URLs
-        if (url.includes('Bulletin.png') || url.includes('bulletin.png')) {
-            img.crossOrigin = 'anonymous';
-        } else {
-            img.crossOrigin = 'anonymous';
-        }
+        img.crossOrigin = 'anonymous';
         
         img.onload = function() {
             try {
@@ -139,6 +133,65 @@ function imageToDataURL(url) {
     });
 }
 
+// Use a CORS proxy for restricted images
+function fetchWithProxy(url) {
+    return new Promise((resolve, reject) => {
+        // Use corsproxy.io as a free CORS proxy
+        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
+        
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        
+        img.onload = function() {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            } catch (error) {
+                reject(error);
+            }
+        };
+        
+        img.onerror = reject;
+        img.src = proxyUrl;
+    });
+}
+
+// Handle GTA World images specifically
+function getGTAMugshotDataURL(url) {
+    return new Promise((resolve) => {
+        // Try direct fetch first
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        
+        img.onload = function() {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            } catch (error) {
+                console.log('Direct conversion failed, trying proxy...');
+                // Try CORS proxy
+                fetchWithProxy(url).then(resolve).catch(() => resolve(null));
+            }
+        };
+        
+        img.onerror = function() {
+            console.log('Direct load failed, trying proxy...');
+            // Try CORS proxy
+            fetchWithProxy(url).then(resolve).catch(() => resolve(null));
+        };
+        
+        img.src = url;
+    });
+}
+
 // Handle mugshot URL input
 async function handleMugshotInput() {
     const url = mugshotUrlInput.value.trim();
@@ -155,15 +208,22 @@ async function handleMugshotInput() {
     mugshot.src = ''; // Clear previous
     
     try {
-        // Convert to data URL for reliable loading
-        mugshotDataURL = await imageToDataURL(url);
+        // Check if it's a GTA World URL
+        if (url.includes('gta.world') || url.includes('mdc.gta.world')) {
+            console.log('Detected GTA World URL, using special handler');
+            mugshotDataURL = await getGTAMugshotDataURL(url);
+        } else {
+            // Use regular method for other URLs
+            mugshotDataURL = await imageToDataURL(url);
+        }
         
         if (mugshotDataURL) {
             mugshot.src = mugshotDataURL;
             mugshot.style.display = 'block';
+            console.log('Mugshot loaded successfully as data URL');
         } else {
             mugshot.style.display = 'none';
-            console.log('Failed to convert mugshot to data URL');
+            console.log('Failed to load mugshot');
         }
     } catch (error) {
         console.error('Error handling mugshot:', error);
@@ -300,7 +360,7 @@ async function generateAPBPoster() {
         document.body.appendChild(clone);
         
         // Give browser time to render the clone
-        await new Promise(resolve => setTimeout(resolve, 500));
+        await new Promise(resolve => setTimeout(resolve, 1000));
         
         // Capture with html2canvas
         const canvas = await html2canvas(clone, {
@@ -309,7 +369,7 @@ async function generateAPBPoster() {
             logging: false,
             useCORS: true,
             allowTaint: true,
-            imageTimeout: 10000
+            imageTimeout: 15000
         });
         
         // Remove clone
@@ -332,7 +392,7 @@ async function generateAPBPoster() {
         
         // Fallback: Try without clone
         try {
-            alert('Trying alternative method...');
+            console.log('Trying fallback method...');
             
             // Direct capture with longer timeout
             const canvas = await html2canvas(document.getElementById('poster'), {
@@ -341,7 +401,7 @@ async function generateAPBPoster() {
                 logging: false,
                 useCORS: true,
                 allowTaint: true,
-                imageTimeout: 15000
+                imageTimeout: 20000
             });
             
             const link = document.createElement('a');
@@ -356,7 +416,7 @@ async function generateAPBPoster() {
             
         } catch (fallbackError) {
             console.error('Fallback also failed:', fallbackError);
-            alert('Error generating poster. Please try:\n\n1. Using a different image URL\n2. Making sure images are under 2MB\n3. Using Chrome browser\n4. Checking if images are accessible');
+            alert('Error generating poster. Please try:\n\n1. Using a different browser (Chrome recommended)\n2. Making sure you have internet connection\n3. Trying a different image URL\n4. The image might be too large or blocked by CORS');
         }
     } finally {
         // Reset button state
