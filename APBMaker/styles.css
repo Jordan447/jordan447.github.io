@@ -39,6 +39,12 @@
     --preview-text-color: #000000;
 }
 
+/* Add this to your styles.css file */
+#poster {
+    visibility: visible !important;
+    display: block !important;
+}
+
 body {
     font-family: Arial, sans-serif;
     max-width: 1400px;

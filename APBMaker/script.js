@@ -43,10 +43,6 @@ const closeSuccess = document.getElementById('close-success');
 // Dark Mode Toggle
 const darkModeSwitch = document.getElementById('dark-mode-switch');
 
-// Store the original image sources
-let originalMugshotSrc = '';
-let mugshotLoaded = false;
-
 // Initialize character counts
 function updateCharacterCounts() {
     wantedCount.textContent = wantedTextInput.value.length;
@@ -78,73 +74,40 @@ function updatePreview() {
     updateCharacterCounts();
 }
 
-// Handle mugshot URL input with CORS proxy fallback
+// Handle mugshot URL input
 async function handleMugshotInput() {
     const url = mugshotUrlInput.value.trim();
     
     if (!url) {
         mugshot.style.display = 'none';
         mugshot.src = '';
-        originalMugshotSrc = '';
-        mugshotLoaded = false;
         return;
     }
     
-    originalMugshotSrc = url;
-    mugshotLoaded = false;
-    
-    // Show loading state
-    mugshot.style.display = 'block';
-    mugshot.src = ''; // Clear previous image
-    
-    // Try to load the image directly first
+    // Try to load the image with error handling
     const img = new Image();
     img.crossOrigin = 'anonymous';
     
     img.onload = function() {
         mugshot.src = url;
         mugshot.style.display = 'block';
-        mugshotLoaded = true;
-        console.log('Mugshot loaded directly:', url);
     };
     
-    img.onerror = async function() {
-        console.log('Direct load failed, trying CORS proxy:', url);
-        
-        // Try using a CORS proxy
-        try {
-            // Use a free CORS proxy service
-            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
-            const img2 = new Image();
-            img2.crossOrigin = 'anonymous';
-            
-            img2.onload = function() {
-                mugshot.src = proxyUrl;
-                mugshot.style.display = 'block';
-                mugshotLoaded = true;
-                console.log('Mugshot loaded via proxy:', url);
-            };
-            
-            img2.onerror = function() {
-                console.error('All methods failed for:', url);
-                mugshot.style.display = 'none';
-                mugshotLoaded = false;
-                
-                // Show placeholder
-                mugshot.onerror = null; // Prevent infinite loop
-                mugshot.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNDQ0NDQ0MiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjY2NjY2Ij5JbWFnZSBOb3QgTG9hZGVkPC90ZXh0Pjwvc3ZnPg==';
-                mugshot.style.display = 'block';
-            };
-            
-            img2.src = proxyUrl;
-        } catch (error) {
-            console.error('CORS proxy failed:', error);
+    img.onerror = function() {
+        console.log('Failed to load image, trying without CORS:', url);
+        // Try without CORS
+        const img2 = new Image();
+        img2.onload = function() {
+            mugshot.src = url;
+            mugshot.style.display = 'block';
+        };
+        img2.onerror = function() {
+            console.error('Failed to load mugshot:', url);
             mugshot.style.display = 'none';
-            mugshotLoaded = false;
-        }
+        };
+        img2.src = url;
     };
     
-    // Start loading
     img.src = url;
 }
 
@@ -163,31 +126,36 @@ function setupEventListeners() {
     let mugshotTimeout;
     mugshotUrlInput.addEventListener('input', function() {
         clearTimeout(mugshotTimeout);
-        mugshotTimeout = setTimeout(handleMugshotInput, 800); // Wait 800ms after typing stops
+        mugshotTimeout = setTimeout(handleMugshotInput, 800);
     });
     
     // Also handle on blur
     mugshotUrlInput.addEventListener('blur', handleMugshotInput);
 }
 
-// Simple function to convert image to data URL
-function imageToDataURL(img) {
-    return new Promise((resolve) => {
-        try {
-            const canvas = document.createElement('canvas');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0);
-            resolve(canvas.toDataURL('image/png'));
-        } catch (error) {
-            console.error('Error converting image:', error);
-            resolve(null);
-        }
-    });
+// Create a simple clone of the poster for capture
+function createPosterClone() {
+    const original = document.getElementById('poster');
+    const clone = original.cloneNode(true);
+    
+    // Set fixed dimensions
+    clone.style.width = '600px';
+    clone.style.height = 'auto';
+    clone.style.position = 'fixed';
+    clone.style.left = '0';
+    clone.style.top = '0';
+    clone.style.zIndex = '9999';
+    clone.style.opacity = '0';
+    clone.style.pointerEvents = 'none';
+    
+    // Make sure it's visible for capture
+    clone.style.visibility = 'visible';
+    clone.style.display = 'block';
+    
+    return clone;
 }
 
-// Main function to generate APB Poster
+// Simple function to generate the poster
 async function generateAPBPoster() {
     // Show loading state
     const originalText = generateBtn.innerHTML;
@@ -195,41 +163,44 @@ async function generateAPBPoster() {
     generateBtn.disabled = true;
     
     try {
-        // Get the poster element
-        const posterElement = document.getElementById('poster');
+        // Create a temporary container in the visible area
+        const tempContainer = document.createElement('div');
+        tempContainer.style.position = 'fixed';
+        tempContainer.style.left = '0';
+        tempContainer.style.top = '0';
+        tempContainer.style.width = '600px';
+        tempContainer.style.height = 'auto';
+        tempContainer.style.zIndex = '9999';
+        tempContainer.style.background = '#eaeaea';
+        tempContainer.style.opacity = '0.01'; // Almost invisible but still capturable
         
-        // Store original styles
-        const originalPosition = posterElement.style.position;
-        const originalLeft = posterElement.style.left;
-        const originalTop = posterElement.style.top;
+        // Get the poster and append it to the temp container
+        const poster = document.getElementById('poster').cloneNode(true);
         
-        // Position the poster for capture
-        posterElement.style.position = 'fixed';
-        posterElement.style.left = '0';
-        posterElement.style.top = '0';
-        posterElement.style.zIndex = '10000';
-        posterElement.style.transform = 'translate(-10000px, -10000px)';
+        // Ensure proper styling for the cloned poster
+        poster.style.width = '600px';
+        poster.style.height = 'auto';
+        poster.style.position = 'static';
+        poster.style.display = 'block';
+        poster.style.visibility = 'visible';
         
-        // Wait a moment for repositioning
-        await new Promise(resolve => setTimeout(resolve, 100));
+        tempContainer.appendChild(poster);
+        document.body.appendChild(tempContainer);
         
-        // Use html2canvas with CORS support
-        const canvas = await html2canvas(posterElement, {
+        // Wait a moment for rendering
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        // Capture the temp container
+        const canvas = await html2canvas(tempContainer, {
             scale: 2,
             backgroundColor: '#eaeaea',
-            logging: false,
-            useCORS: true, // Enable CORS
-            allowTaint: true, // Allow tainted images
-            foreignObjectRendering: false,
-            removeContainer: true
+            logging: true,
+            useCORS: true,
+            allowTaint: true
         });
         
-        // Restore original styles
-        posterElement.style.position = originalPosition;
-        posterElement.style.left = originalLeft;
-        posterElement.style.top = originalTop;
-        posterElement.style.transform = '';
-        posterElement.style.zIndex = '';
+        // Remove the temp container
+        document.body.removeChild(tempContainer);
         
         // Download the image
         const link = document.createElement('a');
@@ -246,16 +217,160 @@ async function generateAPBPoster() {
     } catch (error) {
         console.error('Error generating poster:', error);
         
-        // Try without CORS options as fallback
+        // Alternative method: create a new canvas manually
         try {
-            const canvas = await html2canvas(document.getElementById('poster'), {
+            alert('Using alternative generation method...');
+            
+            // Get the poster element
+            const posterElement = document.getElementById('poster');
+            
+            // Create an iframe to isolate the content
+            const iframe = document.createElement('iframe');
+            iframe.style.position = 'fixed';
+            iframe.style.left = '-9999px';
+            iframe.style.top = '0';
+            iframe.style.width = '600px';
+            iframe.style.height = '800px';
+            iframe.style.border = 'none';
+            document.body.appendChild(iframe);
+            
+            // Write the poster HTML to the iframe
+            iframe.contentDocument.open();
+            iframe.contentDocument.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>
+                        body { margin: 0; padding: 0; background: #eaeaea; }
+                        .apb-form {
+                            width: 600px;
+                            background: #eaeaea;
+                            display: flex;
+                            flex-direction: column;
+                            overflow-x: hidden;
+                            border: 2px solid #000;
+                            font-family: Arial, sans-serif;
+                        }
+                        .bulletin-image-container { 
+                            width: 100%; 
+                            overflow: hidden; 
+                            border-bottom: 2px solid #000; 
+                        }
+                        .bulletin-image { 
+                            width: 100%; 
+                            height: auto; 
+                            display: block; 
+                        }
+                        .apb-header {
+                            background: #ffd800;
+                            font-family: 'Anton', sans-serif;
+                            font-size: 44px;
+                            letter-spacing: 3px;
+                            text-align: center;
+                            padding: 8px 0;
+                            color: #000;
+                            text-transform: uppercase;
+                        }
+                        .charge-bar {
+                            background: #5c5c5c;
+                            color: #fff;
+                            font-family: 'Oswald', sans-serif;
+                            font-size: 22px;
+                            font-weight: 700;
+                            text-align: center;
+                            padding: 10px 15px;
+                            word-break: break-word;
+                        }
+                        .apb-body {
+                            padding: 25px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            background: #eaeaea;
+                        }
+                        .photo-block {
+                            text-align: center;
+                            margin-bottom: 25px;
+                            width: 100%;
+                        }
+                        #mugshot {
+                            width: 200px;
+                            height: 200px;
+                            background: #ccc;
+                            object-fit: cover;
+                            margin: 0 auto;
+                            border: 2px solid #000;
+                            display: block;
+                        }
+                        .suspect-name {
+                            margin-top: 10px;
+                            font-family: 'Oswald', sans-serif;
+                            font-size: 22px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            word-break: break-word;
+                            color: #000000;
+                        }
+                        .text-block p {
+                            font-family: 'Courier Prime', monospace;
+                            font-size: 14px;
+                            line-height: 1.5;
+                            white-space: pre-wrap;
+                            word-break: break-word;
+                            overflow-wrap: break-word;
+                            color: #000000;
+                            margin: 0;
+                        }
+                        .contact-bar {
+                            background: #4f5f3a;
+                            color: #ffd800;
+                            font-family: 'Oswald', sans-serif;
+                            font-size: 14px;
+                            text-align: center;
+                            padding: 12px 15px;
+                        }
+                        .attention {
+                            font-weight: bold;
+                            margin-top: 6px;
+                            font-size: 16px;
+                            color: #ffd800;
+                        }
+                        .apb-footer {
+                            background: #000000;
+                            color: #ffffff;
+                            font-family: 'Share Tech Mono', monospace;
+                            font-size: 12px;
+                            padding: 8px 12px;
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${posterElement.outerHTML}
+                </body>
+                </html>
+            `);
+            iframe.contentDocument.close();
+            
+            // Wait for iframe to load
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Capture the iframe content
+            const canvas = await html2canvas(iframe.contentDocument.body, {
                 scale: 2,
                 backgroundColor: '#eaeaea',
-                logging: false
+                logging: true
             });
             
+            // Remove iframe
+            document.body.removeChild(iframe);
+            
+            // Download
             const link = document.createElement('a');
-            const fileName = `apb-poster-fallback-${new Date().getTime()}.png`;
+            const fileName = `apb-poster-${new Date().getTime()}.png`;
             link.download = fileName;
             link.href = canvas.toDataURL('image/png');
             document.body.appendChild(link);
@@ -263,9 +378,10 @@ async function generateAPBPoster() {
             document.body.removeChild(link);
             
             successMessage.classList.add('visible');
+            
         } catch (fallbackError) {
             console.error('Fallback also failed:', fallbackError);
-            alert('Error generating poster. Tips:\n\n• Try using Chrome or Firefox\n• Run from a local web server\n• Use images from secure (https) sources\n• Try without external images first');
+            alert('Error generating poster. Please try:\n\n1. Using Chrome browser\n2. Running from a local web server\n3. Disabling ad blockers\n4. Trying without external images');
         }
     } finally {
         // Reset button state
@@ -312,8 +428,6 @@ resetBtn.addEventListener('click', function() {
         mugshotUrlInput.value = '';
         mugshot.src = '';
         mugshot.style.display = 'none';
-        originalMugshotSrc = '';
-        mugshotLoaded = false;
         
         updatePreview();
     }
@@ -357,11 +471,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial mugshot display
     mugshot.style.display = 'none';
     
-    // Load bulletin image with cache busting
-    bulletinImage.src = 'Bulletin.png?' + new Date().getTime();
+    // Load bulletin image
+    bulletinImage.src = 'Bulletin.png';
     bulletinImage.onerror = function() {
-        console.warn('Bulletin.png not found, hiding bulletin header');
-        bulletinContainer.style.display = 'none';
+        console.warn('Bulletin.png not found');
     };
     
     console.log('APB Generator initialized successfully');
