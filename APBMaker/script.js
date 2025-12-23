@@ -444,12 +444,12 @@ resetBtn.addEventListener('click', function() {
     if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
         wantedTextInput.value = 'WANTED';
         bulletinToggle.checked = true;
-        chargeInput.value = 'FA 201. CAPITAL MURDER';
-        suspectNameInput.value = 'CODY HASKINS';
-        descriptionInput.value = 'Los Santos County Sheriff\'s Department\'s Homicide Bureau is seeking assistance in locating and apprehending Cody Haskins.\n\nCody Haskins is an individual wanted for two counts of capital murder, one which occurred on December 4, 2025 and the other on December 5, 2025 in early hours. Cody Haskins is believed to be ARMED AND DANGEROUS with a handgun which he used in both murders.\n\nHe was last seen wearing black sunglasses, blue surgical mask, grey hoodie, black gloves, black jacket, blue jeans and black shoes, riding a black bicycle in the area of Vespucci and Del Perro.\n\nIf spotted, do not approach alone. Notify the Homicide Bureau.';
-        contactInput.value = 'HOMICIDE BUREAU • PH: 26771317';
-        detectiveInput.value = 'Detective Stanley Strange';
-        dateInput.value = 'Friday, December 5, 2025';
+        chargeInput.value = '';
+        suspectNameInput.value = '';
+        descriptionInput.value = '';
+        contactInput.value = '';
+        detectiveInput.value = '';
+        dateInput.value = '';
         mugshotUrlInput.value = '';
         mugshot.src = '';
         mugshot.style.display = 'none';
