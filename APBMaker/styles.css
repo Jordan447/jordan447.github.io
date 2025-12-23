@@ -380,57 +380,6 @@ input:invalid {
     display: none;
 }
 
-/* Bulletin Toggle Switch */
-.toggle-switch {
-    margin-top: 8px;
-}
-
-.toggle-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.toggle-text {
-    font-size: 0.9em;
-    color: var(--text-color);
-    transition: color 0.3s;
-}
-
-.toggle-slider {
-    position: relative;
-    width: 50px;
-    height: 24px;
-    background-color: #ccc;
-    border-radius: 24px;
-    transition: background-color 0.3s;
-}
-
-.toggle-slider:before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: white;
-    top: 2px;
-    left: 2px;
-    transition: transform 0.3s;
-}
-
-#bulletinToggle:checked + .toggle-label .toggle-slider {
-    background-color: #28a745;
-}
-
-#bulletinToggle:checked + .toggle-label .toggle-slider:before {
-    transform: translateX(26px);
-}
-
-#bulletinToggle {
-    display: none;
-}
-
 /* Spinner animation */
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -814,4 +763,88 @@ input:invalid {
 
 .infraction-row:last-child {
     margin-bottom: 0;
+}
+
+/* ================= COMPACT TOGGLE STYLES ================= */
+/* Compact toggle label */
+.compact-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Hide the checkbox but keep it accessible */
+.compact-toggle-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Custom checkbox/toggle design */
+.toggle-icon {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+    background-color: #ccc;
+    border-radius: 22px;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+
+.toggle-icon:after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+/* Checked state - default blue */
+.compact-toggle-label input:checked + .toggle-icon {
+    background-color: var(--primary-btn);
+}
+
+.compact-toggle-label input:checked + .toggle-icon:after {
+    transform: translateX(22px);
+}
+
+/* For the bulletin toggle, make it green when checked */
+#bulletinToggle:checked + .toggle-icon {
+    background-color: #28a745 !important;
+}
+
+/* Add subtle hover effect */
+.compact-toggle-label:hover .toggle-icon {
+    box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.2);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .compact-toggle-label input:not(:checked) + .toggle-icon {
+    background-color: #555;
+}
+
+/* Responsive adjustments for compact toggle */
+@media (max-width: 600px) {
+    .toggle-icon {
+        width: 40px;
+        height: 20px;
+    }
+    
+    .toggle-icon:after {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .compact-toggle-label input:checked + .toggle-icon:after {
+        transform: translateX(20px);
+    }
 }
