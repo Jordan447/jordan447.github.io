@@ -1,6 +1,7 @@
 // DOM Elements
 const wantedTextInput = document.getElementById('wantedText');
 const bulletinToggle = document.getElementById('bulletinToggle');
+const bulletinSelect = document.getElementById('bulletinSelect');
 const chargeInput = document.getElementById('charge');
 const suspectNameInput = document.getElementById('suspectName');
 const descriptionInput = document.getElementById('description');
@@ -45,6 +46,7 @@ const darkModeSwitch = document.getElementById('dark-mode-switch');
 
 // Store image data URLs
 let mugshotDataURL = null;
+let currentBulletinImage = 'Bulletin.png'; // Default
 
 // Initialize character counts
 function updateCharacterCounts() {
@@ -67,9 +69,10 @@ function updatePreview() {
     pDetective.textContent = detectiveInput.value || 'Detective Name Not Specified';
     pDate.textContent = dateInput.value || 'Date Not Specified';
     
-    // Update bulletin image visibility
+    // Update bulletin image visibility and source
     if (bulletinToggle.checked) {
         bulletinContainer.classList.remove('hidden');
+        bulletinImage.src = currentBulletinImage;
     } else {
         bulletinContainer.classList.add('hidden');
     }
@@ -80,7 +83,6 @@ function updatePreview() {
 // Use a CORS proxy for restricted images
 function fetchWithProxy(url) {
     return new Promise((resolve, reject) => {
-        // Use corsproxy.io as a free CORS proxy
         const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
         
         const img = new Image();
@@ -131,14 +133,12 @@ function getGTAMugshotDataURL(url) {
                 resolve(canvas.toDataURL('image/png'));
             } catch (error) {
                 console.log('Direct conversion failed, trying proxy...');
-                // Try CORS proxy
                 fetchWithProxy(url).then(resolve).catch(() => resolve(null));
             }
         };
         
         img.onerror = function() {
             console.log('Direct load failed, trying proxy...');
-            // Try CORS proxy
             fetchWithProxy(url).then(resolve).catch(() => resolve(null));
         };
         
@@ -161,7 +161,7 @@ function imageToDataURL(url) {
         }
         
         // For local files like Bulletin.png, use direct URL
-        if (url.includes('Bulletin.png') || url.includes('bulletin.png')) {
+        if (url.includes('.png') && !url.includes('http')) {
             resolve(url);
             return;
         }
@@ -191,7 +191,7 @@ function imageToDataURL(url) {
                 resolve(canvas.toDataURL('image/png'));
             } catch (error) {
                 console.log('Could not convert to data URL:', error);
-                resolve(url); // Fallback to direct URL
+                resolve(url);
             }
         };
         
@@ -215,9 +215,8 @@ async function handleMugshotInput() {
         return;
     }
     
-    // Show loading
     mugshot.style.display = 'block';
-    mugshot.src = ''; // Clear previous
+    mugshot.src = '';
     
     try {
         mugshotDataURL = await imageToDataURL(url);
@@ -225,10 +224,8 @@ async function handleMugshotInput() {
         if (mugshotDataURL) {
             mugshot.src = mugshotDataURL;
             mugshot.style.display = 'block';
-            console.log('Mugshot loaded successfully');
         } else {
             mugshot.style.display = 'none';
-            console.log('Failed to load mugshot');
         }
     } catch (error) {
         console.error('Error handling mugshot:', error);
@@ -247,6 +244,12 @@ function setupEventListeners() {
     contactInput.addEventListener('input', updatePreview);
     detectiveInput.addEventListener('input', updatePreview);
     dateInput.addEventListener('input', updatePreview);
+    
+    // Handle bulletin selection change
+    bulletinSelect.addEventListener('change', function() {
+        currentBulletinImage = this.value;
+        updatePreview();
+    });
     
     // Handle mugshot URL input with debounce
     let mugshotTimeout;
@@ -286,7 +289,6 @@ function waitForImages() {
             }
         });
         
-        // Timeout after 5 seconds
         setTimeout(resolve, 5000);
     });
 }
@@ -298,23 +300,20 @@ function createPosterClone() {
     
     // Update images in clone
     if (bulletinToggle.checked) {
-        // Show bulletin container
         const bulletinContainer = clone.querySelector('.bulletin-image-container');
         if (bulletinContainer) {
             bulletinContainer.classList.remove('hidden');
             bulletinContainer.style.display = 'block';
             
-            // Update bulletin image - use direct URL for local file
             const bulletinImg = clone.querySelector('.bulletin-image');
             if (bulletinImg) {
-                bulletinImg.src = 'Bulletin.png';
+                bulletinImg.src = currentBulletinImage;
                 bulletinImg.style.display = 'block';
                 bulletinImg.style.width = '100%';
                 bulletinImg.style.height = 'auto';
             }
         }
     } else {
-        // Hide bulletin container if not enabled
         const bulletinContainer = clone.querySelector('.bulletin-image-container');
         if (bulletinContainer) {
             bulletinContainer.style.display = 'none';
@@ -330,7 +329,6 @@ function createPosterClone() {
             mugshotImg.style.height = '200px';
         }
     } else {
-        // Hide mugshot if no image
         const mugshotImg = clone.querySelector('#mugshot');
         if (mugshotImg) {
             mugshotImg.style.display = 'none';
@@ -352,23 +350,18 @@ function createPosterClone() {
 
 // Main function to generate APB Poster
 async function generateAPBPoster() {
-    // Show loading state
     const originalText = generateBtn.innerHTML;
     generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
     generateBtn.disabled = true;
     
     try {
-        // Wait for images to load
         await waitForImages();
         
-        // Create a clone with proper image URLs
         const clone = createPosterClone();
         document.body.appendChild(clone);
         
-        // Give browser time to render the clone
         await new Promise(resolve => setTimeout(resolve, 1000));
         
-        // Capture with html2canvas
         const canvas = await html2canvas(clone, {
             scale: 2,
             backgroundColor: '#eaeaea',
@@ -378,10 +371,8 @@ async function generateAPBPoster() {
             imageTimeout: 15000
         });
         
-        // Remove clone
         document.body.removeChild(clone);
         
-        // Download the image
         const link = document.createElement('a');
         const fileName = `apb-poster-${new Date().getTime()}.png`;
         link.download = fileName;
@@ -390,17 +381,12 @@ async function generateAPBPoster() {
         link.click();
         document.body.removeChild(link);
         
-        // Show success message
         successMessage.classList.add('visible');
         
     } catch (error) {
         console.error('Error generating poster:', error);
         
-        // Fallback: Try direct capture
         try {
-            console.log('Trying direct capture fallback...');
-            
-            // Direct capture of the original element
             const canvas = await html2canvas(document.getElementById('poster'), {
                 scale: 2,
                 backgroundColor: '#eaeaea',
@@ -422,10 +408,9 @@ async function generateAPBPoster() {
             
         } catch (fallbackError) {
             console.error('Fallback also failed:', fallbackError);
-            alert('Error generating poster. Please try:\n\n1. Using Chrome browser\n2. Running from a local web server (not file://)\n3. Making sure Bulletin.png is in the same folder\n4. Trying a different mugshot URL');
+            alert('Error generating poster. Please try:\n\n1. Using Chrome browser\n2. Running from a local web server\n3. Making sure bulletin images are in the same folder\n4. Trying a different mugshot URL');
         }
     } finally {
-        // Reset button state
         generateBtn.innerHTML = originalText;
         generateBtn.disabled = false;
     }
@@ -440,7 +425,6 @@ copyBtn.addEventListener('click', function() {
     const apbText = `${pWanted.textContent}\n${pCharge.textContent}\n\nSUSPECT: ${pName.textContent}\n\n${pDescription.textContent}\n\nAny information, please contact:\n${pContact.textContent}\nATTENTION: ${pDetective.textContent}\n\n${pDate.textContent} | APB | Created by SIB`;
     
     navigator.clipboard.writeText(apbText).then(() => {
-        // Show temporary success indicator
         const originalText = copyBtn.innerHTML;
         copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
         copyBtn.style.backgroundColor = '#28a745';
@@ -470,6 +454,8 @@ resetBtn.addEventListener('click', function() {
         mugshot.src = '';
         mugshot.style.display = 'none';
         mugshotDataURL = null;
+        currentBulletinImage = 'Bulletin.png';
+        bulletinSelect.value = 'Bulletin.png';
         
         updatePreview();
     }
@@ -504,19 +490,14 @@ darkModeSwitch.addEventListener('change', toggleDarkMode);
 
 // Initialize everything on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Setup event listeners first
     setupEventListeners();
-    
-    // Initialize preview
     updatePreview();
-    
-    // Set initial mugshot display
     mugshot.style.display = 'none';
     
-    // Load bulletin image
-    bulletinImage.src = 'Bulletin.png';
+    // Load initial bulletin image
+    bulletinImage.src = currentBulletinImage;
     bulletinImage.onerror = function() {
-        console.warn('Bulletin.png not found in the same folder');
+        console.warn('Bulletin image not found:', currentBulletinImage);
     };
     
     console.log('APB Generator initialized successfully');

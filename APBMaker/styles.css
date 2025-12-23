@@ -39,12 +39,6 @@
     --preview-text-color: #000000;
 }
 
-/* Add this to your styles.css file */
-#poster {
-    visibility: visible !important;
-    display: block !important;
-}
-
 body {
     font-family: Arial, sans-serif;
     max-width: 1400px;
@@ -151,7 +145,21 @@ select, input, textarea {
     transition: all 0.3s;
 }
 
-select:focus, input:focus, textarea:focus {
+/* New bulletin select styling */
+.bulletin-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: all 0.3s;
+    margin-top: 8px;
+}
+
+select:focus, input:focus, textarea:focus, .bulletin-select:focus {
     outline: none;
     border-color: var(--primary-btn);
     box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.2);
