@@ -45,7 +45,6 @@ const darkModeSwitch = document.getElementById('dark-mode-switch');
 
 // Store image data URLs
 let mugshotDataURL = null;
-let bulletinDataURL = null;
 
 // Initialize character counts
 function updateCharacterCounts() {
@@ -78,61 +77,6 @@ function updatePreview() {
     updateCharacterCounts();
 }
 
-// Convert any image to data URL (solves CORS issues)
-function imageToDataURL(url) {
-    return new Promise((resolve, reject) => {
-        if (!url) {
-            resolve(null);
-            return;
-        }
-        
-        // If already a data URL, return it
-        if (url.startsWith('data:image')) {
-            resolve(url);
-            return;
-        }
-        
-        const img = new Image();
-        img.crossOrigin = 'anonymous';
-        
-        img.onload = function() {
-            try {
-                const canvas = document.createElement('canvas');
-                canvas.width = img.naturalWidth || img.width;
-                canvas.height = img.naturalHeight || img.height;
-                
-                const ctx = canvas.getContext('2d');
-                
-                // Draw white background first for transparency issues
-                ctx.fillStyle = '#ffffff';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                // Draw the image
-                ctx.drawImage(img, 0, 0);
-                
-                // Get data URL
-                const dataURL = canvas.toDataURL('image/png');
-                resolve(dataURL);
-            } catch (error) {
-                console.error('Error creating data URL:', error);
-                resolve(url); // Fallback to original URL
-            }
-        };
-        
-        img.onerror = function() {
-            console.warn('Failed to load image for data URL conversion:', url);
-            resolve(null);
-        };
-        
-        // Load the image with cache busting
-        if (url.includes('Bulletin.png') || url.includes('bulletin.png')) {
-            img.src = url + (url.includes('?') ? '&' : '?') + 't=' + Date.now();
-        } else {
-            img.src = url;
-        }
-    });
-}
-
 // Use a CORS proxy for restricted images
 function fetchWithProxy(url) {
     return new Promise((resolve, reject) => {
@@ -148,6 +92,11 @@ function fetchWithProxy(url) {
                 canvas.width = img.width;
                 canvas.height = img.height;
                 const ctx = canvas.getContext('2d');
+                
+                // Draw white background first for transparency issues
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
                 ctx.drawImage(img, 0, 0);
                 resolve(canvas.toDataURL('image/png'));
             } catch (error) {
@@ -173,6 +122,11 @@ function getGTAMugshotDataURL(url) {
                 canvas.width = img.width;
                 canvas.height = img.height;
                 const ctx = canvas.getContext('2d');
+                
+                // Draw white background first
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
                 ctx.drawImage(img, 0, 0);
                 resolve(canvas.toDataURL('image/png'));
             } catch (error) {
@@ -186,6 +140,64 @@ function getGTAMugshotDataURL(url) {
             console.log('Direct load failed, trying proxy...');
             // Try CORS proxy
             fetchWithProxy(url).then(resolve).catch(() => resolve(null));
+        };
+        
+        img.src = url;
+    });
+}
+
+// Convert any image to data URL
+function imageToDataURL(url) {
+    return new Promise((resolve) => {
+        if (!url) {
+            resolve(null);
+            return;
+        }
+        
+        // If already a data URL, return it
+        if (url.startsWith('data:image')) {
+            resolve(url);
+            return;
+        }
+        
+        // For local files like Bulletin.png, use direct URL
+        if (url.includes('Bulletin.png') || url.includes('bulletin.png')) {
+            resolve(url);
+            return;
+        }
+        
+        // Check if it's a GTA World URL
+        if (url.includes('gta.world') || url.includes('mdc.gta.world')) {
+            getGTAMugshotDataURL(url).then(resolve).catch(() => resolve(null));
+            return;
+        }
+        
+        // For other URLs, try to convert
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        
+        img.onload = function() {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                
+                // Draw white background first
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            } catch (error) {
+                console.log('Could not convert to data URL:', error);
+                resolve(url); // Fallback to direct URL
+            }
+        };
+        
+        img.onerror = function() {
+            console.log('Image load failed:', url);
+            resolve(null);
         };
         
         img.src = url;
@@ -208,19 +220,12 @@ async function handleMugshotInput() {
     mugshot.src = ''; // Clear previous
     
     try {
-        // Check if it's a GTA World URL
-        if (url.includes('gta.world') || url.includes('mdc.gta.world')) {
-            console.log('Detected GTA World URL, using special handler');
-            mugshotDataURL = await getGTAMugshotDataURL(url);
-        } else {
-            // Use regular method for other URLs
-            mugshotDataURL = await imageToDataURL(url);
-        }
+        mugshotDataURL = await imageToDataURL(url);
         
         if (mugshotDataURL) {
             mugshot.src = mugshotDataURL;
             mugshot.style.display = 'block';
-            console.log('Mugshot loaded successfully as data URL');
+            console.log('Mugshot loaded successfully');
         } else {
             mugshot.style.display = 'none';
             console.log('Failed to load mugshot');
@@ -229,19 +234,6 @@ async function handleMugshotInput() {
         console.error('Error handling mugshot:', error);
         mugshot.style.display = 'none';
         mugshotDataURL = null;
-    }
-}
-
-// Load bulletin image as data URL
-async function loadBulletinImage() {
-    try {
-        bulletinDataURL = await imageToDataURL('Bulletin.png');
-        if (bulletinDataURL) {
-            bulletinImage.src = bulletinDataURL;
-        }
-    } catch (error) {
-        console.warn('Could not load bulletin image:', error);
-        bulletinDataURL = null;
     }
 }
 
@@ -304,11 +296,22 @@ function createPosterClone() {
     const original = document.getElementById('poster');
     const clone = original.cloneNode(true);
     
-    // Update images in clone with data URLs
-    if (bulletinToggle.checked && bulletinDataURL) {
-        const bulletinImg = clone.querySelector('.bulletin-image');
-        if (bulletinImg) {
-            bulletinImg.src = bulletinDataURL;
+    // Update images in clone
+    if (bulletinToggle.checked) {
+        // Show bulletin container
+        const bulletinContainer = clone.querySelector('.bulletin-image-container');
+        if (bulletinContainer) {
+            bulletinContainer.classList.remove('hidden');
+            bulletinContainer.style.display = 'block';
+            
+            // Update bulletin image - use direct URL for local file
+            const bulletinImg = clone.querySelector('.bulletin-image');
+            if (bulletinImg) {
+                bulletinImg.src = 'Bulletin.png';
+                bulletinImg.style.display = 'block';
+                bulletinImg.style.width = '100%';
+                bulletinImg.style.height = 'auto';
+            }
         }
     } else {
         // Hide bulletin container if not enabled
@@ -323,6 +326,8 @@ function createPosterClone() {
         if (mugshotImg) {
             mugshotImg.src = mugshotDataURL;
             mugshotImg.style.display = 'block';
+            mugshotImg.style.width = '200px';
+            mugshotImg.style.height = '200px';
         }
     } else {
         // Hide mugshot if no image
@@ -340,6 +345,7 @@ function createPosterClone() {
     clone.style.background = '#eaeaea';
     clone.style.visibility = 'visible';
     clone.style.opacity = '1';
+    clone.style.zIndex = '9999';
     
     return clone;
 }
@@ -355,7 +361,7 @@ async function generateAPBPoster() {
         // Wait for images to load
         await waitForImages();
         
-        // Create a clone with data URLs
+        // Create a clone with proper image URLs
         const clone = createPosterClone();
         document.body.appendChild(clone);
         
@@ -390,22 +396,22 @@ async function generateAPBPoster() {
     } catch (error) {
         console.error('Error generating poster:', error);
         
-        // Fallback: Try without clone
+        // Fallback: Try direct capture
         try {
-            console.log('Trying fallback method...');
+            console.log('Trying direct capture fallback...');
             
-            // Direct capture with longer timeout
+            // Direct capture of the original element
             const canvas = await html2canvas(document.getElementById('poster'), {
                 scale: 2,
                 backgroundColor: '#eaeaea',
                 logging: false,
                 useCORS: true,
                 allowTaint: true,
-                imageTimeout: 20000
+                imageTimeout: 15000
             });
             
             const link = document.createElement('a');
-            const fileName = `apb-poster-fallback-${new Date().getTime()}.png`;
+            const fileName = `apb-poster-${new Date().getTime()}.png`;
             link.download = fileName;
             link.href = canvas.toDataURL('image/png');
             document.body.appendChild(link);
@@ -416,7 +422,7 @@ async function generateAPBPoster() {
             
         } catch (fallbackError) {
             console.error('Fallback also failed:', fallbackError);
-            alert('Error generating poster. Please try:\n\n1. Using a different browser (Chrome recommended)\n2. Making sure you have internet connection\n3. Trying a different image URL\n4. The image might be too large or blocked by CORS');
+            alert('Error generating poster. Please try:\n\n1. Using Chrome browser\n2. Running from a local web server (not file://)\n3. Making sure Bulletin.png is in the same folder\n4. Trying a different mugshot URL');
         }
     } finally {
         // Reset button state
@@ -497,7 +503,7 @@ if (savedTheme === 'dark') {
 darkModeSwitch.addEventListener('change', toggleDarkMode);
 
 // Initialize everything on page load
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Setup event listeners first
     setupEventListeners();
     
@@ -507,8 +513,11 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Set initial mugshot display
     mugshot.style.display = 'none';
     
-    // Load bulletin image as data URL
-    await loadBulletinImage();
+    // Load bulletin image
+    bulletinImage.src = 'Bulletin.png';
+    bulletinImage.onerror = function() {
+        console.warn('Bulletin.png not found in the same folder');
+    };
     
     console.log('APB Generator initialized successfully');
 });
