@@ -75,7 +75,7 @@ function updatePreview() {
 }
 
 // Handle mugshot URL input
-async function handleMugshotInput() {
+function handleMugshotInput() {
     const url = mugshotUrlInput.value.trim();
     
     if (!url) {
@@ -84,7 +84,6 @@ async function handleMugshotInput() {
         return;
     }
     
-    // Try to load the image with error handling
     const img = new Image();
     img.crossOrigin = 'anonymous';
     
@@ -94,7 +93,6 @@ async function handleMugshotInput() {
     };
     
     img.onerror = function() {
-        console.log('Failed to load image, trying without CORS:', url);
         // Try without CORS
         const img2 = new Image();
         img2.onload = function() {
@@ -102,7 +100,6 @@ async function handleMugshotInput() {
             mugshot.style.display = 'block';
         };
         img2.onerror = function() {
-            console.error('Failed to load mugshot:', url);
             mugshot.style.display = 'none';
         };
         img2.src = url;
@@ -129,33 +126,187 @@ function setupEventListeners() {
         mugshotTimeout = setTimeout(handleMugshotInput, 800);
     });
     
-    // Also handle on blur
     mugshotUrlInput.addEventListener('blur', handleMugshotInput);
 }
 
-// Create a simple clone of the poster for capture
-function createPosterClone() {
-    const original = document.getElementById('poster');
-    const clone = original.cloneNode(true);
+// Create poster using Canvas API directly
+async function createPosterWithCanvas() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
     
-    // Set fixed dimensions
-    clone.style.width = '600px';
-    clone.style.height = 'auto';
-    clone.style.position = 'fixed';
-    clone.style.left = '0';
-    clone.style.top = '0';
-    clone.style.zIndex = '9999';
-    clone.style.opacity = '0';
-    clone.style.pointerEvents = 'none';
+    // Set canvas dimensions (600px width, calculate height)
+    canvas.width = 600 * 2; // Double for high DPI
+    canvas.height = 800 * 2;
     
-    // Make sure it's visible for capture
-    clone.style.visibility = 'visible';
-    clone.style.display = 'block';
+    // Fill with background color
+    ctx.fillStyle = '#eaeaea';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    return clone;
+    let yPosition = 0;
+    
+    // Load and draw bulletin image if enabled
+    if (bulletinToggle.checked) {
+        try {
+            const bulletinImg = await loadImage('Bulletin.png');
+            const bulletinHeight = (200 * 2); // Fixed height for bulletin
+            ctx.drawImage(bulletinImg, 0, yPosition, canvas.width, bulletinHeight);
+            yPosition += bulletinHeight;
+            
+            // Draw black border
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(0, yPosition - 2, canvas.width, 2);
+        } catch (error) {
+            console.log('Bulletin image not available');
+        }
+    }
+    
+    // Draw WANTED header
+    ctx.fillStyle = '#ffd800';
+    ctx.fillRect(0, yPosition, canvas.width, 60 * 2);
+    ctx.fillStyle = '#000';
+    ctx.font = 'bold 44px Anton, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(pWanted.textContent, canvas.width / 2, yPosition + (60 * 2) / 2);
+    yPosition += 60 * 2;
+    
+    // Draw charge bar
+    ctx.fillStyle = '#5c5c5c';
+    ctx.fillRect(0, yPosition, canvas.width, 50 * 2);
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 22px Oswald, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(pCharge.textContent, canvas.width / 2, yPosition + (50 * 2) / 2);
+    yPosition += 50 * 2;
+    
+    // Draw body content
+    const bodyStartY = yPosition;
+    const bodyHeight = 400 * 2;
+    
+    // Draw mugshot if available
+    if (mugshot.style.display !== 'none' && mugshot.src) {
+        try {
+            const mugshotImg = await loadImage(mugshot.src);
+            const mugshotX = (canvas.width / 2) - (100 * 2);
+            const mugshotY = bodyStartY + (30 * 2);
+            ctx.drawImage(mugshotImg, mugshotX, mugshotY, 200 * 2, 200 * 2);
+            
+            // Draw border around mugshot
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 2 * 2;
+            ctx.strokeRect(mugshotX, mugshotY, 200 * 2, 200 * 2);
+            
+            // Draw suspect name
+            ctx.fillStyle = '#000';
+            ctx.font = 'bold 22px Oswald, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(pName.textContent, canvas.width / 2, mugshotY + (220 * 2));
+            
+            yPosition = mugshotY + (270 * 2);
+        } catch (error) {
+            console.log('Mugshot not available for download');
+            // Draw suspect name without mugshot
+            ctx.fillStyle = '#000';
+            ctx.font = 'bold 22px Oswald, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(pName.textContent, canvas.width / 2, bodyStartY + (30 * 2));
+            yPosition = bodyStartY + (60 * 2);
+        }
+    } else {
+        // Draw suspect name without mugshot
+        ctx.fillStyle = '#000';
+        ctx.font = 'bold 22px Oswald, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(pName.textContent, canvas.width / 2, bodyStartY + (30 * 2));
+        yPosition = bodyStartY + (60 * 2);
+    }
+    
+    // Draw description
+    ctx.fillStyle = '#000';
+    ctx.font = '14px Courier Prime, monospace';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'top';
+    
+    const description = pDescription.textContent;
+    const lineHeight = 20 * 2;
+    const maxWidth = canvas.width - (50 * 2);
+    const startX = 25 * 2;
+    
+    // Wrap text manually
+    const words = description.split(' ');
+    let line = '';
+    let lineY = yPosition;
+    
+    for (let i = 0; i < words.length; i++) {
+        const testLine = line + words[i] + ' ';
+        const metrics = ctx.measureText(testLine);
+        const testWidth = metrics.width;
+        
+        if (testWidth > maxWidth && i > 0) {
+            ctx.fillText(line, startX, lineY);
+            line = words[i] + ' ';
+            lineY += lineHeight;
+        } else {
+            line = testLine;
+        }
+    }
+    
+    if (line) {
+        ctx.fillText(line, startX, lineY);
+    }
+    
+    yPosition = lineY + (40 * 2);
+    
+    // Draw contact bar
+    ctx.fillStyle = '#4f5f3a';
+    ctx.fillRect(0, yPosition, canvas.width, 80 * 2);
+    ctx.fillStyle = '#ffd800';
+    ctx.font = '14px Oswald, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Any information, please contact:', canvas.width / 2, yPosition + (20 * 2));
+    
+    ctx.font = 'bold 14px Oswald, sans-serif';
+    ctx.fillText(pContact.textContent, canvas.width / 2, yPosition + (40 * 2));
+    
+    ctx.font = 'bold 16px Oswald, sans-serif';
+    ctx.fillText(`ATTENTION: ${pDetective.textContent}`, canvas.width / 2, yPosition + (60 * 2));
+    
+    yPosition += 80 * 2;
+    
+    // Draw footer
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, yPosition, canvas.width, 40 * 2);
+    ctx.fillStyle = '#fff';
+    ctx.font = '12px Share Tech Mono, monospace';
+    ctx.textAlign = 'left';
+    
+    // Left: Date
+    ctx.fillText(pDate.textContent, 25 * 2, yPosition + (20 * 2));
+    
+    // Center: APB
+    ctx.textAlign = 'center';
+    ctx.fillText('APB', canvas.width / 2, yPosition + (20 * 2));
+    
+    // Right: Created by SIB
+    ctx.textAlign = 'right';
+    ctx.fillText('Created by SIB', canvas.width - (25 * 2), yPosition + (20 * 2));
+    
+    return canvas;
 }
 
-// Simple function to generate the poster
+// Helper function to load images
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+    });
+}
+
+// Main function to generate APB Poster
 async function generateAPBPoster() {
     // Show loading state
     const originalText = generateBtn.innerHTML;
@@ -163,214 +314,43 @@ async function generateAPBPoster() {
     generateBtn.disabled = true;
     
     try {
-        // Create a temporary container in the visible area
-        const tempContainer = document.createElement('div');
-        tempContainer.style.position = 'fixed';
-        tempContainer.style.left = '0';
-        tempContainer.style.top = '0';
-        tempContainer.style.width = '600px';
-        tempContainer.style.height = 'auto';
-        tempContainer.style.zIndex = '9999';
-        tempContainer.style.background = '#eaeaea';
-        tempContainer.style.opacity = '0.01'; // Almost invisible but still capturable
+        // Create the poster using Canvas
+        const canvas = await createPosterWithCanvas();
         
-        // Get the poster and append it to the temp container
-        const poster = document.getElementById('poster').cloneNode(true);
-        
-        // Ensure proper styling for the cloned poster
-        poster.style.width = '600px';
-        poster.style.height = 'auto';
-        poster.style.position = 'static';
-        poster.style.display = 'block';
-        poster.style.visibility = 'visible';
-        
-        tempContainer.appendChild(poster);
-        document.body.appendChild(tempContainer);
-        
-        // Wait a moment for rendering
-        await new Promise(resolve => setTimeout(resolve, 300));
-        
-        // Capture the temp container
-        const canvas = await html2canvas(tempContainer, {
-            scale: 2,
-            backgroundColor: '#eaeaea',
-            logging: true,
-            useCORS: true,
-            allowTaint: true
-        });
-        
-        // Remove the temp container
-        document.body.removeChild(tempContainer);
-        
-        // Download the image
-        const link = document.createElement('a');
-        const fileName = `apb-poster-${new Date().getTime()}.png`;
-        link.download = fileName;
-        link.href = canvas.toDataURL('image/png');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        // Show success message
-        successMessage.classList.add('visible');
+        // Convert to blob and download
+        canvas.toBlob((blob) => {
+            const link = document.createElement('a');
+            const fileName = `apb-poster-${new Date().getTime()}.png`;
+            link.download = fileName;
+            link.href = URL.createObjectURL(blob);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+            
+            // Show success message
+            successMessage.classList.add('visible');
+        }, 'image/png');
         
     } catch (error) {
         console.error('Error generating poster:', error);
         
-        // Alternative method: create a new canvas manually
+        // Try html2canvas as fallback
         try {
-            alert('Using alternative generation method...');
+            alert('Using html2canvas fallback...');
             
-            // Get the poster element
-            const posterElement = document.getElementById('poster');
+            // Get the preview container
+            const previewContainer = document.getElementById('apbPreview');
             
-            // Create an iframe to isolate the content
-            const iframe = document.createElement('iframe');
-            iframe.style.position = 'fixed';
-            iframe.style.left = '-9999px';
-            iframe.style.top = '0';
-            iframe.style.width = '600px';
-            iframe.style.height = '800px';
-            iframe.style.border = 'none';
-            document.body.appendChild(iframe);
-            
-            // Write the poster HTML to the iframe
-            iframe.contentDocument.open();
-            iframe.contentDocument.write(`
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <style>
-                        body { margin: 0; padding: 0; background: #eaeaea; }
-                        .apb-form {
-                            width: 600px;
-                            background: #eaeaea;
-                            display: flex;
-                            flex-direction: column;
-                            overflow-x: hidden;
-                            border: 2px solid #000;
-                            font-family: Arial, sans-serif;
-                        }
-                        .bulletin-image-container { 
-                            width: 100%; 
-                            overflow: hidden; 
-                            border-bottom: 2px solid #000; 
-                        }
-                        .bulletin-image { 
-                            width: 100%; 
-                            height: auto; 
-                            display: block; 
-                        }
-                        .apb-header {
-                            background: #ffd800;
-                            font-family: 'Anton', sans-serif;
-                            font-size: 44px;
-                            letter-spacing: 3px;
-                            text-align: center;
-                            padding: 8px 0;
-                            color: #000;
-                            text-transform: uppercase;
-                        }
-                        .charge-bar {
-                            background: #5c5c5c;
-                            color: #fff;
-                            font-family: 'Oswald', sans-serif;
-                            font-size: 22px;
-                            font-weight: 700;
-                            text-align: center;
-                            padding: 10px 15px;
-                            word-break: break-word;
-                        }
-                        .apb-body {
-                            padding: 25px;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            background: #eaeaea;
-                        }
-                        .photo-block {
-                            text-align: center;
-                            margin-bottom: 25px;
-                            width: 100%;
-                        }
-                        #mugshot {
-                            width: 200px;
-                            height: 200px;
-                            background: #ccc;
-                            object-fit: cover;
-                            margin: 0 auto;
-                            border: 2px solid #000;
-                            display: block;
-                        }
-                        .suspect-name {
-                            margin-top: 10px;
-                            font-family: 'Oswald', sans-serif;
-                            font-size: 22px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                            letter-spacing: 1px;
-                            word-break: break-word;
-                            color: #000000;
-                        }
-                        .text-block p {
-                            font-family: 'Courier Prime', monospace;
-                            font-size: 14px;
-                            line-height: 1.5;
-                            white-space: pre-wrap;
-                            word-break: break-word;
-                            overflow-wrap: break-word;
-                            color: #000000;
-                            margin: 0;
-                        }
-                        .contact-bar {
-                            background: #4f5f3a;
-                            color: #ffd800;
-                            font-family: 'Oswald', sans-serif;
-                            font-size: 14px;
-                            text-align: center;
-                            padding: 12px 15px;
-                        }
-                        .attention {
-                            font-weight: bold;
-                            margin-top: 6px;
-                            font-size: 16px;
-                            color: #ffd800;
-                        }
-                        .apb-footer {
-                            background: #000000;
-                            color: #ffffff;
-                            font-family: 'Share Tech Mono', monospace;
-                            font-size: 12px;
-                            padding: 8px 12px;
-                            display: flex;
-                            justify-content: space-between;
-                            flex-wrap: wrap;
-                        }
-                    </style>
-                </head>
-                <body>
-                    ${posterElement.outerHTML}
-                </body>
-                </html>
-            `);
-            iframe.contentDocument.close();
-            
-            // Wait for iframe to load
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            // Capture the iframe content
-            const canvas = await html2canvas(iframe.contentDocument.body, {
+            const canvas = await html2canvas(previewContainer.querySelector('.apb-form'), {
                 scale: 2,
                 backgroundColor: '#eaeaea',
-                logging: true
+                logging: false,
+                useCORS: true
             });
             
-            // Remove iframe
-            document.body.removeChild(iframe);
-            
-            // Download
             const link = document.createElement('a');
-            const fileName = `apb-poster-${new Date().getTime()}.png`;
+            const fileName = `apb-poster-fallback-${new Date().getTime()}.png`;
             link.download = fileName;
             link.href = canvas.toDataURL('image/png');
             document.body.appendChild(link);
@@ -381,7 +361,7 @@ async function generateAPBPoster() {
             
         } catch (fallbackError) {
             console.error('Fallback also failed:', fallbackError);
-            alert('Error generating poster. Please try:\n\n1. Using Chrome browser\n2. Running from a local web server\n3. Disabling ad blockers\n4. Trying without external images');
+            alert('Error generating poster. Please try:\n\n1. Using Chrome browser\n2. Making sure Bulletin.png is in the same folder\n3. Trying without external mugshot images\n4. Checking browser console (F12) for errors');
         }
     } finally {
         // Reset button state
