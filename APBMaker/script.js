@@ -43,6 +43,9 @@ const closeSuccess = document.getElementById('close-success');
 // Dark Mode Toggle
 const darkModeSwitch = document.getElementById('dark-mode-switch');
 
+// Store mugshot data URL
+let mugshotDataURL = null;
+
 // Initialize character counts
 function updateCharacterCounts() {
     wantedCount.textContent = wantedTextInput.value.length;
@@ -74,38 +77,114 @@ function updatePreview() {
     updateCharacterCounts();
 }
 
+// Convert image URL to data URL to avoid CORS issues
+function urlToDataURL(url) {
+    return new Promise((resolve, reject) => {
+        if (!url) {
+            resolve(null);
+            return;
+        }
+        
+        // If it's already a data URL, return it
+        if (url.startsWith('data:')) {
+            resolve(url);
+            return;
+        }
+        
+        // If it's a local file (Bulletin.png), we need to handle it differently
+        if (url.includes('Bulletin.png') || url.includes('bulletin.png')) {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            };
+            
+            img.onerror = function() {
+                console.warn('Could not load local image:', url);
+                resolve(null);
+            };
+            
+            // Add cache buster for local files
+            img.src = url.includes('?') ? url : url + '?t=' + Date.now();
+            return;
+        }
+        
+        // For external URLs, try to fetch with CORS
+        fetch(url, { mode: 'cors' })
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.blob();
+            })
+            .then(blob => {
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    resolve(reader.result);
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(blob);
+            })
+            .catch(error => {
+                console.warn('Fetch failed, trying alternative method:', error);
+                
+                // Alternative: create image and draw to canvas
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                
+                img.onload = function() {
+                    try {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0);
+                        resolve(canvas.toDataURL('image/png'));
+                    } catch (e) {
+                        reject(e);
+                    }
+                };
+                
+                img.onerror = function() {
+                    console.warn('Image load failed:', url);
+                    resolve(null);
+                };
+                
+                img.src = url;
+            });
+    });
+}
+
 // Handle mugshot URL input
-function handleMugshotInput() {
+async function handleMugshotInput() {
     const url = mugshotUrlInput.value.trim();
     
     if (!url) {
         mugshot.style.display = 'none';
         mugshot.src = '';
+        mugshotDataURL = null;
         return;
     }
     
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    
-    img.onload = function() {
-        mugshot.src = url;
-        mugshot.style.display = 'block';
-    };
-    
-    img.onerror = function() {
-        // Try without CORS
-        const img2 = new Image();
-        img2.onload = function() {
-            mugshot.src = url;
+    try {
+        // Convert to data URL for preview and download
+        mugshotDataURL = await urlToDataURL(url);
+        
+        if (mugshotDataURL) {
+            mugshot.src = mugshotDataURL;
             mugshot.style.display = 'block';
-        };
-        img2.onerror = function() {
+        } else {
             mugshot.style.display = 'none';
-        };
-        img2.src = url;
-    };
-    
-    img.src = url;
+        }
+    } catch (error) {
+        console.error('Failed to load mugshot:', error);
+        mugshot.style.display = 'none';
+        mugshotDataURL = null;
+    }
 }
 
 // Set up event listeners for real-time preview
@@ -129,6 +208,24 @@ function setupEventListeners() {
     mugshotUrlInput.addEventListener('blur', handleMugshotInput);
 }
 
+// Load image helper
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        if (!src) {
+            reject(new Error('No source provided'));
+            return;
+        }
+        
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error('Failed to load image'));
+        
+        img.src = src;
+    });
+}
+
 // Create poster using Canvas API directly
 async function createPosterWithCanvas() {
     const canvas = document.createElement('canvas');
@@ -136,7 +233,7 @@ async function createPosterWithCanvas() {
     
     // Set canvas dimensions (600px width, calculate height)
     canvas.width = 600 * 2; // Double for high DPI
-    canvas.height = 800 * 2;
+    canvas.height = 1000 * 2; // Increased height to accommodate content
     
     // Fill with background color
     ctx.fillStyle = '#eaeaea';
@@ -147,79 +244,92 @@ async function createPosterWithCanvas() {
     // Load and draw bulletin image if enabled
     if (bulletinToggle.checked) {
         try {
-            const bulletinImg = await loadImage('Bulletin.png');
-            const bulletinHeight = (200 * 2); // Fixed height for bulletin
-            ctx.drawImage(bulletinImg, 0, yPosition, canvas.width, bulletinHeight);
-            yPosition += bulletinHeight;
-            
-            // Draw black border
-            ctx.strokeStyle = '#000';
-            ctx.lineWidth = 2;
-            ctx.strokeRect(0, yPosition - 2, canvas.width, 2);
+            const bulletinDataURL = await urlToDataURL('Bulletin.png');
+            if (bulletinDataURL) {
+                const bulletinImg = await loadImage(bulletinDataURL);
+                // Scale image to fit width while maintaining aspect ratio
+                const scaleFactor = canvas.width / bulletinImg.width;
+                const bulletinHeight = bulletinImg.height * scaleFactor;
+                ctx.drawImage(bulletinImg, 0, yPosition, canvas.width, bulletinHeight);
+                yPosition += bulletinHeight;
+                
+                // Draw black border
+                ctx.strokeStyle = '#000';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(0, yPosition - 2, canvas.width, 2);
+            }
         } catch (error) {
-            console.log('Bulletin image not available');
+            console.log('Bulletin image not available:', error);
         }
     }
     
     // Draw WANTED header
+    const headerHeight = 60 * 2;
     ctx.fillStyle = '#ffd800';
-    ctx.fillRect(0, yPosition, canvas.width, 60 * 2);
+    ctx.fillRect(0, yPosition, canvas.width, headerHeight);
     ctx.fillStyle = '#000';
     ctx.font = 'bold 44px Anton, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(pWanted.textContent, canvas.width / 2, yPosition + (60 * 2) / 2);
-    yPosition += 60 * 2;
+    ctx.fillText(pWanted.textContent, canvas.width / 2, yPosition + headerHeight / 2);
+    yPosition += headerHeight;
     
     // Draw charge bar
+    const chargeHeight = 50 * 2;
     ctx.fillStyle = '#5c5c5c';
-    ctx.fillRect(0, yPosition, canvas.width, 50 * 2);
+    ctx.fillRect(0, yPosition, canvas.width, chargeHeight);
     ctx.fillStyle = '#fff';
     ctx.font = 'bold 22px Oswald, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText(pCharge.textContent, canvas.width / 2, yPosition + (50 * 2) / 2);
-    yPosition += 50 * 2;
+    ctx.fillText(pCharge.textContent, canvas.width / 2, yPosition + chargeHeight / 2);
+    yPosition += chargeHeight;
     
-    // Draw body content
-    const bodyStartY = yPosition;
-    const bodyHeight = 400 * 2;
+    // Draw mugshot and suspect name area
+    const mugshotSize = 200 * 2;
+    const mugshotAreaHeight = mugshotSize + 60 * 2;
     
     // Draw mugshot if available
-    if (mugshot.style.display !== 'none' && mugshot.src) {
+    if (mugshotDataURL) {
         try {
-            const mugshotImg = await loadImage(mugshot.src);
-            const mugshotX = (canvas.width / 2) - (100 * 2);
-            const mugshotY = bodyStartY + (30 * 2);
-            ctx.drawImage(mugshotImg, mugshotX, mugshotY, 200 * 2, 200 * 2);
+            const mugshotImg = await loadImage(mugshotDataURL);
+            const mugshotX = (canvas.width / 2) - (mugshotSize / 2);
+            const mugshotY = yPosition + 30 * 2;
+            
+            // Draw white background for mugshot
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(mugshotX - 5, mugshotY - 5, mugshotSize + 10, mugshotSize + 10);
+            
+            // Draw mugshot
+            ctx.drawImage(mugshotImg, mugshotX, mugshotY, mugshotSize, mugshotSize);
             
             // Draw border around mugshot
             ctx.strokeStyle = '#000';
-            ctx.lineWidth = 2 * 2;
-            ctx.strokeRect(mugshotX, mugshotY, 200 * 2, 200 * 2);
+            ctx.lineWidth = 4;
+            ctx.strokeRect(mugshotX, mugshotY, mugshotSize, mugshotSize);
             
             // Draw suspect name
             ctx.fillStyle = '#000';
             ctx.font = 'bold 22px Oswald, sans-serif';
             ctx.textAlign = 'center';
-            ctx.fillText(pName.textContent, canvas.width / 2, mugshotY + (220 * 2));
+            ctx.fillText(pName.textContent, canvas.width / 2, mugshotY + mugshotSize + 30 * 2);
             
-            yPosition = mugshotY + (270 * 2);
+            yPosition = mugshotY + mugshotSize + 60 * 2;
         } catch (error) {
-            console.log('Mugshot not available for download');
+            console.log('Mugshot not available for download:', error);
             // Draw suspect name without mugshot
             ctx.fillStyle = '#000';
             ctx.font = 'bold 22px Oswald, sans-serif';
             ctx.textAlign = 'center';
-            ctx.fillText(pName.textContent, canvas.width / 2, bodyStartY + (30 * 2));
-            yPosition = bodyStartY + (60 * 2);
+            ctx.fillText(pName.textContent, canvas.width / 2, yPosition + 60 * 2);
+            yPosition += 90 * 2;
         }
     } else {
         // Draw suspect name without mugshot
         ctx.fillStyle = '#000';
         ctx.font = 'bold 22px Oswald, sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText(pName.textContent, canvas.width / 2, bodyStartY + (30 * 2));
-        yPosition = bodyStartY + (60 * 2);
+        ctx.fillText(pName.textContent, canvas.width / 2, yPosition + 60 * 2);
+        yPosition += 90 * 2;
     }
     
     // Draw description
@@ -259,8 +369,9 @@ async function createPosterWithCanvas() {
     yPosition = lineY + (40 * 2);
     
     // Draw contact bar
+    const contactHeight = 80 * 2;
     ctx.fillStyle = '#4f5f3a';
-    ctx.fillRect(0, yPosition, canvas.width, 80 * 2);
+    ctx.fillRect(0, yPosition, canvas.width, contactHeight);
     ctx.fillStyle = '#ffd800';
     ctx.font = '14px Oswald, sans-serif';
     ctx.textAlign = 'center';
@@ -272,38 +383,36 @@ async function createPosterWithCanvas() {
     ctx.font = 'bold 16px Oswald, sans-serif';
     ctx.fillText(`ATTENTION: ${pDetective.textContent}`, canvas.width / 2, yPosition + (60 * 2));
     
-    yPosition += 80 * 2;
+    yPosition += contactHeight;
     
     // Draw footer
+    const footerHeight = 40 * 2;
     ctx.fillStyle = '#000';
-    ctx.fillRect(0, yPosition, canvas.width, 40 * 2);
+    ctx.fillRect(0, yPosition, canvas.width, footerHeight);
     ctx.fillStyle = '#fff';
     ctx.font = '12px Share Tech Mono, monospace';
     ctx.textAlign = 'left';
     
     // Left: Date
-    ctx.fillText(pDate.textContent, 25 * 2, yPosition + (20 * 2));
+    ctx.fillText(pDate.textContent, 25 * 2, yPosition + (footerHeight / 2));
     
     // Center: APB
     ctx.textAlign = 'center';
-    ctx.fillText('APB', canvas.width / 2, yPosition + (20 * 2));
+    ctx.fillText('APB', canvas.width / 2, yPosition + (footerHeight / 2));
     
     // Right: Created by SIB
     ctx.textAlign = 'right';
-    ctx.fillText('Created by SIB', canvas.width - (25 * 2), yPosition + (20 * 2));
+    ctx.fillText('Created by SIB', canvas.width - (25 * 2), yPosition + (footerHeight / 2));
     
-    return canvas;
-}
-
-// Helper function to load images
-function loadImage(src) {
-    return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.crossOrigin = 'anonymous';
-        img.onload = () => resolve(img);
-        img.onerror = reject;
-        img.src = src;
-    });
+    // Trim canvas to actual content height
+    const actualHeight = yPosition + footerHeight;
+    const trimmedCanvas = document.createElement('canvas');
+    trimmedCanvas.width = canvas.width;
+    trimmedCanvas.height = actualHeight;
+    const trimmedCtx = trimmedCanvas.getContext('2d');
+    trimmedCtx.drawImage(canvas, 0, 0, canvas.width, actualHeight, 0, 0, canvas.width, actualHeight);
+    
+    return trimmedCanvas;
 }
 
 // Main function to generate APB Poster
@@ -335,18 +444,16 @@ async function generateAPBPoster() {
     } catch (error) {
         console.error('Error generating poster:', error);
         
-        // Try html2canvas as fallback
+        // Try a simpler html2canvas approach
         try {
-            alert('Using html2canvas fallback...');
+            const posterElement = document.getElementById('poster');
             
-            // Get the preview container
-            const previewContainer = document.getElementById('apbPreview');
-            
-            const canvas = await html2canvas(previewContainer.querySelector('.apb-form'), {
+            const canvas = await html2canvas(posterElement, {
                 scale: 2,
                 backgroundColor: '#eaeaea',
                 logging: false,
-                useCORS: true
+                useCORS: true,
+                allowTaint: true
             });
             
             const link = document.createElement('a');
@@ -361,7 +468,7 @@ async function generateAPBPoster() {
             
         } catch (fallbackError) {
             console.error('Fallback also failed:', fallbackError);
-            alert('Error generating poster. Please try:\n\n1. Using Chrome browser\n2. Making sure Bulletin.png is in the same folder\n3. Trying without external mugshot images\n4. Checking browser console (F12) for errors');
+            alert('Error generating poster. Please try:\n\n1. Using a different browser (Chrome/Firefox)\n2. Ensuring Bulletin.png is in the same folder\n3. Using https URLs for mugshots\n4. Trying a smaller image for mugshot');
         }
     } finally {
         // Reset button state
@@ -408,6 +515,7 @@ resetBtn.addEventListener('click', function() {
         mugshotUrlInput.value = '';
         mugshot.src = '';
         mugshot.style.display = 'none';
+        mugshotDataURL = null;
         
         updatePreview();
     }
@@ -441,7 +549,7 @@ if (savedTheme === 'dark') {
 darkModeSwitch.addEventListener('change', toggleDarkMode);
 
 // Initialize everything on page load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // Setup event listeners first
     setupEventListeners();
     
@@ -451,7 +559,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial mugshot display
     mugshot.style.display = 'none';
     
-    // Load bulletin image
+    // Load bulletin image for preview
     bulletinImage.src = 'Bulletin.png';
     bulletinImage.onerror = function() {
         console.warn('Bulletin.png not found');
