@@ -1,0 +1,16 @@
+{
+  "name": "apb-generator",
+  "version": "1.0.0",
+  "description": "Obfuscated APB Generator",
+  "main": "build/obfuscate.js",
+  "scripts": {
+    "build": "node build/obfuscate.js",
+    "dev": "cp -r src/* dist/",
+    "deploy": "npm run build && echo 'Obfuscation complete'"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^4.0.2",
+    "clean-css": "^5.3.3",
+    "html-minifier": "^4.0.0"
+  }
+}
