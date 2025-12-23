@@ -1,3 +1,4 @@
+/* Import the provided CSS */
 :root {
     --bg-color: #1e1e1e;
     --text-color: #f0f0f0;
@@ -582,17 +583,17 @@ input:invalid {
 }
 
 .bulletin-image {
-    width: 100%; 
+    width: 100%; /* Changed from max-width to width */
     height: auto;
-    display: block; 
-    object-fit: cover; 
+    display: block; /* Removes bottom space under image */
+    object-fit: cover; /* Changed from contain to cover to fill the area */
 }
 
 .bulletin-image-container.hidden {
     display: none;
 }
 
-/* APB PREVIEW  */
+/* APB PREVIEW COLORS - FIXED (not affected by dark/light mode) */
 .apb-header {
     background: #ffd800;
     font-family: 'Anton', sans-serif;
@@ -692,6 +693,7 @@ input:invalid {
     flex-wrap: wrap;
 }
 
+/* Ensure ALL APB text is correct color */
 .apb-body, .suspect-name, .text-block p, .text-block, .apb-form {
     color: #000000 !important;
 }
@@ -739,6 +741,7 @@ input:invalid {
     }
 }
 
+/* Remove the old warning form styles that were interfering */
 .warning-form, .warning-form-png,
 .warning-header, .warning-header-png,
 .agency-name, .agency-name-png,
@@ -755,6 +758,7 @@ input:invalid {
     display: none !important;
 }
 
+/* Remove instructions section styles */
 .instructions-section,
 .instructions-content,
 .instruction-step,
