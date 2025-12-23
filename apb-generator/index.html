@@ -1,1 +1,204 @@
-<script language=JavaScript> html='%3C%21DOCTYPE%20html%3E%0D%0A%3Chtml%20lang%3D%22en%22%3E%0D%0A%3Chead%3E%0D%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0D%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%22%3E%0D%0A%20%20%20%20%3Ctitle%3EAPB%20%2F%20Wanted%20Poster%20Generator%3C%2Ftitle%3E%0D%0A%20%20%20%20%0D%0A%20%20%20%20%3C%21--%20Google%20Fonts%20for%20APB%20style%20--%3E%0D%0A%20%20%20%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0D%0A%20%20%20%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0D%0A%20%20%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnton%26family%3DCourier%2BPrime%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400%3B1%2C700%26family%3DOswald%3Awght%40400%3B600%3B700%26family%3DShare%2BTech%2BMono%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E%0D%0A%20%20%20%20%0D%0A%20%20%20%20%3C%21--%20Font%20Awesome%20--%3E%0D%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Ffont-awesome%2F6.4.0%2Fcss%2Fall.min.css%22%3E%0D%0A%20%20%20%20%0D%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22styles.css%22%3E%0D%0A%20%20%20%20%3Cscript%20src%3D%22https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fhtml2canvas%401.4.1%2Fdist%2Fhtml2canvas.min.js%22%3E%3C%2Fscript%3E%0D%0A%3C%2Fhead%3E%0D%0A%3Cbody%3E%0D%0A%20%20%20%20%0D%0A%20%20%20%20%3C%21--%20Dark%20Mode%20Toggle%20--%3E%0D%0A%20%20%20%20%3Cdiv%20class%3D%22dark-mode-toggle%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22checkbox%22%20id%3D%22dark-mode-switch%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22dark-mode-switch%22%20class%3D%22dark-mode-label%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22dark-mode-slider%22%3E%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22dark-mode-text%22%3EDark%20Mode%3C%2Fspan%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Flabel%3E%0D%0A%20%20%20%20%3C%2Fdiv%3E%0D%0A%0D%0A%20%20%20%20%3Cdiv%20class%3D%22container%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cheader%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch1%3E%3Ci%20class%3D%22fas%20fa-bullhorn%22%3E%3C%2Fi%3E%20APB%20%2F%20Wanted%20Poster%20Generator%3C%2Fh1%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%20class%3D%22subtitle%22%3EGenerate%20APB%20posters%20without%20the%20annoying%20BBCODE%3C%2Fp%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fheader%3E%0D%0A%0D%0A%20%20%20%20%20%20%20%20%3C%21--%20Form%20Section%20--%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-section%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch2%3ECreate%20APB%3C%2Fh2%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cform%20id%3D%22apbForm%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22wantedText%22%20class%3D%22required%22%3EHeader%20Text%20%3Cspan%20class%3D%22hint%22%3E%28e.g.%2C%20%22WANTED%22%2C%20%22MISSING%22%2C%20%22APB%22%29%3C%2Fspan%3E%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22wantedText%22%20value%3D%22WANTED%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22character-count%22%3E%3Cspan%20id%3D%22wanted-count%22%3E0%3C%2Fspan%3E%2F20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Bulletin%20Section%20-%20Toggle%20and%20dropdown%20on%20same%20line%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22bulletinToggle%22%20class%3D%22compact-toggle-label%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22checkbox%22%20id%3D%22bulletinToggle%22%20checked%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22toggle-icon%22%3E%3C%2Fspan%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Bulletin%20Style%20%3Cspan%20class%3D%22hint%22%3E%28Toggle%20visibility%29%3C%2Fspan%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cselect%20id%3D%22bulletinSelect%22%20class%3D%22bulletin-select%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%22Bulletin.png%22%3E%231%3C%2Foption%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%22Bulletin2.png%22%3E%232%3C%2Foption%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fselect%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Moved%20Mugshot%20URL%20here%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22mugshotUrl%22%3EMugshot%20Image%20URL%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22mugshotUrl%22%20placeholder%3D%22https%3A%2F%2Fexample.com%2Fmugshot.jpg%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Name%20Toggle%20-%20COMPACT%20VERSION%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22nameToggle%22%20class%3D%22compact-toggle-label%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22checkbox%22%20id%3D%22nameToggle%22%20checked%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22toggle-icon%22%3E%3C%2Fspan%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Suspect%20Name%20%3Cspan%20class%3D%22hint%22%3E%28Toggle%20visibility%29%3C%2Fspan%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22suspectName%22%20value%3D%22%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22character-count%22%3E%3Cspan%20id%3D%22name-count%22%3E0%3C%2Fspan%3E%2F50%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-row%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22charge%22%20class%3D%22required%22%3ECharge%20%3Cspan%20class%3D%22hint%22%3E%28e.g.%2C%20%22FA%20201.%20CAPITAL%20MURDER%22%29%3C%2Fspan%3E%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22charge%22%20value%3D%22FA%20201.%20CAPITAL%20MURDER%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22character-count%22%3E%3Cspan%20id%3D%22charge-count%22%3E0%3C%2Fspan%3E%2F100%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22contact%22%3EContact%20Information%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22contact%22%20value%3D%22HOMICIDE%20BUREAU%20%E2%80%A2%20PH%3A%20%23%23%23%23%23%23%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22character-count%22%3E%3Cspan%20id%3D%22contact-count%22%3E0%3C%2Fspan%3E%2F100%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22description%22%3EDescription%20%3Cspan%20class%3D%22hint%22%3E%28Details%20about%20the%20crime%2C%20suspect%20appearance%2C%20last%20seen%2C%20etc.%29%3C%2Fspan%3E%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20id%3D%22description%22%20rows%3D%226%22%3E%3C%2Ftextarea%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22character-count%22%3E%3Cspan%20id%3D%22description-count%22%3E0%3C%2Fspan%3E%2F2000%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-row%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22detective%22%3EDetective%2FDeputies%20Name%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22detective%22%20value%3D%22%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22character-count%22%3E%3Cspan%20id%3D%22detective-count%22%3E0%3C%2Fspan%3E%2F50%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22date%22%3EDate%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22date%22%20value%3D%22Day%2C%20Month%20Date%2C%20Year%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22character-count%22%3E%3Cspan%20id%3D%22date-count%22%3E0%3C%2Fspan%3E%2F50%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22createdBy%22%3ECreated%20By%20Text%20%3Cspan%20class%3D%22hint%22%3E%28e.g.%2C%20%22Created%20by%20SIB%22%29%3C%2Fspan%3E%3C%2Flabel%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22createdBy%22%20value%3D%22Created%20by%20SIB%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22character-count%22%3E%3Cspan%20id%3D%22createdby-count%22%3E0%3C%2Fspan%3E%2F30%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22button-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbutton%20type%3D%22button%22%20class%3D%22discord-btn%22%20id%3D%22generateBtn%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20class%3D%22fas%20fa-file-image%22%3E%3C%2Fi%3E%20Generate%20APB%20Poster%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fbutton%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbutton%20type%3D%22button%22%20class%3D%22secondary-btn%22%20id%3D%22resetBtn%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20class%3D%22fas%20fa-redo%22%3E%3C%2Fi%3E%20Reset%20Form%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fbutton%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fform%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%0D%0A%20%20%20%20%20%20%20%20%3C%21--%20Preview%20Section%20--%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22preview-section%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch2%3EAPB%20Preview%3C%2Fh2%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22apbPreview%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20APB%20Poster%20will%20be%20generated%20here%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22apb-form%22%20id%3D%22poster%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Bulletin%20Image%20Area%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22bulletin-image-container%22%20id%3D%22bulletinContainer%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22Bulletin.png%22%20alt%3D%22%231%22%20class%3D%22bulletin-image%22%20id%3D%22bulletinImage%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20WANTED%20Header%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22apb-header%22%20id%3D%22pWanted%22%3EWANTED%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Charge%20Bar%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22charge-bar%22%20id%3D%22pCharge%22%3EFA%20201.%20CAPITAL%20MURDER%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Body%20Content%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22apb-body%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22photo-block%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20id%3D%22mugshot%22%20src%3D%22%22%20alt%3D%22Suspect%20Mugshot%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22suspect-name%22%20id%3D%22pName%22%3E%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22text-block%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%20id%3D%22pDescription%22%3E%3C%2Fp%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Contact%20Bar%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22contact-bar%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%3EAny%20information%2C%20please%20contact%3A%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstrong%20id%3D%22pContact%22%3EHOMICIDE%20BUREAU%20%E2%80%A2%20PH%3A%20%23%23%23%23%23%23%3C%2Fstrong%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22attention%22%3EATTENTION%3A%20%3Cspan%20id%3D%22pDetective%22%3E%3C%2Fspan%3E%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Footer%20--%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22apb-footer%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20id%3D%22pDate%22%3EDay%2C%20Month%20Date%2C%20Year%3C%2Fspan%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%3EAPB%3C%2Fspan%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20id%3D%22pCreatedBy%22%3ECreated%20by%20SIB%3C%2Fspan%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22button-group%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbutton%20type%3D%22button%22%20class%3D%22discord-btn%22%20id%3D%22downloadBtn%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20class%3D%22fas%20fa-download%22%3E%3C%2Fi%3E%20Download%20as%20PNG%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fbutton%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbutton%20type%3D%22button%22%20class%3D%22secondary-btn%22%20id%3D%22copyBtn%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20class%3D%22fas%20fa-copy%22%3E%3C%2Fi%3E%20Copy%20Text%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fbutton%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%0D%0A%20%20%20%20%3C%21--%20Success%20Message%20Modal%20--%3E%0D%0A%20%20%20%20%3Cdiv%20id%3D%22success-message%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22success-message-content%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20class%3D%22fas%20fa-check-circle%22%3E%3C%2Fi%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch2%3EAPB%20Poster%20Generated%21%3C%2Fh2%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3EYour%20poster%20has%20been%20successfully%20generated%20and%20is%20ready%20for%20download.%3C%2Fp%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22success-instructions%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3EThe%20PNG%20file%20has%20been%20downloaded%20to%20your%20device.%3C%2Fp%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbutton%20id%3D%22close-success%22%20class%3D%22secondary-btn%22%3EClose%3C%2Fbutton%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%0D%0A%20%20%20%20%3Cdiv%20class%3D%22copyright%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cp%3EThis%20tool%20is%20created%20by%20%3Ca%20href%3D%22https%3A%2F%2Fforum.gta.world%2Fen%2Fprofile%2F47870-jordan447%2F%22%20target%3D%22_blank%22%3EJordan%3C%2Fa%3E.%20Report%20any%20bugs%20in%20DMs%21%3C%2Fp%3E%0D%0A%20%20%20%20%3C%2Fdiv%3E%0D%0A%0D%0A%20%20%20%20%3Cscript%20src%3D%22script.js%22%3E%3C%2Fscript%3E%0D%0A%3C%2Fbody%3E%0D%0A%3C%2Fhtml%3E';d=unescape(html);document.write(d);</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APB / Wanted Poster Generator</title>
+    
+    <!-- Google Fonts for APB style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="dark-mode-switch">
+        <label for="dark-mode-switch" class="dark-mode-label">
+            <div class="dark-mode-slider"></div>
+            <span class="dark-mode-text">Dark Mode</span>
+        </label>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-bullhorn"></i> APB / Wanted Poster Generator</h1>
+            <p class="subtitle">Generate APB posters without the annoying BBCODE</p>
+        </header>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Create APB</h2>
+            
+            <form id="apbForm">
+                <div class="form-group">
+                    <label for="wantedText" class="required">Header Text <span class="hint">(e.g., "WANTED", "MISSING", "APB")</span></label>
+                    <input type="text" id="wantedText" value="WANTED">
+                    <div class="character-count"><span id="wanted-count">0</span>/20</div>
+                </div>
+                
+                <!-- Bulletin Section - Toggle and dropdown on same line -->
+                <div class="form-group">
+                    <label for="bulletinToggle" class="compact-toggle-label">
+                        <input type="checkbox" id="bulletinToggle" checked>
+                        <span class="toggle-icon"></span>
+                        Bulletin Style <span class="hint">(Toggle visibility)</span>
+                    </label>
+                    <select id="bulletinSelect" class="bulletin-select">
+                        <option value="Bulletin.png">#1</option>
+                        <option value="Bulletin2.png">#2</option>
+                    </select>
+                </div>
+                
+                <!-- Moved Mugshot URL here -->
+                <div class="form-group">
+                    <label for="mugshotUrl">Mugshot Image URL</label>
+                    <input type="text" id="mugshotUrl" placeholder="https://example.com/mugshot.jpg">
+                </div>
+                
+                <!-- Name Toggle - COMPACT VERSION -->
+                <div class="form-group">
+                    <label for="nameToggle" class="compact-toggle-label">
+                        <input type="checkbox" id="nameToggle" checked>
+                        <span class="toggle-icon"></span>
+                        Suspect Name <span class="hint">(Toggle visibility)</span>
+                    </label>
+                    <input type="text" id="suspectName" value="">
+                    <div class="character-count"><span id="name-count">0</span>/50</div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="charge" class="required">Charge <span class="hint">(e.g., "FA 201. CAPITAL MURDER")</span></label>
+                        <input type="text" id="charge" value="FA 201. CAPITAL MURDER">
+                        <div class="character-count"><span id="charge-count">0</span>/100</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact">Contact Information</label>
+                        <input type="text" id="contact" value="HOMICIDE BUREAU • PH: ######">
+                        <div class="character-count"><span id="contact-count">0</span>/100</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description <span class="hint">(Details about the crime, suspect appearance, last seen, etc.)</span></label>
+                    <textarea id="description" rows="6"></textarea>
+                    <div class="character-count"><span id="description-count">0</span>/2000</div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="detective">Detective/Deputies Name</label>
+                        <input type="text" id="detective" value="">
+                        <div class="character-count"><span id="detective-count">0</span>/50</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="text" id="date" value="Day, Month Date, Year">
+                        <div class="character-count"><span id="date-count">0</span>/50</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="createdBy">Created By Text <span class="hint">(e.g., "Created by SIB")</span></label>
+                    <input type="text" id="createdBy" value="Created by SIB">
+                    <div class="character-count"><span id="createdby-count">0</span>/30</div>
+                </div>
+                
+                <div class="button-group">
+                    <button type="button" class="discord-btn" id="generateBtn">
+                        <i class="fas fa-file-image"></i> Generate APB Poster
+                    </button>
+                    <button type="button" class="secondary-btn" id="resetBtn">
+                        <i class="fas fa-redo"></i> Reset Form
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <h2>APB Preview</h2>
+            
+            <div id="apbPreview">
+                <!-- APB Poster will be generated here -->
+                <div class="apb-form" id="poster">
+                    <!-- Bulletin Image Area -->
+                    <div class="bulletin-image-container" id="bulletinContainer">
+                        <img src="Bulletin.png" alt="#1" class="bulletin-image" id="bulletinImage">
+                    </div>
+                    
+                    <!-- WANTED Header -->
+                    <div class="apb-header" id="pWanted">WANTED</div>
+                    
+                    <!-- Charge Bar -->
+                    <div class="charge-bar" id="pCharge">FA 201. CAPITAL MURDER</div>
+                    
+                    <!-- Body Content -->
+                    <div class="apb-body">
+                        <div class="photo-block">
+                            <img id="mugshot" src="" alt="Suspect Mugshot">
+                            <div class="suspect-name" id="pName"></div>
+                        </div>
+                        
+                        <div class="text-block">
+                            <p id="pDescription"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Bar -->
+                    <div class="contact-bar">
+                        <div>Any information, please contact:</div>
+                        <strong id="pContact">HOMICIDE BUREAU • PH: ######</strong>
+                        <div class="attention">ATTENTION: <span id="pDetective"></span></div>
+                    </div>
+                    
+                    <!-- Footer -->
+                    <div class="apb-footer">
+                        <span id="pDate">Day, Month Date, Year</span>
+                        <span>APB</span>
+                        <span id="pCreatedBy">Created by SIB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button type="button" class="discord-btn" id="downloadBtn">
+                    <i class="fas fa-download"></i> Download as PNG
+                </button>
+                <button type="button" class="secondary-btn" id="copyBtn">
+                    <i class="fas fa-copy"></i> Copy Text
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Message Modal -->
+    <div id="success-message">
+        <div class="success-message-content">
+            <i class="fas fa-check-circle"></i>
+            <h2>APB Poster Generated!</h2>
+            <p>Your poster has been successfully generated and is ready for download.</p>
+            <div class="success-instructions">
+                <p>The PNG file has been downloaded to your device.</p>
+            </div>
+            <button id="close-success" class="secondary-btn">Close</button>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>This tool is created by <a href="https://forum.gta.world/en/profile/47870-jordan447/" target="_blank">Jordan</a>. Report any bugs in DMs!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
