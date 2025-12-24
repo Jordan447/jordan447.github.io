@@ -516,7 +516,7 @@ input:invalid {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    border: 2px solid #000;
+    /*border: 2px solid #000;*/
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -544,22 +544,28 @@ input:invalid {
 
 /* APB PREVIEW COLORS - FIXED (not affected by dark/light mode) */
 .apb-header {
-    background: #ffd800;
-    font-family: 'Anton', sans-serif;
+    background: #fd0;
+    font-family: Arial, sans-serif;
+    font-weight: 900; /* Using the heaviest font-weight */
     font-size: 44px;
     letter-spacing: 3px;
     text-align: center;
-    padding: 8px 0;
+    padding: 4px 0; /* Reduced height */
     color: #000;
     text-transform: uppercase;
+    /* Multi-layer text-shadow for bold effect */
+    text-shadow: 
+        0.25px 0.25px 0 #000,
+        0.5px 0.5px 0 #000;
+    -webkit-text-stroke: 0.5px #000; /* For WebKit browsers */
 }
 
 .charge-bar {
-    background: #5c5c5c;
+    background: #58595b;
     color: #fff;
-    font-family: 'Oswald', sans-serif;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     font-size: 22px;
-    font-weight: 700;
     text-align: center;
     padding: 10px 15px;
     word-break: break-word;
@@ -591,9 +597,9 @@ input:invalid {
 
 .suspect-name {
     margin-top: 10px;
-    font-family: 'Oswald', sans-serif;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     font-size: 22px;
-    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     word-break: break-word;
@@ -605,7 +611,8 @@ input:invalid {
 }
 
 .text-block p {
-    font-family: 'Courier Prime', monospace;
+    font-family: Arial, sans-serif;
+    font-weight: normal; /* Not bold for description */
     font-size: 14px;
     line-height: 1.5;
     white-space: pre-wrap;
@@ -617,29 +624,70 @@ input:invalid {
 
 .contact-bar {
     background: #4f5f3a;
-    color: #ffd800;
-    font-family: 'Oswald', sans-serif;
+    color: #ffffff; /* Changed from #ffd800 to #ffffff */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     font-size: 14px;
     text-align: center;
     padding: 12px 15px;
+}
+
+.contact-bar div:first-child {
+    color: #e0bd79; /* Changed from #ffd800 to #e0bd79 */
+}
+
+.contact-bar strong {
+    color: #ffffff !important; /* Make contact info white */
 }
 
 .attention {
     font-weight: bold;
     margin-top: 6px;
     font-size: 16px;
-    color: #ffd800;
+    color: #e0bd79; /* Changed from #ffd800 to #e0bd79 */
+}
+
+.attention span {
+    color: #ffffff !important; /* Make detective name white */
 }
 
 .apb-footer {
     background: #000000;
     color: #ffffff;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     font-size: 12px;
     padding: 8px 12px;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+/* All spans - remove equal flex distribution */
+.apb-footer span {
+    color: #ffffff !important;
+    flex: 0 0 auto;
+}
+
+/* Date on the left */
+#pDate {
+    text-align: left;
+}
+
+/* APB text absolutely centered */
+#pApbText {
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Created by on the right */
+#pCreatedBy {
+    text-align: right;
 }
 
 /* Ensure ALL APB text is correct color */
@@ -647,8 +695,12 @@ input:invalid {
     color: #000000 !important;
 }
 
-.contact-bar div, .contact-bar strong {
-    color: #ffd800 !important;
+.contact-bar div:first-child {
+    color: #e0bd79 !important; /* Updated to #e0bd79 */
+}
+
+.contact-bar strong, .attention span, .contact-bar {
+    color: #ffffff !important;
 }
 
 .apb-footer span {

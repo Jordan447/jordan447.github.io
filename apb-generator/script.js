@@ -1,1 +1,556 @@
-const OwjrzydsI_uxiO=B$UyX$zn;(function(Lvk$LocK,fBVNX$xgbFVZ){const hSvojUUDsrssSwaBL=B$UyX$zn,rZWONiYigCrnPcCdeIzCx=Lvk$LocK();while(!![]){try{const osOxbqtHFBTWoreyEfRC_dNa=parseFloat(hSvojUUDsrssSwaBL(0x1a8))/(-0x3a*0x63+Math.floor(parseInt(0x1))*parseFloat(-0x5e7)+0xba*Math.trunc(parseInt(0x27)))*Math['trunc'](-parseFloat(hSvojUUDsrssSwaBL(0x191))/(Math.trunc(parseInt(0x17a0))+Math.floor(0x21dc)+Math.ceil(-0x397a)))+parseFloat(-parseFloat(hSvojUUDsrssSwaBL(0x1ab))/(Number(0x3)*parseInt(-parseInt(0x96))+Math.floor(-parseInt(0x5))*0x565+parseInt(0xe5f)*0x2))+parseFloat(hSvojUUDsrssSwaBL(0x22d))/(Math.floor(parseInt(0x2ce))*0x1+Math.floor(parseInt(0x25))*-parseInt(0x5e)+parseInt(0x566)*Math.floor(parseInt(0x2)))+Number(parseFloat(hSvojUUDsrssSwaBL(0x233))/(-parseInt(0xbe)*parseInt(0x5)+Number(-parseInt(0x42f))+Math.ceil(-0x7ea)*-parseInt(0x1)))*(-parseFloat(hSvojUUDsrssSwaBL(0x212))/(-0x7*0x1e3+parseInt(0x233)*Math.max(parseInt(0x4),parseInt(0x4))+parseInt(parseInt(0x5))*parseFloat(parseInt(0xe3))))+Math['floor'](-parseFloat(hSvojUUDsrssSwaBL(0x1c1))/(parseInt(0x2300)+-0x1*parseInt(0x21b5)+-parseInt(0x144)))*(parseFloat(hSvojUUDsrssSwaBL(0x1ca))/(parseInt(0x12a3)*Math.trunc(-0x1)+Math.max(0x10ad,parseInt(0x10ad))*parseInt(0x1)+-0x33*-0xa))+-parseFloat(hSvojUUDsrssSwaBL(0x218))/(-0x2284+Math.ceil(-parseInt(0x79))*0x3+parseInt(0x23f8))*(parseFloat(hSvojUUDsrssSwaBL(0x239))/(Number(0x23ef)*Math.max(parseInt(0x1),0x1)+-0x1600+Math.floor(-parseInt(0xde5))))+parseFloat(hSvojUUDsrssSwaBL(0x22e))/(parseInt(0x1ebb)*Math.max(0x1,parseInt(0x1))+-0x624+-0x188c);if(osOxbqtHFBTWoreyEfRC_dNa===fBVNX$xgbFVZ)break;else rZWONiYigCrnPcCdeIzCx['push'](rZWONiYigCrnPcCdeIzCx['shift']());}catch(s_bPTaDtYtTaUow$Azv){rZWONiYigCrnPcCdeIzCx['push'](rZWONiYigCrnPcCdeIzCx['shift']());}}}(jNGPOnJ_pw,Math.floor(-0x65261)+-0x42463+-0x5*-parseInt(0x39ce9)));const wantedTextInput=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1b2)),bulletinToggle=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x223)),bulletinSelect=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x21f)),nameToggle=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1d7)),chargeInput=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1f2)),suspectNameInput=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x19e)),descriptionInput=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x195)),contactInput=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x18b)),detectiveInput=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x232)),dateInput=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1f1)),createdByInput=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1f8)),mugshotUrlInput=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1b3)),bulletinContainer=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1aa)),bulletinImage=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x19d)),pWanted=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1be)),pCharge=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x19a)),pName=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1cd)),pDescription=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1dc)),pContact=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1ea)),pDetective=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1b0)),pDate=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1fe)),pCreatedBy=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1c2)),mugshot=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x228)),generateBtn=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1ec)),resetBtn=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x205)),downloadBtn=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x225)),copyBtn=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x219)),wantedCount=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1a1)),chargeCount=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x237)),nameCount=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1b1)),descriptionCount=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1a7)),contactCount=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1ff)),detectiveCount=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x221)),dateCount=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1b7)),createdByCount=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x1f3)),successMessage=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x234)),closeSuccess=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x209)),darkModeSwitch=document[OwjrzydsI_uxiO(0x1d1)](OwjrzydsI_uxiO(0x20d));let mugshotDataURL=null,currentBulletinImage=OwjrzydsI_uxiO(0x1f5);function updateCharacterCounts(){const JKfvvHdBuWHcPSElfPC$nQAKwY=OwjrzydsI_uxiO;wantedCount[JKfvvHdBuWHcPSElfPC$nQAKwY(0x21d)]=wantedTextInput[JKfvvHdBuWHcPSElfPC$nQAKwY(0x1fd)][JKfvvHdBuWHcPSElfPC$nQAKwY(0x238)],chargeCount[JKfvvHdBuWHcPSElfPC$nQAKwY(0x21d)]=chargeInput[JKfvvHdBuWHcPSElfPC$nQAKwY(0x1fd)][JKfvvHdBuWHcPSElfPC$nQAKwY(0x238)],nameCount[JKfvvHdBuWHcPSElfPC$nQAKwY(0x21d)]=suspectNameInput[JKfvvHdBuWHcPSElfPC$nQAKwY(0x1fd)][JKfvvHdBuWHcPSElfPC$nQAKwY(0x238)],descriptionCount[JKfvvHdBuWHcPSElfPC$nQAKwY(0x21d)]=descriptionInput[JKfvvHdBuWHcPSElfPC$nQAKwY(0x1fd)][JKfvvHdBuWHcPSElfPC$nQAKwY(0x238)],contactCount[JKfvvHdBuWHcPSElfPC$nQAKwY(0x21d)]=contactInput[JKfvvHdBuWHcPSElfPC$nQAKwY(0x1fd)][JKfvvHdBuWHcPSElfPC$nQAKwY(0x238)],detectiveCount[JKfvvHdBuWHcPSElfPC$nQAKwY(0x21d)]=detectiveInput[JKfvvHdBuWHcPSElfPC$nQAKwY(0x1fd)][JKfvvHdBuWHcPSElfPC$nQAKwY(0x238)],dateCount[JKfvvHdBuWHcPSElfPC$nQAKwY(0x21d)]=dateInput[JKfvvHdBuWHcPSElfPC$nQAKwY(0x1fd)][JKfvvHdBuWHcPSElfPC$nQAKwY(0x238)],createdByCount[JKfvvHdBuWHcPSElfPC$nQAKwY(0x21d)]=createdByInput[JKfvvHdBuWHcPSElfPC$nQAKwY(0x1fd)][JKfvvHdBuWHcPSElfPC$nQAKwY(0x238)];}function updatePreview(){const N$vK$WbK=OwjrzydsI_uxiO;pWanted[N$vK$WbK(0x21d)]=wantedTextInput[N$vK$WbK(0x1fd)][N$vK$WbK(0x200)]()||N$vK$WbK(0x19b),pCharge[N$vK$WbK(0x21d)]=chargeInput[N$vK$WbK(0x1fd)]||N$vK$WbK(0x207),nameToggle[N$vK$WbK(0x224)]?(pName[N$vK$WbK(0x21d)]=suspectNameInput[N$vK$WbK(0x1fd)][N$vK$WbK(0x200)]()||N$vK$WbK(0x21a),pName[N$vK$WbK(0x1c7)][N$vK$WbK(0x1cb)]=N$vK$WbK(0x199)):(pName[N$vK$WbK(0x21d)]='',pName[N$vK$WbK(0x1c7)][N$vK$WbK(0x1cb)]=N$vK$WbK(0x20a)),pDescription[N$vK$WbK(0x21d)]=descriptionInput[N$vK$WbK(0x1fd)]||N$vK$WbK(0x1df),pContact[N$vK$WbK(0x21d)]=contactInput[N$vK$WbK(0x1fd)]||N$vK$WbK(0x1eb),pDetective[N$vK$WbK(0x21d)]=detectiveInput[N$vK$WbK(0x1fd)]||N$vK$WbK(0x1b4),pDate[N$vK$WbK(0x21d)]=dateInput[N$vK$WbK(0x1fd)]||N$vK$WbK(0x198),pCreatedBy[N$vK$WbK(0x21d)]=createdByInput[N$vK$WbK(0x1fd)]||N$vK$WbK(0x1de),bulletinToggle[N$vK$WbK(0x224)]?(bulletinContainer[N$vK$WbK(0x1dd)][N$vK$WbK(0x1c8)](N$vK$WbK(0x1e0)),bulletinImage[N$vK$WbK(0x1ba)]=currentBulletinImage):bulletinContainer[N$vK$WbK(0x1dd)][N$vK$WbK(0x1bf)](N$vK$WbK(0x1e0)),updateCharacterCounts();}function fetchWithProxy(RtY$gO$QB){return new Promise((VuRylHRu,l_lrFtb_H)=>{const bbvu$$ldnCCQ=B$UyX$zn,agzqmyHJtfeSaIcXfQ$wqEGWL=bbvu$$ldnCCQ(0x229)+encodeURIComponent(RtY$gO$QB),MBGJVa$ncJ_fRzFAsPK=new Image();MBGJVa$ncJ_fRzFAsPK[bbvu$$ldnCCQ(0x1d8)]=bbvu$$ldnCCQ(0x1a6),MBGJVa$ncJ_fRzFAsPK[bbvu$$ldnCCQ(0x1e5)]=function(){const aeOwKnybpdw$k=bbvu$$ldnCCQ;try{const DLRPCwvDkX$Nnrut_Lgh=document[aeOwKnybpdw$k(0x202)](aeOwKnybpdw$k(0x1e3));DLRPCwvDkX$Nnrut_Lgh[aeOwKnybpdw$k(0x236)]=MBGJVa$ncJ_fRzFAsPK[aeOwKnybpdw$k(0x236)],DLRPCwvDkX$Nnrut_Lgh[aeOwKnybpdw$k(0x231)]=MBGJVa$ncJ_fRzFAsPK[aeOwKnybpdw$k(0x231)];const wsWSM$IpBioyjKEEjtcT$IK=DLRPCwvDkX$Nnrut_Lgh[aeOwKnybpdw$k(0x194)]('2d');wsWSM$IpBioyjKEEjtcT$IK[aeOwKnybpdw$k(0x20f)]=aeOwKnybpdw$k(0x220),wsWSM$IpBioyjKEEjtcT$IK[aeOwKnybpdw$k(0x1e6)](parseInt(0x1503)+0xe*Number(-parseInt(0x179))+-0x65*parseInt(parseInt(0x1)),Math.max(0x2608,0x2608)+0x1ced*Math.floor(0x1)+Math.trunc(-0x42f5)*0x1,DLRPCwvDkX$Nnrut_Lgh[aeOwKnybpdw$k(0x236)],DLRPCwvDkX$Nnrut_Lgh[aeOwKnybpdw$k(0x231)]),wsWSM$IpBioyjKEEjtcT$IK[aeOwKnybpdw$k(0x1f7)](MBGJVa$ncJ_fRzFAsPK,Math.max(-0x258,-parseInt(0x258))+parseFloat(-parseInt(0xa))*0xb+Math.floor(-parseInt(0x163))*-parseInt(0x2),Math.max(-0x1503,-parseInt(0x1503))*Math.trunc(parseInt(0x1))+-parseInt(0x7)*-0x546+-0xfe7),VuRylHRu(DLRPCwvDkX$Nnrut_Lgh[aeOwKnybpdw$k(0x23b)](aeOwKnybpdw$k(0x217)));}catch(qEStGynUaCdGEhCSnhPUwq){l_lrFtb_H(qEStGynUaCdGEhCSnhPUwq);}},MBGJVa$ncJ_fRzFAsPK[bbvu$$ldnCCQ(0x20b)]=l_lrFtb_H,MBGJVa$ncJ_fRzFAsPK[bbvu$$ldnCCQ(0x1ba)]=agzqmyHJtfeSaIcXfQ$wqEGWL;});}function getGTAMugshotDataURL(oULQaxWpzgvKmg_OzgAueRy_qDt){return new Promise(Aea$InGIlTcJbzL=>{const WfPiigSu$_xuonrL=B$UyX$zn,LrAVRNVXtFQcxFwlEam=new Image();LrAVRNVXtFQcxFwlEam[WfPiigSu$_xuonrL(0x1d8)]=WfPiigSu$_xuonrL(0x1a6),LrAVRNVXtFQcxFwlEam[WfPiigSu$_xuonrL(0x1e5)]=function(){const iFxBnIOwvvuUFtzeLxAKb$Xf=WfPiigSu$_xuonrL;try{const RMjcWkBlYgxM$ZKZYFV=document[iFxBnIOwvvuUFtzeLxAKb$Xf(0x202)](iFxBnIOwvvuUFtzeLxAKb$Xf(0x1e3));RMjcWkBlYgxM$ZKZYFV[iFxBnIOwvvuUFtzeLxAKb$Xf(0x236)]=LrAVRNVXtFQcxFwlEam[iFxBnIOwvvuUFtzeLxAKb$Xf(0x236)],RMjcWkBlYgxM$ZKZYFV[iFxBnIOwvvuUFtzeLxAKb$Xf(0x231)]=LrAVRNVXtFQcxFwlEam[iFxBnIOwvvuUFtzeLxAKb$Xf(0x231)];const IGH_WwBxqojcGGvpg=RMjcWkBlYgxM$ZKZYFV[iFxBnIOwvvuUFtzeLxAKb$Xf(0x194)]('2d');IGH_WwBxqojcGGvpg[iFxBnIOwvvuUFtzeLxAKb$Xf(0x20f)]=iFxBnIOwvvuUFtzeLxAKb$Xf(0x220),IGH_WwBxqojcGGvpg[iFxBnIOwvvuUFtzeLxAKb$Xf(0x1e6)](Number(parseInt(0x13fd))+-0x23c9+0xfcc,-parseInt(0x547)+parseInt(0x1d)*0x101+-parseInt(0x1b)*0xe2,RMjcWkBlYgxM$ZKZYFV[iFxBnIOwvvuUFtzeLxAKb$Xf(0x236)],RMjcWkBlYgxM$ZKZYFV[iFxBnIOwvvuUFtzeLxAKb$Xf(0x231)]),IGH_WwBxqojcGGvpg[iFxBnIOwvvuUFtzeLxAKb$Xf(0x1f7)](LrAVRNVXtFQcxFwlEam,Math.trunc(-0x24a3)+-0x2*0xccd+parseInt(parseInt(0x3e3d)),parseInt(0x1862)+-parseInt(0x7)*parseInt(0x66)+parseFloat(-parseInt(0x1598))),Aea$InGIlTcJbzL(RMjcWkBlYgxM$ZKZYFV[iFxBnIOwvvuUFtzeLxAKb$Xf(0x23b)](iFxBnIOwvvuUFtzeLxAKb$Xf(0x217)));}catch(msWPDdfEYKfm){console[iFxBnIOwvvuUFtzeLxAKb$Xf(0x1a2)](iFxBnIOwvvuUFtzeLxAKb$Xf(0x208)),fetchWithProxy(oULQaxWpzgvKmg_OzgAueRy_qDt)[iFxBnIOwvvuUFtzeLxAKb$Xf(0x1f0)](Aea$InGIlTcJbzL)[iFxBnIOwvvuUFtzeLxAKb$Xf(0x1b9)](()=>Aea$InGIlTcJbzL(null));}},LrAVRNVXtFQcxFwlEam[WfPiigSu$_xuonrL(0x20b)]=function(){const zPrCsKRdJnFgtzWJUP=WfPiigSu$_xuonrL;console[zPrCsKRdJnFgtzWJUP(0x1a2)](zPrCsKRdJnFgtzWJUP(0x1e4)),fetchWithProxy(oULQaxWpzgvKmg_OzgAueRy_qDt)[zPrCsKRdJnFgtzWJUP(0x1f0)](Aea$InGIlTcJbzL)[zPrCsKRdJnFgtzWJUP(0x1b9)](()=>Aea$InGIlTcJbzL(null));},LrAVRNVXtFQcxFwlEam[WfPiigSu$_xuonrL(0x1ba)]=oULQaxWpzgvKmg_OzgAueRy_qDt;});}function imageToDataURL(PJdvelQCMcVm_PrvRUCXvJC){return new Promise(joafZWDAf_MkCPIv=>{const Ppelhja_nJDZmVXt_eZ=B$UyX$zn;if(!PJdvelQCMcVm_PrvRUCXvJC){joafZWDAf_MkCPIv(null);return;}if(PJdvelQCMcVm_PrvRUCXvJC[Ppelhja_nJDZmVXt_eZ(0x210)](Ppelhja_nJDZmVXt_eZ(0x1f9))){joafZWDAf_MkCPIv(PJdvelQCMcVm_PrvRUCXvJC);return;}if(PJdvelQCMcVm_PrvRUCXvJC[Ppelhja_nJDZmVXt_eZ(0x1b6)](Ppelhja_nJDZmVXt_eZ(0x1d9))&&!PJdvelQCMcVm_PrvRUCXvJC[Ppelhja_nJDZmVXt_eZ(0x1b6)](Ppelhja_nJDZmVXt_eZ(0x227))){joafZWDAf_MkCPIv(PJdvelQCMcVm_PrvRUCXvJC);return;}if(PJdvelQCMcVm_PrvRUCXvJC[Ppelhja_nJDZmVXt_eZ(0x1b6)](Ppelhja_nJDZmVXt_eZ(0x193))||PJdvelQCMcVm_PrvRUCXvJC[Ppelhja_nJDZmVXt_eZ(0x1b6)](Ppelhja_nJDZmVXt_eZ(0x1c5))){getGTAMugshotDataURL(PJdvelQCMcVm_PrvRUCXvJC)[Ppelhja_nJDZmVXt_eZ(0x1f0)](joafZWDAf_MkCPIv)[Ppelhja_nJDZmVXt_eZ(0x1b9)](()=>joafZWDAf_MkCPIv(null));return;}const voFRpmangOIJOevtzRRVASvN=new Image();voFRpmangOIJOevtzRRVASvN[Ppelhja_nJDZmVXt_eZ(0x1d8)]=Ppelhja_nJDZmVXt_eZ(0x1a6),voFRpmangOIJOevtzRRVASvN[Ppelhja_nJDZmVXt_eZ(0x1e5)]=function(){const lZUSSLpWeFxRIZPLjDyWeyq=Ppelhja_nJDZmVXt_eZ;try{const GMBgTQCn_B$f=document[lZUSSLpWeFxRIZPLjDyWeyq(0x202)](lZUSSLpWeFxRIZPLjDyWeyq(0x1e3));GMBgTQCn_B$f[lZUSSLpWeFxRIZPLjDyWeyq(0x236)]=voFRpmangOIJOevtzRRVASvN[lZUSSLpWeFxRIZPLjDyWeyq(0x236)],GMBgTQCn_B$f[lZUSSLpWeFxRIZPLjDyWeyq(0x231)]=voFRpmangOIJOevtzRRVASvN[lZUSSLpWeFxRIZPLjDyWeyq(0x231)];const u$keZyYMhGyFB_NHGDxUgYGR=GMBgTQCn_B$f[lZUSSLpWeFxRIZPLjDyWeyq(0x194)]('2d');u$keZyYMhGyFB_NHGDxUgYGR[lZUSSLpWeFxRIZPLjDyWeyq(0x20f)]=lZUSSLpWeFxRIZPLjDyWeyq(0x220),u$keZyYMhGyFB_NHGDxUgYGR[lZUSSLpWeFxRIZPLjDyWeyq(0x1e6)](parseInt(0x14c4)+parseInt(0xfb9)+Math.trunc(-parseInt(0x247d)),parseInt(0x1e33)+0x1aab+Math.ceil(0xfb)*-parseInt(0x3a),GMBgTQCn_B$f[lZUSSLpWeFxRIZPLjDyWeyq(0x236)],GMBgTQCn_B$f[lZUSSLpWeFxRIZPLjDyWeyq(0x231)]),u$keZyYMhGyFB_NHGDxUgYGR[lZUSSLpWeFxRIZPLjDyWeyq(0x1f7)](voFRpmangOIJOevtzRRVASvN,parseInt(0x22)*parseInt(0xc1)+parseInt(0x218d)+Number(-0x3b2f),0x3*Math.trunc(0xb5a)+-0xb*parseInt(0x160)+-parseInt(0x12ee)*0x1),joafZWDAf_MkCPIv(GMBgTQCn_B$f[lZUSSLpWeFxRIZPLjDyWeyq(0x23b)](lZUSSLpWeFxRIZPLjDyWeyq(0x217)));}catch(xxmo_LxSIj_IcdmPDP){console[lZUSSLpWeFxRIZPLjDyWeyq(0x1a2)](lZUSSLpWeFxRIZPLjDyWeyq(0x1fb),xxmo_LxSIj_IcdmPDP),joafZWDAf_MkCPIv(PJdvelQCMcVm_PrvRUCXvJC);}},voFRpmangOIJOevtzRRVASvN[Ppelhja_nJDZmVXt_eZ(0x20b)]=function(){const VMqITAtollSR$orhGtzei=Ppelhja_nJDZmVXt_eZ;console[VMqITAtollSR$orhGtzei(0x1a2)](VMqITAtollSR$orhGtzei(0x190),PJdvelQCMcVm_PrvRUCXvJC),joafZWDAf_MkCPIv(null);},voFRpmangOIJOevtzRRVASvN[Ppelhja_nJDZmVXt_eZ(0x1ba)]=PJdvelQCMcVm_PrvRUCXvJC;});}function jNGPOnJ_pw(){const gcK$wIwTkLiZlt$sh=['5f50555f57','4c7f5352485d5f48','7f7372687d7f681c75727a736e717d687573721c7273681c6c6e736a75787978','5b5952594e5d48597e4852','794e4e534e1c5b5952594e5d4855525b1c4c534f48594e121c6c50595d4f591c484e450636360d121c694f55525b1c7f544e5351591c5e4e534b4f594e360e121c6e49525255525b1c5a4e53511c5d1c50535f5d501c4b595e1c4f594e4a594e360f121c715d5755525b1c4f494e591c5e495050594855521c55515d5b594f1c5d4e591c55521c4854591c4f5d51591c5a535058594e3608121c684e4555525b1c5d1c58555a5a594e5952481c51495b4f5453481c696e70','467552585944','4b5d4e52','48545952','585d4859','5f545d4e5b59','5f4e595d4859585e45115f53495248','484e5551','7e49505059485552124c525b','4a554f555e5550554845','584e5d4b75515d5b59','5f4e595d4859587e45','585d485d0655515d5b59','4f59487d48484e555e494859','7f534950581c5253481c5f53524a594e481c48531c585d485d1c696e7006','05050505','4a5d504959','4c785d4859','5f5352485d5f48115f53495248','4853694c4c594e7f5d4f59','58534b5250535d58','5f4e595d485979505951595248','58554f5d5e505958','1f4c534f48594e1c55515b','4e594f59487e4852','58535f495159524879505951595248','7f747d6e7b791c7273681c6f6c797f757a757978','78554e595f481c5f53524a594e4f5553521c5a5d55505958101c484e4555525b1c4c4e534445121212','5f50534f59114f495f5f594f4f','52535259','5352594e4e534e','7a5d555059581c48531c5f534c451c485944481c48531c5f50554c5e535d4e58121c6c50595d4f591c484e451c5d5b5d555212','585d4e571151535859114f4b55485f54','7a5d50505e5d5f571c5d504f531c5a5d5550595806','5a5550506f48455059','4f485d4e484f6b554854','125e495050594855521155515d5b59115f5352485d5552594e','0f0f09084a7a574b595a','6f696f6c797f68061c','55524c4948','48534c','50595a48','55515d5b59134c525b','080e0c0f745b6c5a4444','5f534c457e4852','69727772736b721c6f696f6c797f68','11050505054c44','7e495050594855521c55515d5b591c5253481c5a5349525806','485944487f535248595248','747371757f7578791c7e696e797d691cdebc9e1c6c74061c1f1f1f1f1f1f','5e495050594855526f5950595f48','1f5a5a5a5a5a5a','585948595f48554a59115f53495248','5e5d5f575b4e534952587f5350534e','5e4950505948555268535b5b5059','5f54595f575958','58534b5250535d587e4852','4d49594e456f5950595f48534e','5448484c','51495b4f545348','5448484c4f0613135f534e4f4c4e5344451255531303','4d49594e456f5950595f48534e7d5050','7d4e591c4553491c4f494e591c4553491c4b5d52481c48531c4e594f59481c4854591c5a534e51031c7d50501c585d485d1c4b5550501c5e591c50534f4812','1f51495b4f545348','0e0a0f0b0f04084b74685d4a72','0e0d0b040b0d040f70497e6e595f','0e0c0c4c44','367d6868797268757372061c','5459555b5448','585948595f48554a59','0d0d080c4a786c5b686e','4f495f5f594f4f1151594f4f5d5b59','794e4e534e1c5b5952594e5d4855525b1c4c534f48594e06','4b55584854','5f545d4e5b59115f53495248','5059525b4854','09080f0c4f6c50664951','585d4e57','4853785d485d696e70','5f545d525b59','5f5352485d5f48','5b594875485951','7a5d555059581c48531c5f534c451c48594448061c','7d6c7e1c7b5952594e5d48534e1c55525548555d50554659581c4f495f5f594f4f5a49505045','794e4e534e1c545d52585055525b1c51495b4f54534806','75515d5b591c50535d581c5a5d5550595806','0e4d565a6b5358','585d485d114854595159','5b485d124b534e5058','5b59487f535248594448','58594f5f4e554c48555352','5d494853','544e595a','785d48591c7253481c6f4c595f555a555958','5e50535f57','4c7f545d4e5b59','6b7d72687978','5e535845','5e4950505948555275515d5b59','4f494f4c595f48725d5159','36367d52451c55525a534e515d48555352101c4c50595d4f591c5f5352485d5f480636','4a554f555e5059','4b5d52485958115f53495248','50535b','594e4e534e','5d4c4c5952587f54555058','5b594868555159','5d525352455153494f','58594f5f4e554c48555352115f53495248','0b0e0a0e05094a78444d4944','7a7d1c0e0c0d121c7f7d6c75687d701c71696e78796e','5e495050594855527f5352485d5552594e','0d0b090b0c0c08577778454a4e','4e5951534a597f54555058','534c5d5f554845','5e5d5f575b4e53495258','7a4e55585d45101c78595f59515e594e1c09101c0e0c0e09','4c785948595f48554a59','525d5159115f53495248','4b5d5248595868594448','51495b4f545348694e50','785948595f48554a591378594c494855594f1c725d51591c7253481c6f4c595f555a555958','5f50554c5e535d4e58','55525f504958594f','585d4859115f53495248','125e495050594855521155515d5b59','5f5d485f54','4f4e5f','0a0c0c4c44','4b4e55485968594448','5d5e4f5350494859','4c6b5d52485958','5d5858','4c534f5548555352','0f0d080e0d0b085a6d4f4e705a','4c7f4e595d4859587e45','00551c5f505d4f4f011e5a5d4f1c5a5d115f54595f571e02001355021c7f534c5559581d','7873717f53524859524870535d585958','51585f125b485d124b534e5058','1c401c7d6c7e1c401c','4f48455059','4e5951534a59','4c534f48594e','047658464c7369','58554f4c505d45','1f0e045d0b0809','4c725d5159','0d0c0c19','5d4c5e114c534f48594e11','5a534e795d5f54','5b5948795059515952487e457558','5e50494e','50555b5448','4854595159','00551c5f505d4f4f011e5a5d4f1c5a5d114f4c555252594e1c5a5d114f4c55521e02001355021c7b5952594e5d4855525b121212','5f5053525972535859','525d515968535b5b5059','5f4e534f4f734e555b5552','124c525b','1f595d595d595d','555252594e74687170','4c78594f5f4e554c48555352','5f505d4f4f70554f48','7f4e595d4859581c5e451c6f757e','72531c58594f5f4e554c485553521c4c4e534a5558595812','545558585952','5f53514c50594859','4f594875485951','5f5d524a5d4f','78554e595f481c50535d581c5a5d55505958101c484e4555525b1c4c4e534445121212','535250535d58','5a5550506e595f48','1f4c725d5159','5d5858794a59524870554f485952594e'];jNGPOnJ_pw=function(){return gcK$wIwTkLiZlt$sh;};return jNGPOnJ_pw();}function B$UyX$zn(IoKec,RsWCmYSaUxtvHXTji){const cqwdTozwTlLGAoEkwJkb=jNGPOnJ_pw();return B$UyX$zn=function(wSuwkhuP,yqIs_lMRRDNKnepQNMU_RyeZ){wSuwkhuP=wSuwkhuP-(Math.trunc(-parseInt(0x178f))+parseInt(0xb04)+0x7*parseInt(0x203));let Y$cl$BRWWLbhTMMuWpGGPsI=cqwdTozwTlLGAoEkwJkb[wSuwkhuP];if(B$UyX$zn['xEcCgT']===undefined){const TMkflxRcHbADJVQiB$CI$nLpg=function(h$Ow$OZikQLMROLWsdJM){let yUwfRtYgOQB=parseFloat(-parseInt(0xfc7))+Math.max(0x164,0x164)*-parseInt(0x4)+parseInt(0x1793)&parseInt(0x1e8d)+parseInt(0xb36)+-parseInt(0xa31)*Math.trunc(parseInt(0x4)),Vu$Ryl$HRu=new Uint8Array(h$Ow$OZikQLMROLWsdJM['match'](/.{1,2}/g)['map'](DLRPCwvDkXNnrutLgh=>parseInt(DLRPCwvDkXNnrutLgh,-parseInt(0x24d4)+-0x2b*-parseInt(0x94)+parseInt(parseInt(0xc08))*Math.max(parseInt(0x1),0x1)))),l_lrFtbH=Vu$Ryl$HRu['map'](wsW_SMI$pBioyjKEEjtcTIK=>wsW_SMI$pBioyjKEEjtcTIK^yUwfRtYgOQB),a$gzqmyHJtfeSaIcXfQwqEGWL=new TextDecoder(),MBGJVancJfRzFAsPK=a$gzqmyHJtfeSaIcXfQwqEGWL['decode'](l_lrFtbH);return MBGJVancJfRzFAsPK;};B$UyX$zn['mikybT']=TMkflxRcHbADJVQiB$CI$nLpg,IoKec=arguments,B$UyX$zn['xEcCgT']=!![];}const tktG_$P=cqwdTozwTlLGAoEkwJkb[parseInt(-0xbbd)+-0x1476+Number(0x2033)],cEAz_aamS_TMcZNL=wSuwkhuP+tktG_$P,HXoqkDySjLQ_bN=IoKec[cEAz_aamS_TMcZNL];return!HXoqkDySjLQ_bN?(B$UyX$zn['DSlwHZ']===undefined&&(B$UyX$zn['DSlwHZ']=!![]),Y$cl$BRWWLbhTMMuWpGGPsI=B$UyX$zn['mikybT'](Y$cl$BRWWLbhTMMuWpGGPsI),IoKec[cEAz_aamS_TMcZNL]=Y$cl$BRWWLbhTMMuWpGGPsI):Y$cl$BRWWLbhTMMuWpGGPsI=HXoqkDySjLQ_bN,Y$cl$BRWWLbhTMMuWpGGPsI;},B$UyX$zn(IoKec,RsWCmYSaUxtvHXTji);}async function handleMugshotInput(){const SnWt_DF=OwjrzydsI_uxiO,NrA_JuPfN_zcvbixhfgg=mugshotUrlInput[SnWt_DF(0x1fd)][SnWt_DF(0x1f4)]();if(!NrA_JuPfN_zcvbixhfgg){mugshot[SnWt_DF(0x1c7)][SnWt_DF(0x1cb)]=SnWt_DF(0x20a),mugshot[SnWt_DF(0x1ba)]='',mugshotDataURL=null;return;}mugshot[SnWt_DF(0x1c7)][SnWt_DF(0x1cb)]=SnWt_DF(0x199),mugshot[SnWt_DF(0x1ba)]='';try{mugshotDataURL=await imageToDataURL(NrA_JuPfN_zcvbixhfgg),mugshotDataURL?(mugshot[SnWt_DF(0x1ba)]=mugshotDataURL,mugshot[SnWt_DF(0x1c7)][SnWt_DF(0x1cb)]=SnWt_DF(0x199)):mugshot[SnWt_DF(0x1c7)][SnWt_DF(0x1cb)]=SnWt_DF(0x20a);}catch(EYuApYyzjr){console[SnWt_DF(0x1a3)](SnWt_DF(0x18f),EYuApYyzjr),mugshot[SnWt_DF(0x1c7)][SnWt_DF(0x1cb)]=SnWt_DF(0x20a),mugshotDataURL=null;}}function setupEventListeners(){const QFGGyNZneiUDJ_TSdsr$eI=OwjrzydsI_uxiO;wantedTextInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x214),updatePreview),bulletinToggle[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x18a),updatePreview),nameToggle[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x18a),updatePreview),chargeInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x214),updatePreview),suspectNameInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x214),updatePreview),descriptionInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x214),updatePreview),contactInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x214),updatePreview),detectiveInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x214),updatePreview),dateInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x214),updatePreview),createdByInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x214),updatePreview),bulletinSelect[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x18a),function(){const IfPrRduGeTgozshcqlIhCyJ=QFGGyNZneiUDJ_TSdsr$eI;currentBulletinImage=this[IfPrRduGeTgozshcqlIhCyJ(0x1fd)],updatePreview();});let AGQJLyDOV_kYPARmcl$gW;mugshotUrlInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x214),function(){clearTimeout(AGQJLyDOV_kYPARmcl$gW),AGQJLyDOV_kYPARmcl$gW=setTimeout(handleMugshotInput,-0x1*parseInt(0x23da)+parseInt(0x725)+Number(parseInt(0x1fd5)));}),mugshotUrlInput[QFGGyNZneiUDJ_TSdsr$eI(0x1e8)](QFGGyNZneiUDJ_TSdsr$eI(0x1d2),handleMugshotInput);}function waitForImages(){return new Promise(vzadgiC=>{const D_CMGLbG$Gr=B$UyX$zn,CiswJq$ebUVUmW_qEfbAxKN=document[D_CMGLbG$Gr(0x22a)](D_CMGLbG$Gr(0x204));let ThQZ_QOkG=Math.trunc(0x16)*-0x199+Math.ceil(0x2670)+Math.max(parseInt(0x34a),0x34a)*-parseInt(0x1);const ZHYQKKtLOFG=CiswJq$ebUVUmW_qEfbAxKN[D_CMGLbG$Gr(0x238)];if(ZHYQKKtLOFG===-0x618*0x4+parseInt(0x1d9)*0x9+parseInt(0x3)*0x295){vzadgiC();return;}CiswJq$ebUVUmW_qEfbAxKN[D_CMGLbG$Gr(0x1d0)](WTJGM=>{const G$dCfoKL=D_CMGLbG$Gr;if(WTJGM[G$dCfoKL(0x1e1)]){ThQZ_QOkG++;if(ThQZ_QOkG===ZHYQKKtLOFG)vzadgiC();}else WTJGM[G$dCfoKL(0x1e5)]=function(){ThQZ_QOkG++;if(ThQZ_QOkG===ZHYQKKtLOFG)vzadgiC();},WTJGM[G$dCfoKL(0x20b)]=function(){ThQZ_QOkG++;if(ThQZ_QOkG===ZHYQKKtLOFG)vzadgiC();};}),setTimeout(vzadgiC,parseInt(0x3)*parseInt(0x3b5)+parseInt(0x245f)*parseInt(-0x1)+Math.ceil(-parseInt(0xb32))*-0x4);});}function createPosterClone(){const MwFIghjAixjWz$wBuLk$qpeUY=OwjrzydsI_uxiO,fs$kLLTN=document[MwFIghjAixjWz$wBuLk$qpeUY(0x1d1)](MwFIghjAixjWz$wBuLk$qpeUY(0x1c9)),cA_ODJbBgfSTSKREdj=fs$kLLTN[MwFIghjAixjWz$wBuLk$qpeUY(0x1d6)](!![]);if(bulletinToggle[MwFIghjAixjWz$wBuLk$qpeUY(0x224)]){const AJhrbR_$a=cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x226)](MwFIghjAixjWz$wBuLk$qpeUY(0x211));if(AJhrbR_$a){AJhrbR_$a[MwFIghjAixjWz$wBuLk$qpeUY(0x1dd)][MwFIghjAixjWz$wBuLk$qpeUY(0x1c8)](MwFIghjAixjWz$wBuLk$qpeUY(0x1e0)),AJhrbR_$a[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1cb)]=MwFIghjAixjWz$wBuLk$qpeUY(0x199);const Ug_LINnLJgEkRrM=cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x226)](MwFIghjAixjWz$wBuLk$qpeUY(0x1b8));Ug_LINnLJgEkRrM&&(Ug_LINnLJgEkRrM[MwFIghjAixjWz$wBuLk$qpeUY(0x1ba)]=currentBulletinImage,Ug_LINnLJgEkRrM[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1cb)]=MwFIghjAixjWz$wBuLk$qpeUY(0x199),Ug_LINnLJgEkRrM[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x236)]=MwFIghjAixjWz$wBuLk$qpeUY(0x1ce),Ug_LINnLJgEkRrM[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x231)]=MwFIghjAixjWz$wBuLk$qpeUY(0x196));}}else{const SRqn_BQdslqDcWmiZEE=cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x226)](MwFIghjAixjWz$wBuLk$qpeUY(0x211));SRqn_BQdslqDcWmiZEE&&(SRqn_BQdslqDcWmiZEE[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1cb)]=MwFIghjAixjWz$wBuLk$qpeUY(0x20a));}if(mugshotDataURL){const auNNblCBQN=cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x226)](MwFIghjAixjWz$wBuLk$qpeUY(0x22c));auNNblCBQN&&(auNNblCBQN[MwFIghjAixjWz$wBuLk$qpeUY(0x1ba)]=mugshotDataURL,auNNblCBQN[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1cb)]=MwFIghjAixjWz$wBuLk$qpeUY(0x199),auNNblCBQN[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x236)]=MwFIghjAixjWz$wBuLk$qpeUY(0x22f),auNNblCBQN[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x231)]=MwFIghjAixjWz$wBuLk$qpeUY(0x22f));}else{const VFUNK$h=cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x226)](MwFIghjAixjWz$wBuLk$qpeUY(0x22c));VFUNK$h&&(VFUNK$h[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1cb)]=MwFIghjAixjWz$wBuLk$qpeUY(0x20a));}const CHGddKIP=cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x226)](MwFIghjAixjWz$wBuLk$qpeUY(0x1e7));return CHGddKIP&&(nameToggle[MwFIghjAixjWz$wBuLk$qpeUY(0x224)]?(CHGddKIP[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1cb)]=MwFIghjAixjWz$wBuLk$qpeUY(0x199),CHGddKIP[MwFIghjAixjWz$wBuLk$qpeUY(0x21d)]=suspectNameInput[MwFIghjAixjWz$wBuLk$qpeUY(0x1fd)][MwFIghjAixjWz$wBuLk$qpeUY(0x200)]()||MwFIghjAixjWz$wBuLk$qpeUY(0x21a)):(CHGddKIP[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1cb)]=MwFIghjAixjWz$wBuLk$qpeUY(0x20a),CHGddKIP[MwFIghjAixjWz$wBuLk$qpeUY(0x21d)]='')),cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1c0)]=MwFIghjAixjWz$wBuLk$qpeUY(0x1bd),cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x216)]=MwFIghjAixjWz$wBuLk$qpeUY(0x21b),cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x215)]='0',cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x236)]=MwFIghjAixjWz$wBuLk$qpeUY(0x1bb),cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1ae)]=MwFIghjAixjWz$wBuLk$qpeUY(0x1da),cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1f6)]=MwFIghjAixjWz$wBuLk$qpeUY(0x1a0),cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1ad)]='1',cA_ODJbBgfSTSKREdj[MwFIghjAixjWz$wBuLk$qpeUY(0x1c7)][MwFIghjAixjWz$wBuLk$qpeUY(0x1ee)]=MwFIghjAixjWz$wBuLk$qpeUY(0x1fc),cA_ODJbBgfSTSKREdj;}async function generateAPBPoster(){const XMEXkxqCzQfJPlvawwATKtaO=OwjrzydsI_uxiO,MgQYk_YgnhcEYjNzI_jEFQgAnYc=generateBtn[XMEXkxqCzQfJPlvawwATKtaO(0x1db)];generateBtn[XMEXkxqCzQfJPlvawwATKtaO(0x1db)]=XMEXkxqCzQfJPlvawwATKtaO(0x1d5),generateBtn[XMEXkxqCzQfJPlvawwATKtaO(0x203)]=!![];try{await waitForImages();const qJKKPHeG_Kk=createPosterClone();document[XMEXkxqCzQfJPlvawwATKtaO(0x19c)][XMEXkxqCzQfJPlvawwATKtaO(0x1a4)](qJKKPHeG_Kk),await new Promise(YEfHACqGPOrnD_hsnXfkO=>setTimeout(YEfHACqGPOrnD_hsnXfkO,Math.max(-0x1dc6,-0x1dc6)+Number(-parseInt(0x3))*Math.max(-parseInt(0x3bf),-parseInt(0x3bf))+parseInt(0x1671)*Math.ceil(parseInt(0x1))));const UaxNbRKHCzZFACetsjwLso=await html2canvas(qJKKPHeG_Kk,{'scale':0x2,'backgroundColor':XMEXkxqCzQfJPlvawwATKtaO(0x1da),'logging':![],'useCORS':!![],'allowTaint':!![],'imageTimeout':0x3a98});document[XMEXkxqCzQfJPlvawwATKtaO(0x19c)][XMEXkxqCzQfJPlvawwATKtaO(0x1ac)](qJKKPHeG_Kk);const O_YwwIR=document[XMEXkxqCzQfJPlvawwATKtaO(0x202)]('a'),iPBczMH=XMEXkxqCzQfJPlvawwATKtaO(0x1cf)+new Date()[XMEXkxqCzQfJPlvawwATKtaO(0x1a5)]()+XMEXkxqCzQfJPlvawwATKtaO(0x1d9);O_YwwIR[XMEXkxqCzQfJPlvawwATKtaO(0x201)]=iPBczMH,O_YwwIR[XMEXkxqCzQfJPlvawwATKtaO(0x197)]=UaxNbRKHCzZFACetsjwLso[XMEXkxqCzQfJPlvawwATKtaO(0x23b)](XMEXkxqCzQfJPlvawwATKtaO(0x217)),document[XMEXkxqCzQfJPlvawwATKtaO(0x19c)][XMEXkxqCzQfJPlvawwATKtaO(0x1a4)](O_YwwIR),O_YwwIR[XMEXkxqCzQfJPlvawwATKtaO(0x1e9)](),document[XMEXkxqCzQfJPlvawwATKtaO(0x19c)][XMEXkxqCzQfJPlvawwATKtaO(0x1ac)](O_YwwIR),successMessage[XMEXkxqCzQfJPlvawwATKtaO(0x1dd)][XMEXkxqCzQfJPlvawwATKtaO(0x1bf)](XMEXkxqCzQfJPlvawwATKtaO(0x1a0));}catch(wngAzahuQk_myuKExFeYIhhe){console[XMEXkxqCzQfJPlvawwATKtaO(0x1a3)](XMEXkxqCzQfJPlvawwATKtaO(0x235),wngAzahuQk_myuKExFeYIhhe);try{const Zz_k_wavw=await html2canvas(document[XMEXkxqCzQfJPlvawwATKtaO(0x1d1)](XMEXkxqCzQfJPlvawwATKtaO(0x1c9)),{'scale':0x2,'backgroundColor':XMEXkxqCzQfJPlvawwATKtaO(0x1da),'logging':![],'useCORS':!![],'allowTaint':!![],'imageTimeout':0x3a98}),lzy$kNSAKruKeqffn=document[XMEXkxqCzQfJPlvawwATKtaO(0x202)]('a'),xFPGM$jgojNLILO=XMEXkxqCzQfJPlvawwATKtaO(0x1cf)+new Date()[XMEXkxqCzQfJPlvawwATKtaO(0x1a5)]()+XMEXkxqCzQfJPlvawwATKtaO(0x1d9);lzy$kNSAKruKeqffn[XMEXkxqCzQfJPlvawwATKtaO(0x201)]=xFPGM$jgojNLILO,lzy$kNSAKruKeqffn[XMEXkxqCzQfJPlvawwATKtaO(0x197)]=Zz_k_wavw[XMEXkxqCzQfJPlvawwATKtaO(0x23b)](XMEXkxqCzQfJPlvawwATKtaO(0x217)),document[XMEXkxqCzQfJPlvawwATKtaO(0x19c)][XMEXkxqCzQfJPlvawwATKtaO(0x1a4)](lzy$kNSAKruKeqffn),lzy$kNSAKruKeqffn[XMEXkxqCzQfJPlvawwATKtaO(0x1e9)](),document[XMEXkxqCzQfJPlvawwATKtaO(0x19c)][XMEXkxqCzQfJPlvawwATKtaO(0x1ac)](lzy$kNSAKruKeqffn),successMessage[XMEXkxqCzQfJPlvawwATKtaO(0x1dd)][XMEXkxqCzQfJPlvawwATKtaO(0x1bf)](XMEXkxqCzQfJPlvawwATKtaO(0x1a0));}catch(vbaElUvwcAYMHaNrPRVPvE){console[XMEXkxqCzQfJPlvawwATKtaO(0x1a3)](XMEXkxqCzQfJPlvawwATKtaO(0x20e),vbaElUvwcAYMHaNrPRVPvE),alert(XMEXkxqCzQfJPlvawwATKtaO(0x1ed));}}finally{generateBtn[XMEXkxqCzQfJPlvawwATKtaO(0x1db)]=MgQYk_YgnhcEYjNzI_jEFQgAnYc,generateBtn[XMEXkxqCzQfJPlvawwATKtaO(0x203)]=![];}}downloadBtn[OwjrzydsI_uxiO(0x1e8)](OwjrzydsI_uxiO(0x1e9),generateAPBPoster),generateBtn[OwjrzydsI_uxiO(0x1e8)](OwjrzydsI_uxiO(0x1e9),generateAPBPoster),copyBtn[OwjrzydsI_uxiO(0x1e8)](OwjrzydsI_uxiO(0x1e9),function(){const iCPeRytnBwqZ$HLdgOndx=OwjrzydsI_uxiO;let UE_eS$eli=pWanted[iCPeRytnBwqZ$HLdgOndx(0x21d)]+'\x0a'+pCharge[iCPeRytnBwqZ$HLdgOndx(0x21d)]+'\x0a\x0a';nameToggle[iCPeRytnBwqZ$HLdgOndx(0x224)]&&(UE_eS$eli+=iCPeRytnBwqZ$HLdgOndx(0x213)+pName[iCPeRytnBwqZ$HLdgOndx(0x21d)]+'\x0a\x0a'),UE_eS$eli+=pDescription[iCPeRytnBwqZ$HLdgOndx(0x21d)]+iCPeRytnBwqZ$HLdgOndx(0x19f)+pContact[iCPeRytnBwqZ$HLdgOndx(0x21d)]+iCPeRytnBwqZ$HLdgOndx(0x230)+pDetective[iCPeRytnBwqZ$HLdgOndx(0x21d)]+'\x0a\x0a'+pDate[iCPeRytnBwqZ$HLdgOndx(0x21d)]+iCPeRytnBwqZ$HLdgOndx(0x1c6)+pCreatedBy[iCPeRytnBwqZ$HLdgOndx(0x21d)],navigator[iCPeRytnBwqZ$HLdgOndx(0x1b5)][iCPeRytnBwqZ$HLdgOndx(0x1bc)](UE_eS$eli)[iCPeRytnBwqZ$HLdgOndx(0x1f0)](()=>{const LvLb$CdPHPvOR$ILTwzOgFaEarG=iCPeRytnBwqZ$HLdgOndx,NJaNXBkVtUcpEYZ=copyBtn[LvLb$CdPHPvOR$ILTwzOgFaEarG(0x1db)];copyBtn[LvLb$CdPHPvOR$ILTwzOgFaEarG(0x1db)]=LvLb$CdPHPvOR$ILTwzOgFaEarG(0x1c3),copyBtn[LvLb$CdPHPvOR$ILTwzOgFaEarG(0x1c7)][LvLb$CdPHPvOR$ILTwzOgFaEarG(0x222)]=LvLb$CdPHPvOR$ILTwzOgFaEarG(0x1cc),setTimeout(()=>{const sDmwtu$LKXnKmjhEJ$iuTrUI=LvLb$CdPHPvOR$ILTwzOgFaEarG;copyBtn[sDmwtu$LKXnKmjhEJ$iuTrUI(0x1db)]=NJaNXBkVtUcpEYZ,copyBtn[sDmwtu$LKXnKmjhEJ$iuTrUI(0x1c7)][sDmwtu$LKXnKmjhEJ$iuTrUI(0x222)]='';},0x117a+Number(0x221a)+parseInt(0x4)*-0xaf1);})[iCPeRytnBwqZ$HLdgOndx(0x1b9)](GLEeaudIe$mWBhRjNCwsVWsw=>{const AKqiFJYVXVlugggpsBg$pZJm=iCPeRytnBwqZ$HLdgOndx;console[AKqiFJYVXVlugggpsBg$pZJm(0x1a3)](AKqiFJYVXVlugggpsBg$pZJm(0x18d),GLEeaudIe$mWBhRjNCwsVWsw),alert(AKqiFJYVXVlugggpsBg$pZJm(0x20c));});}),resetBtn[OwjrzydsI_uxiO(0x1e8)](OwjrzydsI_uxiO(0x1e9),function(){const sa$XbeaU$pKAMe=OwjrzydsI_uxiO;confirm(sa$XbeaU$pKAMe(0x22b))&&(wantedTextInput[sa$XbeaU$pKAMe(0x1fd)]=sa$XbeaU$pKAMe(0x19b),bulletinToggle[sa$XbeaU$pKAMe(0x224)]=!![],nameToggle[sa$XbeaU$pKAMe(0x224)]=!![],chargeInput[sa$XbeaU$pKAMe(0x1fd)]=sa$XbeaU$pKAMe(0x1a9),suspectNameInput[sa$XbeaU$pKAMe(0x1fd)]='',descriptionInput[sa$XbeaU$pKAMe(0x1fd)]='',contactInput[sa$XbeaU$pKAMe(0x1fd)]=sa$XbeaU$pKAMe(0x21e),detectiveInput[sa$XbeaU$pKAMe(0x1fd)]='',dateInput[sa$XbeaU$pKAMe(0x1fd)]=sa$XbeaU$pKAMe(0x1af),createdByInput[sa$XbeaU$pKAMe(0x1fd)]=sa$XbeaU$pKAMe(0x1de),mugshotUrlInput[sa$XbeaU$pKAMe(0x1fd)]='',mugshot[sa$XbeaU$pKAMe(0x1ba)]='',mugshot[sa$XbeaU$pKAMe(0x1c7)][sa$XbeaU$pKAMe(0x1cb)]=sa$XbeaU$pKAMe(0x20a),mugshotDataURL=null,currentBulletinImage=sa$XbeaU$pKAMe(0x1f5),bulletinSelect[sa$XbeaU$pKAMe(0x1fd)]=sa$XbeaU$pKAMe(0x1f5),updatePreview());}),closeSuccess[OwjrzydsI_uxiO(0x1e8)](OwjrzydsI_uxiO(0x1e9),function(){const qB_gzKzoerc=OwjrzydsI_uxiO;successMessage[qB_gzKzoerc(0x1dd)][qB_gzKzoerc(0x1c8)](qB_gzKzoerc(0x1a0));});function toggleDarkMode(){const GEzjQNO=OwjrzydsI_uxiO;darkModeSwitch[GEzjQNO(0x224)]?(document[GEzjQNO(0x206)][GEzjQNO(0x1fa)](GEzjQNO(0x192),GEzjQNO(0x23a)),localStorage[GEzjQNO(0x1e2)](GEzjQNO(0x1d4),GEzjQNO(0x23a))):(document[GEzjQNO(0x206)][GEzjQNO(0x1fa)](GEzjQNO(0x192),GEzjQNO(0x1d3)),localStorage[GEzjQNO(0x1e2)](GEzjQNO(0x1d4),GEzjQNO(0x1d3)));}const savedTheme=localStorage[OwjrzydsI_uxiO(0x18c)](OwjrzydsI_uxiO(0x1d4));savedTheme===OwjrzydsI_uxiO(0x23a)?(darkModeSwitch[OwjrzydsI_uxiO(0x224)]=!![],document[OwjrzydsI_uxiO(0x206)][OwjrzydsI_uxiO(0x1fa)](OwjrzydsI_uxiO(0x192),OwjrzydsI_uxiO(0x23a))):document[OwjrzydsI_uxiO(0x206)][OwjrzydsI_uxiO(0x1fa)](OwjrzydsI_uxiO(0x192),OwjrzydsI_uxiO(0x1d3));darkModeSwitch[OwjrzydsI_uxiO(0x1e8)](OwjrzydsI_uxiO(0x18a),toggleDarkMode),document[OwjrzydsI_uxiO(0x1e8)](OwjrzydsI_uxiO(0x1c4),function(){const r_jWQKoBs_WpLfawbyUrQWeuMc=OwjrzydsI_uxiO;setupEventListeners(),updatePreview(),mugshot[r_jWQKoBs_WpLfawbyUrQWeuMc(0x1c7)][r_jWQKoBs_WpLfawbyUrQWeuMc(0x1cb)]=r_jWQKoBs_WpLfawbyUrQWeuMc(0x20a),bulletinImage[r_jWQKoBs_WpLfawbyUrQWeuMc(0x1ba)]=currentBulletinImage,bulletinImage[r_jWQKoBs_WpLfawbyUrQWeuMc(0x20b)]=function(){const IT$mQBJVrciP_pkUPEjizyUQ=r_jWQKoBs_WpLfawbyUrQWeuMc;console[IT$mQBJVrciP_pkUPEjizyUQ(0x1ef)](IT$mQBJVrciP_pkUPEjizyUQ(0x21c),currentBulletinImage);},console[r_jWQKoBs_WpLfawbyUrQWeuMc(0x1a2)](r_jWQKoBs_WpLfawbyUrQWeuMc(0x18e));});
+// DOM Elements
+const wantedTextInput = document.getElementById('wantedText');
+const bulletinToggle = document.getElementById('bulletinToggle');
+const bulletinSelect = document.getElementById('bulletinSelect');
+const nameToggle = document.getElementById('nameToggle');
+const chargeInput = document.getElementById('charge');
+const suspectNameInput = document.getElementById('suspectName');
+const descriptionInput = document.getElementById('description');
+const contactInput = document.getElementById('contact');
+const detectiveInput = document.getElementById('detective');
+const dateInput = document.getElementById('date');
+const createdByInput = document.getElementById('createdBy');
+const apbTextInput = document.getElementById('apbText');
+const mugshotUrlInput = document.getElementById('mugshotUrl');
+
+// Preview Elements
+const bulletinContainer = document.getElementById('bulletinContainer');
+const bulletinImage = document.getElementById('bulletinImage');
+const pWanted = document.getElementById('pWanted');
+const pCharge = document.getElementById('pCharge');
+const pName = document.getElementById('pName');
+const pDescription = document.getElementById('pDescription');
+const pContact = document.getElementById('pContact');
+const pDetective = document.getElementById('pDetective');
+const pDate = document.getElementById('pDate');
+const pApbText = document.getElementById('pApbText');
+const pCreatedBy = document.getElementById('pCreatedBy');
+const mugshot = document.getElementById('mugshot');
+
+// Buttons
+const generateBtn = document.getElementById('generateBtn');
+const resetBtn = document.getElementById('resetBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+const copyBtn = document.getElementById('copyBtn');
+
+// Character Count Elements
+const wantedCount = document.getElementById('wanted-count');
+const chargeCount = document.getElementById('charge-count');
+const nameCount = document.getElementById('name-count');
+const descriptionCount = document.getElementById('description-count');
+const contactCount = document.getElementById('contact-count');
+const detectiveCount = document.getElementById('detective-count');
+const dateCount = document.getElementById('date-count');
+const apbTextCount = document.getElementById('apbtext-count');
+const createdByCount = document.getElementById('createdby-count');
+
+// Success Modal
+const successMessage = document.getElementById('success-message');
+const closeSuccess = document.getElementById('close-success');
+
+// Dark Mode Toggle
+const darkModeSwitch = document.getElementById('dark-mode-switch');
+
+// Store image data URLs
+let mugshotDataURL = null;
+let currentBulletinImage = 'Bulletin.png'; // Default
+
+// Initialize character counts
+function updateCharacterCounts() {
+    wantedCount.textContent = wantedTextInput.value.length;
+    chargeCount.textContent = chargeInput.value.length;
+    nameCount.textContent = suspectNameInput.value.length;
+    descriptionCount.textContent = descriptionInput.value.length;
+    contactCount.textContent = contactInput.value.length;
+    detectiveCount.textContent = detectiveInput.value.length;
+    dateCount.textContent = dateInput.value.length;
+    apbTextCount.textContent = apbTextInput.value.length;
+    createdByCount.textContent = createdByInput.value.length;
+}
+
+// Update preview function
+function updatePreview() {
+    pWanted.textContent = wantedTextInput.value.toUpperCase() || 'WANTED';
+    pCharge.textContent = chargeInput.value || 'CHARGE NOT SPECIFIED';
+    
+    // Update APB text
+    pApbText.textContent = apbTextInput.value || 'APB';
+    
+    // Update suspect name based on toggle
+    if (nameToggle.checked) {
+        pName.textContent = suspectNameInput.value.toUpperCase() || 'UNKNOWN SUSPECT';
+        pName.style.display = 'block';
+    } else {
+        pName.textContent = '';
+        pName.style.display = 'none';
+    }
+    
+    pDescription.textContent = descriptionInput.value || 'No description provided.';
+    pContact.textContent = contactInput.value || 'CONTACT INFORMATION NOT PROVIDED';
+    pDetective.textContent = detectiveInput.value || 'Detective/Deputies Name Not Specified';
+    pDate.textContent = dateInput.value || 'Date Not Specified';
+    pCreatedBy.textContent = createdByInput.value || 'Created by SIB';
+    
+    // Update bulletin image visibility and source
+    if (bulletinToggle.checked) {
+        bulletinContainer.classList.remove('hidden');
+        bulletinImage.src = currentBulletinImage;
+    } else {
+        bulletinContainer.classList.add('hidden');
+    }
+    
+    updateCharacterCounts();
+}
+
+// Use a CORS proxy for restricted images
+function fetchWithProxy(url) {
+    return new Promise((resolve, reject) => {
+        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
+        
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        
+        img.onload = function() {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                
+                // Draw white background first for transparency issues
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            } catch (error) {
+                reject(error);
+            }
+        };
+        
+        img.onerror = reject;
+        img.src = proxyUrl;
+    });
+}
+
+// Handle GTA World images specifically
+function getGTAMugshotDataURL(url) {
+    return new Promise((resolve) => {
+        // Try direct fetch first
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        
+        img.onload = function() {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                
+                // Draw white background first
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            } catch (error) {
+                console.log('Direct conversion failed, trying proxy...');
+                fetchWithProxy(url).then(resolve).catch(() => resolve(null));
+            }
+        };
+        
+        img.onerror = function() {
+            console.log('Direct load failed, trying proxy...');
+            fetchWithProxy(url).then(resolve).catch(() => resolve(null));
+        };
+        
+        img.src = url;
+    });
+}
+
+// Convert any image to data URL
+function imageToDataURL(url) {
+    return new Promise((resolve) => {
+        if (!url) {
+            resolve(null);
+            return;
+        }
+        
+        // If already a data URL, return it
+        if (url.startsWith('data:image')) {
+            resolve(url);
+            return;
+        }
+        
+        // For local files like Bulletin.png, use direct URL
+        if (url.includes('.png') && !url.includes('http')) {
+            resolve(url);
+            return;
+        }
+        
+        // Check if it's a GTA World URL
+        if (url.includes('gta.world') || url.includes('mdc.gta.world')) {
+            getGTAMugshotDataURL(url).then(resolve).catch(() => resolve(null));
+            return;
+        }
+        
+        // For other URLs, try to convert
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        
+        img.onload = function() {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                
+                // Draw white background first
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            } catch (error) {
+                console.log('Could not convert to data URL:', error);
+                resolve(url);
+            }
+        };
+        
+        img.onerror = function() {
+            console.log('Image load failed:', url);
+            resolve(null);
+        };
+        
+        img.src = url;
+    });
+}
+
+// Handle mugshot URL input
+async function handleMugshotInput() {
+    const url = mugshotUrlInput.value.trim();
+    
+    if (!url) {
+        mugshot.style.display = 'none';
+        mugshot.src = '';
+        mugshotDataURL = null;
+        return;
+    }
+    
+    mugshot.style.display = 'block';
+    mugshot.src = '';
+    
+    try {
+        mugshotDataURL = await imageToDataURL(url);
+        
+        if (mugshotDataURL) {
+            mugshot.src = mugshotDataURL;
+            mugshot.style.display = 'block';
+        } else {
+            mugshot.style.display = 'none';
+        }
+    } catch (error) {
+        console.error('Error handling mugshot:', error);
+        mugshot.style.display = 'none';
+        mugshotDataURL = null;
+    }
+}
+
+// Set up event listeners for real-time preview
+function setupEventListeners() {
+    wantedTextInput.addEventListener('input', updatePreview);
+    bulletinToggle.addEventListener('change', updatePreview);
+    nameToggle.addEventListener('change', updatePreview);
+    chargeInput.addEventListener('input', updatePreview);
+    suspectNameInput.addEventListener('input', updatePreview);
+    descriptionInput.addEventListener('input', updatePreview);
+    contactInput.addEventListener('input', updatePreview);
+    detectiveInput.addEventListener('input', updatePreview);
+    dateInput.addEventListener('input', updatePreview);
+    apbTextInput.addEventListener('input', updatePreview);
+    createdByInput.addEventListener('input', updatePreview);
+    
+    // Handle bulletin selection change
+    bulletinSelect.addEventListener('change', function() {
+        currentBulletinImage = this.value;
+        updatePreview();
+    });
+    
+    // Handle mugshot URL input with debounce
+    let mugshotTimeout;
+    mugshotUrlInput.addEventListener('input', function() {
+        clearTimeout(mugshotTimeout);
+        mugshotTimeout = setTimeout(handleMugshotInput, 800);
+    });
+    
+    mugshotUrlInput.addEventListener('blur', handleMugshotInput);
+}
+
+// Wait for all images to load
+function waitForImages() {
+    return new Promise((resolve) => {
+        const images = document.querySelectorAll('#poster img');
+        let loadedCount = 0;
+        const totalImages = images.length;
+        
+        if (totalImages === 0) {
+            resolve();
+            return;
+        }
+        
+        images.forEach(img => {
+            if (img.complete) {
+                loadedCount++;
+                if (loadedCount === totalImages) resolve();
+            } else {
+                img.onload = function() {
+                    loadedCount++;
+                    if (loadedCount === totalImages) resolve();
+                };
+                img.onerror = function() {
+                    loadedCount++;
+                    if (loadedCount === totalImages) resolve();
+                };
+            }
+        });
+        
+        setTimeout(resolve, 5000);
+    });
+}
+
+// Create a cloned poster with data URLs
+function createPosterClone() {
+    const original = document.getElementById('poster');
+    const clone = original.cloneNode(true);
+    
+    // Update images in clone
+    if (bulletinToggle.checked) {
+        const bulletinContainer = clone.querySelector('.bulletin-image-container');
+        if (bulletinContainer) {
+            bulletinContainer.classList.remove('hidden');
+            bulletinContainer.style.display = 'block';
+            
+            const bulletinImg = clone.querySelector('.bulletin-image');
+            if (bulletinImg) {
+                bulletinImg.src = currentBulletinImage;
+                bulletinImg.style.display = 'block';
+                bulletinImg.style.width = '100%';
+                bulletinImg.style.height = 'auto';
+            }
+        }
+    } else {
+        const bulletinContainer = clone.querySelector('.bulletin-image-container');
+        if (bulletinContainer) {
+            bulletinContainer.style.display = 'none';
+        }
+    }
+    
+    if (mugshotDataURL) {
+        const mugshotImg = clone.querySelector('#mugshot');
+        if (mugshotImg) {
+            mugshotImg.src = mugshotDataURL;
+            mugshotImg.style.display = 'block';
+            mugshotImg.style.width = '200px';
+            mugshotImg.style.height = '200px';
+        }
+    } else {
+        const mugshotImg = clone.querySelector('#mugshot');
+        if (mugshotImg) {
+            mugshotImg.style.display = 'none';
+        }
+    }
+    
+    // Update name visibility in clone
+    const nameElement = clone.querySelector('#pName');
+    if (nameElement) {
+        if (nameToggle.checked) {
+            nameElement.style.display = 'block';
+            nameElement.textContent = suspectNameInput.value.toUpperCase() || 'UNKNOWN SUSPECT';
+        } else {
+            nameElement.style.display = 'none';
+            nameElement.textContent = '';
+        }
+    }
+    
+    // Update APB text in clone
+    const apbTextElement = clone.querySelector('#pApbText');
+    if (apbTextElement) {
+        apbTextElement.textContent = apbTextInput.value || 'APB';
+    }
+    
+    // Style the clone for capture
+    clone.style.position = 'absolute';
+    clone.style.left = '-9999px';
+    clone.style.top = '0';
+    clone.style.width = '600px';
+    clone.style.background = '#eaeaea';
+    clone.style.visibility = 'visible';
+    clone.style.opacity = '1';
+    clone.style.zIndex = '9999';
+    
+    return clone;
+}
+
+// Main function to generate APB Poster
+async function generateAPBPoster() {
+    const originalText = generateBtn.innerHTML;
+    generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+    generateBtn.disabled = true;
+    
+    try {
+        await waitForImages();
+        
+        const clone = createPosterClone();
+        document.body.appendChild(clone);
+        
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        const canvas = await html2canvas(clone, {
+            scale: 2,
+            backgroundColor: '#eaeaea',
+            logging: false,
+            useCORS: true,
+            allowTaint: true,
+            imageTimeout: 15000
+        });
+        
+        document.body.removeChild(clone);
+        
+        const link = document.createElement('a');
+        const fileName = `apb-poster-${new Date().getTime()}.png`;
+        link.download = fileName;
+        link.href = canvas.toDataURL('image/png');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        successMessage.classList.add('visible');
+        
+    } catch (error) {
+        console.error('Error generating poster:', error);
+        
+        try {
+            const canvas = await html2canvas(document.getElementById('poster'), {
+                scale: 2,
+                backgroundColor: '#eaeaea',
+                logging: false,
+                useCORS: true,
+                allowTaint: true,
+                imageTimeout: 15000
+            });
+            
+            const link = document.createElement('a');
+            const fileName = `apb-poster-${new Date().getTime()}.png`;
+            link.download = fileName;
+            link.href = canvas.toDataURL('image/png');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            successMessage.classList.add('visible');
+            
+        } catch (fallbackError) {
+            console.error('Fallback also failed:', fallbackError);
+            alert('Error generating poster. Please try:\n\n1. Using Chrome browser\n2. Running from a local web server\n3. Making sure bulletin images are in the same folder\n4. Trying a different mugshot URL');
+        }
+    } finally {
+        generateBtn.innerHTML = originalText;
+        generateBtn.disabled = false;
+    }
+}
+
+// Download as PNG
+downloadBtn.addEventListener('click', generateAPBPoster);
+generateBtn.addEventListener('click', generateAPBPoster);
+
+// Copy APB text
+copyBtn.addEventListener('click', function() {
+    let apbText = `${pWanted.textContent}\n${pCharge.textContent}\n\n`;
+    
+    if (nameToggle.checked) {
+        apbText += `SUSPECT: ${pName.textContent}\n\n`;
+    }
+    
+    apbText += `${pDescription.textContent}\n\nAny information, please contact:\n${pContact.textContent}\nATTENTION: ${pDetective.textContent}\n\n${pDate.textContent} | ${pApbText.textContent} | ${pCreatedBy.textContent}`;
+    
+    navigator.clipboard.writeText(apbText).then(() => {
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        copyBtn.style.backgroundColor = '#28a745';
+        
+        setTimeout(() => {
+            copyBtn.innerHTML = originalText;
+            copyBtn.style.backgroundColor = '';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+        alert('Failed to copy text to clipboard. Please try again.');
+    });
+});
+
+// Reset form
+resetBtn.addEventListener('click', function() {
+    if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
+        wantedTextInput.value = 'WANTED';
+        bulletinToggle.checked = true;
+        nameToggle.checked = true;
+        chargeInput.value = 'FA 201. CAPITAL MURDER';
+        suspectNameInput.value = '';
+        descriptionInput.value = '';
+        contactInput.value = 'HOMICIDE BUREAU • PH: ######';
+        detectiveInput.value = '';
+        dateInput.value = 'Friday, December 5, 2025';
+        createdByInput.value = 'Created by SIB';
+        apbTextInput.value = 'APB';
+        mugshotUrlInput.value = '';
+        mugshot.src = '';
+        mugshot.style.display = 'none';
+        mugshotDataURL = null;
+        currentBulletinImage = 'Bulletin.png';
+        bulletinSelect.value = 'Bulletin.png';
+        
+        updatePreview();
+    }
+});
+
+// Close success modal
+closeSuccess.addEventListener('click', function() {
+    successMessage.classList.remove('visible');
+});
+
+// Dark mode toggle
+function toggleDarkMode() {
+    if (darkModeSwitch.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    darkModeSwitch.checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+} else {
+    document.documentElement.setAttribute('data-theme', 'light');
+}
+
+darkModeSwitch.addEventListener('change', toggleDarkMode);
+
+// Initialize everything on page load
+document.addEventListener('DOMContentLoaded', function() {
+    setupEventListeners();
+    updatePreview();
+    mugshot.style.display = 'none';
+    
+    // Load initial bulletin image
+    bulletinImage.src = currentBulletinImage;
+    bulletinImage.onerror = function() {
+        console.warn('Bulletin image not found:', currentBulletinImage);
+    };
+    
+    console.log('APB Generator initialized successfully');
+});
