@@ -975,47 +975,66 @@ function openImageEditor(type, index = null, inputElement = null) {
     currentEditingImage.type = type;
     currentEditingImage.index = index;
     
+    // Reset editor image
+    editorImage.src = '';
+    editorImage.style.display = 'none';
+    
+    // Clear any existing cropper
+    if (cropper) {
+        cropper.destroy();
+        cropper = null;
+    }
+    
     // Load image
-    editorImage.src = imageUrl;
-    editorImage.onload = function() {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    
+    img.onload = function() {
+        editorImage.src = imageUrl;
+        editorImage.style.display = 'block';
+        
         document.getElementById('imageInfo').textContent = 
             `Original size: ${this.naturalWidth}×${this.naturalHeight}`;
         
-        // Initialize cropper
-        if (cropper) {
-            cropper.destroy();
-        }
-        
-        cropper = new Cropper(editorImage, {
-            aspectRatio: NaN, // Free ratio by default
-            viewMode: 1,
-            autoCropArea: 1,
-            responsive: true,
-            restore: true,
-            checkCrossOrigin: false,
-            background: false,
-            modal: true,
-            guides: true,
-            highlight: true,
-            cropBoxMovable: true,
-            cropBoxResizable: true,
-            toggleDragModeOnDblclick: true,
-            ready: function() {
-                // Set aspect ratio from select
-                const ratio = aspectRatioSelect.value;
-                if (ratio !== 'free') {
-                    const [x, y] = ratio.split(':').map(Number);
-                    cropper.setAspectRatio(x / y);
-                }
+        // Initialize cropper after image is displayed
+        setTimeout(() => {
+            if (cropper) {
+                cropper.destroy();
             }
-        });
+            
+            cropper = new Cropper(editorImage, {
+                viewMode: 2,
+                dragMode: 'crop',
+                autoCropArea: 1,
+                restore: false,
+                guides: true,
+                center: true,
+                highlight: true,
+                cropBoxMovable: true,
+                cropBoxResizable: true,
+                toggleDragModeOnDblclick: false,
+                aspectRatio: NaN,
+                ready: function() {
+                    console.log('Cropper is ready');
+                }
+            });
+            
+            // Set aspect ratio from select
+            const ratio = aspectRatioSelect.value;
+            if (ratio !== 'free') {
+                const [x, y] = ratio.split(':').map(Number);
+                cropper.setAspectRatio(x / y);
+            }
+        }, 100);
         
         imageEditorModal.classList.add('visible');
     };
     
-    editorImage.onerror = function() {
+    img.onerror = function() {
         showValidationMessage('Failed to load image. Please check the URL.', 'error');
     };
+    
+    img.src = imageUrl;
 }
 
 function closeImageEditor() {
@@ -1024,6 +1043,8 @@ function closeImageEditor() {
         cropper = null;
     }
     imageEditorModal.classList.remove('visible');
+    editorImage.src = '';
+    editorImage.style.display = 'none';
     currentEditingImage = {
         type: null,
         inputElement: null,
@@ -1032,36 +1053,66 @@ function closeImageEditor() {
 }
 
 function applyImageEdit() {
-    if (!cropper) return;
+    if (!cropper) {
+        showValidationMessage('No image to save. Please crop an image first.', 'warning');
+        return;
+    }
     
-    // Get cropped canvas
-    const canvas = cropper.getCroppedCanvas({
-        width: 800, // Max width
-        height: 800, // Max height
-        fillColor: '#fff'
-    });
-    
-    // Convert to data URL
-    const dataURL = canvas.toDataURL('image/png');
-    
-    // Update the appropriate input field
-    if (currentEditingImage.inputElement) {
+    try {
+        // Get cropped canvas
+        const canvas = cropper.getCroppedCanvas({
+            width: 800,
+            height: 800,
+            fillColor: '#fff',
+            imageSmoothingEnabled: true,
+            imageSmoothingQuality: 'high'
+        });
+        
+        if (!canvas) {
+            showValidationMessage('Could not get cropped image. Please try again.', 'error');
+            return;
+        }
+        
+        // Convert to data URL
+        const dataURL = canvas.toDataURL('image/png');
+        
         // Store in the appropriate data URL variable
         if (currentEditingImage.type === 'mugshot') {
             mugshotDataURL = dataURL;
-            handleMugshotInput();
+            mugshot.src = dataURL;
+            mugshot.style.display = 'block';
+            mugshotUrlInput.value = dataURL; // Replace URL with data URL
         } else if (currentEditingImage.type === 'wide') {
             wideImageDataURL = dataURL;
-            handleWideImageInput();
+            wideImage.src = dataURL;
+            wideImage.style.display = 'block';
+            wideImageUrlInput.value = dataURL; // Replace URL with data URL
         } else if (currentEditingImage.type === 'multiple') {
-            multipleImageDataURLs[currentEditingImage.index] = dataURL;
-            handleMultipleImages();
+            const index = currentEditingImage.index;
+            multipleImageDataURLs[index] = dataURL;
+            
+            // Update the specific grid image
+            const gridImage = document.getElementById(`gridImage${index}`);
+            if (gridImage) {
+                gridImage.src = dataURL;
+                gridImage.style.display = 'block';
+            }
+            
+            // Update the input with data URL
+            if (currentEditingImage.inputElement) {
+                currentEditingImage.inputElement.value = dataURL;
+            }
+            
+            updateMultipleImagesGrid();
         }
         
         showValidationMessage('Image edited successfully!', 'success');
+        closeImageEditor();
+        
+    } catch (error) {
+        console.error('Error applying image edit:', error);
+        showValidationMessage('Error saving edited image. Please try again.', 'error');
     }
-    
-    closeImageEditor();
 }
 
 // Modal Management
@@ -1077,6 +1128,8 @@ function closeAllModals() {
         cropper.destroy();
         cropper = null;
     }
+    editorImage.src = '';
+    editorImage.style.display = 'none';
 }
 
 // Show validation message
@@ -1449,28 +1502,34 @@ function setupEventListeners() {
     const initialRemoveBtn = document.querySelector('.remove-image-btn');
     
     let initialTimeout;
-    initialInput.addEventListener('input', function() {
-        clearTimeout(initialTimeout);
-        initialTimeout = setTimeout(() => {
+    if (initialInput) {
+        initialInput.addEventListener('input', function() {
+            clearTimeout(initialTimeout);
+            initialTimeout = setTimeout(() => {
+                validateField(this, 'url');
+                handleMultipleImages();
+            }, 800);
+        });
+        
+        initialInput.addEventListener('blur', function() {
             validateField(this, 'url');
             handleMultipleImages();
-        }, 800);
-    });
+        });
+    }
     
-    initialInput.addEventListener('blur', function() {
-        validateField(this, 'url');
-        handleMultipleImages();
-    });
+    if (initialEditBtn) {
+        initialEditBtn.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            openImageEditor('multiple', index, initialInput);
+        });
+    }
     
-    initialEditBtn.addEventListener('click', function() {
-        const index = parseInt(this.getAttribute('data-index'));
-        openImageEditor('multiple', index, initialInput);
-    });
-    
-    initialRemoveBtn.addEventListener('click', function() {
-        const index = parseInt(this.getAttribute('data-index'));
-        removeImageInput(index);
-    });
+    if (initialRemoveBtn) {
+        initialRemoveBtn.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            removeImageInput(index);
+        });
+    }
     
     // Image editor buttons
     editMugshotBtn.addEventListener('click', () => openImageEditor('mugshot'));
@@ -1498,15 +1557,15 @@ function setupEventListeners() {
     
     flipHorizontalBtn.addEventListener('click', () => {
         if (cropper) {
-            const scaleX = cropper.getData().scaleX || 1;
-            cropper.scaleX(-scaleX);
+            const data = cropper.getData();
+            cropper.scaleX(-data.scaleX || -1);
         }
     });
     
     flipVerticalBtn.addEventListener('click', () => {
         if (cropper) {
-            const scaleY = cropper.getData().scaleY || 1;
-            cropper.scaleY(-scaleY);
+            const data = cropper.getData();
+            cropper.scaleY(-data.scaleY || -1);
         }
     });
     
@@ -1522,6 +1581,10 @@ function setupEventListeners() {
         if (cropper) cropper.reset();
     });
     
+    // Apply and Cancel buttons
+    applyEditBtn.addEventListener('click', applyImageEdit);
+    cancelEditBtn.addEventListener('click', closeImageEditor);
+    
     // Template buttons
     templatesBtn.addEventListener('click', openTemplatesModal);
     saveCurrentTemplateBtn.addEventListener('click', saveCurrentAsTemplate);
@@ -1530,10 +1593,6 @@ function setupEventListeners() {
     closeModalButtons.forEach(btn => {
         btn.addEventListener('click', closeAllModals);
     });
-    
-    // Image editor buttons
-    cancelEditBtn.addEventListener('click', closeImageEditor);
-    applyEditBtn.addEventListener('click', applyImageEdit);
     
     // Close modal on ESC key
     document.addEventListener('keydown', function(e) {
