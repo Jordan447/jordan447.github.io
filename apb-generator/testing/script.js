@@ -106,7 +106,8 @@ let currentBulletinImage = 'Bulletin.png'; // Default
 let currentEditingImage = {
     type: null, // 'mugshot', 'wide', or index for multiple
     inputElement: null,
-    originalDataURL: null
+    originalUrl: null,
+    loadedDataURL: null
 };
 
 // Cropper instance
@@ -512,10 +513,33 @@ function updatePreview() {
     updateCharacterCounts();
 }
 
-// Use a CORS proxy for restricted images
-function fetchWithProxy(url) {
+// Load image for editing with CORS proxy support
+function loadImageForEditing(url) {
     return new Promise((resolve, reject) => {
-        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
+        if (!url) {
+            resolve(null);
+            return;
+        }
+        
+        // If already a data URL, return it
+        if (url.startsWith('data:image')) {
+            resolve(url);
+            return;
+        }
+        
+        // For local files like Bulletin.png, use direct URL
+        if (url.includes('.png') && !url.includes('http')) {
+            resolve(url);
+            return;
+        }
+        
+        // Check if it's a GTA World/MDC URL
+        const isMDCImage = url.includes('gta.world') || url.includes('mdc.gta.world');
+        
+        // Always use CORS proxy for MDC images to avoid CORS issues
+        const proxyUrl = isMDCImage ? 
+            `https://corsproxy.io/?${encodeURIComponent(url)}` :
+            url;
         
         const img = new Image();
         img.crossOrigin = 'anonymous';
@@ -523,62 +547,37 @@ function fetchWithProxy(url) {
         img.onload = function() {
             try {
                 const canvas = document.createElement('canvas');
-                canvas.width = img.width;
-                canvas.height = img.height;
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
                 const ctx = canvas.getContext('2d');
                 
-                // Draw white background first for transparency issues
+                // Draw white background first for transparency
                 ctx.fillStyle = '#ffffff';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 
+                // Draw the image
                 ctx.drawImage(img, 0, 0);
-                resolve(canvas.toDataURL('image/png'));
+                
+                // Convert to data URL
+                const dataURL = canvas.toDataURL('image/png');
+                resolve(dataURL);
+                
             } catch (error) {
+                console.error('Error converting image to data URL:', error);
                 reject(error);
             }
         };
         
-        img.onerror = reject;
+        img.onerror = function() {
+            console.error('Image load failed for editing:', url);
+            reject(new Error('Failed to load image'));
+        };
+        
         img.src = proxyUrl;
     });
 }
 
-// Handle GTA World images specifically
-function getGTAMugshotDataURL(url) {
-    return new Promise((resolve) => {
-        // Try direct fetch first
-        const img = new Image();
-        img.crossOrigin = 'anonymous';
-        
-        img.onload = function() {
-            try {
-                const canvas = document.createElement('canvas');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                const ctx = canvas.getContext('2d');
-                
-                // Draw white background first
-                ctx.fillStyle = '#ffffff';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                ctx.drawImage(img, 0, 0);
-                resolve(canvas.toDataURL('image/png'));
-            } catch (error) {
-                console.log('Direct conversion failed, trying proxy...');
-                fetchWithProxy(url).then(resolve).catch(() => resolve(null));
-            }
-        };
-        
-        img.onerror = function() {
-            console.log('Direct load failed, trying proxy...');
-            fetchWithProxy(url).then(resolve).catch(() => resolve(null));
-        };
-        
-        img.src = url;
-    });
-}
-
-// Convert any image to data URL
+// Convert any image to data URL (for preview)
 function imageToDataURL(url) {
     return new Promise((resolve) => {
         if (!url) {
@@ -600,7 +599,36 @@ function imageToDataURL(url) {
         
         // Check if it's a GTA World URL
         if (url.includes('gta.world') || url.includes('mdc.gta.world')) {
-            getGTAMugshotDataURL(url).then(resolve).catch(() => resolve(null));
+            // Try with CORS proxy for MDC images
+            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            
+            img.onload = function() {
+                try {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Draw white background first
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    ctx.drawImage(img, 0, 0);
+                    resolve(canvas.toDataURL('image/png'));
+                } catch (error) {
+                    console.log('Direct conversion failed for MDC image');
+                    resolve(null);
+                }
+            };
+            
+            img.onerror = function() {
+                console.log('MDC image load failed, trying fallback');
+                resolve(null);
+            };
+            
+            img.src = proxyUrl;
             return;
         }
         
@@ -974,6 +1002,7 @@ function openImageEditor(type, index = null, inputElement = null) {
     
     currentEditingImage.type = type;
     currentEditingImage.index = index;
+    currentEditingImage.originalUrl = imageUrl; // Store original URL
     
     // Reset editor image
     editorImage.src = '';
@@ -985,16 +1014,21 @@ function openImageEditor(type, index = null, inputElement = null) {
         cropper = null;
     }
     
-    // Load image
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
+    // Show loading state
+    showValidationMessage('Loading image for editing...', 'warning');
     
-    img.onload = function() {
-        editorImage.src = imageUrl;
+    // Load image through CORS proxy for MDC/GTA World images
+    loadImageForEditing(imageUrl).then(dataURL => {
+        if (!dataURL) {
+            showValidationMessage('Failed to load image for editing. Please check the URL or try a different image.', 'error');
+            return;
+        }
+        
+        editorImage.src = dataURL;
         editorImage.style.display = 'block';
         
-        document.getElementById('imageInfo').textContent = 
-            `Original size: ${this.naturalWidth}×${this.naturalHeight}`;
+        // Store the data URL for later use
+        currentEditingImage.loadedDataURL = dataURL;
         
         // Initialize cropper after image is displayed
         setTimeout(() => {
@@ -1014,8 +1048,15 @@ function openImageEditor(type, index = null, inputElement = null) {
                 cropBoxResizable: true,
                 toggleDragModeOnDblclick: false,
                 aspectRatio: NaN,
+                checkCrossOrigin: false, // Important: Disable cross-origin check
                 ready: function() {
-                    console.log('Cropper is ready');
+                    console.log('Cropper is ready for editing');
+                    
+                    // Update image info
+                    const naturalWidth = editorImage.naturalWidth;
+                    const naturalHeight = editorImage.naturalHeight;
+                    document.getElementById('imageInfo').textContent = 
+                        `Original size: ${naturalWidth}×${naturalHeight}`;
                 }
             });
             
@@ -1025,16 +1066,15 @@ function openImageEditor(type, index = null, inputElement = null) {
                 const [x, y] = ratio.split(':').map(Number);
                 cropper.setAspectRatio(x / y);
             }
+            
+            imageEditorModal.classList.add('visible');
+            
         }, 100);
         
-        imageEditorModal.classList.add('visible');
-    };
-    
-    img.onerror = function() {
-        showValidationMessage('Failed to load image. Please check the URL.', 'error');
-    };
-    
-    img.src = imageUrl;
+    }).catch(error => {
+        console.error('Error loading image for editing:', error);
+        showValidationMessage('Failed to load image. The image may have CORS restrictions.', 'error');
+    });
 }
 
 function closeImageEditor() {
@@ -1048,7 +1088,8 @@ function closeImageEditor() {
     currentEditingImage = {
         type: null,
         inputElement: null,
-        originalDataURL: null
+        originalUrl: null,
+        loadedDataURL: null
     };
 }
 
@@ -1081,12 +1122,18 @@ function applyImageEdit() {
             mugshotDataURL = dataURL;
             mugshot.src = dataURL;
             mugshot.style.display = 'block';
-            mugshotUrlInput.value = dataURL; // Replace URL with data URL
+            
+            // Always store as data URL for edited images
+            mugshotUrlInput.value = dataURL;
+            
         } else if (currentEditingImage.type === 'wide') {
             wideImageDataURL = dataURL;
             wideImage.src = dataURL;
             wideImage.style.display = 'block';
-            wideImageUrlInput.value = dataURL; // Replace URL with data URL
+            
+            // Always store as data URL for edited images
+            wideImageUrlInput.value = dataURL;
+            
         } else if (currentEditingImage.type === 'multiple') {
             const index = currentEditingImage.index;
             multipleImageDataURLs[index] = dataURL;
