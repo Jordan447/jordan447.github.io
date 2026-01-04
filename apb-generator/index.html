@@ -13,8 +13,12 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Cropper.js for image editing -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 </head>
 <body>
     
@@ -27,6 +31,104 @@
         </label>
     </div>
 
+    <!-- Templates Modal -->
+    <div id="templates-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-folder-open"></i> Saved Templates</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="templates-grid" id="templatesGrid">
+                    <!-- Templates will be loaded here -->
+                    <div class="no-templates">
+                        <i class="fas fa-folder-open fa-3x"></i>
+                        <p>No templates saved yet</p>
+                        <p class="hint">Save your current configuration as a template for future use</p>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="secondary-btn" id="saveCurrentTemplate">
+                        <i class="fas fa-save"></i> Save Current as Template
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Editor Modal -->
+    <div id="image-editor-modal" class="modal">
+        <div class="modal-content wide-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-crop"></i> Edit Image</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="image-editor-container">
+                    <div class="editor-tools">
+                        <div class="tool-group">
+                            <label>Aspect Ratio:</label>
+                            <select id="aspectRatio">
+                                <option value="free">Free</option>
+                                <option value="1:1">Square (1:1)</option>
+                                <option value="4:3">Standard (4:3)</option>
+                                <option value="16:9">Wide (16:9)</option>
+                                <option value="3:2">Photo (3:2)</option>
+                            </select>
+                        </div>
+                        <div class="tool-group">
+                            <label>Rotate:</label>
+                            <button type="button" class="small-btn" id="rotateLeft">
+                                <i class="fas fa-rotate-left"></i> 90° Left
+                            </button>
+                            <button type="button" class="small-btn" id="rotateRight">
+                                <i class="fas fa-rotate-right"></i> 90° Right
+                            </button>
+                        </div>
+                        <div class="tool-group">
+                            <label>Flip:</label>
+                            <button type="button" class="small-btn" id="flipHorizontal">
+                                <i class="fas fa-arrows-alt-h"></i> Horizontal
+                            </button>
+                            <button type="button" class="small-btn" id="flipVertical">
+                                <i class="fas fa-arrows-alt-v"></i> Vertical
+                            </button>
+                        </div>
+                        <div class="tool-group">
+                            <label>Zoom:</label>
+                            <div class="zoom-controls">
+                                <button type="button" class="small-btn" id="zoomIn">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                                <button type="button" class="small-btn" id="zoomOut">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                                <button type="button" class="small-btn" id="zoomReset">
+                                    <i class="fas fa-sync-alt"></i> Reset
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editor-preview">
+                        <img id="editorImage" src="" alt="Edit Image">
+                    </div>
+                    <div class="editor-info">
+                        <p id="imageInfo">Original size: 0x0</p>
+                        <div class="hint">Drag to move, scroll to zoom. Press ESC to cancel.</div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="secondary-btn" id="cancelEdit">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                    <button type="button" class="discord-btn" id="applyEdit">
+                        <i class="fas fa-check"></i> Apply Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <h1><i class="fas fa-bullhorn"></i> APB / Wanted Poster Generator</h1>
@@ -35,7 +137,12 @@
 
         <!-- Form Section -->
         <div class="form-section">
-            <h2>Create APB</h2>
+            <div class="section-header">
+                <h2>Create APB</h2>
+                <button type="button" class="small-btn" id="templatesBtn">
+                    <i class="fas fa-folder-open"></i> Templates
+                </button>
+            </div>
             
             <form id="apbForm">
                 <div class="form-group">
@@ -44,7 +151,7 @@
                     <div class="character-count"><span id="wanted-count">0</span>/20</div>
                 </div>
                 
-                <!-- Bulletin Section - Toggle and dropdown on same line -->
+                <!-- Bulletin Section -->
                 <div class="form-group">
                     <label for="bulletinToggle" class="compact-toggle-label">
                         <input type="checkbox" id="bulletinToggle" checked>
@@ -57,20 +164,88 @@
                     </select>
                 </div>
                 
-                <!-- Moved Mugshot URL here -->
+                <!-- Image Layout Selection -->
                 <div class="form-group">
-                    <label for="mugshotUrl">Mugshot Image URL</label>
-                    <input type="text" id="mugshotUrl" placeholder="https://example.com/mugshot.jpg">
+                    <label for="imageLayout" class="required">Image Layout</label>
+                    <select id="imageLayout" class="bulletin-select">
+                        <option value="mugshot">Single Mugshot</option>
+                        <option value="multiple">Multiple Images (Max 3)</option>
+                        <option value="wide">Wide Image</option>
+                        <option value="none">No Image</option>
+                    </select>
                 </div>
                 
-                <!-- Name Toggle - COMPACT VERSION -->
+                <!-- Image Configuration Area -->
+                <div id="imageConfigArea">
+                    <!-- Mugshot Layout -->
+                    <div class="image-config" data-layout="mugshot">
+                        <div class="form-group">
+                            <label for="mugshotUrl">Mugshot Image URL</label>
+                            <div class="input-with-button">
+                                <input type="text" id="mugshotUrl" placeholder="https://example.com/mugshot.jpg">
+                                <button type="button" class="small-btn" id="editMugshotBtn" title="Edit Image">
+                                    <i class="fas fa-crop"></i>
+                                </button>
+                            </div>
+                            <div class="hint">
+                                <div>For best results, use square images (1:1 aspect ratio)</div>
+                                <div><strong>Auto-fill:</strong> Enter suspect name below and the image will auto-fill from MDC</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Multiple Images Layout -->
+                    <div class="image-config" data-layout="multiple" style="display: none;">
+                        <div class="form-group">
+                            <label>Multiple Images (Maximum 3)</label>
+                            <div class="dynamic-images-container">
+                                <div id="multipleImagesList">
+                                    <div class="dynamic-image-row" data-index="0">
+                                        <div class="input-with-button">
+                                            <input type="text" class="multiple-image-url" placeholder="Image URL" data-index="0">
+                                            <button type="button" class="small-btn edit-image-btn" data-index="0" title="Edit Image">
+                                                <i class="fas fa-crop"></i>
+                                            </button>
+                                        </div>
+                                        <button type="button" class="remove-image-btn" data-index="0" title="Remove image">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button type="button" class="small-btn add-image-btn" id="addImageBtn">
+                                    <i class="fas fa-plus"></i> Add Another Image
+                                </button>
+                                <div class="hint">Add up to 3 image URLs. Images will be arranged in a responsive grid.</div>
+                                <div class="image-count-display">
+                                    Current: <span id="imageCount">1</span> / 3 images added
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wide Image Layout -->
+                    <div class="image-config" data-layout="wide" style="display: none;">
+                        <div class="form-group">
+                            <label for="wideImageUrl">Wide Image URL</label>
+                            <div class="input-with-button">
+                                <input type="text" id="wideImageUrl" placeholder="https://example.com/wide-image.jpg">
+                                <button type="button" class="small-btn" id="editWideImageBtn" title="Edit Image">
+                                    <i class="fas fa-crop"></i>
+                                </button>
+                            </div>
+                            <div class="hint">For best results, use wide images (16:9 or 3:1 aspect ratio)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Name Toggle -->
                 <div class="form-group">
                     <label for="nameToggle" class="compact-toggle-label">
                         <input type="checkbox" id="nameToggle" checked>
                         <span class="toggle-icon"></span>
                         Suspect Name <span class="hint">(Toggle visibility)</span>
                     </label>
-                    <input type="text" id="suspectName" value="">
+                    <input type="text" id="suspectName" value="" placeholder="Enter suspect name (e.g., Cody Haskins)">
                     <div class="character-count"><span id="name-count">0</span>/50</div>
                 </div>
                 
@@ -136,7 +311,6 @@
             <h2>APB Preview</h2>
             
             <div id="apbPreview">
-                <!-- APB Poster will be generated here -->
                 <div class="apb-form" id="poster">
                     <!-- Bulletin Image Area -->
                     <div class="bulletin-image-container" id="bulletinContainer">
@@ -152,7 +326,23 @@
                     <!-- Body Content -->
                     <div class="apb-body">
                         <div class="photo-block">
-                            <img id="mugshot" src="" alt="Suspect Mugshot">
+                            <!-- Mugshot Layout -->
+                            <div class="image-container mugshot-layout" id="mugshotContainer">
+                                <img id="mugshot" src="" alt="Suspect Mugshot">
+                            </div>
+                            
+                            <!-- Multiple Images Layout -->
+                            <div class="image-container multiple-layout" id="multipleContainer" style="display: none;">
+                                <div class="image-grid" id="multipleImagesGrid">
+                                    <!-- Dynamic grid items will be added here -->
+                                </div>
+                            </div>
+                            
+                            <!-- Wide Image Layout -->
+                            <div class="image-container wide-layout" id="wideContainer" style="display: none;">
+                                <img id="wideImage" src="" alt="Wide Image">
+                            </div>
+                            
                             <div class="suspect-name" id="pName"></div>
                         </div>
                         
