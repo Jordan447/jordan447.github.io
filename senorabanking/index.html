@@ -270,6 +270,14 @@
       background: rgba(255, 255, 255, 0.025);
     }
 
+    tr.clickable {
+      cursor: pointer;
+    }
+
+    tr.selected td {
+      background: rgba(73, 209, 125, 0.12);
+    }
+
     .empty {
       padding: 32px 16px;
       color: var(--muted);
@@ -376,7 +384,7 @@
     <header>
       <div>
         <h1>Trucking Competition</h1>
-        <p class="subhead">Leaderboard built from Fleeca transaction exports.</p>
+        <p class="subhead">Leaderboard built from Fleeca transaction exports.<br>Ensure the loaded CSV file is up to date.</p>
       </div>
       <div class="actions">
         <label class="file-btn">
@@ -493,7 +501,8 @@
       rows: [],
       headers: [],
       leaderboard: [],
-      matched: []
+      matched: [],
+      selectedDriver: ""
     };
 
     const els = {
@@ -605,6 +614,13 @@
         Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
       };
       return new Date(Number(match[3]), months[match[2]], Number(match[1]), Number(match[4]), Number(match[5]));
+    }
+
+    function formatDateValue(date) {
+      if (!date) return "";
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const pad = (value) => String(value).padStart(2, "0");
+      return `${pad(date.getDate())}/${months[date.getMonth()]}/${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
     }
 
     function formatMoney(value) {
@@ -727,6 +743,9 @@
       const shown = state.leaderboard.slice(0, topLimit);
       const totalCrates = state.leaderboard.reduce((sum, row) => sum + row.crates, 0);
       const totalPayout = state.leaderboard.reduce((sum, row) => sum + row.payout, 0);
+      const selectedMatched = state.selectedDriver
+        ? state.matched.filter((row) => row.driver === state.selectedDriver)
+        : state.matched;
 
       els.metricName.textContent = els.competitionName.value || "Competition";
       els.metricDrivers.textContent = state.leaderboard.length.toLocaleString();
@@ -767,12 +786,12 @@
             </thead>
             <tbody>
               ${shown.map((row, index) => `
-                <tr>
+                <tr class="clickable${row.driver === state.selectedDriver ? " selected" : ""}" data-driver="${escapeHtml(row.driver)}">
                   <td class="num">${index + 1}</td>
                   <td>${escapeHtml(row.driver)}</td>
                   <td class="num">${row.crates.toLocaleString()}</td>
                   <td class="num">${formatMoney(row.payout)}</td>
-                  <td>${row.lastDate ? escapeHtml(row.lastDate.toLocaleString()) : ""}</td>
+                  <td>${escapeHtml(formatDateValue(row.lastDate))}</td>
                 </tr>
               `).join("")}
             </tbody>
@@ -780,7 +799,7 @@
         `;
       }
 
-      const recent = state.matched.slice(0, 80);
+      const recent = selectedMatched.slice(0, 200);
       if (!recent.length) {
         els.matchedRows.innerHTML = `<div class="empty">No matched transactions to show.</div>`;
       } else {
@@ -802,27 +821,36 @@
                   <td>${escapeHtml(row.reason)}</td>
                   <td class="num">${row.crates.toLocaleString()}</td>
                   <td class="num">${formatMoney(row.amount)}</td>
-                  <td>${row.date ? escapeHtml(row.date.toLocaleString()) : ""}</td>
+                  <td>${escapeHtml(formatDateValue(row.date))}</td>
                 </tr>
               `).join("")}
             </tbody>
           </table>
         `;
       }
+
+      els.leaderboard.querySelectorAll("[data-driver]").forEach((row) => {
+        row.addEventListener("click", () => {
+          const driver = row.getAttribute("data-driver") || "";
+          state.selectedDriver = state.selectedDriver === driver ? "" : driver;
+          render();
+        });
+      });
     }
 
     function renderDiagnostics() {
       const diagnostics = state.diagnostics || {};
       const dateSpan = diagnostics.minMatchedDate && diagnostics.maxMatchedDate
-        ? `${diagnostics.minMatchedDate.toLocaleDateString()} to ${diagnostics.maxMatchedDate.toLocaleDateString()}`
+        ? `${formatDateValue(diagnostics.minMatchedDate)} to ${formatDateValue(diagnostics.maxMatchedDate)}`
         : "none";
       const selectedRange = `${els.startDate.value || "any"} to ${els.endDate.value || "any"}`;
+      const selectedDriver = state.selectedDriver ? ` | Showing matched rows for: ${state.selectedDriver}` : " | Showing newest 200 matched rows";
 
       els.diagnostics.textContent = [
         `Rows matching reason pattern: ${(diagnostics.patternMatches || 0).toLocaleString()}`,
         `Excluded by date range: ${(diagnostics.dateExcluded || 0).toLocaleString()}`,
         `Matched delivery date span: ${dateSpan}`,
-        `Selected date range: ${selectedRange}`
+        `Selected date range: ${selectedRange}${selectedDriver}`
       ].join(" | ");
     }
 
@@ -854,7 +882,7 @@
           row.driver,
           row.crates,
           row.payout,
-          row.lastDate ? row.lastDate.toISOString() : ""
+          formatDateValue(row.lastDate)
         ]);
       });
       return lines.map((line) => line.map((value) => `"${String(value).replaceAll('"', '""')}"`).join(",")).join("\n");
