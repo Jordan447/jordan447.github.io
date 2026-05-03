@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>GTA Banking Tool | Pull & Analyze Transactions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+            margin: 0;
+            padding: 24px 20px;
+            color: #1a2c3e;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #0f2b3d, #1b4f6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-top: 0;
+            margin-bottom: 0.25rem;
+        }
+        .sub {
+            color: #4a627a;
+            border-left: 3px solid #2c7da0;
+            padding-left: 14px;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+        .card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.02);
+            padding: 1.6rem 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.2s;
+            border: 1px solid #e9edf2;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #eef2f6;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f3b4c;
+        }
+        .badge {
+            background: #e9ecef;
+            padding: 5px 12px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2c5a74;
+        }
+        button, .file-label {
+            background: #1f6392;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        button:hover, .file-label:hover {
+            background: #0f4b6e;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+        button:active {
+            transform: translateY(1px);
+        }
+        .secondary-btn {
+            background: #3e6b8c;
+        }
+        .danger-outline {
+            background: transparent;
+            border: 1px solid #cbd5e1;
+            color: #2c3e50;
+            box-shadow: none;
+        }
+        .danger-outline:hover {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .status-box {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 14px 20px;
+            margin: 20px 0 0;
+            font-family: monospace;
+            font-size: 0.85rem;
+            border-left: 5px solid #2c7da0;
+            word-break: break-word;
+            white-space: pre-wrap;
+        }
+        .grid-2col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .col {
+            flex: 1;
+            min-width: 280px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            background: white;
+            border-radius: 20px;
+            overflow: auto;
+            display: block;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #0f3b4f;
+            position: sticky;
+            top: 0;
+        }
+        .summary-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: #f1f9ff;
+            padding: 0.8rem 1.4rem;
+            border-radius: 32px;
+            flex: 1;
+            min-width: 160px;
+            border: 1px solid #dceaf2;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1f6392;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4f6f8f;
+        }
+        .money {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+        }
+        .upload-area {
+            border: 2px dashed #cbd5e1;
+            border-radius: 24px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 1rem;
+            background: #fefefe;
+            transition: 0.2s;
+        }
+        .upload-area.drag-over {
+            background: #eef4ff;
+            border-color: #1f6392;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        hr {
+            margin: 1rem 0;
+            border-color: #e9edf2;
+        }
+        .warning {
+            background: #fff8e7;
+            border-left: 5px solid #f5b042;
+            padding: 12px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 20px;
+            border: 1px solid #eef2f8;
+            max-height: 420px;
+            overflow-y: auto;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #7c8ea0;
+            margin-top: 2rem;
+        }
+        @media (max-width: 760px) {
+            .card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🏦 GTA World Banking Hub</h1>
+    <div class="sub">Pull live transactions + CSV analysis — track player volume & total money</div>
+
+    <!-- SECTION 1: PULL DATA from python backend -->
+    <div class="card">
+        <div class="card-header">
+            <h2>📡 1. Pull transactions (Python bridge)</h2>
+            <span class="badge">backend: pull_transactions.py</span>
+        </div>
+        <div class="flex-row">
+            <button id="pullDataBtn">🚀 Pull Data from Banking API</button>
+            <button id="clearPullLog" class="danger-outline">🗑️ Clear logs</button>
+        </div>
+        <div id="pullStatus" class="status-box">
+            💡 Click "Pull Data" to trigger the Python script. The script will fetch transactions and generate JSON/CSV.<br>
+            ✅ After successful pull, you can download the generated CSV or use the "Upload CSV" section below.
+        </div>
+        <div style="margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <button id="downloadJsonBtn" class="secondary-btn" disabled>📥 Download transactions.json</button>
+            <button id="downloadCsvBtn" class="secondary-btn" disabled>📥 Download transactions.csv</button>
+        </div>
+    </div>
+
+    <!-- SECTION 2: UPLOAD CSV + ANALYZE BY "Name" field -->
+    <div class="card">
+        <div class="card-header">
+            <h2>📊 2. Analyze by "Name" (CSV upload)</h2>
+            <span class="badge">aggregate count & sum by player name</span>
+        </div>
+        <div class="grid-2col">
+            <div class="col">
+                <div class="upload-area" id="dropZone">
+                    <label for="csvUpload" class="file-label" style="background:#2c5f8a;">📂 Choose CSV file</label>
+                    <input type="file" id="csvUpload" accept=".csv">
+                    <p style="margin-top: 12px; font-size: 0.8rem; color:#5d7184;">Drag & drop or click to upload<br>Expects standard columns: <strong>Name</strong>, <strong>Amount</strong>, Id, From, etc.</p>
+                </div>
+                <button id="analyzeBtn" style="margin-top: 16px; width: 100%; background: #2c7a4d;">🔍 Analyze by "Name"</button>
+                <button id="resetAnalysis" class="danger-outline" style="margin-top: 10px; width: 100%;">⟳ Reset / Clear table</button>
+            </div>
+            <div class="col">
+                <div class="summary-stats" id="summaryStats">
+                    <div class="stat-card"><div class="stat-number" id="totalPlayers">0</div><div class="stat-label">Unique Players</div></div>
+                    <div class="stat-card"><div class="stat-number" id="totalTxCount">0</div><div class="stat-label">Total Transactions</div></div>
+                    <div class="stat-card"><div class="stat-number" id="totalMoneySum">$0</div><div class="stat-label">Aggregated Money</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="table-wrapper" id="analysisTableWrapper" style="margin-top: 1.2rem;">
+            <table id="analysisTable">
+                <thead>
+                    <tr><th>Player Name</th><th>📝 Transaction Count</th><th>💰 Total Amount (sum)</th><th>📊 Avg per Tx</th></tr>
+                </thead>
+                <tbody id="analysisTableBody">
+                    <tr><td colspan="4" style="text-align:center;">No data yet — upload CSV and click "Analyze by Name"</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="csvAnalysisInfo" class="warning" style="margin-top: 16px; display: none;"></div>
+    </div>
+
+    <!-- Footer info -->
+    <footer>
+        🔐 Requires backend endpoint: /api/pull-transactions (flask/fastapi) that runs pull_transactions.py logic.<br>
+        Or you can adjust endpoint URL. This UI sends POST to "/api/trigger-pull" and expects file URLs.
+    </footer>
+</div>
+
+<script>
+    // --------------------------------------------------------------
+    //  Configuration: endpoint for triggering python script
+    //  The provided python script is designed for CLI, but we can
+    //  wrap it inside a simple Flask route. For demo we simulate
+    //  actual fetch to a backend that runs pull_transactions.py.
+    //  In a real deployment, adjust API_ROOT to your server.
+    // --------------------------------------------------------------
+    const API_BASE = window.location.origin;   // same origin, expects backend routes
+    const PULL_TRIGGER_ENDPOINT = '/api/trigger-pull';   // POST -> runs script, returns generated files info
+    const JSON_DOWNLOAD_URL = '/api/download/transactions.json';
+    const CSV_DOWNLOAD_URL = '/api/download/transactions.csv';
+
+    // for standalone frontend (static) we simulate with demo / but we also implement manual CSV analysis.
+    // but to reflect the request: "html site that has a pull data button that goes off a python script"
+    // we need a backend adapter. For local demonstration, we'll also provide a mock mode + instructions.
+    // However the answer should be fully functional. Using fetch to trigger a backend that executes the given python.
+    // I'll also provide mock simulation if backend is unavailable, but the requirement: html + interaction.
+    // Since this is a code answer, the user will have to set up a small Flask server. I'll include a sample Flask snippet.
+    // In the UI I'll handle both: real backend & fallback message.
+
+    // UI elements
+    const pullBtn = document.getElementById('pullDataBtn');
+    const pullStatusDiv = document.getElementById('pullStatus');
+    const downloadJsonBtn = document.getElementById('downloadJsonBtn');
+    const downloadCsvBtn = document.getElementById('downloadCsvBtn');
+    const clearLogBtn = document.getElementById('clearPullLog');
+    const csvFileInput = document.getElementById('csvUpload');
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    const resetAnalysisBtn = document.getElementById('resetAnalysis');
+    const analysisBody = document.getElementById('analysisTableBody');
+    const totalPlayersSpan = document.getElementById('totalPlayers');
+    const totalTxCountSpan = document.getElementById('totalTxCount');
+    const totalMoneySumSpan = document.getElementById('totalMoneySum');
+    const csvInfoDiv = document.getElementById('csvAnalysisInfo');
+
+    let lastGeneratedCsvBlob = null;     // store latest pulled csv for convenience
+    let lastGeneratedJsonData = null;
+
+    // Helper to update status area
+    function setPullStatus(message, isError = false) {
+        const prefix = isError ? '⚠️ ' : '📌 ';
+        pullStatusDiv.innerHTML = prefix + message;
+        if (isError) pullStatusDiv.style.borderLeftColor = '#e53e3e';
+        else pullStatusDiv.style.borderLeftColor = '#2c7da0';
+    }
+
+    // Simulate / actual fetch to trigger python script
+    async function triggerPythonPull() {
+        setPullStatus('⏳ Triggering pull_transactions.py ... fetching fresh transactions ...');
+        downloadJsonBtn.disabled = true;
+        downloadCsvBtn.disabled = true;
+        try {
+            const response = await fetch(PULL_TRIGGER_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'pull' })
+            });
+            if (!response.ok) {
+                const errText = await response.text();
+                throw new Error(`Server responded ${response.status}: ${errText.slice(0, 100)}`);
+            }
+            const result = await response.json();
+            if (result.success) {
+                setPullStatus(`✅ Pull successful! ${result.message || 'Transactions fetched.'} JSON: ${result.json_file || 'transactions_response.json'}, CSV: ${result.csv_file || 'transactions.csv'}`);
+                downloadJsonBtn.disabled = false;
+                downloadCsvBtn.disabled = false;
+                // Optionally pre-load csv content for analysis? we can fetch CSV later.
+                // Provide user info that CSV ready to download
+                if (result.csv_content) {
+                    // if backend returns base64 or raw, but we rely on download URLs
+                }
+                // trigger auto refresh of last csv? we'll add a fetchCSVForAnalysis option
+                await fetchAndCacheGeneratedCSV();
+            } else {
+                throw new Error(result.error || 'Unknown error from backend');
+            }
+        } catch (err) {
+            console.error(err);
+            let msg = `❌ Failed to trigger Python script: ${err.message}. `;
+            msg += `Make sure backend endpoint ${PULL_TRIGGER_ENDPOINT} is implemented. `;
+            msg += `(Flask example: subprocess.run(['python','pull_transactions.py']))`;
+            setPullStatus(msg, true);
+            downloadJsonBtn.disabled = true;
+            downloadCsvBtn.disabled = true;
+        }
+    }
+
+    // Helper to fetch generated CSV from backend to use locally for analysis (optional)
+    async function fetchAndCacheGeneratedCSV() {
+        try {
+            const resp = await fetch(CSV_DOWNLOAD_URL);
+            if (resp.ok) {
+                const blob = await resp.blob();
+                lastGeneratedCsvBlob = blob;
+                setPullStatus(pullStatusDiv.innerText + ' | CSV ready for analysis.');
+            } else {
+                console.warn("CSV not downloadable yet");
+            }
+        } catch(e) { console.warn(e); }
+    }
+
+    // download handlers
+    function downloadJson() {
+        window.open(JSON_DOWNLOAD_URL, '_blank');
+    }
+    function downloadCsv() {
+        window.open(CSV_DOWNLOAD_URL, '_blank');
+    }
+
+    // --- CSV ANALYSIS SECTION (by "Name")---
+    // Expected CSV columns: "Name" (player name) and "Amount" (numeric)
+    // also supports "From" if "Name" is missing, but we look for "Name" exactly.
+    function parseCSVAndAggregate(csvText) {
+        const lines = csvText.split(/\r?\n/);
+        if (lines.length < 2) throw new Error("CSV has no data rows");
+        const headers = lines[0].split(',').map(h => h.replace(/^"|"$/g, '').trim());
+        const nameIdx = headers.findIndex(h => h.toLowerCase() === 'name');
+        const amountIdx = headers.findIndex(h => h.toLowerCase() === 'amount');
+        if (nameIdx === -1) throw new Error("CSV missing required column: 'Name'. Found headers: " + headers.join(', '));
+        if (amountIdx === -1) throw new Error("CSV missing required column: 'Amount'. Found: " + headers.join(', '));
+        
+        const playerMap = new Map(); // name -> {count, sum}
+        let totalTransactions = 0;
+        let totalMoney = 0;
+
+        for (let i = 1; i < lines.length; i++) {
+            const line = lines[i].trim();
+            if (line === "") continue;
+            // simple CSV parsing respecting quotes? basic split works for clean data
+            let values = line.split(',');
+            if (values.length <= Math.max(nameIdx, amountIdx)) continue;
+            let rawName = values[nameIdx].replace(/^"|"$/g, '').trim();
+            let rawAmount = values[amountIdx].replace(/^"|"$/g, '').trim();
+            if (rawName === "") continue;
+            let amountNum = parseFloat(rawAmount.replace(/[$,]/g, ''));
+            if (isNaN(amountNum)) amountNum = 0;
+
+            if (!playerMap.has(rawName)) {
+                playerMap.set(rawName, { count: 0, sum: 0 });
+            }
+            const entry = playerMap.get(rawName);
+            entry.count += 1;
+            entry.sum += amountNum;
+            totalTransactions += 1;
+            totalMoney += amountNum;
+        }
+        // transform to sorted array (by sum desc)
+        const aggregated = Array.from(playerMap.entries()).map(([name, data]) => ({
+            name,
+            count: data.count,
+            totalAmount: data.sum,
+            avgAmount: data.count ? data.sum / data.count : 0
+        }));
+        aggregated.sort((a,b) => b.totalAmount - a.totalAmount);
+        return { aggregated, totalPlayers: aggregated.length, totalTransactions, totalMoney };
+    }
+
+    function renderAnalysisTable(aggregated) {
+        analysisBody.innerHTML = '';
+        if (!aggregated.length) {
+            analysisBody.innerHTML = '<tr><td colspan="4" style="text-align:center;">No player data found. Check CSV columns.</td></tr>';
+            return;
+        }
+        for (const player of aggregated) {
+            const row = analysisBody.insertRow();
+            row.insertCell(0).innerText = player.name;
+            row.insertCell(1).innerText = player.count.toLocaleString();
+            row.insertCell(2).innerHTML = `<span class="money">$${player.totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>`;
+            row.insertCell(3).innerHTML = `$${player.avgAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
+    }
+
+    function updateSummaryStats(playersCount, totalTx, totalMoney) {
+        totalPlayersSpan.innerText = playersCount;
+        totalTxCountSpan.innerText = totalTx.toLocaleString();
+        totalMoneySumSpan.innerHTML = `$${totalMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    async function analyzeUploadedCSV(file) {
+        if (!file) {
+            csvInfoDiv.style.display = 'block';
+            csvInfoDiv.innerText = '⚠️ Please select a CSV file first.';
+            return;
+        }
+        csvInfoDiv.style.display = 'none';
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const csvText = e.target.result;
+                const { aggregated, totalPlayers, totalTransactions, totalMoney } = parseCSVAndAggregate(csvText);
+                renderAnalysisTable(aggregated);
+                updateSummaryStats(totalPlayers, totalTransactions, totalMoney);
+                csvInfoDiv.style.display = 'block';
+                csvInfoDiv.className = 'warning';
+                csvInfoDiv.innerHTML = `✅ Analysis complete: processed ${totalTransactions} rows, found ${totalPlayers} unique players.`;
+            } catch (err) {
+                console.error(err);
+                analysisBody.innerHTML = `<tr><td colspan="4" style="color:red;">❌ ${err.message}</td></tr>`;
+                csvInfoDiv.style.display = 'block';
+                csvInfoDiv.innerHTML = `❌ ${err.message}`;
+                updateSummaryStats(0,0,0);
+            }
+        };
+        reader.onerror = () => {
+            analysisBody.innerHTML = '<tr><td colspan="4">Error reading file</td></tr>';
+        };
+        reader.readAsText(file, "UTF-8");
+    }
+
+    // handle file upload via input or dragdrop
+    let currentSelectedFile = null;
+    csvFileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+            currentSelectedFile = e.target.files[0];
+            csvInfoDiv.style.display = 'block';
+            csvInfoDiv.innerHTML = `📁 "${currentSelectedFile.name}" ready. Click "Analyze by Name".`;
+        }
+    });
+    analyzeBtn.addEventListener('click', () => {
+        if (currentSelectedFile) {
+            analyzeUploadedCSV(currentSelectedFile);
+        } else if (lastGeneratedCsvBlob) {
+            // also allow analyze directly from last pulled CSV
+            const fileFromPull = new File([lastGeneratedCsvBlob], "transactions.csv", { type: "text/csv" });
+            analyzeUploadedCSV(fileFromPull);
+        } else {
+            csvInfoDiv.style.display = 'block';
+            csvInfoDiv.innerHTML = '⚠️ No CSV file selected. Please upload a CSV file first or pull data and then use generated CSV.';
+        }
+    });
+    resetAnalysisBtn.addEventListener('click', () => {
+        analysisBody.innerHTML = '<tr><td colspan="4" style="text-align:center;">Analysis cleared — upload new CSV and analyze.</td></tr>';
+        updateSummaryStats(0,0,0);
+        currentSelectedFile = null;
+        csvFileInput.value = '';
+        csvInfoDiv.style.display = 'none';
+        setPullStatus(pullStatusDiv.innerText.split('|')[0]);
+    });
+
+    // drag & drop enhancements
+    const dropZone = document.getElementById('dropZone');
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('drag-over');
+    });
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('drag-over');
+    });
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+        const files = e.dataTransfer.files;
+        if (files && files[0] && files[0].type === 'text/csv') {
+            currentSelectedFile = files[0];
+            csvFileInput.files = files;
+            csvInfoDiv.style.display = 'block';
+            csvInfoDiv.innerHTML = `📁 Dropped: "${currentSelectedFile.name}". Click "Analyze by Name".`;
+        } else {
+            csvInfoDiv.style.display = 'block';
+            csvInfoDiv.innerHTML = '❌ Please drop a valid .csv file.';
+        }
+    });
+
+    // clear log just resets status
+    clearLogBtn.addEventListener('click', () => {
+        setPullStatus('Log cleared. Ready to pull again.');
+        downloadJsonBtn.disabled = true;
+        downloadCsvBtn.disabled = true;
+    });
+
+    pullBtn.addEventListener('click', triggerPythonPull);
+    downloadJsonBtn.addEventListener('click', downloadJson);
+    downloadCsvBtn.addEventListener('click', downloadCsv);
+
+    // initial instructions if backend not yet integrated, show note
+    function showBackendHint() {
+        setPullStatus(`💡 Backend API expected at '${PULL_TRIGGER_ENDPOINT}'. 
+        To integrate with pull_transactions.py, implement a Flask route that uses subprocess to run the script.
+        Example code snippet provided below (you can adapt). Meanwhile you can upload CSV manually.`, false);
+    }
+    showBackendHint();
+
+    // Example fetch to detect backend readiness on load (optional)
+    window.addEventListener('load', () => {
+        fetch(PULL_TRIGGER_ENDPOINT, { method: 'HEAD' }).catch(() => {});
+    });
+</script>
+
+<!-- Backend Example Snippet (Flask) - included as reference compatibility -->
+<div style="display: none;">
+<!-- 
+    SUGGESTED FLASK BACKEND (app.py) to satisfy "pull data" button:
+
+    from flask import Flask, jsonify, request, send_file
+    import subprocess, os, json
+    app = Flask(__name__)
+    @app.route('/api/trigger-pull', methods=['POST'])
+    def trigger_pull():
+        try:
+            result = subprocess.run(['python', 'pull_transactions.py'], capture_output=True, text=True, timeout=60)
+            if result.returncode == 0:
+                return jsonify({"success": True, "message": "Transactions pulled", "json_file": "transactions_response.json", "csv_file": "transactions.csv"})
+            else:
+                return jsonify({"success": False, "error": result.stderr}), 500
+        except Exception as e:
+            return jsonify({"success": False, "error": str(e)}), 500
+    @app.route('/api/download/transactions.csv')
+    def download_csv():
+        return send_file('transactions.csv', as_attachment=True)
+    @app.route('/api/download/transactions.json')
+    def download_json():
+        return send_file('transactions_response.json', as_attachment=True)
+    if __name__ == '__main__':
+        app.run(debug=True)
+-->
+</div>
+</body>
+</html>

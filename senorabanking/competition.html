@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trucking Competition</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111418;
+      --panel: #1a1f26;
+      --panel-2: #222933;
+      --text: #edf2f7;
+      --muted: #a8b3c2;
+      --line: #313a46;
+      --green: #49d17d;
+      --red: #ff6b6b;
+      --gold: #f0c15a;
+      --blue: #6ba6ff;
+      --shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .app {
+      width: min(1440px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .subhead {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn,
+    .file-btn {
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--text);
+      min-height: 40px;
+      padding: 9px 13px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: var(--green);
+      border-color: var(--green);
+      color: #08120c;
+      font-weight: 700;
+    }
+
+    .file-btn input {
+      display: none;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .panel,
+    .metric,
+    .table-wrap {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 16px;
+      position: sticky;
+      top: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 14px;
+    }
+
+    label,
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #101319;
+      color: var(--text);
+      padding: 8px 10px;
+    }
+
+    .hint {
+      margin-top: -6px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .content {
+      display: grid;
+      gap: 16px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+    }
+
+    .metric .value {
+      display: block;
+      margin-top: 7px;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .podium {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .podium-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      min-height: 116px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .podium-card:first-child {
+      border-color: rgba(240, 193, 90, 0.8);
+    }
+
+    .rank {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .name {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .detail {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .table-wrap {
+      overflow: hidden;
+    }
+
+    .table-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .table-head h2 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid rgba(49, 58, 70, 0.7);
+      text-align: left;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: #151a20;
+    }
+
+    td.num,
+    th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .empty {
+      padding: 32px 16px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .recent {
+      max-height: 340px;
+      overflow: auto;
+    }
+
+    .winner {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        position: static;
+      }
+
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .actions {
+        justify-content: flex-start;
+      }
+
+      .metrics,
+      .podium {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .app {
+        width: min(100% - 20px, 1440px);
+        padding-top: 16px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .metrics,
+      .podium {
+        grid-template-columns: 1fr;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      table {
+        min-width: 760px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <h1>Trucking Competition</h1>
+        <p class="subhead">Leaderboard built from Fleeca transaction exports.</p>
+      </div>
+      <div class="actions">
+        <label class="file-btn">
+          Load CSV
+          <input id="fileInput" type="file" accept=".csv,text/csv">
+        </label>
+        <button class="btn" id="loadDefault">Reload transactions.csv</button>
+        <button class="btn primary" id="exportLeaderboard">Export leaderboard</button>
+      </div>
+    </header>
+
+    <section class="layout">
+      <aside class="panel">
+        <div class="field">
+          <label for="competitionName">Competition name</label>
+          <input id="competitionName" value="May Trucking Cup">
+        </div>
+        <div class="field">
+          <label for="driverColumn">Driver column</label>
+          <select id="driverColumn"></select>
+        </div>
+        <div class="field">
+          <label for="reasonColumn">Reason column</label>
+          <select id="reasonColumn"></select>
+        </div>
+        <div class="field">
+          <label for="amountColumn">Amount column</label>
+          <select id="amountColumn"></select>
+        </div>
+        <div class="field">
+          <label for="dateColumn">Date column</label>
+          <select id="dateColumn"></select>
+        </div>
+        <div class="field">
+          <label for="includePattern">Include reason pattern</label>
+          <input id="includePattern" value="Employee Payment (Trucking)">
+        </div>
+        <div class="field">
+          <label for="crateRegex">Crate number regex</label>
+          <input id="crateRegex" value="(\\d+)\\s*$">
+        </div>
+        <p class="hint">Default counts the trailing number in reasons like Employee Payment (Trucking) 3.</p>
+        <div class="field">
+          <label for="startDate">Start date</label>
+          <input id="startDate" type="date">
+        </div>
+        <div class="field">
+          <label for="endDate">End date</label>
+          <input id="endDate" type="date">
+        </div>
+        <div class="field">
+          <label for="topLimit">Rows shown</label>
+          <input id="topLimit" type="number" min="3" max="100" value="25">
+        </div>
+        <button class="btn primary" id="applySettings" style="width:100%">Apply</button>
+      </aside>
+
+      <section class="content">
+        <section class="metrics">
+          <div class="metric">
+            <span class="label">Competition</span>
+            <span class="value" id="metricName">May Trucking Cup</span>
+          </div>
+          <div class="metric">
+            <span class="label">Drivers</span>
+            <span class="value" id="metricDrivers">0</span>
+          </div>
+          <div class="metric">
+            <span class="label">Crates</span>
+            <span class="value" id="metricCrates">0</span>
+          </div>
+          <div class="metric">
+            <span class="label">Payouts</span>
+            <span class="value" id="metricPayouts">$0</span>
+          </div>
+        </section>
+
+        <section class="podium" id="podium"></section>
+
+        <section class="table-wrap">
+          <div class="table-head">
+            <h2>Leaderboard</h2>
+            <div class="status" id="status">No data loaded</div>
+          </div>
+          <div id="leaderboard"></div>
+        </section>
+
+        <section class="table-wrap">
+          <div class="table-head">
+            <h2>Matched Transactions</h2>
+            <div class="status" id="matchedStatus"></div>
+          </div>
+          <div class="recent" id="matchedRows"></div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const state = {
+      rows: [],
+      headers: [],
+      leaderboard: [],
+      matched: []
+    };
+
+    const els = {
+      fileInput: document.getElementById("fileInput"),
+      loadDefault: document.getElementById("loadDefault"),
+      exportLeaderboard: document.getElementById("exportLeaderboard"),
+      applySettings: document.getElementById("applySettings"),
+      competitionName: document.getElementById("competitionName"),
+      driverColumn: document.getElementById("driverColumn"),
+      reasonColumn: document.getElementById("reasonColumn"),
+      amountColumn: document.getElementById("amountColumn"),
+      dateColumn: document.getElementById("dateColumn"),
+      includePattern: document.getElementById("includePattern"),
+      crateRegex: document.getElementById("crateRegex"),
+      startDate: document.getElementById("startDate"),
+      endDate: document.getElementById("endDate"),
+      topLimit: document.getElementById("topLimit"),
+      metricName: document.getElementById("metricName"),
+      metricDrivers: document.getElementById("metricDrivers"),
+      metricCrates: document.getElementById("metricCrates"),
+      metricPayouts: document.getElementById("metricPayouts"),
+      podium: document.getElementById("podium"),
+      status: document.getElementById("status"),
+      leaderboard: document.getElementById("leaderboard"),
+      matchedRows: document.getElementById("matchedRows"),
+      matchedStatus: document.getElementById("matchedStatus")
+    };
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let value = "";
+      let quoted = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (quoted) {
+          if (char === '"' && next === '"') {
+            value += '"';
+            i++;
+          } else if (char === '"') {
+            quoted = false;
+          } else {
+            value += char;
+          }
+          continue;
+        }
+
+        if (char === '"') {
+          quoted = true;
+        } else if (char === ",") {
+          row.push(value);
+          value = "";
+        } else if (char === "\n") {
+          row.push(value);
+          rows.push(row);
+          row = [];
+          value = "";
+        } else if (char !== "\r") {
+          value += char;
+        }
+      }
+
+      if (value || row.length) {
+        row.push(value);
+        rows.push(row);
+      }
+
+      const headers = rows.shift() || [];
+      return {
+        headers,
+        rows: rows
+          .filter((items) => items.some(Boolean))
+          .map((items) => Object.fromEntries(headers.map((header, index) => [header, items[index] || ""])))
+      };
+    }
+
+    function stripHtml(value) {
+      const template = document.createElement("template");
+      template.innerHTML = String(value || "");
+      return (template.content.textContent || template.innerText || String(value || "")).trim();
+    }
+
+    function parseMoney(value) {
+      const text = stripHtml(value);
+      const sign = text.includes("-") ? -1 : 1;
+      const number = Number(text.replace(/[^0-9.]/g, ""));
+      return Number.isFinite(number) ? sign * number : 0;
+    }
+
+    function parseDateValue(value) {
+      const text = stripHtml(value);
+      const match = text.match(/^(\d{2})\/([A-Za-z]{3})\/(\d{4})\s+(\d{2}):(\d{2})$/);
+      if (!match) {
+        const fallback = new Date(text);
+        return Number.isNaN(fallback.getTime()) ? null : fallback;
+      }
+
+      const months = {
+        Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+        Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+      };
+      return new Date(Number(match[3]), months[match[2]], Number(match[1]), Number(match[4]), Number(match[5]));
+    }
+
+    function formatMoney(value) {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0
+      }).format(value || 0);
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function setOptions(select, headers, preferred) {
+      select.innerHTML = headers.map((header) => {
+        const selected = header === preferred ? " selected" : "";
+        return `<option value="${escapeHtml(header)}"${selected}>${escapeHtml(header)}</option>`;
+      }).join("");
+    }
+
+    function configureColumns(headers) {
+      setOptions(els.driverColumn, headers, headers.includes("From") ? "From" : headers[0]);
+      setOptions(els.reasonColumn, headers, headers.includes("Reason") ? "Reason" : headers[0]);
+      setOptions(els.amountColumn, headers, headers.includes("Amount") ? "Amount" : headers[0]);
+      setOptions(els.dateColumn, headers, headers.includes("Date") ? "Date" : headers[0]);
+    }
+
+    function crateCount(reason) {
+      const regex = new RegExp(els.crateRegex.value || "(\\d+)\\s*$", "i");
+      const match = stripHtml(reason).match(regex);
+      if (!match) return 1;
+      const parsed = Number(match[1]);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
+    }
+
+    function inDateRange(rowDate) {
+      if (!rowDate) return true;
+      const start = els.startDate.value ? new Date(`${els.startDate.value}T00:00:00`) : null;
+      const end = els.endDate.value ? new Date(`${els.endDate.value}T23:59:59`) : null;
+      if (start && rowDate < start) return false;
+      if (end && rowDate > end) return false;
+      return true;
+    }
+
+    function recompute() {
+      const driverColumn = els.driverColumn.value;
+      const reasonColumn = els.reasonColumn.value;
+      const amountColumn = els.amountColumn.value;
+      const dateColumn = els.dateColumn.value;
+      const includePattern = els.includePattern.value.trim().toLowerCase();
+      const totals = new Map();
+      const matched = [];
+
+      for (const row of state.rows) {
+        const reason = stripHtml(row[reasonColumn]);
+        if (includePattern && !reason.toLowerCase().includes(includePattern)) continue;
+
+        const date = parseDateValue(row[dateColumn]);
+        if (!inDateRange(date)) continue;
+
+        const driver = stripHtml(row[driverColumn]) || "Unknown";
+        const crates = crateCount(reason);
+        const amount = parseMoney(row[amountColumn]);
+
+        if (!totals.has(driver)) {
+          totals.set(driver, {
+            driver,
+            crates: 0,
+            runs: 0,
+            payout: 0,
+            lastDate: null
+          });
+        }
+
+        const entry = totals.get(driver);
+        entry.crates += crates;
+        entry.runs += 1;
+        entry.payout += amount;
+        if (date && (!entry.lastDate || date > entry.lastDate)) {
+          entry.lastDate = date;
+        }
+
+        matched.push({ driver, reason, crates, amount, date });
+      }
+
+      state.matched = matched.sort((a, b) => (b.date?.getTime() || 0) - (a.date?.getTime() || 0));
+      state.leaderboard = Array.from(totals.values()).sort((a, b) => {
+        if (b.crates !== a.crates) return b.crates - a.crates;
+        if (b.runs !== a.runs) return b.runs - a.runs;
+        return a.driver.localeCompare(b.driver);
+      });
+
+      render();
+    }
+
+    function render() {
+      const topLimit = Math.max(3, Number(els.topLimit.value) || 25);
+      const shown = state.leaderboard.slice(0, topLimit);
+      const totalCrates = state.leaderboard.reduce((sum, row) => sum + row.crates, 0);
+      const totalPayout = state.leaderboard.reduce((sum, row) => sum + row.payout, 0);
+
+      els.metricName.textContent = els.competitionName.value || "Competition";
+      els.metricDrivers.textContent = state.leaderboard.length.toLocaleString();
+      els.metricCrates.textContent = totalCrates.toLocaleString();
+      els.metricPayouts.textContent = formatMoney(totalPayout);
+      els.status.textContent = `${state.rows.length.toLocaleString()} transactions loaded`;
+      els.matchedStatus.textContent = `${state.matched.length.toLocaleString()} matching rows`;
+
+      els.podium.innerHTML = [0, 1, 2].map((index) => {
+        const row = state.leaderboard[index];
+        if (!row) {
+          return `<div class="podium-card"><div class="rank">#${index + 1}</div><div class="name">Open</div><div class="detail">No result yet</div></div>`;
+        }
+
+        return `
+          <div class="podium-card">
+            <div class="rank">#${index + 1}</div>
+            <div class="name">${escapeHtml(row.driver)}</div>
+            <div class="detail"><span class="winner">${row.crates.toLocaleString()}</span> crates · ${row.runs.toLocaleString()} runs · ${formatMoney(row.payout)}</div>
+          </div>
+        `;
+      }).join("");
+
+      if (!shown.length) {
+        els.leaderboard.innerHTML = `<div class="empty">No matching trucking transactions found.</div>`;
+      } else {
+        els.leaderboard.innerHTML = `
+          <table>
+            <thead>
+              <tr>
+                <th class="num">Rank</th>
+                <th>Driver</th>
+                <th class="num">Crates</th>
+                <th class="num">Runs</th>
+                <th class="num">Avg</th>
+                <th class="num">Payout</th>
+                <th>Last delivery</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${shown.map((row, index) => `
+                <tr>
+                  <td class="num">${index + 1}</td>
+                  <td>${escapeHtml(row.driver)}</td>
+                  <td class="num">${row.crates.toLocaleString()}</td>
+                  <td class="num">${row.runs.toLocaleString()}</td>
+                  <td class="num">${(row.crates / row.runs).toFixed(1)}</td>
+                  <td class="num">${formatMoney(row.payout)}</td>
+                  <td>${row.lastDate ? escapeHtml(row.lastDate.toLocaleString()) : ""}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        `;
+      }
+
+      const recent = state.matched.slice(0, 80);
+      if (!recent.length) {
+        els.matchedRows.innerHTML = `<div class="empty">No matched transactions to show.</div>`;
+      } else {
+        els.matchedRows.innerHTML = `
+          <table>
+            <thead>
+              <tr>
+                <th>Driver</th>
+                <th>Reason</th>
+                <th class="num">Crates</th>
+                <th class="num">Amount</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${recent.map((row) => `
+                <tr>
+                  <td>${escapeHtml(row.driver)}</td>
+                  <td>${escapeHtml(row.reason)}</td>
+                  <td class="num">${row.crates.toLocaleString()}</td>
+                  <td class="num">${formatMoney(row.amount)}</td>
+                  <td>${row.date ? escapeHtml(row.date.toLocaleString()) : ""}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        `;
+      }
+    }
+
+    function loadCsvText(text, source) {
+      const parsed = parseCsv(text);
+      state.headers = parsed.headers;
+      state.rows = parsed.rows;
+      configureColumns(parsed.headers);
+      recompute();
+      els.status.textContent = `${state.rows.length.toLocaleString()} transactions loaded from ${source}`;
+    }
+
+    async function loadDefaultCsv() {
+      try {
+        const response = await fetch("transactions.csv", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        loadCsvText(await response.text(), "transactions.csv");
+      } catch (error) {
+        els.status.textContent = "Could not auto-load transactions.csv. Use Load CSV instead.";
+      }
+    }
+
+    function toCsv(rows) {
+      const headers = ["Rank", "Driver", "Crates", "Runs", "Average Crates", "Payout", "Last Delivery"];
+      const lines = [headers];
+      rows.forEach((row, index) => {
+        lines.push([
+          index + 1,
+          row.driver,
+          row.crates,
+          row.runs,
+          (row.crates / row.runs).toFixed(1),
+          row.payout,
+          row.lastDate ? row.lastDate.toISOString() : ""
+        ]);
+      });
+      return lines.map((line) => line.map((value) => `"${String(value).replaceAll('"', '""')}"`).join(",")).join("\n");
+    }
+
+    function download(filename, text) {
+      const blob = new Blob([text], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    els.fileInput.addEventListener("change", async (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+      loadCsvText(await file.text(), file.name);
+    });
+
+    els.loadDefault.addEventListener("click", loadDefaultCsv);
+    els.applySettings.addEventListener("click", recompute);
+    els.exportLeaderboard.addEventListener("click", () => download("trucking_leaderboard.csv", toCsv(state.leaderboard)));
+
+    for (const input of [
+      els.competitionName,
+      els.driverColumn,
+      els.reasonColumn,
+      els.amountColumn,
+      els.dateColumn,
+      els.includePattern,
+      els.crateRegex,
+      els.startDate,
+      els.endDate,
+      els.topLimit
+    ]) {
+      input.addEventListener("change", recompute);
+    }
+
+    loadDefaultCsv();
+  </script>
+</body>
+</html>
