@@ -691,7 +691,6 @@
           totals.set(driver, {
             driver,
             crates: 0,
-            runs: 0,
             payout: 0,
             lastDate: null
           });
@@ -699,7 +698,6 @@
 
         const entry = totals.get(driver);
         entry.crates += crates;
-        entry.runs += 1;
         entry.payout += amount;
         if (date && (!entry.lastDate || date > entry.lastDate)) {
           entry.lastDate = date;
@@ -711,7 +709,7 @@
       state.matched = matched.sort((a, b) => (b.date?.getTime() || 0) - (a.date?.getTime() || 0));
       state.leaderboard = Array.from(totals.values()).sort((a, b) => {
         if (b.crates !== a.crates) return b.crates - a.crates;
-        if (b.runs !== a.runs) return b.runs - a.runs;
+        if (b.payout !== a.payout) return b.payout - a.payout;
         return a.driver.localeCompare(b.driver);
       });
       state.diagnostics = {
@@ -748,7 +746,7 @@
           <div class="podium-card">
             <div class="rank">#${index + 1}</div>
             <div class="name">${escapeHtml(row.driver)}</div>
-            <div class="detail"><span class="winner">${row.crates.toLocaleString()}</span> crates · ${row.runs.toLocaleString()} runs · ${formatMoney(row.payout)}</div>
+            <div class="detail"><span class="winner">${row.crates.toLocaleString()}</span> crates · ${formatMoney(row.payout)}</div>
           </div>
         `;
       }).join("");
@@ -763,8 +761,6 @@
                 <th class="num">Rank</th>
                 <th>Driver</th>
                 <th class="num">Crates</th>
-                <th class="num">Runs</th>
-                <th class="num">Avg</th>
                 <th class="num">Payout</th>
                 <th>Last delivery</th>
               </tr>
@@ -775,8 +771,6 @@
                   <td class="num">${index + 1}</td>
                   <td>${escapeHtml(row.driver)}</td>
                   <td class="num">${row.crates.toLocaleString()}</td>
-                  <td class="num">${row.runs.toLocaleString()}</td>
-                  <td class="num">${(row.crates / row.runs).toFixed(1)}</td>
                   <td class="num">${formatMoney(row.payout)}</td>
                   <td>${row.lastDate ? escapeHtml(row.lastDate.toLocaleString()) : ""}</td>
                 </tr>
@@ -852,15 +846,13 @@
     }
 
     function toCsv(rows) {
-      const headers = ["Rank", "Driver", "Crates", "Runs", "Average Crates", "Payout", "Last Delivery"];
+      const headers = ["Rank", "Driver", "Crates", "Payout", "Last Delivery"];
       const lines = [headers];
       rows.forEach((row, index) => {
         lines.push([
           index + 1,
           row.driver,
           row.crates,
-          row.runs,
-          (row.crates / row.runs).toFixed(1),
           row.payout,
           row.lastDate ? row.lastDate.toISOString() : ""
         ]);
