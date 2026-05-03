@@ -86,7 +86,7 @@ def main() -> int:
     port = int(os.environ.get("COMPETITION_PORT", "8766"))
     server = ThreadingHTTPServer((host, port), CompetitionHandler)
     print(f"Leaderboard: http://{host}:{port}/index.html")
-    print(f"Pull tool:   http://{host}:{port}/pull.html")
+    print(f"Pull tool:   http://{host}:{port}/pull/")
     server.serve_forever()
     return 0
 

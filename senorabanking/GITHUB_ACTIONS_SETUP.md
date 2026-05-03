@@ -11,6 +11,7 @@ GitHub Pages serves the static dashboard. GitHub Actions runs the Python puller 
 ## Files
 
 - `index.html` is the public dashboard.
+- `pull/index.html` is the local pull tool page.
 - `pull_transactions.py` pulls Fleeca transaction data.
 - `server.py` is only for local testing.
 - `.github/workflows/update-senorabanking.yml` lives at the repository root.
