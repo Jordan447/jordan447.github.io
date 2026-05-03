@@ -504,8 +504,9 @@
       matched: [],
       selectedDriver: ""
     };
-    const DEFAULT_RELOAD_KEY = "senorabanking.loadDefaultAfterReload";
     const SETTINGS_KEY = "senorabanking.dashboardSettings";
+    const CSV_TEXT_KEY = "senorabanking.csvText";
+    const CSV_SOURCE_KEY = "senorabanking.csvSource";
 
     const els = {
       fileInput: document.getElementById("fileInput"),
@@ -552,11 +553,11 @@
         endDate: els.endDate.value,
         topLimit: els.topLimit.value
       };
-      sessionStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
     }
 
     function restoreSettings() {
-      const raw = sessionStorage.getItem(SETTINGS_KEY);
+      const raw = localStorage.getItem(SETTINGS_KEY);
       if (!raw) return {};
 
       try {
@@ -574,6 +575,20 @@
           els[key].value = value;
         }
       }
+    }
+
+    function saveCsv(text, source) {
+      localStorage.setItem(CSV_TEXT_KEY, text);
+      localStorage.setItem(CSV_SOURCE_KEY, source);
+    }
+
+    function loadStoredCsv() {
+      const text = localStorage.getItem(CSV_TEXT_KEY);
+      const source = localStorage.getItem(CSV_SOURCE_KEY) || "stored CSV";
+      if (!text) return false;
+
+      loadCsvText(text, source);
+      return true;
     }
 
     function parseCsv(text) {
@@ -898,22 +913,21 @@
       const parsed = parseCsv(text);
       state.headers = parsed.headers;
       state.rows = parsed.rows;
+      state.selectedDriver = "";
       configureColumns(parsed.headers);
       applyStoredSettings();
       recompute();
       els.status.textContent = `${state.rows.length.toLocaleString()} transactions loaded from ${source}`;
     }
 
-    async function loadDefaultCsv(options = {}) {
+    async function loadDefaultCsv() {
       try {
         const response = await fetch("transactions.csv", { cache: "no-store" });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        loadCsvText(await response.text(), "transactions.csv");
-        if (options.reloadAfterLoad) {
-          saveSettings();
-          sessionStorage.setItem(DEFAULT_RELOAD_KEY, "1");
-          window.location.reload();
-        }
+        const text = await response.text();
+        saveSettings();
+        saveCsv(text, "transactions.csv");
+        loadCsvText(text, "transactions.csv");
       } catch (error) {
         els.status.textContent = "Could not load senorabanking/transactions.csv. Use Load CSV instead.";
       }
@@ -966,10 +980,13 @@
     els.fileInput.addEventListener("change", async (event) => {
       const file = event.target.files[0];
       if (!file) return;
-      loadCsvText(await file.text(), file.name);
+      const text = await file.text();
+      saveSettings();
+      saveCsv(text, file.name);
+      loadCsvText(text, file.name);
     });
 
-    els.loadDefault.addEventListener("click", () => loadDefaultCsv({ reloadAfterLoad: true }));
+    els.loadDefault.addEventListener("click", loadDefaultCsv);
     els.applySettings.addEventListener("click", recompute);
     els.exportLeaderboard.addEventListener("click", exportLeaderboard);
     els.copyLeaderboard.addEventListener("click", async () => {
@@ -994,10 +1011,7 @@
     }
 
     applyStoredSettings();
-    if (sessionStorage.getItem(DEFAULT_RELOAD_KEY) === "1") {
-      sessionStorage.removeItem(DEFAULT_RELOAD_KEY);
-      loadDefaultCsv();
-    } else {
+    if (!loadStoredCsv()) {
       els.status.textContent = "Load a CSV file or use Load default CSV.";
     }
   </script>
