@@ -1,0 +1,56 @@
+name: Update Senora Banking leaderboard
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: "Start date, YYYY-MM-DD"
+        required: false
+        type: string
+      end_date:
+        description: "End date, YYYY-MM-DD"
+        required: false
+        type: string
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: senorabanking-data
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      GTA_BANK_COOKIE: ${{ secrets.GTA_BANK_COOKIE }}
+      GTA_BANK_ACCOUNT_TYPE: ${{ vars.GTA_BANK_ACCOUNT_TYPE || 'Business' }}
+      GTA_BANK_FETCH_ID: ${{ vars.GTA_BANK_FETCH_ID || '70855' }}
+      GTA_BANK_START_DATE: ${{ inputs.start_date || vars.GTA_BANK_START_DATE }}
+      GTA_BANK_END_DATE: ${{ inputs.end_date || vars.GTA_BANK_END_DATE }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pull latest transactions
+        run: python senorabanking/pull_transactions.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add senorabanking/transactions.csv senorabanking/transactions_response.json
+          if git diff --cached --quiet; then
+            echo "No transaction data changes to commit."
+          else
+            git commit -m "Update Senora Banking leaderboard data"
+            git push
+          fi
