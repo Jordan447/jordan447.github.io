@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pull Senora Banking Data</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111418;
+      --panel: #1a1f26;
+      --panel-2: #222933;
+      --text: #edf2f7;
+      --muted: #a8b3c2;
+      --line: #313a46;
+      --green: #49d17d;
+      --red: #ff6b6b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(760px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .panel {
+      margin-top: 18px;
+      padding: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 14px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    input,
+    select,
+    textarea,
+    button,
+    a.btn {
+      font: inherit;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #101319;
+      color: var(--text);
+      padding: 9px 10px;
+    }
+
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    button,
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 13px;
+      border-radius: 7px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    button.primary {
+      background: var(--green);
+      border-color: var(--green);
+      color: #08120c;
+      font-weight: 800;
+    }
+
+    button:disabled {
+      cursor: wait;
+      opacity: 0.7;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      min-height: 120px;
+      margin: 0;
+      padding: 12px;
+      border-radius: 7px;
+      background: #101319;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .ok {
+      color: var(--green);
+    }
+
+    .error {
+      color: var(--red);
+    }
+
+    @media (max-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Pull Senora Banking Data</h1>
+    <p>This local admin page runs `pull_transactions.py` through `server.py`, refreshes `transactions.csv`, then the public leaderboard reads that CSV.</p>
+
+    <section class="panel">
+      <div class="grid">
+        <div class="field full">
+          <label for="cookieHeader">Banking cookie header</label>
+          <textarea id="cookieHeader" placeholder="XSRF-TOKEN=...; gta_world_banking_session=...; cf_clearance=..."></textarea>
+        </div>
+        <div class="field">
+          <label for="accountType">Bank account type</label>
+          <select id="accountType">
+            <option value="Business" selected>Business</option>
+            <option value="Personal">Personal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fetchId">Bank account fetch ID</label>
+          <input id="fetchId" value="70855">
+        </div>
+        <div class="field">
+          <label for="startDate">Start date</label>
+          <input id="startDate" type="date">
+        </div>
+        <div class="field">
+          <label for="endDate">End date</label>
+          <input id="endDate" type="date">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="primary" id="pullTransactions">Pull latest transactions</button>
+        <a class="btn" href="index.html">Open leaderboard</a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <p id="status">Waiting to run.</p>
+      <pre id="output"></pre>
+    </section>
+  </main>
+
+  <script>
+    const els = {
+      cookieHeader: document.getElementById("cookieHeader"),
+      accountType: document.getElementById("accountType"),
+      fetchId: document.getElementById("fetchId"),
+      startDate: document.getElementById("startDate"),
+      endDate: document.getElementById("endDate"),
+      pullTransactions: document.getElementById("pullTransactions"),
+      status: document.getElementById("status"),
+      output: document.getElementById("output")
+    };
+
+    async function pullTransactions() {
+      els.pullTransactions.disabled = true;
+      els.status.className = "";
+      els.status.textContent = "Running pull_transactions.py...";
+      els.output.textContent = "";
+
+      try {
+        const response = await fetch("/api/pull-transactions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            cookie: els.cookieHeader.value.trim(),
+            accountType: els.accountType.value,
+            fetchId: els.fetchId.value.trim(),
+            startDate: els.startDate.value,
+            endDate: els.endDate.value
+          })
+        });
+        const payload = await response.json();
+
+        els.output.textContent = [
+          payload.stdout || "",
+          payload.stderr ? `\nSTDERR:\n${payload.stderr}` : ""
+        ].join("").trim();
+
+        if (!payload.ok) {
+          els.status.className = "error";
+          els.status.textContent = payload.error || "Pull failed.";
+          return;
+        }
+
+        els.status.className = "ok";
+        els.status.textContent = `Pull complete. transactions.csv is ${payload.csvBytes.toLocaleString()} bytes.`;
+      } catch (error) {
+        els.status.className = "error";
+        els.status.textContent = "Could not reach the local Python server. Start it with: python senorabanking/server.py";
+      } finally {
+        els.pullTransactions.disabled = false;
+      }
+    }
+
+    els.pullTransactions.addEventListener("click", pullTransactions);
+  </script>
+</body>
+</html>

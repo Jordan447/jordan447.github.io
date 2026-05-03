@@ -15,6 +15,14 @@ OUT_DIR = Path(__file__).resolve().parent
 OUT_JSON = OUT_DIR / "transactions_response.json"
 OUT_CSV = OUT_DIR / "transactions.csv"
 COOKIE_NAMES = ("XSRF-TOKEN", "gta_world_banking_session", "cf_clearance")
+ACCOUNT_TYPE = os.environ.get("GTA_BANK_ACCOUNT_TYPE", "Business").strip() or "Business"
+ACCOUNT_FETCH_ID = os.environ.get("GTA_BANK_FETCH_ID", "70855").strip() or "70855"
+ACCOUNT_REFERER = os.environ.get(
+    "GTA_BANK_REFERER",
+    f"{BASE_URL}/business/{ACCOUNT_FETCH_ID}" if ACCOUNT_TYPE.lower() == "business" else f"{BASE_URL}/personal",
+).strip()
+START_DATE = os.environ.get("GTA_BANK_START_DATE", "").strip()
+END_DATE = os.environ.get("GTA_BANK_END_DATE", "").strip()
 
 
 def require_env(name: str) -> str:
@@ -79,7 +87,7 @@ def fetch_page(start: int = 0, length: int = 500) -> SimpleResponse:
         "User-Agent": "Mozilla/5.0",
         "Accept": "application/json, text/javascript, */*; q=0.01",
         "X-Requested-With": "XMLHttpRequest",
-        "Referer": f"{BASE_URL}/personal",
+        "Referer": ACCOUNT_REFERER,
         "Cookie": build_cookie_header(),
     }
 
@@ -91,14 +99,14 @@ def fetch_page(start: int = 0, length: int = 500) -> SimpleResponse:
         "search[regex]": "false",
         "order[0][column]": 1,
         "order[0][dir]": "desc",
-        "Type": "Personal",
-        "fetch": "43100",
+        "Type": ACCOUNT_TYPE,
+        "fetch": ACCOUNT_FETCH_ID,
         "routing": "",
         "reason": "",
         "playerName": "",
         "amount": "",
-        "startDate": "",
-        "endDate": "",
+        "startDate": START_DATE,
+        "endDate": END_DATE,
         "excludeFurniture": 0,
         "excludeDelivery": 0,
         "excludeServer": 0,
@@ -156,6 +164,8 @@ def main() -> int:
     print(f"HTTP {response.status_code}")
     print(f"Content-Type: {response.headers.get('content-type', '')}")
     print(f"Final URL: {response.url}")
+    print(f"Account: Type={ACCOUNT_TYPE} fetch={ACCOUNT_FETCH_ID}")
+    print(f"Date filters: startDate={START_DATE or '(none)'} endDate={END_DATE or '(none)'}")
     if "/login" in response.url:
         print("The site redirected to login. The session cookie is missing or expired.")
 
