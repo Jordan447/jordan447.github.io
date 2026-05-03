@@ -420,6 +420,13 @@
         </div>
         <p class="hint">Default counts the trailing number in reasons like Employee Payment (Trucking) 3.</p>
         <div class="field">
+          <label for="cookieHeader">Banking cookie header</label>
+          <input id="cookieHeader" type="password" placeholder="XSRF-TOKEN=...; gta_world_banking_session=...; cf_clearance=...">
+        </div>
+        <p class="hint">Used only by the local Python server to refresh transactions.csv.</p>
+        <button class="btn primary" id="pullTransactions" style="width:100%;margin-bottom:14px;">Pull latest transactions</button>
+        <p class="hint" id="pullStatus">Python pull server not checked yet.</p>
+        <div class="field">
           <label for="startDate">Start date</label>
           <input id="startDate" type="date">
         </div>
@@ -501,6 +508,9 @@
       loadDefault: document.getElementById("loadDefault"),
       exportLeaderboard: document.getElementById("exportLeaderboard"),
       applySettings: document.getElementById("applySettings"),
+      cookieHeader: document.getElementById("cookieHeader"),
+      pullTransactions: document.getElementById("pullTransactions"),
+      pullStatus: document.getElementById("pullStatus"),
       exportPanel: document.getElementById("exportPanel"),
       exportStatus: document.getElementById("exportStatus"),
       exportPreview: document.getElementById("exportPreview"),
@@ -851,6 +861,33 @@
       }
     }
 
+    async function pullTransactions() {
+      els.pullTransactions.disabled = true;
+      els.pullStatus.textContent = "Running pull_transactions.py...";
+
+      try {
+        const response = await fetch("/api/pull-transactions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cookie: els.cookieHeader.value.trim() })
+        });
+        const payload = await response.json();
+
+        if (!payload.ok) {
+          els.pullStatus.textContent = payload.error || payload.stderr || "Pull failed.";
+          return;
+        }
+
+        const fetchedLine = (payload.stdout || "").split("\n").reverse().find((line) => line.includes("CSV written"));
+        els.pullStatus.textContent = fetchedLine || `Pull complete. CSV size: ${payload.csvBytes.toLocaleString()} bytes.`;
+        await loadDefaultCsv();
+      } catch (error) {
+        els.pullStatus.textContent = "Could not reach the Python pull server. Open this page from server.py, not the static server.";
+      } finally {
+        els.pullTransactions.disabled = false;
+      }
+    }
+
     function toCsv(rows) {
       const headers = ["Rank", "Driver", "Crates", "Runs", "Average Crates", "Payout", "Last Delivery"];
       const lines = [headers];
@@ -905,6 +942,7 @@
 
     els.loadDefault.addEventListener("click", loadDefaultCsv);
     els.applySettings.addEventListener("click", recompute);
+    els.pullTransactions.addEventListener("click", pullTransactions);
     els.exportLeaderboard.addEventListener("click", exportLeaderboard);
     els.copyLeaderboard.addEventListener("click", async () => {
       if (!els.exportPreview.value) return;
