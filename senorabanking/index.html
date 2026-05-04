@@ -426,6 +426,10 @@
           <label for="crateRegex">Crate number regex</label>
           <input id="crateRegex" value="(\d+)\s*$">
         </div>
+        <div class="field">
+          <label for="cratesPerRun">Crates per run</label>
+          <input id="cratesPerRun" type="number" min="1" step="1" value="5">
+        </div>
         <p class="hint">For business commission rows, each matched transaction counts as 1 crate. Personal payout rows can use Employee Payment (Trucking).</p>
         <div class="field">
           <label for="startDate">Start date</label>
@@ -525,6 +529,7 @@
       dateColumn: document.getElementById("dateColumn"),
       includePattern: document.getElementById("includePattern"),
       crateRegex: document.getElementById("crateRegex"),
+      cratesPerRun: document.getElementById("cratesPerRun"),
       startDate: document.getElementById("startDate"),
       endDate: document.getElementById("endDate"),
       topLimit: document.getElementById("topLimit"),
@@ -549,6 +554,7 @@
         dateColumn: els.dateColumn.value,
         includePattern: els.includePattern.value,
         crateRegex: els.crateRegex.value,
+        cratesPerRun: els.cratesPerRun.value,
         startDate: els.startDate.value,
         endDate: els.endDate.value,
         topLimit: els.topLimit.value
@@ -717,6 +723,17 @@
       return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
     }
 
+    function runsFromCrates(crates) {
+      const divisor = Math.max(1, Number(els.cratesPerRun.value) || 5);
+      const runs = Number(crates) / divisor;
+      return Number.isInteger(runs) ? runs.toLocaleString() : runs.toLocaleString(undefined, { maximumFractionDigits: 1 });
+    }
+
+    function rawRunsFromCrates(crates) {
+      const divisor = Math.max(1, Number(els.cratesPerRun.value) || 5);
+      return Number(crates) / divisor;
+    }
+
     function inDateRange(rowDate) {
       if (!rowDate) return true;
       const start = els.startDate.value ? new Date(`${els.startDate.value}T00:00:00`) : null;
@@ -820,7 +837,7 @@
           <div class="podium-card">
             <div class="rank">#${index + 1}</div>
             <div class="name">${escapeHtml(row.driver)}</div>
-            <div class="detail"><span class="winner">${row.crates.toLocaleString()}</span> crates · ${formatMoney(row.payout)}</div>
+            <div class="detail"><span class="winner">${row.crates.toLocaleString()}</span> crates · ${runsFromCrates(row.crates)} runs · ${formatMoney(row.payout)}</div>
           </div>
         `;
       }).join("");
@@ -835,6 +852,7 @@
                 <th class="num">Rank</th>
                 <th>Driver</th>
                 <th class="num">Crates</th>
+                <th class="num">Runs</th>
                 <th class="num">Payout</th>
                 <th>Last delivery</th>
               </tr>
@@ -845,6 +863,7 @@
                   <td class="num">${index + 1}</td>
                   <td>${escapeHtml(row.driver)}</td>
                   <td class="num">${row.crates.toLocaleString()}</td>
+                  <td class="num">${runsFromCrates(row.crates)}</td>
                   <td class="num">${formatMoney(row.payout)}</td>
                   <td>${escapeHtml(formatDateValue(row.lastDate))}</td>
                 </tr>
@@ -934,13 +953,14 @@
     }
 
     function toCsv(rows) {
-      const headers = ["Rank", "Driver", "Crates", "Payout", "Last Delivery"];
+      const headers = ["Rank", "Driver", "Crates", "Runs", "Payout", "Last Delivery"];
       const lines = [headers];
       rows.forEach((row, index) => {
         lines.push([
           index + 1,
           row.driver,
           row.crates,
+          rawRunsFromCrates(row.crates),
           row.payout,
           formatDateValue(row.lastDate)
         ]);
@@ -1003,6 +1023,7 @@
       els.dateColumn,
       els.includePattern,
       els.crateRegex,
+      els.cratesPerRun,
       els.startDate,
       els.endDate,
       els.topLimit
