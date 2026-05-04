@@ -157,7 +157,7 @@
 
     .metrics {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 12px;
     }
 
@@ -461,6 +461,10 @@
             <span class="value" id="metricCrates">0</span>
           </div>
           <div class="metric">
+            <span class="label">Runs</span>
+            <span class="value" id="metricRuns">0</span>
+          </div>
+          <div class="metric">
             <span class="label">Payouts</span>
             <span class="value" id="metricPayouts">$0</span>
           </div>
@@ -536,6 +540,7 @@
       metricName: document.getElementById("metricName"),
       metricDrivers: document.getElementById("metricDrivers"),
       metricCrates: document.getElementById("metricCrates"),
+      metricRuns: document.getElementById("metricRuns"),
       metricPayouts: document.getElementById("metricPayouts"),
       podium: document.getElementById("podium"),
       status: document.getElementById("status"),
@@ -822,6 +827,7 @@
       els.metricName.textContent = els.competitionName.value || "Competition";
       els.metricDrivers.textContent = state.leaderboard.length.toLocaleString();
       els.metricCrates.textContent = totalCrates.toLocaleString();
+      els.metricRuns.textContent = runsFromCrates(totalCrates);
       els.metricPayouts.textContent = formatMoney(totalPayout);
       els.status.textContent = `${state.rows.length.toLocaleString()} transactions loaded`;
       els.matchedStatus.textContent = `${state.matched.length.toLocaleString()} matching rows`;
