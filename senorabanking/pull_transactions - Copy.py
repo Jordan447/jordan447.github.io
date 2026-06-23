@@ -2,7 +2,6 @@ import csv
 import json
 import os
 import sys
-import argparse
 from pathlib import Path
 from http.cookiejar import CookieJar
 from urllib.error import HTTPError, URLError
@@ -16,27 +15,20 @@ OUT_DIR = Path(__file__).resolve().parent
 OUT_JSON = OUT_DIR / "transactions_response.json"
 OUT_CSV = OUT_DIR / "transactions.csv"
 COOKIE_NAMES = ("XSRF-TOKEN", "gta_world_banking_session", "cf_clearance")
+ACCOUNT_TYPE = os.environ.get("GTA_BANK_ACCOUNT_TYPE", "Business").strip() or "Business"
+ACCOUNT_FETCH_ID = os.environ.get("GTA_BANK_FETCH_ID", "70855").strip() or "70855"
+ACCOUNT_REFERER = os.environ.get(
+    "GTA_BANK_REFERER",
+    f"{BASE_URL}/business/{ACCOUNT_FETCH_ID}" if ACCOUNT_TYPE.lower() == "business" else f"{BASE_URL}/personal",
+).strip()
+START_DATE = os.environ.get("GTA_BANK_START_DATE", "").strip()
+END_DATE = os.environ.get("GTA_BANK_END_DATE", "").strip()
 
 
-def parse_arguments():
-    parser = argparse.ArgumentParser(description="Pull GTA World banking transactions")
-    parser.add_argument("--xsrf-token", help="XSRF-TOKEN cookie value")
-    parser.add_argument("--session", help="gta_world_banking_session cookie value")
-    parser.add_argument("--cf-clearance", help="cf_clearance cookie value (optional)")
-    parser.add_argument("--cookie", help="Full cookie string (alternative to individual cookies)")
-    parser.add_argument("--account-type", default="Business", help="Account type (Business or Personal)")
-    parser.add_argument("--fetch-id", default="70855", help="Account fetch ID")
-    parser.add_argument("--referer", help="Referer URL (optional)")
-    parser.add_argument("--start-date", help="Start date filter (optional)")
-    parser.add_argument("--end-date", help="End date filter (optional)")
-    parser.add_argument("--output", help="Output CSV filename (default: transactions.csv)")
-    parser.add_argument("--json-output", help="Output JSON filename (default: transactions_response.json)")
-    return parser.parse_args()
-
-
-def require_value(name: str, value: str) -> str:
+def require_env(name: str) -> str:
+    value = os.environ.get(name, "").strip()
     if not value:
-        print(f"Missing required parameter: {name}", file=sys.stderr)
+        print(f"Missing required environment variable: {name}", file=sys.stderr)
         sys.exit(2)
     return value
 
@@ -66,41 +58,37 @@ def parse_cookie_header(cookie_header: str) -> dict[str, str]:
     return cookies
 
 
-def build_cookie_header(args) -> str:
-    # If full cookie string is provided, use it
-    if args.cookie:
-        cookies = parse_cookie_header(args.cookie)
+def build_cookie_header() -> str:
+    full_cookie = os.environ.get("GTA_BANK_COOKIE", "").strip()
+
+    if full_cookie:
+        cookies = parse_cookie_header(full_cookie)
     else:
-        # Otherwise use individual cookie values
-        cookies = {}
-        if args.xsrf_token:
-            cookies["XSRF-TOKEN"] = args.xsrf_token
-        if args.session:
-            cookies["gta_world_banking_session"] = args.session
-        if args.cf_clearance:
-            cookies["cf_clearance"] = args.cf_clearance
+        cookies = {
+            "XSRF-TOKEN": require_env("GTA_BANK_XSRF_TOKEN"),
+            "gta_world_banking_session": require_env("GTA_WORLD_BANKING_SESSION"),
+        }
+
+        cf_clearance = os.environ.get("GTA_CF_CLEARANCE", "").strip()
+        if cf_clearance:
+            cookies["cf_clearance"] = cf_clearance
 
     required = ("XSRF-TOKEN", "gta_world_banking_session")
     missing = [name for name in required if not cookies.get(name)]
     if missing:
         print(f"Missing required cookie(s): {', '.join(missing)}", file=sys.stderr)
-        print("Provide via --xsrf-token and --session, or use --cookie with full cookie string", file=sys.stderr)
         sys.exit(2)
 
     return "; ".join(f"{name}={cookies[name]}" for name in COOKIE_NAMES if cookies.get(name))
 
 
-def fetch_page(start: int, length: int, args) -> SimpleResponse:
-    account_type = args.account_type or "Business"
-    fetch_id = args.fetch_id or "70855"
-    referer = args.referer or (f"{BASE_URL}/business/{fetch_id}" if account_type.lower() == "business" else f"{BASE_URL}/personal")
-    
+def fetch_page(start: int = 0, length: int = 500) -> SimpleResponse:
     headers = {
         "User-Agent": "Mozilla/5.0",
         "Accept": "application/json, text/javascript, */*; q=0.01",
         "X-Requested-With": "XMLHttpRequest",
-        "Referer": referer,
-        "Cookie": build_cookie_header(args),
+        "Referer": ACCOUNT_REFERER,
+        "Cookie": build_cookie_header(),
     }
 
     params = {
@@ -111,14 +99,14 @@ def fetch_page(start: int, length: int, args) -> SimpleResponse:
         "search[regex]": "false",
         "order[0][column]": 1,
         "order[0][dir]": "desc",
-        "Type": account_type,
-        "fetch": fetch_id,
+        "Type": ACCOUNT_TYPE,
+        "fetch": ACCOUNT_FETCH_ID,
         "routing": "",
         "reason": "",
         "playerName": "",
         "amount": "",
-        "startDate": args.start_date or "",
-        "endDate": args.end_date or "",
+        "startDate": START_DATE,
+        "endDate": END_DATE,
         "excludeFurniture": 0,
         "excludeDelivery": 0,
         "excludeServer": 0,
@@ -155,35 +143,29 @@ def fetch_page(start: int, length: int, args) -> SimpleResponse:
         sys.exit(1)
 
 
-def write_csv(rows: list[dict], output_file: Path) -> None:
+def write_csv(rows: list[dict]) -> None:
     if not rows:
         return
 
     fieldnames = ["Id", "From", "Routing", "Reason", "Amount", "Balance", "Date"]
-    with output_file.open("w", newline="", encoding="utf-8") as f:
+    with OUT_CSV.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
 
 def main() -> int:
-    args = parse_arguments()
-    
-    # Set output files
-    json_output = Path(args.json_output) if args.json_output else OUT_JSON
-    csv_output = Path(args.output) if args.output else OUT_CSV
-    
     all_rows = []
     start = 0
     length = 500
     total = None
 
-    response = fetch_page(start=start, length=length, args=args)
+    response = fetch_page(start=start, length=length)
     print(f"HTTP {response.status_code}")
     print(f"Content-Type: {response.headers.get('content-type', '')}")
     print(f"Final URL: {response.url}")
-    print(f"Account: Type={args.account_type or 'Business'} fetch={args.fetch_id or '70855'}")
-    print(f"Date filters: startDate={args.start_date or '(none)'} endDate={args.end_date or '(none)'}")
+    print(f"Account: Type={ACCOUNT_TYPE} fetch={ACCOUNT_FETCH_ID}")
+    print(f"Date filters: startDate={START_DATE or '(none)'} endDate={END_DATE or '(none)'}")
     if "/login" in response.url:
         print("The site redirected to login. The session cookie is missing or expired.")
 
@@ -193,12 +175,12 @@ def main() -> int:
     try:
         payload = response.json()
     except ValueError:
-        json_output.write_text(text[:5000], encoding="utf-8")
-        print(f"Response was not JSON. First 5000 chars written to {json_output}")
+        OUT_JSON.write_text(text[:5000], encoding="utf-8")
+        print(f"Response was not JSON. First 5000 chars written to {OUT_JSON}")
         print(text[:500])
         return 1
 
-    json_output.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    OUT_JSON.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     rows = payload.get("data", [])
     all_rows.extend(rows)
     total = payload.get("recordsFiltered", len(rows))
@@ -209,18 +191,18 @@ def main() -> int:
 
     while rows and len(all_rows) < total:
         start += length
-        response = fetch_page(start=start, length=length, args=args)
+        response = fetch_page(start=start, length=length)
         payload = response.json()
         rows = payload.get("data", [])
         all_rows.extend(rows)
         print(f"Fetched {len(all_rows)} / {total}")
 
-    json_output.write_text(json.dumps({"data": all_rows, "recordsFiltered": total}, indent=2), encoding="utf-8")
-    write_csv(all_rows, csv_output)
+    OUT_JSON.write_text(json.dumps({"data": all_rows, "recordsFiltered": total}, indent=2), encoding="utf-8")
+    write_csv(all_rows)
 
-    print(f"JSON written to {json_output}")
+    print(f"JSON written to {OUT_JSON}")
     if all_rows:
-        print(f"CSV written to {csv_output}")
+        print(f"CSV written to {OUT_CSV}")
         print("First row keys:", ", ".join(all_rows[0].keys()))
 
     return 0
