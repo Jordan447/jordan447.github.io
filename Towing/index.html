@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Towing Paperwork Fixer</title>
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --container-bg: white;
+            --container-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --heading-color: #2c3e50;
+            --textarea-bg: white;
+            --textarea-border: #ddd;
+            --button-bg: #3498db;
+            --button-hover: #2980b9;
+            --button-text: white;
+            --template-btn-bg: #2ecc71;
+            --template-btn-hover: #27ae60;
+            --copy-btn-bg: #9b59b6;
+            --copy-btn-hover: #8e44ad;
+            --output-copy-btn-bg: #e67e22;
+            --output-copy-btn-hover: #d35400;
+            --contractor-btn-bg: #1abc9c;
+            --contractor-btn-hover: #16a085;
+            --field-info-color: #7f8c8d;
+            --stats-bg: #e8f4fc;
+            --contractor-options-bg: #f8f9fa;
+            --table-border: #ddd;
+            --table-header-bg: #f2f2f2;
+            --tow-breakdown-color: #666;
+            --input-bg: white;
+            --input-border: #ddd;
+        }
+
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --container-bg: #1e1e1e;
+            --container-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            --heading-color: #bb86fc;
+            --textarea-bg: #2d2d2d;
+            --textarea-border: #444;
+            --button-bg: #3700b3;
+            --button-hover: #6200ee;
+            --button-text: white;
+            --template-btn-bg: #03dac6;
+            --template-btn-hover: #018786;
+            --copy-btn-bg: #bb86fc;
+            --copy-btn-hover: #3700b3;
+            --output-copy-btn-bg: #ff8c00;
+            --output-copy-btn-hover: #ff6d00;
+            --contractor-btn-bg: #018786;
+            --contractor-btn-hover: #03dac6;
+            --field-info-color: #a0a0a0;
+            --stats-bg: #2d3748;
+            --contractor-options-bg: #2d2d2d;
+            --table-border: #444;
+            --table-header-bg: #333;
+            --tow-breakdown-color: #aaa;
+            --input-bg: #2d2d2d;
+            --input-border: #444;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            background-color: var(--container-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--container-shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        h1, h2, h3 {
+            color: var(--heading-color);
+            transition: color 0.3s;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 12px;
+            font-family: monospace;
+            border: 1px solid var(--textarea-border);
+            border-radius: 4px;
+            resize: vertical;
+            font-size: 14px;
+            line-height: 1.5;
+            background-color: var(--textarea-bg);
+            color: var(--text-color);
+            transition: all 0.3s;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: var(--button-hover);
+        }
+        .template-btn {
+            background-color: var(--template-btn-bg);
+        }
+        .template-btn:hover {
+            background-color: var(--template-btn-hover);
+        }
+        .copy-btn {
+            background-color: var(--copy-btn-bg);
+        }
+        .copy-btn:hover {
+            background-color: var(--copy-btn-hover);
+        }
+        .output-copy-btn {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background-color: var(--output-copy-btn-bg);
+            margin: 0;
+        }
+        .output-copy-btn:hover {
+            background-color: var(--output-copy-btn-hover);
+        }
+        .contractor-btn {
+            background-color: var(--contractor-btn-bg);
+        }
+        .contractor-btn:hover {
+            background-color: var(--contractor-btn-hover);
+        }
+        .btn-group {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .field-info {
+            font-size: 14px;
+            color: var(--field-info-color);
+            margin-top: 10px;
+            text-align: center;
+            transition: color 0.3s;
+        }
+        .stats {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: var(--stats-bg);
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .contractor-options {
+            background-color: var(--contractor-options-bg);
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        .contractor-options label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+        .contractor-options input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            transition: all 0.3s;
+        }
+        .payments-due {
+            margin-top: 20px;
+            border-top: 1px solid var(--textarea-border);
+            padding-top: 15px;
+            transition: border-color 0.3s;
+        }
+        .payments-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .payments-table th, .payments-table td {
+            border: 1px solid var(--table-border);
+            padding: 8px;
+            text-align: left;
+            transition: border-color 0.3s;
+        }
+        .payments-table th {
+            background-color: var(--table-header-bg);
+            transition: background-color 0.3s;
+        }
+        .copy-cmd-btn {
+            background-color: var(--template-btn-bg);
+            padding: 5px 10px;
+            font-size: 14px;
+            margin-left: 10px;
+            color: white;
+        }
+        .copy-cmd-btn:hover {
+            background-color: var(--template-btn-hover);
+        }
+        .copied-status {
+            color: var(--template-btn-bg);
+            font-weight: bold;
+            margin-left: 10px;
+            transition: color 0.3s;
+        }
+        .tow-breakdown {
+            font-size: 12px;
+            color: var(--tow-breakdown-color);
+            margin-top: 3px;
+            transition: color 0.3s;
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .dark-mode-toggle button {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .dark-mode-toggle button:hover {
+            background-color: var(--button-hover);
+        }
+        .output-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dark-mode-toggle">
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
+    
+    <div class="container">
+        <h1>Towing Paperwork Fixer</h1>
+        
+        <div class="btn-group">
+            <button class="template-btn" onclick="loadTemplate()">Load Template</button>
+            <button onclick="processAllEntries()">Process All Entries</button>
+        </div>
+        
+        <div class="field-info">
+            Paste multiple service records below. Each record should contain all required fields.
+            The system will automatically detect City/County and set pricing accordingly.
+            <strong>Date format: MM/DD/YYYY (e.g., 03/10/2025 for March 10th)</strong>
+        </div>
+        
+        <div class="section">
+            <h3>Input BBCode:</h3>
+            <textarea id="bbcodeInput" placeholder="Paste multiple service records here..."></textarea>
+        </div>
+        
+        <div class="section">
+            <div class="output-header">
+                <h3>Formatted Towing Records:</h3>
+            </div>
+            <div id="stats" class="stats"></div>
+            <div class="output-container">
+                <button class="output-copy-btn" onclick="copyOutputToClipboard('formattedOutput')">Copy All</button>
+                <textarea id="formattedOutput" readonly placeholder="Formatted towing records will appear here..."></textarea>
+            </div>
+            
+            <div class="payments-due">
+                <h3>Payments Due:</h3>
+                <div id="paymentsStats"></div>
+                <table class="payments-table">
+                    <thead>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Tows Completed<br><span class="tow-breakdown">(City/County)</span></th>
+                            <th>Amount Owed ($3,100 per tow)</th>
+                            <th>Routing Number</th>
+                            <th>Payments</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentsList">
+                        <!-- Payments will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="output-header">
+                <h3>Contractor Log Generator:</h3>
+                <button class="contractor-btn" onclick="generateContractorLog()">Generate Log</button>
+            </div>
+            
+            <div class="contractor-options">
+                <label>Contractor Details:</label>
+                <input type="text" id="contractorName" placeholder="Contractor Name (e.g. Senora Logistics)" value="Senora Logistics">
+                <input type="text" id="routingNumber" placeholder="Routing Number (e.g. 0300 9904 6)" value="030099046">
+                <input type="text" id="logLink" placeholder="Contractor Log URL" value="">
+            </div>
+            
+            <div class="output-container">
+                <button class="output-copy-btn" onclick="copyOutputToClipboard('contractorOutput')">Copy</button>
+                <textarea id="contractorOutput" readonly placeholder="Contractor log will appear here..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Check for saved user preference or use system preference
+        const currentTheme = localStorage.getItem('theme') || 
+                            (prefersDarkScheme.matches ? 'dark' : 'light');
+        
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.textContent = 'Toggle Light Mode';
+        }
+        
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            darkModeToggle.textContent = theme === 'dark' ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+        });
+
+        // Employee database with routing numbers
+        const employeeDatabase = {
+            "Sergio Rivas": "010095497",
+            "Devon Chute": "010087025",
+            "Cassidy McNeill": "010053604",
+            "Kara Sanchez": "010112464",
+            "Alec Rivas": "010003775",
+            "Gypsy Cobb": "010087225",
+            "Ryan Henderson": "010098174"
+        };
+
+        // Store towing data globally
+        window.towingData = {
+            serviceDates: [],
+            vehicleCount: 0,
+            totalDue: 0,
+            employeePayments: {}
+        };
+
+        // Helper function to parse date in MM/DD/YYYY format
+        function parseDateMMDDYYYY(dateStr) {
+            if (!dateStr) return null;
+            
+            // Clean the date string
+            const cleaned = dateStr.trim();
+            
+            // Try to match MM/DD/YYYY or MM/DD/YY
+            const patterns = [
+                /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/,  // MM/DD/YYYY
+                /^(\d{1,2})\/(\d{1,2})\/(\d{2})$/    // MM/DD/YY
+            ];
+            
+            for (const pattern of patterns) {
+                const match = cleaned.match(pattern);
+                if (match) {
+                    let month = parseInt(match[1], 10);
+                    let day = parseInt(match[2], 10);
+                    let year = parseInt(match[3], 10);
+                    
+                    // Handle 2-digit year (assume 2000s)
+                    if (year < 100) {
+                        year += 2000;
+                    }
+                    
+                    // Validate month and day ranges
+                    if (month >= 1 && month <= 12 && day >= 1 && day <= 31) {
+                        const dateObj = new Date(year, month - 1, day);
+                        // Verify the date is valid (e.g., not Feb 30)
+                        if (dateObj.getMonth() === month - 1 && dateObj.getDate() === day) {
+                            return dateObj;
+                        }
+                    }
+                }
+            }
+            
+            return null;
+        }
+
+        // Helper function to format date as MM/DD/YYYY
+        function formatDateMMDDYYYY(date) {
+            if (!date || !(date instanceof Date) || isNaN(date.getTime())) return 'MM/DD/YYYY';
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const year = date.getFullYear();
+            return `${month}/${day}/${year}`;
+        }
+
+        // Sample template for multiple entries (using MM/DD/YYYY format)
+        function loadTemplate() {
+            const template = `[b]Company Name[/b]: Senora Towing
+[b]Employee Name[/b]: Ryan Henderson
+[b]Vehicle Model and Plate[/b]: Maibatsu Manchez - No plates
+[b]Date of Service[/b]: 03/10/2025
+[b]Type of Service[/b]: Safekeeping. 
+[b]LSSD Authorizing Employee[/b]: Detective Brewer - 80264
+[b]City OR County[/b]: City
+
+[b]Company Name[/b]: Senora Towing
+[b]Employee Name[/b]: Alex Morgan
+[b]Vehicle Model and Plate[/b]: Vapid Dominator - ABC1234
+[b]Date of Service[/b]: 03/16/2025
+[b]Type of Service[/b]: Impound.
+[b]LSSD Authorizing Employee[/b]: Deputy Smith - 12345
+[b]City OR County[/b]: County`;
+            document.getElementById('bbcodeInput').value = template;
+        }
+
+        // Main processing function
+        function processAllEntries() {
+            const input = document.getElementById('bbcodeInput').value.trim();
+            if (!input) {
+                alert("Please paste some BBCode entries first");
+                return;
+            }
+
+            // Reset towing data
+            window.towingData = {
+                serviceDates: [],
+                vehicleCount: 0,
+                totalDue: 0,
+                employeePayments: {}
+            };
+
+            // Clean and split the input
+            const cleanedInput = cleanInput(input);
+            let entries = splitEntries(cleanedInput);
+
+            let processedCount = 0;
+            let errorCount = 0;
+            let outputText = '';
+            
+            entries.forEach((entry, index) => {
+                try {
+                    // Process the entry
+                    const processedEntry = processSingleEntry(entry.trim());
+                    outputText += processedEntry + '\n\n';
+                    processedCount++;
+                    
+                    // Track employee payments and other data
+                    trackEntryData(entry);
+                    
+                } catch (e) {
+                    errorCount++;
+                    outputText += `[color=red]Error processing entry ${index + 1}: ${e.message}[/color]\n\n`;
+                    outputText += entry + '\n\n';
+                }
+            });
+
+            updateOutputDisplay(processedCount, errorCount, outputText);
+            updatePaymentsDue();
+        }
+
+        // Clean input - removes non-BBCode lines
+        function cleanInput(input) {
+            const lines = input.split('\n');
+            const cleanedLines = lines.filter(line => line.trim().startsWith('[b]'));
+            
+            let cleanedInput = cleanedLines.join('\n').replace(/\n{3,}/g, '\n\n');
+            
+            if (!cleanedInput.startsWith('[b]Company Name[/b]')) {
+                const companyIndex = cleanedInput.indexOf('[b]Company Name[/b]');
+                if (companyIndex > 0) {
+                    cleanedInput = cleanedInput.substring(companyIndex);
+                }
+            }
+            
+            return cleanedInput;
+        }
+
+        // Split entries
+        function splitEntries(input) {
+            const entries = input.split(/(?=\[b\]Company Name\[\/b\])/);
+            return entries.map(entry => entry.trim()).filter(entry => entry.length > 0);
+        }
+
+        // Process single entry with City/County normalization
+        function processSingleEntry(entry) {
+            const requiredFields = [
+                'Company Name',
+                'Employee Name',
+                'Vehicle Model and Plate',
+                'Date of Service',
+                'Type of Service',
+                'LSSD Authorizing Employee',
+                'City OR County',
+                '[color=#0040FF]Grounds for Additional Billing:[/color]',
+                'Bill of Service'
+            ];
+
+            const fields = {};
+            const fieldRegex = /\[b\]([^\]]+)\[\/b\][:\s]([^\n]*)/g;
+            let match;
+            while ((match = fieldRegex.exec(entry))) {
+                fields[match[1].trim()] = match[2].trim();
+            }
+
+            // Normalize City/County field
+            if (fields['City OR County']) {
+                const cityCounty = fields['City OR County'].replace(/\./g, '').trim();
+                if (cityCounty.toLowerCase() === 'city') {
+                    fields['City OR County'] = 'City';
+                } else if (cityCounty.toLowerCase() === 'county') {
+                    fields['City OR County'] = 'County';
+                }
+            }
+
+            // Normalize Date field - ensure consistent display format
+            if (fields['Date of Service']) {
+                const parsedDate = parseDateMMDDYYYY(fields['Date of Service']);
+                if (parsedDate) {
+                    fields['Date of Service'] = formatDateMMDDYYYY(parsedDate);
+                }
+            }
+
+            const cityCounty = fields['City OR County'] || '';
+            const isCity = cityCounty.toLowerCase() === 'city';
+            const servicePrice = isCity ? '$3,950' : '$3,000';
+
+            let output = '';
+            for (const field of requiredFields) {
+                if (field.includes('color')) {
+                    const plainField = field.replace(/\[[^\]]+\]/g, '');
+                    const value = fields[plainField] || 'N/A';
+                    output += `[b]${field}[/b] ${value}\n`;
+                } 
+                else if (field === 'Bill of Service') {
+                    output += `[b]${field}[/b]: ${servicePrice}\n`;
+                }
+                else {
+                    const value = fields[field] || '';
+                    output += `[b]${field}[/b]: ${value}\n`;
+                }
+            }
+
+            return output.trim();
+        }
+
+        // Track entry data with improved date handling (MM/DD/YYYY)
+        function trackEntryData(entry) {
+            const employeeMatch = entry.match(/\[b\]Employee Name\[\/b\][:\s]([^\n]+)/i);
+            const employeeName = employeeMatch ? employeeMatch[1].trim() : "Default Employee";
+            
+            if (!window.towingData.employeePayments[employeeName]) {
+                window.towingData.employeePayments[employeeName] = {
+                    count: 0,
+                    cityCount: 0,
+                    countyCount: 0,
+                    amount: 0,
+                    routingNumber: employeeDatabase[employeeName] || 'Not found'
+                };
+            }
+            
+            window.towingData.employeePayments[employeeName].count++;
+            
+            // Improved date extraction using MM/DD/YYYY format
+            const dateMatch = entry.match(/\[b\]Date of Service\[\/b\][:\s]*([^\n]+)/i);
+            if (dateMatch && dateMatch[1]) {
+                const parsedDate = parseDateMMDDYYYY(dateMatch[1]);
+                if (parsedDate && !isNaN(parsedDate.getTime())) {
+                    window.towingData.serviceDates.push(parsedDate);
+                }
+            }
+            
+            // City/County detection with normalization
+            const cityCountyMatch = entry.match(/\[b\]City OR County\[\/b\][:\s]*([^\n]+)/i);
+            if (cityCountyMatch) {
+                const cityCounty = cityCountyMatch[1].replace(/\./g, '').trim().toLowerCase();
+                const isCity = cityCounty === 'city';
+                const servicePrice = isCity ? 3950 : 3000;
+                
+                if (isCity) {
+                    window.towingData.employeePayments[employeeName].cityCount++;
+                } else {
+                    window.towingData.employeePayments[employeeName].countyCount++;
+                }
+                
+                window.towingData.totalDue += servicePrice;
+            }
+            
+            window.towingData.employeePayments[employeeName].amount += 3100;
+            window.towingData.vehicleCount++;
+        }
+
+        // Update output display
+        function updateOutputDisplay(processedCount, errorCount, outputText) {
+            document.getElementById('formattedOutput').value = outputText.trim();
+            document.getElementById('stats').innerHTML = `
+                Processed ${processedCount} entries successfully | 
+                ${errorCount} entries had errors |
+                Total Due: $${window.towingData.totalDue.toLocaleString()}
+            `;
+        }
+
+        // Update payments due display
+        function updatePaymentsDue() {
+            const paymentsList = document.getElementById('paymentsList');
+            paymentsList.innerHTML = '';
+            
+            let totalPayments = 0;
+            let totalTows = 0;
+            let totalCityTows = 0;
+            let totalCountyTows = 0;
+            
+            for (const [employee, data] of Object.entries(window.towingData.employeePayments)) {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td>${employee}</td>
+                    <td>${data.count}<br>
+                        <span class="tow-breakdown">(${data.cityCount} City / ${data.countyCount} County)</span>
+                    </td>
+                    <td>$${(data.amount).toLocaleString()}</td>
+                    <td>${data.routingNumber}</td>
+                    <td>
+                        <button class="copy-cmd-btn" onclick="copyPaymentCommand('${employee}', ${data.amount}, '${data.routingNumber}')">
+                            Copy Transfer Command
+                        </button>
+                        <span id="copied-${employee.replace(/\s+/g, '-')}" class="copied-status"></span>
+                    </td>
+                `;
+                paymentsList.appendChild(row);
+                
+                totalTows += data.count;
+                totalCityTows += data.cityCount;
+                totalCountyTows += data.countyCount;
+                totalPayments += data.amount;
+            }
+            
+            // Add total row
+            const totalRow = document.createElement('tr');
+            totalRow.style.fontWeight = 'bold';
+            totalRow.innerHTML = `
+                <td>Total</td>
+                <td>${totalTows}<br>
+                    <span class="tow-breakdown">(${totalCityTows} City / ${totalCountyTows} County)</span>
+                </td>
+                <td>$${totalPayments.toLocaleString()}</td>
+                <td colspan="2"></td>
+            `;
+            paymentsList.appendChild(totalRow);
+            
+            document.getElementById('paymentsStats').innerHTML = `
+                Total Payments Due: $${totalPayments.toLocaleString()} across ${totalTows} tows
+                (${totalCityTows} City / ${totalCountyTows} County) at $3,100 per tow
+            `;
+        }
+
+        // Copy payment command to clipboard
+        function copyPaymentCommand(employeeName, amount, routingNumber) {
+            const command = `/btransfer ${amount} ${routingNumber} SENLOG - Towing Payment`;
+            
+            // Create a temporary textarea element
+            const textarea = document.createElement('textarea');
+            textarea.value = command;
+            textarea.style.position = 'fixed';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                // Try using the newer clipboard API first
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(command).then(() => {
+                        showCopyStatus(employeeName);
+                    }).catch(err => {
+                        console.error('Clipboard API failed, using fallback:', err);
+                        fallbackCopy(command, employeeName);
+                    });
+                } else {
+                    // Fallback for older browsers
+                    fallbackCopy(command, employeeName);
+                }
+            } catch (err) {
+                console.error('Copy failed:', err);
+                fallbackCopy(command, employeeName);
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+
+        // Fallback copy method using execCommand
+        function fallbackCopy(text, employeeName) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopyStatus(employeeName);
+                } else {
+                    console.error('Fallback copy failed');
+                    alert('Failed to copy command. Please copy manually:\n' + text);
+                }
+            } catch (err) {
+                console.error('Fallback copy error:', err);
+                alert('Failed to copy command. Please copy manually:\n' + text);
+            }
+            
+            document.body.removeChild(textarea);
+        }
+
+        // Show copy status message
+        function showCopyStatus(employeeName) {
+            const statusElement = document.getElementById(`copied-${employeeName.replace(/\s+/g, '-')}`);
+            statusElement.textContent = 'Copied!';
+            
+            setTimeout(() => {
+                statusElement.textContent = '';
+            }, 2000);
+        }
+
+        function generateContractorLog() {
+            if (!window.towingData || window.towingData.vehicleCount === 0) {
+                alert("Please process towing records first");
+                return;
+            }
+
+            const contractorName = document.getElementById('contractorName').value || 'Senora Logistics';
+            const routingNumber = document.getElementById('routingNumber').value || '0300 9904 6';
+            const logLink = document.getElementById('logLink').value || '';
+            
+            // Improved date range calculation using MM/DD/YYYY format
+            let startDate = 'MM/DD/YYYY';
+            let endDate = 'MM/DD/YYYY';
+            
+            if (window.towingData.serviceDates.length > 0) {
+                // Filter out invalid dates and create a copy
+                const validDates = window.towingData.serviceDates.filter(date => 
+                    date instanceof Date && !isNaN(date.getTime())
+                );
+                
+                if (validDates.length > 0) {
+                    // Sort dates chronologically
+                    validDates.sort((a, b) => a - b);
+                    
+                    // Get the earliest and latest dates
+                    startDate = formatDateMMDDYYYY(validDates[0]);
+                    endDate = formatDateMMDDYYYY(validDates[validDates.length - 1]);
+                }
+            }
+            
+            // Format total due with commas
+            const formattedTotal = window.towingData.totalDue.toLocaleString('en-US');
+            
+            const contractorLog = `[divbox=white]
+[b]Contractor Name:[/b] ${contractorName}
+[b]Contractor Log:[/b] ${logLink ? `[url=${logLink}]ACCESS[/url]` : 'Not specified'}
+[b]Date Start:[/b] ${startDate}
+[b]Date End:[/b] ${endDate}
+[b]Vehicles Towed:[/b] ${window.towingData.vehicleCount}
+[b]Total Due:[/b] $${formattedTotal}
+[b]Routing Number:[/b] ${routingNumber}
+[hr][/hr]
+[i]To be filed by LSSD[/i]
+[b]Status:[/b] UNPAID
+[b]Handling Deputy:[/b][/divbox]`;
+            
+            document.getElementById('contractorOutput').value = contractorLog;
+        }
+
+        function copyOutputToClipboard(elementId) {
+            const output = document.getElementById(elementId);
+            output.select();
+            document.execCommand('copy');
+            
+            // Visual feedback
+            const copyBtn = event.target;
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            copyBtn.style.backgroundColor = '#2ecc71';
+            
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+                copyBtn.style.backgroundColor = elementId === 'formattedOutput' ? '#e67e22' : '#1abc9c';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
