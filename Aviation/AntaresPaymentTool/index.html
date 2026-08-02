@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Log · Pilot Payout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dark-mode-toggle">
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+  </div>
+
+  <div class="container">
+    <h1>✈️ Flight Log · Pilot Payout</h1>
+
+    <div class="field-info">
+      Paste multiple flight records below. Each record should contain all required fields.
+      <strong>Date format: MM/DD/YYYY (e.g., 07/28/2026)</strong>
+    </div>
+
+    <div class="btn-group">
+      <button class="template-btn" id="loadSampleBtn">Load Sample Flights</button>
+      <button id="processFlightsBtn">Process All Entries</button>
+      <button id="clearAllBtn">Clear All</button>
+    </div>
+
+    <div class="section">
+      <h3>Input BBCode:</h3>
+      <textarea id="bbcodeInput" placeholder="Paste flight records here..."></textarea>
+    </div>
+
+    <div class="section">
+      <div class="output-header">
+        <h3>Bonus per Flight Log:</h3>
+        <div class="price-input-group">
+          <input type="number" id="pricePerFlight" value="1850" step="50" min="0">
+          <button id="updatePriceBtn" style="margin: 0;">Update</button>
+        </div>
+      </div>
+      <div id="stats" class="stats"></div>
+
+      <div class="output-header">
+        <h3>👨‍✈️ Pilot Payout Breakdown</h3>
+      </div>
+      <div id="pilotListContainer" class="pilot-list">
+        <div class="empty-state">No flights processed yet. Paste logs and click "Process All Entries".</div>
+      </div>
+
+      <div class="copy-section">
+        <button class="copy-list-btn" id="copyPayoutBtn">📋 Copy Complete Data</button>
+      </div>
+    </div>
+
+    <!-- Pilot Manager -->
+    <div class="section pilot-manager">
+      <h3>👤 Manage Pilots & Routing</h3>
+      <div class="pilot-manager-grid">
+        <div class="pm-input-group">
+          <input type="text" id="newPilotName" placeholder="Pilot name">
+          <input type="text" id="newPilotRouting" placeholder="Routing number">
+          <button id="addPilotBtn">Add / Update</button>
+        </div>
+        <div id="pilotListManager" class="pilot-manager-list"></div>
+        <div class="pm-actions">
+          <button id="resetDefaultPilotsBtn" class="template-btn">Reset to Default Pilots</button>
+          <button id="clearCustomPilotsBtn" style="background-color: #e74c3c;">Clear All Pilots</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
