@@ -90,11 +90,6 @@
       font-weight: 700;
     }
 
-    .btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
     .file-btn input {
       display: none;
     }
@@ -243,11 +238,6 @@
       text-align: right;
     }
 
-    .status .loading {
-      color: var(--gold);
-      font-weight: 600;
-    }
-
     table {
       width: 100%;
       border-collapse: collapse;
@@ -338,37 +328,6 @@
     .winner {
       color: var(--green);
       font-weight: 800;
-    }
-
-    .pagination {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px;
-      flex-wrap: wrap;
-    }
-
-    .pagination button {
-      min-width: 36px;
-      min-height: 36px;
-      padding: 4px 10px;
-      border: 1px solid var(--line);
-      background: var(--panel-2);
-      color: var(--text);
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .pagination button.active {
-      background: var(--green);
-      border-color: var(--green);
-      color: #08120c;
-      font-weight: 700;
-    }
-
-    .pagination button:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
     }
 
     @media (max-width: 980px) {
@@ -529,7 +488,6 @@
             <textarea id="exportPreview" readonly></textarea>
           </div>
           <div id="leaderboard"></div>
-          <div class="pagination" id="pagination"></div>
         </section>
 
         <section class="table-wrap">
@@ -541,7 +499,6 @@
             <div class="status" id="diagnostics"></div>
           </div>
           <div class="recent" id="matchedRows"></div>
-          <div class="pagination" id="matchedPagination"></div>
         </section>
       </section>
     </section>
@@ -553,12 +510,7 @@
       headers: [],
       leaderboard: [],
       matched: [],
-      selectedDriver: "",
-      processing: false,
-      totalRows: 0,
-      matchedPage: 0,
-      leaderboardPage: 0,
-      pageSize: 50
+      selectedDriver: ""
     };
     const SETTINGS_KEY = "senorabanking.dashboardSettings";
     const CSV_TEXT_KEY = "senorabanking.csvText";
@@ -595,9 +547,7 @@
       leaderboard: document.getElementById("leaderboard"),
       matchedRows: document.getElementById("matchedRows"),
       matchedStatus: document.getElementById("matchedStatus"),
-      diagnostics: document.getElementById("diagnostics"),
-      pagination: document.getElementById("pagination"),
-      matchedPagination: document.getElementById("matchedPagination")
+      diagnostics: document.getElementById("diagnostics")
     };
 
     function saveSettings() {
@@ -620,6 +570,7 @@
     function restoreSettings() {
       const raw = localStorage.getItem(SETTINGS_KEY);
       if (!raw) return {};
+
       try {
         return JSON.parse(raw);
       } catch {
@@ -646,100 +597,60 @@
       const text = localStorage.getItem(CSV_TEXT_KEY);
       const source = localStorage.getItem(CSV_SOURCE_KEY) || "stored CSV";
       if (!text) return false;
+
       loadCsvText(text, source);
       return true;
     }
 
-    // Optimized CSV parser with streaming/chunking support
-    function parseCsvChunked(text, onProgress) {
-      return new Promise((resolve, reject) => {
-        try {
-          const rows = [];
-          let row = [];
-          let value = "";
-          let quoted = false;
-          let headers = [];
-          let isHeader = true;
-          let chunkSize = 5000;
-          let processed = 0;
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let value = "";
+      let quoted = false;
 
-          // Use setTimeout to avoid blocking UI
-          function processChunk(startIndex) {
-            let endIndex = Math.min(startIndex + chunkSize, text.length);
-            let chunk = text.substring(startIndex, endIndex);
-            
-            for (let i = 0; i < chunk.length; i++) {
-              const char = chunk[i];
-              const next = chunk[i + 1];
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
 
-              if (quoted) {
-                if (char === '"' && next === '"') {
-                  value += '"';
-                  i++;
-                } else if (char === '"') {
-                  quoted = false;
-                } else {
-                  value += char;
-                }
-                continue;
-              }
-
-              if (char === '"') {
-                quoted = true;
-              } else if (char === ",") {
-                row.push(value);
-                value = "";
-              } else if (char === "\n") {
-                row.push(value);
-                if (isHeader) {
-                  headers = row;
-                  isHeader = false;
-                } else {
-                  rows.push(row);
-                }
-                row = [];
-                value = "";
-              } else if (char !== "\r") {
-                value += char;
-              }
-            }
-
-            processed = endIndex;
-            
-            if (onProgress) {
-              const progress = Math.min(100, Math.round((processed / text.length) * 100));
-              onProgress(progress, rows.length);
-            }
-
-            if (processed < text.length) {
-              // Continue with next chunk
-              setTimeout(() => processChunk(processed), 0);
-            } else {
-              // Handle any remaining value
-              if (value || row.length) {
-                row.push(value);
-                if (!isHeader) {
-                  rows.push(row);
-                }
-              }
-
-              // Convert rows to objects
-              const rowObjects = rows
-                .filter((items) => items.some(Boolean))
-                .map((items) => Object.fromEntries(headers.map((header, index) => [header, items[index] || ""])));
-
-              resolve({
-                headers,
-                rows: rowObjects
-              });
-            }
+        if (quoted) {
+          if (char === '"' && next === '"') {
+            value += '"';
+            i++;
+          } else if (char === '"') {
+            quoted = false;
+          } else {
+            value += char;
           }
-
-          processChunk(0);
-        } catch (error) {
-          reject(error);
+          continue;
         }
-      });
+
+        if (char === '"') {
+          quoted = true;
+        } else if (char === ",") {
+          row.push(value);
+          value = "";
+        } else if (char === "\n") {
+          row.push(value);
+          rows.push(row);
+          row = [];
+          value = "";
+        } else if (char !== "\r") {
+          value += char;
+        }
+      }
+
+      if (value || row.length) {
+        row.push(value);
+        rows.push(row);
+      }
+
+      const headers = rows.shift() || [];
+      return {
+        headers,
+        rows: rows
+          .filter((items) => items.some(Boolean))
+          .map((items) => Object.fromEntries(headers.map((header, index) => [header, items[index] || ""])))
+      };
     }
 
     function stripHtml(value) {
@@ -838,8 +749,6 @@
     }
 
     function recompute() {
-      if (state.processing) return;
-      
       const driverColumn = els.driverColumn.value;
       const reasonColumn = els.reasonColumn.value;
       const amountColumn = els.amountColumn.value;
@@ -852,7 +761,6 @@
       let minMatchedDate = null;
       let maxMatchedDate = null;
 
-      // Process rows efficiently
       for (const row of state.rows) {
         const reason = stripHtml(row[reasonColumn]);
         if (includePattern && !reason.toLowerCase().includes(includePattern)) continue;
@@ -903,174 +811,18 @@
         minMatchedDate,
         maxMatchedDate
       };
-      state.matchedPage = 0;
-      state.leaderboardPage = 0;
 
       render();
     }
 
-    function renderPagination(total, currentPage, pageSize, containerId, callback) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-
-      const totalPages = Math.ceil(total / pageSize);
-      if (totalPages <= 1) {
-        container.innerHTML = "";
-        return;
-      }
-
-      let html = `<button onclick="goToPage(${containerId === 'pagination' ? "'leaderboard'" : "'matched'"}, ${currentPage - 1})" ${currentPage === 0 ? 'disabled' : ''}>←</button>`;
-      
-      let startPage = Math.max(0, currentPage - 2);
-      let endPage = Math.min(totalPages - 1, currentPage + 2);
-      
-      if (startPage > 0) {
-        html += `<button onclick="goToPage(${containerId === 'pagination' ? "'leaderboard'" : "'matched'"}, 0)">1</button>`;
-        if (startPage > 1) html += `<span>…</span>`;
-      }
-      
-      for (let i = startPage; i <= endPage; i++) {
-        html += `<button class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${containerId === 'pagination' ? "'leaderboard'" : "'matched'"}, ${i})">${i + 1}</button>`;
-      }
-      
-      if (endPage < totalPages - 1) {
-        if (endPage < totalPages - 2) html += `<span>…</span>`;
-        html += `<button onclick="goToPage(${containerId === 'pagination' ? "'leaderboard'" : "'matched'"}, ${totalPages - 1})">${totalPages}</button>`;
-      }
-      
-      html += `<button onclick="goToPage(${containerId === 'pagination' ? "'leaderboard'" : "'matched'"}, ${currentPage + 1})" ${currentPage >= totalPages - 1 ? 'disabled' : ''}>→</button>`;
-      
-      container.innerHTML = html;
-    }
-
-    window.goToPage = function(type, page) {
-      if (type === 'leaderboard') {
-        state.leaderboardPage = Math.max(0, page);
-        renderLeaderboard();
-      } else {
-        state.matchedPage = Math.max(0, page);
-        renderMatched();
-      }
-    };
-
-    function renderLeaderboard() {
+    function render() {
       const topLimit = Math.max(3, Number(els.topLimit.value) || 25);
-      const pageSize = Math.min(50, topLimit);
-      const start = state.leaderboardPage * pageSize;
-      const end = Math.min(start + pageSize, state.leaderboard.length);
-      const shown = state.leaderboard.slice(start, end);
-      
-      if (!shown.length) {
-        els.leaderboard.innerHTML = `<div class="empty">No matching trucking transactions found.</div>`;
-        return;
-      }
-
-      let html = `
-        <table>
-          <thead>
-            <tr>
-              <th class="num">Rank</th>
-              <th>Driver</th>
-              <th class="num">Crates</th>
-              <th class="num">Runs</th>
-              <th class="num">Payout</th>
-              <th>Last delivery</th>
-            </tr>
-          </thead>
-          <tbody>
-      `;
-
-      shown.forEach((row, index) => {
-        const globalRank = start + index + 1;
-        html += `
-          <tr class="clickable${row.driver === state.selectedDriver ? " selected" : ""}" data-driver="${escapeHtml(row.driver)}">
-            <td class="num">${globalRank}</td>
-            <td>${escapeHtml(row.driver)}</td>
-            <td class="num">${row.crates.toLocaleString()}</td>
-            <td class="num">${runsFromCrates(row.crates)}</td>
-            <td class="num">${formatMoney(row.payout)}</td>
-            <td>${escapeHtml(formatDateValue(row.lastDate))}</td>
-          </tr>
-        `;
-      });
-
-      html += `</tbody></table>`;
-      els.leaderboard.innerHTML = html;
-
-      // Add click handlers
-      els.leaderboard.querySelectorAll("[data-driver]").forEach((row) => {
-        row.addEventListener("click", () => {
-          const driver = row.getAttribute("data-driver") || "";
-          state.selectedDriver = state.selectedDriver === driver ? "" : driver;
-          render();
-        });
-      });
-
-      renderPagination(
-        state.leaderboard.length,
-        state.leaderboardPage,
-        pageSize,
-        "pagination",
-        "leaderboard"
-      );
-    }
-
-    function renderMatched() {
+      const shown = state.leaderboard.slice(0, topLimit);
+      const totalCrates = state.leaderboard.reduce((sum, row) => sum + row.crates, 0);
+      const totalPayout = state.leaderboard.reduce((sum, row) => sum + row.payout, 0);
       const selectedMatched = state.selectedDriver
         ? state.matched.filter((row) => row.driver === state.selectedDriver)
         : state.matched;
-      
-      const pageSize = 50;
-      const start = state.matchedPage * pageSize;
-      const end = Math.min(start + pageSize, selectedMatched.length);
-      const recent = selectedMatched.slice(start, end);
-      
-      if (!recent.length) {
-        els.matchedRows.innerHTML = `<div class="empty">No matched transactions to show.</div>`;
-        return;
-      }
-
-      let html = `
-        <table>
-          <thead>
-            <tr>
-              <th>Driver</th>
-              <th>Reason</th>
-              <th class="num">Crates</th>
-              <th class="num">Amount</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-      `;
-
-      recent.forEach((row) => {
-        html += `
-          <tr>
-            <td>${escapeHtml(row.driver)}</td>
-            <td>${escapeHtml(row.reason)}</td>
-            <td class="num">${row.crates.toLocaleString()}</td>
-            <td class="num">${formatMoney(row.amount)}</td>
-            <td>${escapeHtml(formatDateValue(row.date))}</td>
-          </tr>
-        `;
-      });
-
-      html += `</tbody></table>`;
-      els.matchedRows.innerHTML = html;
-
-      renderPagination(
-        selectedMatched.length,
-        state.matchedPage,
-        pageSize,
-        "matchedPagination",
-        "matched"
-      );
-    }
-
-    function render() {
-      const totalCrates = state.leaderboard.reduce((sum, row) => sum + row.crates, 0);
-      const totalPayout = state.leaderboard.reduce((sum, row) => sum + row.payout, 0);
 
       els.metricName.textContent = els.competitionName.value || "Competition";
       els.metricDrivers.textContent = state.leaderboard.length.toLocaleString();
@@ -1081,7 +833,6 @@
       els.matchedStatus.textContent = `${state.matched.length.toLocaleString()} matching rows`;
       renderDiagnostics();
 
-      // Render podium (top 3)
       els.podium.innerHTML = [0, 1, 2].map((index) => {
         const row = state.leaderboard[index];
         if (!row) {
@@ -1097,8 +848,74 @@
         `;
       }).join("");
 
-      renderLeaderboard();
-      renderMatched();
+      if (!shown.length) {
+        els.leaderboard.innerHTML = `<div class="empty">No matching trucking transactions found.</div>`;
+      } else {
+        els.leaderboard.innerHTML = `
+          <table>
+            <thead>
+              <tr>
+                <th class="num">Rank</th>
+                <th>Driver</th>
+                <th class="num">Crates</th>
+                <th class="num">Runs</th>
+                <th class="num">Payout</th>
+                <th>Last delivery</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${shown.map((row, index) => `
+                <tr class="clickable${row.driver === state.selectedDriver ? " selected" : ""}" data-driver="${escapeHtml(row.driver)}">
+                  <td class="num">${index + 1}</td>
+                  <td>${escapeHtml(row.driver)}</td>
+                  <td class="num">${row.crates.toLocaleString()}</td>
+                  <td class="num">${runsFromCrates(row.crates)}</td>
+                  <td class="num">${formatMoney(row.payout)}</td>
+                  <td>${escapeHtml(formatDateValue(row.lastDate))}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        `;
+      }
+
+      const recent = selectedMatched.slice(0, 200);
+      if (!recent.length) {
+        els.matchedRows.innerHTML = `<div class="empty">No matched transactions to show.</div>`;
+      } else {
+        els.matchedRows.innerHTML = `
+          <table>
+            <thead>
+              <tr>
+                <th>Driver</th>
+                <th>Reason</th>
+                <th class="num">Crates</th>
+                <th class="num">Amount</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${recent.map((row) => `
+                <tr>
+                  <td>${escapeHtml(row.driver)}</td>
+                  <td>${escapeHtml(row.reason)}</td>
+                  <td class="num">${row.crates.toLocaleString()}</td>
+                  <td class="num">${formatMoney(row.amount)}</td>
+                  <td>${escapeHtml(formatDateValue(row.date))}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        `;
+      }
+
+      els.leaderboard.querySelectorAll("[data-driver]").forEach((row) => {
+        row.addEventListener("click", () => {
+          const driver = row.getAttribute("data-driver") || "";
+          state.selectedDriver = state.selectedDriver === driver ? "" : driver;
+          render();
+        });
+      });
     }
 
     function renderDiagnostics() {
@@ -1107,7 +924,7 @@
         ? `${formatDateValue(diagnostics.minMatchedDate)} to ${formatDateValue(diagnostics.maxMatchedDate)}`
         : "none";
       const selectedRange = `${els.startDate.value || "any"} to ${els.endDate.value || "any"}`;
-      const selectedDriver = state.selectedDriver ? ` | Showing matched rows for: ${state.selectedDriver}` : "";
+      const selectedDriver = state.selectedDriver ? ` | Showing matched rows for: ${state.selectedDriver}` : " | Showing newest 200 matched rows";
 
       els.diagnostics.textContent = [
         `Rows matching reason pattern: ${(diagnostics.patternMatches || 0).toLocaleString()}`,
@@ -1118,31 +935,14 @@
     }
 
     function loadCsvText(text, source) {
-      if (state.processing) return;
-      
-      state.processing = true;
-      els.status.textContent = `Loading ${source}... <span class="loading">⏳</span>`;
-      
-      // Use chunked parsing to avoid blocking UI
-      parseCsvChunked(text, (progress, rowsProcessed) => {
-        els.status.textContent = `Processing ${source}... ${progress}% (${rowsProcessed.toLocaleString()} rows) <span class="loading">⏳</span>`;
-      })
-      .then((parsed) => {
-        state.headers = parsed.headers;
-        state.rows = parsed.rows;
-        state.selectedDriver = "";
-        state.totalRows = parsed.rows.length;
-        configureColumns(parsed.headers);
-        applyStoredSettings();
-        recompute();
-        els.status.textContent = `${state.rows.length.toLocaleString()} transactions loaded from ${source}`;
-        state.processing = false;
-      })
-      .catch((error) => {
-        console.error("Error parsing CSV:", error);
-        els.status.textContent = `Error loading ${source}: ${error.message}`;
-        state.processing = false;
-      });
+      const parsed = parseCsv(text);
+      state.headers = parsed.headers;
+      state.rows = parsed.rows;
+      state.selectedDriver = "";
+      configureColumns(parsed.headers);
+      applyStoredSettings();
+      recompute();
+      els.status.textContent = `${state.rows.length.toLocaleString()} transactions loaded from ${source}`;
     }
 
     async function loadDefaultCsv() {
@@ -1154,7 +954,7 @@
         saveCsv(text, "transactions.csv");
         loadCsvText(text, "transactions.csv");
       } catch (error) {
-        els.status.textContent = "Could not load transactions.csv. Use Load CSV instead.";
+        els.status.textContent = "Could not load senorabanking/transactions.csv. Use Load CSV instead.";
       }
     }
 
