@@ -1,0 +1,412 @@
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --container-bg: white;
+  --container-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --heading-color: #2c3e50;
+  --textarea-bg: white;
+  --textarea-border: #ddd;
+  --button-bg: #3498db;
+  --button-hover: #2980b9;
+  --button-text: white;
+  --template-btn-bg: #2ecc71;
+  --template-btn-hover: #27ae60;
+  --copy-btn-bg: #9b59b6;
+  --copy-btn-hover: #8e44ad;
+  --output-copy-btn-bg: #e67e22;
+  --output-copy-btn-hover: #d35400;
+  --field-info-color: #7f8c8d;
+  --stats-bg: #e8f4fc;
+  --contractor-options-bg: #f8f9fa;
+  --table-border: #ddd;
+  --table-header-bg: #f2f2f2;
+  --tow-breakdown-color: #666;
+  --input-bg: white;
+  --input-border: #ddd;
+  --list-item-border: #e8eff8;
+  --list-total-bg: #eaf3fd;
+  --list-total-border: #b6cade;
+  --routing-bg: #e4edf8;
+  --empty-color: #7a94b0;
+  --pm-bg: #f8f9fa;
+  --pm-border: #ddd;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --container-bg: #1e1e1e;
+  --container-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  --heading-color: #bb86fc;
+  --textarea-bg: #2d2d2d;
+  --textarea-border: #444;
+  --button-bg: #3700b3;
+  --button-hover: #6200ee;
+  --button-text: white;
+  --template-btn-bg: #03dac6;
+  --template-btn-hover: #018786;
+  --copy-btn-bg: #bb86fc;
+  --copy-btn-hover: #3700b3;
+  --output-copy-btn-bg: #ff8c00;
+  --output-copy-btn-hover: #ff6d00;
+  --field-info-color: #a0a0a0;
+  --stats-bg: #2d3748;
+  --contractor-options-bg: #2d2d2d;
+  --table-border: #444;
+  --table-header-bg: #333;
+  --tow-breakdown-color: #aaa;
+  --input-bg: #2d2d2d;
+  --input-border: #444;
+  --list-item-border: #2a4560;
+  --list-total-bg: #1e3a53;
+  --list-total-border: #3a5a78;
+  --routing-bg: #1e3a53;
+  --empty-color: #8aaac9;
+  --pm-bg: #2a2a2a;
+  --pm-border: #444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  background-color: var(--container-bg);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: var(--container-shadow);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+h1, h2, h3 {
+  color: var(--heading-color);
+  transition: color 0.3s;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  font-family: monospace;
+  border: 1px solid var(--textarea-border);
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: var(--textarea-bg);
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+.template-btn {
+  background-color: var(--template-btn-bg);
+}
+
+.template-btn:hover {
+  background-color: var(--template-btn-hover);
+}
+
+.btn-group {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.field-info {
+  font-size: 14px;
+  color: var(--field-info-color);
+  margin-top: 10px;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.stats {
+  margin: 15px 0;
+  padding: 10px;
+  background-color: var(--stats-bg);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.dark-mode-toggle button {
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dark-mode-toggle button:hover {
+  background-color: var(--button-hover);
+}
+
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pilot-list {
+  background-color: var(--textarea-bg);
+  border: 1px solid var(--textarea-border);
+  border-radius: 4px;
+  padding: 6px 0;
+  min-height: 80px;
+  transition: all 0.3s;
+}
+
+.pilot-list .list-item {
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--list-item-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.pilot-list .list-item:last-child {
+  border-bottom: none;
+}
+
+.pilot-list .list-item .count {
+  font-weight: 600;
+  color: var(--button-bg);
+  min-width: 60px;
+  transition: color 0.3s;
+}
+
+.pilot-list .list-item .name {
+  font-weight: 500;
+  min-width: 140px;
+  color: var(--heading-color);
+  transition: color 0.3s;
+}
+
+.pilot-list .list-item .amount {
+  font-weight: 600;
+  color: var(--template-btn-bg);
+  min-width: 100px;
+  transition: color 0.3s;
+}
+
+.pilot-list .list-item .routing {
+  font-family: monospace;
+  background-color: var(--routing-bg);
+  padding: 2px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+
+.pilot-list .total-row {
+  background-color: var(--list-total-bg);
+  border-radius: 0 0 4px 4px;
+  padding: 12px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  border-top: 2px solid var(--list-total-border);
+  margin-top: 4px;
+  transition: all 0.3s;
+}
+
+.pilot-list .total-row .total-label {
+  color: var(--heading-color);
+}
+
+.pilot-list .total-row .total-amount {
+  color: var(--template-btn-bg);
+  font-weight: 700;
+}
+
+.pilot-list .empty-state {
+  padding: 30px 18px;
+  color: var(--empty-color);
+  text-align: center;
+  font-style: italic;
+}
+
+.copy-list-btn {
+  background-color: var(--copy-btn-bg);
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+
+.copy-list-btn:hover {
+  background-color: var(--copy-btn-hover);
+}
+
+.copy-list-btn.copied {
+  background-color: var(--template-btn-bg);
+}
+
+.price-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.price-input-group input {
+  padding: 8px 12px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  width: 150px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.copy-section {
+  margin-top: 15px;
+}
+
+.pilot-manager {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid var(--pm-border);
+}
+
+.pilot-manager-grid {
+  background-color: var(--pm-bg);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--pm-border);
+  transition: all 0.3s;
+}
+
+.pm-input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.pm-input-group input {
+  flex: 1 1 180px;
+  padding: 8px 12px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+
+.pm-input-group button {
+  margin: 0;
+}
+
+.pilot-manager-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 10px 0;
+  min-height: 40px;
+}
+
+.pilot-manager-list .pm-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--routing-bg);
+  padding: 4px 12px 4px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 1px solid var(--pm-border);
+  transition: all 0.3s;
+}
+
+.pm-tag .pm-name {
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+.pm-tag .pm-routing {
+  font-family: monospace;
+  color: var(--field-info-color);
+  font-size: 13px;
+}
+
+.pm-tag .pm-remove {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 4px;
+  margin: 0;
+  line-height: 1;
+}
+
+.pm-tag .pm-remove:hover {
+  color: #c0392b;
+  background: none;
+}
+
+.pm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pm-actions button {
+  margin: 0;
+}
